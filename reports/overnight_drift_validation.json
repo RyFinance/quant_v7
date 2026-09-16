@@ -1,0 +1,334 @@
+{
+  "liquid_75": {
+    "universe": "liquid_75 (live PEAD bot universe)",
+    "n_tickers": 75,
+    "date_range": [
+      "2015-01-05",
+      "2026-08-14"
+    ],
+    "per_ticker_summary": {
+      "overnight_ret": {
+        "n_tickers": 75,
+        "mean_daily_return_bps": 6.252928051883574,
+        "pct_positive_mean": 93.33333333333333,
+        "pct_significant_positive": 45.33333333333333,
+        "pct_significant_negative": 0.0
+      },
+      "intraday_ret": {
+        "n_tickers": 75,
+        "mean_daily_return_bps": 3.3865308157740195,
+        "pct_positive_mean": 82.66666666666667,
+        "pct_significant_positive": 8.0,
+        "pct_significant_negative": 0.0
+      }
+    },
+    "portfolio_overnight_bootstrap_sharpe_ci": {
+      "point_estimate": 1.0127556939229179,
+      "bootstrap_mean": 1.0233786686042412,
+      "ci_2.5pct": 0.3347347538607692,
+      "ci_97.5pct": 1.7813340274640863,
+      "ci_includes_zero": false,
+      "pct_bootstrap_draws_negative": 0.0004
+    },
+    "portfolio_intraday_bootstrap_sharpe_ci": {
+      "point_estimate": 0.3989760492432536,
+      "bootstrap_mean": 0.4074045280492821,
+      "ci_2.5pct": -0.17939755167489776,
+      "ci_97.5pct": 1.0434417803630038,
+      "ci_includes_zero": true,
+      "pct_bootstrap_draws_negative": 0.0936
+    },
+    "buy_and_hold_bootstrap_sharpe_ci": {
+      "point_estimate": 0.9997460041803922,
+      "bootstrap_mean": 1.0123457099173563,
+      "ci_2.5pct": 0.32448386651704814,
+      "ci_97.5pct": 1.7779117699158113,
+      "ci_includes_zero": false,
+      "pct_bootstrap_draws_negative": 0.0008
+    },
+    "null_swap_test": {
+      "real_gap_bps": 2.806188905836191,
+      "null_mean_bps": -0.021567487433905533,
+      "null_std_bps": 2.650571908193591,
+      "empirical_p_value": 0.2876,
+      "significant_at_5pct": false,
+      "methodology": "day-blocked swap (one shared coin flip per trading day, applied to every ticker that day) -- corrects a pseudo-replication bug from an earlier per-(ticker,day)-row version, found via adversarial review.",
+      "n_days": 2920
+    },
+    "overnight_cost_sensitivity": {
+      "2bps_round_trip": {
+        "net_annualized_return": 0.090919,
+        "net_sharpe_ratio": 0.6252,
+        "net_total_return": 1.74102,
+        "net_max_drawdown": -0.329751
+      },
+      "5bps_round_trip": {
+        "net_annualized_return": 0.011497,
+        "net_sharpe_ratio": 0.0791,
+        "net_total_return": 0.141638,
+        "net_max_drawdown": -0.407118
+      },
+      "10bps_round_trip": {
+        "net_annualized_return": -0.108277,
+        "net_sharpe_ratio": -0.7445,
+        "net_total_return": -0.734966,
+        "net_max_drawdown": -0.780096
+      }
+    },
+    "buy_and_hold_metrics": {
+      "annualized_return": 0.226236,
+      "sharpe_ratio": 0.9997,
+      "max_drawdown": -0.357947
+    },
+    "overnight_split_robustness": {
+      "train": {
+        "n_days": 1459,
+        "start": "2015-01-05",
+        "end": "2020-10-19",
+        "mean_bps": 4.679849830463397,
+        "sharpe_ratio": 0.8534,
+        "pct_positive_days": 57.64222069910898
+      },
+      "validation": {
+        "n_days": 364,
+        "start": "2020-10-21",
+        "end": "2022-03-31",
+        "mean_bps": 9.45170156276407,
+        "sharpe_ratio": 2.2545,
+        "pct_positive_days": 59.89010989010989
+      },
+      "holdout_a": {
+        "n_days": 364,
+        "start": "2022-04-04",
+        "end": "2023-09-14",
+        "mean_bps": -5.061977952618657,
+        "sharpe_ratio": -0.7625,
+        "pct_positive_days": 45.879120879120876
+      },
+      "holdout_b": {
+        "n_days": 364,
+        "start": "2023-09-18",
+        "end": "2025-02-28",
+        "mean_bps": 12.340712462780912,
+        "sharpe_ratio": 2.9067,
+        "pct_positive_days": 62.362637362637365
+      },
+      "holdout_c": {
+        "n_days": 365,
+        "start": "2025-03-04",
+        "end": "2026-08-14",
+        "mean_bps": 7.848613601086549,
+        "sharpe_ratio": 1.298,
+        "pct_positive_days": 58.35616438356165
+      }
+    },
+    "intraday_split_robustness": {
+      "train": {
+        "n_days": 1459,
+        "start": "2015-01-05",
+        "end": "2020-10-19",
+        "mean_bps": 1.7629111829142523,
+        "sharpe_ratio": 0.2975,
+        "pct_positive_days": 53.32419465387252
+      },
+      "validation": {
+        "n_days": 364,
+        "start": "2020-10-21",
+        "end": "2022-03-31",
+        "mean_bps": -0.48178658972433447,
+        "sharpe_ratio": -0.0704,
+        "pct_positive_days": 52.74725274725275
+      },
+      "holdout_a": {
+        "n_days": 364,
+        "start": "2022-04-04",
+        "end": "2023-09-14",
+        "mean_bps": 6.799922283797169,
+        "sharpe_ratio": 0.8608,
+        "pct_positive_days": 52.197802197802204
+      },
+      "holdout_b": {
+        "n_days": 364,
+        "start": "2023-09-18",
+        "end": "2025-02-28",
+        "mean_bps": 0.5020696121539363,
+        "sharpe_ratio": 0.0847,
+        "pct_positive_days": 55.494505494505496
+      },
+      "holdout_c": {
+        "n_days": 365,
+        "start": "2025-03-04",
+        "end": "2026-08-14",
+        "mean_bps": 8.862844672960529,
+        "sharpe_ratio": 1.179,
+        "pct_positive_days": 54.794520547945204
+      }
+    }
+  },
+  "full_universe": {
+    "universe": "full_universe (all cached tickers)",
+    "n_tickers": 502,
+    "date_range": [
+      "2015-01-05",
+      "2026-08-17"
+    ],
+    "per_ticker_summary": {
+      "overnight_ret": {
+        "n_tickers": 500,
+        "mean_daily_return_bps": 3.7990291922264223,
+        "pct_positive_mean": 93.4,
+        "pct_significant_positive": 36.6,
+        "pct_significant_negative": 0.2
+      },
+      "intraday_ret": {
+        "n_tickers": 500,
+        "mean_daily_return_bps": 1.2575163231793516,
+        "pct_positive_mean": 68.0,
+        "pct_significant_positive": 3.5999999999999996,
+        "pct_significant_negative": 0.0
+      }
+    },
+    "portfolio_overnight_bootstrap_sharpe_ci": {
+      "point_estimate": 0.8035204766295049,
+      "bootstrap_mean": 0.8145817029152641,
+      "ci_2.5pct": 0.17085988624120413,
+      "ci_97.5pct": 1.529221511286603,
+      "ci_includes_zero": false,
+      "pct_bootstrap_draws_negative": 0.0068
+    },
+    "portfolio_intraday_bootstrap_sharpe_ci": {
+      "point_estimate": 0.21147413290150166,
+      "bootstrap_mean": 0.21171653300540821,
+      "ci_2.5pct": -0.3633944575029675,
+      "ci_97.5pct": 0.809426617561408,
+      "ci_includes_zero": true,
+      "pct_bootstrap_draws_negative": 0.2456
+    },
+    "buy_and_hold_bootstrap_sharpe_ci": {
+      "point_estimate": 0.6835042291201757,
+      "bootstrap_mean": 0.6892410272750217,
+      "ci_2.5pct": 0.05968979013100144,
+      "ci_97.5pct": 1.3900057049857582,
+      "ci_includes_zero": false,
+      "pct_bootstrap_draws_negative": 0.0154
+    },
+    "null_swap_test": {
+      "real_gap_bps": 2.4492154124739716,
+      "null_mean_bps": 0.03520155125366689,
+      "null_std_bps": 2.0128616589419237,
+      "empirical_p_value": 0.2256,
+      "significant_at_5pct": false,
+      "methodology": "day-blocked swap (one shared coin flip per trading day, applied to every ticker that day) -- corrects a pseudo-replication bug from an earlier per-(ticker,day)-row version, found via adversarial review.",
+      "n_days": 2921
+    },
+    "overnight_cost_sensitivity": {
+      "2bps_round_trip": {
+        "net_annualized_return": 0.039954,
+        "net_sharpe_ratio": 0.3426,
+        "net_total_return": 0.574767,
+        "net_max_drawdown": -0.322342
+      },
+      "5bps_round_trip": {
+        "net_annualized_return": -0.03577,
+        "net_sharpe_ratio": -0.3067,
+        "net_total_return": -0.344405,
+        "net_max_drawdown": -0.486172
+      },
+      "10bps_round_trip": {
+        "net_annualized_return": -0.149965,
+        "net_sharpe_ratio": -1.286,
+        "net_total_return": -0.847917,
+        "net_max_drawdown": -0.85457
+      }
+    },
+    "buy_and_hold_metrics": {
+      "annualized_return": 0.124613,
+      "sharpe_ratio": 0.6835,
+      "max_drawdown": -0.397731
+    },
+    "overnight_split_robustness": {
+      "train": {
+        "n_days": 1459,
+        "start": "2015-01-05",
+        "end": "2020-10-19",
+        "mean_bps": 2.749134857020182,
+        "sharpe_ratio": 0.5404,
+        "pct_positive_days": 57.16244002741604
+      },
+      "validation": {
+        "n_days": 364,
+        "start": "2020-10-21",
+        "end": "2022-03-31",
+        "mean_bps": 9.152455422858573,
+        "sharpe_ratio": 2.6022,
+        "pct_positive_days": 59.61538461538461
+      },
+      "holdout_a": {
+        "n_days": 364,
+        "start": "2022-04-04",
+        "end": "2023-09-14",
+        "mean_bps": -2.3431938557478973,
+        "sharpe_ratio": -0.4873,
+        "pct_positive_days": 50.0
+      },
+      "holdout_b": {
+        "n_days": 364,
+        "start": "2023-09-18",
+        "end": "2025-02-28",
+        "mean_bps": 7.635395230287918,
+        "sharpe_ratio": 2.8278,
+        "pct_positive_days": 60.98901098901099
+      },
+      "holdout_c": {
+        "n_days": 366,
+        "start": "2025-03-04",
+        "end": "2026-08-17",
+        "mean_bps": 2.6747610473527876,
+        "sharpe_ratio": 0.7408,
+        "pct_positive_days": 57.650273224043715
+      }
+    },
+    "intraday_split_robustness": {
+      "train": {
+        "n_days": 1459,
+        "start": "2015-01-05",
+        "end": "2020-10-19",
+        "mean_bps": 1.416750518173994,
+        "sharpe_ratio": 0.2781,
+        "pct_positive_days": 53.87251542152159
+      },
+      "validation": {
+        "n_days": 364,
+        "start": "2020-10-21",
+        "end": "2022-03-31",
+        "mean_bps": -0.06870141129639229,
+        "sharpe_ratio": -0.0134,
+        "pct_positive_days": 53.02197802197802
+      },
+      "holdout_a": {
+        "n_days": 364,
+        "start": "2022-04-04",
+        "end": "2023-09-14",
+        "mean_bps": 2.0258272868148737,
+        "sharpe_ratio": 0.3185,
+        "pct_positive_days": 52.74725274725275
+      },
+      "holdout_b": {
+        "n_days": 364,
+        "start": "2023-09-18",
+        "end": "2025-02-28",
+        "mean_bps": -0.6717928178984546,
+        "sharpe_ratio": -0.1686,
+        "pct_positive_days": 51.64835164835166
+      },
+      "holdout_c": {
+        "n_days": 366,
+        "start": "2025-03-04",
+        "end": "2026-08-17",
+        "mean_bps": 2.6014065514027274,
+        "sharpe_ratio": 0.4653,
+        "pct_positive_days": 49.72677595628415
+      }
+    }
+  }
+}

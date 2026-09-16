@@ -1,0 +1,48 @@
+{
+  "n_periods": 4,
+  "annual_results": [
+    {
+      "year": "2021-08-01_to_2022-07-31",
+      "train_n": 10607,
+      "validation_n": 474,
+      "test_n": 1857,
+      "n_trades": 283,
+      "sharpe_ratio": 3.9028,
+      "annualized_return": 0.097138,
+      "max_drawdown": -0.006437
+    },
+    {
+      "year": "2022-08-01_to_2023-07-31",
+      "train_n": 12476,
+      "validation_n": 477,
+      "test_n": 1871,
+      "n_trades": 284,
+      "sharpe_ratio": 2.2492,
+      "annualized_return": 0.070116,
+      "max_drawdown": -0.018335
+    },
+    {
+      "year": "2023-08-01_to_2024-07-31",
+      "train_n": 14368,
+      "validation_n": 479,
+      "test_n": 1919,
+      "n_trades": 56,
+      "sharpe_ratio": 3.6721,
+      "annualized_return": 0.187254,
+      "max_drawdown": -0.015891
+    },
+    {
+      "year": "2024-08-01_to_2025-06-30",
+      "train_n": 16253,
+      "validation_n": 482,
+      "test_n": 1674,
+      "n_trades": 30,
+      "sharpe_ratio": 2.0188,
+      "annualized_return": 0.068427,
+      "max_drawdown": -0.005822
+    }
+  ],
+  "sharpe_mean": 2.960725,
+  "sharpe_std": 0.8347230420175304,
+  "pct_periods_positive_sharpe": 1.0
+}

@@ -1,0 +1,1053 @@
+2026-08-18 00:38:26.255 | WARNING  | data.ingestion:to_bars:53 - MU @ 2026-08-17 00:00:00: skipped bad bar (4 validation errors for OHLCVBar
+open
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+low
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+high
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+close
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than)
+2026-08-18 00:38:26.301 | INFO     | data.ingestion:ingest_universe:75 - [1/75] MU: 2921 bars (2015-01-02 -> 2026-08-14)
+2026-08-18 00:38:27.104 | WARNING  | data.ingestion:to_bars:53 - NVDA @ 2026-08-17 00:00:00: skipped bad bar (4 validation errors for OHLCVBar
+open
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+low
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+high
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+close
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than)
+2026-08-18 00:38:27.114 | INFO     | data.ingestion:ingest_universe:75 - [2/75] NVDA: 2921 bars (2015-01-02 -> 2026-08-14)
+2026-08-18 00:38:27.783 | WARNING  | data.ingestion:to_bars:53 - SNDK @ 2026-08-17 00:00:00: skipped bad bar (4 validation errors for OHLCVBar
+open
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+low
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+high
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+close
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than)
+2026-08-18 00:38:27.785 | INFO     | data.ingestion:ingest_universe:75 - [3/75] SNDK: 377 bars (2025-02-13 -> 2026-08-14)
+2026-08-18 00:38:28.623 | WARNING  | data.ingestion:to_bars:53 - AAPL @ 2026-08-17 00:00:00: skipped bad bar (4 validation errors for OHLCVBar
+open
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+low
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+high
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+close
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than)
+2026-08-18 00:38:28.633 | INFO     | data.ingestion:ingest_universe:75 - [4/75] AAPL: 2921 bars (2015-01-02 -> 2026-08-14)
+2026-08-18 00:38:29.438 | WARNING  | data.ingestion:to_bars:53 - MSFT @ 2026-08-17 00:00:00: skipped bad bar (4 validation errors for OHLCVBar
+open
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+low
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+high
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+close
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than)
+2026-08-18 00:38:29.447 | INFO     | data.ingestion:ingest_universe:75 - [5/75] MSFT: 2921 bars (2015-01-02 -> 2026-08-14)
+2026-08-18 00:38:30.266 | WARNING  | data.ingestion:to_bars:53 - TSLA @ 2026-08-17 00:00:00: skipped bad bar (4 validation errors for OHLCVBar
+open
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+low
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+high
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+close
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than)
+2026-08-18 00:38:30.277 | INFO     | data.ingestion:ingest_universe:75 - [6/75] TSLA: 2921 bars (2015-01-02 -> 2026-08-14)
+2026-08-18 00:38:31.062 | WARNING  | data.ingestion:to_bars:53 - AMD @ 2026-08-17 00:00:00: skipped bad bar (4 validation errors for OHLCVBar
+open
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+low
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+high
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+close
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than)
+2026-08-18 00:38:31.085 | INFO     | data.ingestion:ingest_universe:75 - [7/75] AMD: 2921 bars (2015-01-02 -> 2026-08-14)
+2026-08-18 00:38:31.881 | WARNING  | data.ingestion:to_bars:53 - INTC @ 2026-08-17 00:00:00: skipped bad bar (4 validation errors for OHLCVBar
+open
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+low
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+high
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+close
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than)
+2026-08-18 00:38:31.890 | INFO     | data.ingestion:ingest_universe:75 - [8/75] INTC: 2921 bars (2015-01-02 -> 2026-08-14)
+2026-08-18 00:38:32.683 | WARNING  | data.ingestion:to_bars:53 - AMZN @ 2026-08-17 00:00:00: skipped bad bar (4 validation errors for OHLCVBar
+open
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+low
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+high
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+close
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than)
+2026-08-18 00:38:32.695 | INFO     | data.ingestion:ingest_universe:75 - [9/75] AMZN: 2921 bars (2015-01-02 -> 2026-08-14)
+2026-08-18 00:38:33.497 | WARNING  | data.ingestion:to_bars:53 - GOOGL @ 2026-08-17 00:00:00: skipped bad bar (4 validation errors for OHLCVBar
+open
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+low
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+high
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+close
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than)
+2026-08-18 00:38:33.507 | INFO     | data.ingestion:ingest_universe:75 - [10/75] GOOGL: 2921 bars (2015-01-02 -> 2026-08-14)
+2026-08-18 00:38:34.313 | WARNING  | data.ingestion:to_bars:53 - META @ 2026-08-17 00:00:00: skipped bad bar (4 validation errors for OHLCVBar
+open
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+low
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+high
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+close
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than)
+2026-08-18 00:38:34.329 | INFO     | data.ingestion:ingest_universe:75 - [11/75] META: 2921 bars (2015-01-02 -> 2026-08-14)
+2026-08-18 00:38:35.172 | WARNING  | data.ingestion:to_bars:53 - MRVL @ 2026-08-17 00:00:00: skipped bad bar (4 validation errors for OHLCVBar
+open
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+low
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+high
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+close
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than)
+2026-08-18 00:38:35.184 | INFO     | data.ingestion:ingest_universe:75 - [12/75] MRVL: 2921 bars (2015-01-02 -> 2026-08-14)
+2026-08-18 00:38:36.500 | WARNING  | data.ingestion:to_bars:53 - AVGO @ 2026-08-17 00:00:00: skipped bad bar (4 validation errors for OHLCVBar
+open
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+low
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+high
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+close
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than)
+2026-08-18 00:38:36.510 | INFO     | data.ingestion:ingest_universe:75 - [13/75] AVGO: 2921 bars (2015-01-02 -> 2026-08-14)
+2026-08-18 00:38:37.298 | WARNING  | data.ingestion:to_bars:53 - GOOG @ 2026-08-17 00:00:00: skipped bad bar (4 validation errors for OHLCVBar
+open
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+low
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+high
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+close
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than)
+2026-08-18 00:38:37.309 | INFO     | data.ingestion:ingest_universe:75 - [14/75] GOOG: 2921 bars (2015-01-02 -> 2026-08-14)
+2026-08-18 00:38:38.413 | WARNING  | data.ingestion:to_bars:53 - PLTR @ 2026-08-17 00:00:00: skipped bad bar (4 validation errors for OHLCVBar
+open
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+low
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+high
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+close
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than)
+2026-08-18 00:38:38.419 | INFO     | data.ingestion:ingest_universe:75 - [15/75] PLTR: 1475 bars (2020-09-30 -> 2026-08-14)
+2026-08-18 00:38:39.227 | WARNING  | data.ingestion:to_bars:53 - AMAT @ 2026-08-17 00:00:00: skipped bad bar (4 validation errors for OHLCVBar
+open
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+low
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+high
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+close
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than)
+2026-08-18 00:38:39.236 | INFO     | data.ingestion:ingest_universe:75 - [16/75] AMAT: 2921 bars (2015-01-02 -> 2026-08-14)
+2026-08-18 00:38:40.081 | WARNING  | data.ingestion:to_bars:53 - ORCL @ 2026-08-17 00:00:00: skipped bad bar (4 validation errors for OHLCVBar
+open
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+low
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+high
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+close
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than)
+2026-08-18 00:38:40.091 | INFO     | data.ingestion:ingest_universe:75 - [17/75] ORCL: 2921 bars (2015-01-02 -> 2026-08-14)
+2026-08-18 00:38:40.949 | WARNING  | data.ingestion:to_bars:53 - WDC @ 2026-08-17 00:00:00: skipped bad bar (4 validation errors for OHLCVBar
+open
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+low
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+high
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+close
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than)
+2026-08-18 00:38:40.959 | INFO     | data.ingestion:ingest_universe:75 - [18/75] WDC: 2921 bars (2015-01-02 -> 2026-08-14)
+2026-08-18 00:38:41.711 | WARNING  | data.ingestion:to_bars:53 - LITE @ 2026-08-17 00:00:00: skipped bad bar (4 validation errors for OHLCVBar
+open
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+low
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+high
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+close
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than)
+2026-08-18 00:38:41.790 | INFO     | data.ingestion:ingest_universe:75 - [19/75] LITE: 2782 bars (2015-07-23 -> 2026-08-14)
+2026-08-18 00:38:42.595 | WARNING  | data.ingestion:to_bars:53 - STX @ 2026-08-17 00:00:00: skipped bad bar (4 validation errors for OHLCVBar
+open
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+low
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+high
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+close
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than)
+2026-08-18 00:38:42.604 | INFO     | data.ingestion:ingest_universe:75 - [20/75] STX: 2921 bars (2015-01-02 -> 2026-08-14)
+2026-08-18 00:38:43.441 | WARNING  | data.ingestion:to_bars:53 - LRCX @ 2026-08-17 00:00:00: skipped bad bar (4 validation errors for OHLCVBar
+open
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+low
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+high
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+close
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than)
+2026-08-18 00:38:43.451 | INFO     | data.ingestion:ingest_universe:75 - [21/75] LRCX: 2921 bars (2015-01-02 -> 2026-08-14)
+2026-08-18 00:38:44.676 | WARNING  | data.ingestion:to_bars:53 - QCOM @ 2026-08-17 00:00:00: skipped bad bar (4 validation errors for OHLCVBar
+open
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+low
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+high
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+close
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than)
+2026-08-18 00:38:44.687 | INFO     | data.ingestion:ingest_universe:75 - [22/75] QCOM: 2921 bars (2015-01-02 -> 2026-08-14)
+2026-08-18 00:38:45.617 | WARNING  | data.ingestion:to_bars:53 - DELL @ 2026-08-17 00:00:00: skipped bad bar (4 validation errors for OHLCVBar
+open
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+low
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+high
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+close
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than)
+2026-08-18 00:38:45.625 | INFO     | data.ingestion:ingest_universe:75 - [23/75] DELL: 2512 bars (2016-08-17 -> 2026-08-14)
+2026-08-18 00:38:46.485 | WARNING  | data.ingestion:to_bars:53 - LLY @ 2026-08-17 00:00:00: skipped bad bar (4 validation errors for OHLCVBar
+open
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+low
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+high
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+close
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than)
+2026-08-18 00:38:46.494 | INFO     | data.ingestion:ingest_universe:75 - [24/75] LLY: 2921 bars (2015-01-02 -> 2026-08-14)
+2026-08-18 00:38:47.287 | WARNING  | data.ingestion:to_bars:53 - NFLX @ 2026-08-17 00:00:00: skipped bad bar (4 validation errors for OHLCVBar
+open
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+low
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+high
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+close
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than)
+2026-08-18 00:38:47.297 | INFO     | data.ingestion:ingest_universe:75 - [25/75] NFLX: 2921 bars (2015-01-02 -> 2026-08-14)
+2026-08-18 00:38:48.142 | WARNING  | data.ingestion:to_bars:53 - CAT @ 2026-08-17 00:00:00: skipped bad bar (4 validation errors for OHLCVBar
+open
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+low
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+high
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+close
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than)
+2026-08-18 00:38:48.152 | INFO     | data.ingestion:ingest_universe:75 - [26/75] CAT: 2921 bars (2015-01-02 -> 2026-08-14)
+2026-08-18 00:38:49.108 | WARNING  | data.ingestion:to_bars:53 - JPM @ 2026-08-17 00:00:00: skipped bad bar (4 validation errors for OHLCVBar
+open
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+low
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+high
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+close
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than)
+2026-08-18 00:38:49.118 | INFO     | data.ingestion:ingest_universe:75 - [27/75] JPM: 2921 bars (2015-01-02 -> 2026-08-14)
+2026-08-18 00:38:49.925 | WARNING  | data.ingestion:to_bars:53 - NOW @ 2026-08-17 00:00:00: skipped bad bar (4 validation errors for OHLCVBar
+open
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+low
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+high
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+close
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than)
+2026-08-18 00:38:49.934 | INFO     | data.ingestion:ingest_universe:75 - [28/75] NOW: 2921 bars (2015-01-02 -> 2026-08-14)
+2026-08-18 00:38:50.792 | WARNING  | data.ingestion:to_bars:53 - CSCO @ 2026-08-17 00:00:00: skipped bad bar (4 validation errors for OHLCVBar
+open
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+low
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+high
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+close
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than)
+2026-08-18 00:38:50.801 | INFO     | data.ingestion:ingest_universe:75 - [29/75] CSCO: 2921 bars (2015-01-02 -> 2026-08-14)
+2026-08-18 00:38:51.517 | WARNING  | data.ingestion:to_bars:53 - GEV @ 2026-08-17 00:00:00: skipped bad bar (4 validation errors for OHLCVBar
+open
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+low
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+high
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+close
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than)
+2026-08-18 00:38:51.521 | INFO     | data.ingestion:ingest_universe:75 - [30/75] GEV: 598 bars (2024-03-27 -> 2026-08-14)
+2026-08-18 00:38:52.403 | WARNING  | data.ingestion:to_bars:53 - IBM @ 2026-08-17 00:00:00: skipped bad bar (4 validation errors for OHLCVBar
+open
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+low
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+high
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+close
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than)
+2026-08-18 00:38:52.412 | INFO     | data.ingestion:ingest_universe:75 - [31/75] IBM: 2921 bars (2015-01-02 -> 2026-08-14)
+2026-08-18 00:38:53.235 | WARNING  | data.ingestion:to_bars:53 - KLAC @ 2026-08-17 00:00:00: skipped bad bar (4 validation errors for OHLCVBar
+open
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+low
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+high
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+close
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than)
+2026-08-18 00:38:53.245 | INFO     | data.ingestion:ingest_universe:75 - [32/75] KLAC: 2921 bars (2015-01-02 -> 2026-08-14)
+2026-08-18 00:38:54.111 | WARNING  | data.ingestion:to_bars:53 - V @ 2026-08-17 00:00:00: skipped bad bar (4 validation errors for OHLCVBar
+open
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+low
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+high
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+close
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than)
+2026-08-18 00:38:54.121 | INFO     | data.ingestion:ingest_universe:75 - [33/75] V: 2921 bars (2015-01-02 -> 2026-08-14)
+2026-08-18 00:38:55.020 | WARNING  | data.ingestion:to_bars:53 - WMT @ 2026-08-17 00:00:00: skipped bad bar (4 validation errors for OHLCVBar
+open
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+low
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+high
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+close
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than)
+2026-08-18 00:38:55.029 | INFO     | data.ingestion:ingest_universe:75 - [34/75] WMT: 2921 bars (2015-01-02 -> 2026-08-14)
+2026-08-18 00:38:55.828 | WARNING  | data.ingestion:to_bars:53 - APP @ 2026-08-17 00:00:00: skipped bad bar (4 validation errors for OHLCVBar
+open
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+low
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+high
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+close
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than)
+2026-08-18 00:38:55.835 | INFO     | data.ingestion:ingest_universe:75 - [35/75] APP: 1340 bars (2021-04-15 -> 2026-08-14)
+2026-08-18 00:38:56.709 | WARNING  | data.ingestion:to_bars:53 - GLW @ 2026-08-17 00:00:00: skipped bad bar (4 validation errors for OHLCVBar
+open
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+low
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+high
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+close
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than)
+2026-08-18 00:38:56.718 | INFO     | data.ingestion:ingest_universe:75 - [36/75] GLW: 2921 bars (2015-01-02 -> 2026-08-14)
+2026-08-18 00:38:57.519 | WARNING  | data.ingestion:to_bars:53 - CRM @ 2026-08-17 00:00:00: skipped bad bar (4 validation errors for OHLCVBar
+open
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+low
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+high
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+close
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than)
+2026-08-18 00:38:57.529 | INFO     | data.ingestion:ingest_universe:75 - [37/75] CRM: 2921 bars (2015-01-02 -> 2026-08-14)
+2026-08-18 00:38:58.383 | WARNING  | data.ingestion:to_bars:53 - TXN @ 2026-08-17 00:00:00: skipped bad bar (4 validation errors for OHLCVBar
+open
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+low
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+high
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+close
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than)
+2026-08-18 00:38:58.393 | INFO     | data.ingestion:ingest_universe:75 - [38/75] TXN: 2921 bars (2015-01-02 -> 2026-08-14)
+2026-08-18 00:38:59.126 | WARNING  | data.ingestion:to_bars:53 - HOOD @ 2026-08-17 00:00:00: skipped bad bar (4 validation errors for OHLCVBar
+open
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+low
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+high
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+close
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than)
+2026-08-18 00:38:59.166 | INFO     | data.ingestion:ingest_universe:75 - [39/75] HOOD: 1267 bars (2021-07-29 -> 2026-08-14)
+2026-08-18 00:38:59.990 | WARNING  | data.ingestion:to_bars:53 - UNH @ 2026-08-17 00:00:00: skipped bad bar (4 validation errors for OHLCVBar
+open
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+low
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+high
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+close
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than)
+2026-08-18 00:38:59.999 | INFO     | data.ingestion:ingest_universe:75 - [40/75] UNH: 2921 bars (2015-01-02 -> 2026-08-14)
+2026-08-18 00:39:00.774 | WARNING  | data.ingestion:to_bars:53 - BRK-B @ 2026-08-17 00:00:00: skipped bad bar (4 validation errors for OHLCVBar
+open
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+low
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+high
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+close
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than)
+2026-08-18 00:39:00.783 | INFO     | data.ingestion:ingest_universe:75 - [41/75] BRK-B: 2921 bars (2015-01-02 -> 2026-08-14)
+2026-08-18 00:39:01.656 | WARNING  | data.ingestion:to_bars:53 - XOM @ 2026-08-17 00:00:00: skipped bad bar (4 validation errors for OHLCVBar
+open
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+low
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+high
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+close
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than)
+2026-08-18 00:39:01.666 | INFO     | data.ingestion:ingest_universe:75 - [42/75] XOM: 2921 bars (2015-01-02 -> 2026-08-14)
+2026-08-18 00:39:02.417 | WARNING  | data.ingestion:to_bars:53 - PANW @ 2026-08-17 00:00:00: skipped bad bar (4 validation errors for OHLCVBar
+open
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+low
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+high
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+close
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than)
+2026-08-18 00:39:02.426 | INFO     | data.ingestion:ingest_universe:75 - [43/75] PANW: 2921 bars (2015-01-02 -> 2026-08-14)
+2026-08-18 00:39:03.275 | WARNING  | data.ingestion:to_bars:53 - COST @ 2026-08-17 00:00:00: skipped bad bar (4 validation errors for OHLCVBar
+open
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+low
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+high
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+close
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than)
+2026-08-18 00:39:03.285 | INFO     | data.ingestion:ingest_universe:75 - [44/75] COST: 2921 bars (2015-01-02 -> 2026-08-14)
+2026-08-18 00:39:04.214 | WARNING  | data.ingestion:to_bars:53 - GS @ 2026-08-17 00:00:00: skipped bad bar (4 validation errors for OHLCVBar
+open
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+low
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+high
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+close
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than)
+2026-08-18 00:39:04.224 | INFO     | data.ingestion:ingest_universe:75 - [45/75] GS: 2921 bars (2015-01-02 -> 2026-08-14)
+2026-08-18 00:39:05.040 | WARNING  | data.ingestion:to_bars:53 - COHR @ 2026-08-17 00:00:00: skipped bad bar (4 validation errors for OHLCVBar
+open
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+low
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+high
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+close
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than)
+2026-08-18 00:39:05.050 | INFO     | data.ingestion:ingest_universe:75 - [46/75] COHR: 2921 bars (2015-01-02 -> 2026-08-14)
+2026-08-18 00:39:05.816 | WARNING  | data.ingestion:to_bars:53 - CRWD @ 2026-08-17 00:00:00: skipped bad bar (4 validation errors for OHLCVBar
+open
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+low
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+high
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+close
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than)
+2026-08-18 00:39:05.822 | INFO     | data.ingestion:ingest_universe:75 - [47/75] CRWD: 1804 bars (2019-06-12 -> 2026-08-14)
+2026-08-18 00:39:06.709 | WARNING  | data.ingestion:to_bars:53 - BAC @ 2026-08-17 00:00:00: skipped bad bar (4 validation errors for OHLCVBar
+open
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+low
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+high
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+close
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than)
+2026-08-18 00:39:06.719 | INFO     | data.ingestion:ingest_universe:75 - [48/75] BAC: 2921 bars (2015-01-02 -> 2026-08-14)
+2026-08-18 00:39:07.822 | WARNING  | data.ingestion:to_bars:53 - JNJ @ 2026-08-17 00:00:00: skipped bad bar (4 validation errors for OHLCVBar
+open
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+low
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+high
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+close
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than)
+2026-08-18 00:39:07.832 | INFO     | data.ingestion:ingest_universe:75 - [49/75] JNJ: 2921 bars (2015-01-02 -> 2026-08-14)
+2026-08-18 00:39:08.606 | WARNING  | data.ingestion:to_bars:53 - SMCI @ 2026-08-17 00:00:00: skipped bad bar (4 validation errors for OHLCVBar
+open
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+low
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+high
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+close
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than)
+2026-08-18 00:39:08.616 | INFO     | data.ingestion:ingest_universe:75 - [50/75] SMCI: 2921 bars (2015-01-02 -> 2026-08-14)
+2026-08-18 00:39:09.430 | WARNING  | data.ingestion:to_bars:53 - ADI @ 2026-08-17 00:00:00: skipped bad bar (4 validation errors for OHLCVBar
+open
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+low
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+high
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+close
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than)
+2026-08-18 00:39:09.439 | INFO     | data.ingestion:ingest_universe:75 - [51/75] ADI: 2921 bars (2015-01-02 -> 2026-08-14)
+2026-08-18 00:39:10.236 | WARNING  | data.ingestion:to_bars:53 - VRT @ 2026-08-17 00:00:00: skipped bad bar (4 validation errors for OHLCVBar
+open
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+low
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+high
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+close
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than)
+2026-08-18 00:39:10.244 | INFO     | data.ingestion:ingest_universe:75 - [52/75] VRT: 2019 bars (2018-08-02 -> 2026-08-14)
+2026-08-18 00:39:11.057 | WARNING  | data.ingestion:to_bars:53 - MA @ 2026-08-17 00:00:00: skipped bad bar (4 validation errors for OHLCVBar
+open
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+low
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+high
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+close
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than)
+2026-08-18 00:39:11.067 | INFO     | data.ingestion:ingest_universe:75 - [53/75] MA: 2921 bars (2015-01-02 -> 2026-08-14)
+2026-08-18 00:39:11.868 | WARNING  | data.ingestion:to_bars:53 - INTU @ 2026-08-17 00:00:00: skipped bad bar (4 validation errors for OHLCVBar
+open
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+low
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+high
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+close
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than)
+2026-08-18 00:39:11.893 | INFO     | data.ingestion:ingest_universe:75 - [54/75] INTU: 2921 bars (2015-01-02 -> 2026-08-14)
+2026-08-18 00:39:12.921 | WARNING  | data.ingestion:to_bars:53 - CVX @ 2026-08-17 00:00:00: skipped bad bar (4 validation errors for OHLCVBar
+open
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+low
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+high
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+close
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than)
+2026-08-18 00:39:12.931 | INFO     | data.ingestion:ingest_universe:75 - [55/75] CVX: 2921 bars (2015-01-02 -> 2026-08-14)
+2026-08-18 00:39:13.762 | WARNING  | data.ingestion:to_bars:53 - TER @ 2026-08-17 00:00:00: skipped bad bar (4 validation errors for OHLCVBar
+open
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+low
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+high
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+close
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than)
+2026-08-18 00:39:13.772 | INFO     | data.ingestion:ingest_universe:75 - [56/75] TER: 2921 bars (2015-01-02 -> 2026-08-14)
+2026-08-18 00:39:14.581 | WARNING  | data.ingestion:to_bars:53 - C @ 2026-08-17 00:00:00: skipped bad bar (4 validation errors for OHLCVBar
+open
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+low
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+high
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+close
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than)
+2026-08-18 00:39:14.591 | INFO     | data.ingestion:ingest_universe:75 - [57/75] C: 2921 bars (2015-01-02 -> 2026-08-14)
+2026-08-18 00:39:15.481 | WARNING  | data.ingestion:to_bars:53 - ABBV @ 2026-08-17 00:00:00: skipped bad bar (4 validation errors for OHLCVBar
+open
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+low
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+high
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+close
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than)
+2026-08-18 00:39:15.491 | INFO     | data.ingestion:ingest_universe:75 - [58/75] ABBV: 2920 bars (2015-01-02 -> 2026-08-14)
+2026-08-18 00:39:16.454 | WARNING  | data.ingestion:to_bars:53 - GE @ 2026-08-17 00:00:00: skipped bad bar (4 validation errors for OHLCVBar
+open
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+low
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+high
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+close
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than)
+2026-08-18 00:39:16.464 | INFO     | data.ingestion:ingest_universe:75 - [59/75] GE: 2921 bars (2015-01-02 -> 2026-08-14)
+2026-08-18 00:39:17.279 | WARNING  | data.ingestion:to_bars:53 - HD @ 2026-08-17 00:00:00: skipped bad bar (4 validation errors for OHLCVBar
+open
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+low
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+high
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+close
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than)
+2026-08-18 00:39:17.289 | INFO     | data.ingestion:ingest_universe:75 - [60/75] HD: 2921 bars (2015-01-02 -> 2026-08-14)
+2026-08-18 00:39:18.041 | WARNING  | data.ingestion:to_bars:53 - UBER @ 2026-08-17 00:00:00: skipped bad bar (4 validation errors for OHLCVBar
+open
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+low
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+high
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+close
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than)
+2026-08-18 00:39:18.048 | INFO     | data.ingestion:ingest_universe:75 - [61/75] UBER: 1826 bars (2019-05-10 -> 2026-08-14)
+2026-08-18 00:39:18.872 | WARNING  | data.ingestion:to_bars:53 - ADBE @ 2026-08-17 00:00:00: skipped bad bar (4 validation errors for OHLCVBar
+open
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+low
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+high
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+close
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than)
+2026-08-18 00:39:18.881 | INFO     | data.ingestion:ingest_universe:75 - [62/75] ADBE: 2921 bars (2015-01-02 -> 2026-08-14)
+2026-08-18 00:39:19.956 | WARNING  | data.ingestion:to_bars:53 - KO @ 2026-08-17 00:00:00: skipped bad bar (4 validation errors for OHLCVBar
+open
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+low
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+high
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+close
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than)
+2026-08-18 00:39:19.966 | INFO     | data.ingestion:ingest_universe:75 - [63/75] KO: 2921 bars (2015-01-02 -> 2026-08-14)
+2026-08-18 00:39:20.814 | WARNING  | data.ingestion:to_bars:53 - ANET @ 2026-08-17 00:00:00: skipped bad bar (4 validation errors for OHLCVBar
+open
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+low
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+high
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+close
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than)
+2026-08-18 00:39:20.824 | INFO     | data.ingestion:ingest_universe:75 - [64/75] ANET: 2921 bars (2015-01-02 -> 2026-08-14)
+2026-08-18 00:39:21.760 | WARNING  | data.ingestion:to_bars:53 - T @ 2026-08-17 00:00:00: skipped bad bar (4 validation errors for OHLCVBar
+open
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+low
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+high
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+close
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than)
+2026-08-18 00:39:21.769 | INFO     | data.ingestion:ingest_universe:75 - [65/75] T: 2921 bars (2015-01-02 -> 2026-08-14)
+2026-08-18 00:39:22.600 | WARNING  | data.ingestion:to_bars:53 - MPWR @ 2026-08-17 00:00:00: skipped bad bar (4 validation errors for OHLCVBar
+open
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+low
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+high
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+close
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than)
+2026-08-18 00:39:22.611 | INFO     | data.ingestion:ingest_universe:75 - [66/75] MPWR: 2921 bars (2015-01-02 -> 2026-08-14)
+2026-08-18 00:39:23.462 | WARNING  | data.ingestion:to_bars:53 - BA @ 2026-08-17 00:00:00: skipped bad bar (4 validation errors for OHLCVBar
+open
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+low
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+high
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+close
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than)
+2026-08-18 00:39:23.471 | INFO     | data.ingestion:ingest_universe:75 - [67/75] BA: 2921 bars (2015-01-02 -> 2026-08-14)
+2026-08-18 00:39:24.360 | WARNING  | data.ingestion:to_bars:53 - DDOG @ 2026-08-17 00:00:00: skipped bad bar (4 validation errors for OHLCVBar
+open
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+low
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+high
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+close
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than)
+2026-08-18 00:39:24.366 | INFO     | data.ingestion:ingest_universe:75 - [68/75] DDOG: 1735 bars (2019-09-19 -> 2026-08-14)
+2026-08-18 00:39:25.175 | WARNING  | data.ingestion:to_bars:53 - APH @ 2026-08-17 00:00:00: skipped bad bar (4 validation errors for OHLCVBar
+open
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+low
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+high
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+close
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than)
+2026-08-18 00:39:25.184 | INFO     | data.ingestion:ingest_universe:75 - [69/75] APH: 2921 bars (2015-01-02 -> 2026-08-14)
+2026-08-18 00:39:25.918 | WARNING  | data.ingestion:to_bars:53 - COIN @ 2026-08-17 00:00:00: skipped bad bar (4 validation errors for OHLCVBar
+open
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+low
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+high
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+close
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than)
+2026-08-18 00:39:25.924 | INFO     | data.ingestion:ingest_universe:75 - [70/75] COIN: 1341 bars (2021-04-14 -> 2026-08-14)
+2026-08-18 00:39:26.759 | WARNING  | data.ingestion:to_bars:53 - BKNG @ 2026-08-17 00:00:00: skipped bad bar (4 validation errors for OHLCVBar
+open
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+low
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+high
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+close
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than)
+2026-08-18 00:39:26.769 | INFO     | data.ingestion:ingest_universe:75 - [71/75] BKNG: 2921 bars (2015-01-02 -> 2026-08-14)
+2026-08-18 00:39:27.673 | WARNING  | data.ingestion:to_bars:53 - PG @ 2026-08-17 00:00:00: skipped bad bar (4 validation errors for OHLCVBar
+open
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+low
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+high
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+close
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than)
+2026-08-18 00:39:27.685 | INFO     | data.ingestion:ingest_universe:75 - [72/75] PG: 2921 bars (2015-01-02 -> 2026-08-14)
+2026-08-18 00:39:28.692 | WARNING  | data.ingestion:to_bars:53 - CIEN @ 2026-08-17 00:00:00: skipped bad bar (4 validation errors for OHLCVBar
+open
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+low
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+high
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+close
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than)
+2026-08-18 00:39:28.702 | INFO     | data.ingestion:ingest_universe:75 - [73/75] CIEN: 2921 bars (2015-01-02 -> 2026-08-14)
+2026-08-18 00:39:29.562 | WARNING  | data.ingestion:to_bars:53 - WFC @ 2026-08-17 00:00:00: skipped bad bar (4 validation errors for OHLCVBar
+open
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+low
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+high
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+close
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than)
+2026-08-18 00:39:29.571 | INFO     | data.ingestion:ingest_universe:75 - [74/75] WFC: 2921 bars (2015-01-02 -> 2026-08-14)
+2026-08-18 00:39:30.459 | WARNING  | data.ingestion:to_bars:53 - ACN @ 2026-08-17 00:00:00: skipped bad bar (4 validation errors for OHLCVBar
+open
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+low
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+high
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than
+close
+  Input should be greater than 0 [type=greater_than, input_value=nan, input_type=float]
+    For further information visit https://errors.pydantic.dev/2.12/v/greater_than)
+2026-08-18 00:39:30.469 | INFO     | data.ingestion:ingest_universe:75 - [75/75] ACN: 2921 bars (2015-01-02 -> 2026-08-14)
+2026-08-18 00:39:30.975 | INFO     | data.ingestion:ingest_universe:79 - ingestion complete: 75/75 tickers succeeded
+ingesting 75 tickers
+DONE 75

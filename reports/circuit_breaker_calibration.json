@@ -1,0 +1,65 @@
+{
+  "thresholds": {
+    "magnitude_index_threshold": 0.06,
+    "magnitude_single_asset_threshold": 0.35,
+    "speed_window_minutes": 5,
+    "speed_move_threshold": 0.02,
+    "correlation_spike_threshold": 0.6,
+    "cluster_collapse_fraction": 0.4,
+    "stale_fraction_threshold": 0.1
+  },
+  "production_backtest_75name_2015_2026": {
+    "n_days": 2861,
+    "n_days_any_trigger_fired": 99,
+    "n_days_halt_new_entries": 60,
+    "n_days_full_flatten": 66,
+    "covid_window_true_positive": {
+      "n_days_in_window": 63,
+      "n_days_triggered": 49,
+      "fired_at_least_once_during_covid": true,
+      "max_tier_reached": "2"
+    },
+    "false_positive_rate_outside_covid_window": 0.017869907076483203,
+    "n_false_positive_days_outside_covid": 50,
+    "data_quality": {
+      "tickers_with_gaps": 0,
+      "stale_feed_tickers": 0
+    }
+  },
+  "legacy_tail_event_check_2005_2026": {
+    "2008_gfc": {
+      "n_days": 85,
+      "magnitude_trigger_fires": 11,
+      "structural_trigger_fires_at_prod_threshold": 52,
+      "structural_window_mean_corr": 0.5770639812124129,
+      "note": null
+    },
+    "2010_flash_crash_day": {
+      "n_days": 1,
+      "magnitude_trigger_fires": 0,
+      "structural_trigger_fires_at_prod_threshold": 0,
+      "structural_window_mean_corr": 0.3897744660884149,
+      "note": "2010 Flash Crash daily close-to-close SPY move was only -3.3% (recovered same day) -- daily-bar magnitude trigger structurally cannot detect this event; it needs the F2 speed trigger and intraday data this build does not have historically."
+    },
+    "false_positive_check_20yr_ex_crisis": {
+      "n_days_checked": 5125,
+      "n_false_positive_days": 2,
+      "false_positive_rate": 0.0003902439024390244,
+      "false_positive_dates": [
+        "2011-08-08",
+        "2025-04-09"
+      ]
+    }
+  },
+  "speed_trigger_check": {
+    "data_range": [
+      "2026-08-11 13:30:00+00:00",
+      "2026-08-17 19:59:00+00:00"
+    ],
+    "n_minute_bars": 1950,
+    "fired": false,
+    "max_observed_move": 0.0017941598454373796,
+    "threshold": 0.02,
+    "limitation": "tested against real RECENT intraday data only (ordinary trading, zero false positives) -- no real historical flash-crash intraday sequence available via this build's free data sources."
+  }
+}

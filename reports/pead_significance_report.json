@@ -1,0 +1,65 @@
+{
+  "holdout_a": {
+    "n_trades": 90,
+    "n_days": 133,
+    "bootstrap_ci": {
+      "point_estimate": 0.567083004655861,
+      "bootstrap_mean": 0.5479210212827911,
+      "ci_2.5pct": -2.177067843938171,
+      "ci_97.5pct": 3.213421264349936,
+      "ci_includes_zero": true,
+      "pct_bootstrap_draws_negative": 0.3438
+    },
+    "permutation_test": {
+      "real_sharpe": 0.567083004655861,
+      "null_mean": -0.21809334633222793,
+      "null_std": 1.288308976218954,
+      "null_ci_2.5pct": -2.5103669833893125,
+      "null_ci_97.5pct": 2.371959865047997,
+      "empirical_p_value": 0.2755,
+      "significant_at_5pct": false
+    }
+  },
+  "holdout_b": {
+    "n_trades": 92,
+    "n_days": 133,
+    "bootstrap_ci": {
+      "point_estimate": 1.8733297657906498,
+      "bootstrap_mean": 1.9923423849445907,
+      "ci_2.5pct": -0.8632440161265903,
+      "ci_97.5pct": 4.898008013338816,
+      "ci_includes_zero": true,
+      "pct_bootstrap_draws_negative": 0.096
+    },
+    "permutation_test": {
+      "real_sharpe": 1.8733297657906498,
+      "null_mean": -0.14908398130648776,
+      "null_std": 1.2623959990064735,
+      "null_ci_2.5pct": -2.5986238845759626,
+      "null_ci_97.5pct": 2.3202821262753304,
+      "empirical_p_value": 0.0585,
+      "significant_at_5pct": false
+    }
+  },
+  "holdout_c": {
+    "n_trades": 108,
+    "n_days": 153,
+    "bootstrap_ci": {
+      "point_estimate": 0.5321507730136844,
+      "bootstrap_mean": 0.5513475997347916,
+      "ci_2.5pct": -1.9841465689770459,
+      "ci_97.5pct": 3.177047387032862,
+      "ci_includes_zero": true,
+      "pct_bootstrap_draws_negative": 0.3514
+    },
+    "permutation_test": {
+      "real_sharpe": 0.5321507730136844,
+      "null_mean": 0.4129008067791249,
+      "null_std": 1.1601893998964687,
+      "null_ci_2.5pct": -1.8776228350143191,
+      "null_ci_97.5pct": 2.818611836380047,
+      "empirical_p_value": 0.458,
+      "significant_at_5pct": false
+    }
+  }
+}

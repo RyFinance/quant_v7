@@ -1,0 +1,524 @@
+{
+  "partitions": [
+    {
+      "name": "train",
+      "start": "2015-06-26",
+      "end": "2021-01-05",
+      "n_dates": 1392,
+      "n_rows": 55774
+    },
+    {
+      "name": "validation",
+      "start": "2021-01-13",
+      "end": "2022-05-24",
+      "n_dates": 344,
+      "n_rows": 16085
+    },
+    {
+      "name": "holdout_a",
+      "start": "2022-06-02",
+      "end": "2023-10-16",
+      "n_dates": 345,
+      "n_rows": 16647
+    },
+    {
+      "name": "holdout_b",
+      "start": "2023-10-24",
+      "end": "2025-03-10",
+      "n_dates": 344,
+      "n_rows": 16028
+    },
+    {
+      "name": "holdout_c",
+      "start": "2025-03-18",
+      "end": "2026-08-07",
+      "n_dates": 350,
+      "n_rows": 17390
+    }
+  ],
+  "ensemble_weights": {
+    "mlp": 0.3944412452446413,
+    "adaboost": 0.0,
+    "lightgbm": 0.2015536056767603,
+    "random_forest": 0.4040051490785984
+  },
+  "payoff_ratio_b": 1.0449021212157807,
+  "holdout_backtests_10bps": {
+    "holdout_a": {
+      "label": "holdout_a",
+      "cost_bps": 10.0,
+      "n_candidates": 16647,
+      "n_trades": 4088,
+      "n_blocked_by_circuit_breaker": 41,
+      "n_blocked_by_risk_limits": 351,
+      "n_blocked_by_no_conviction": 12167,
+      "metrics": {
+        "n_days": 345,
+        "n_trades": 4088,
+        "annualized_return": -0.020283,
+        "annualized_std": 0.063754,
+        "sharpe_ratio": -0.3181,
+        "sortino_ratio": -0.3624,
+        "max_drawdown": -0.104025,
+        "calmar_ratio": -0.195,
+        "turnover_annualized": 28.0682,
+        "total_return": -0.027663
+      }
+    },
+    "holdout_b": {
+      "label": "holdout_b",
+      "cost_bps": 10.0,
+      "n_candidates": 16028,
+      "n_trades": 3646,
+      "n_blocked_by_circuit_breaker": 89,
+      "n_blocked_by_risk_limits": 192,
+      "n_blocked_by_no_conviction": 12101,
+      "metrics": {
+        "n_days": 344,
+        "n_trades": 3646,
+        "annualized_return": 0.069858,
+        "annualized_std": 0.048078,
+        "sharpe_ratio": 1.453,
+        "sortino_ratio": 2.1372,
+        "max_drawdown": -0.038562,
+        "calmar_ratio": 1.8116,
+        "turnover_annualized": 23.2021,
+        "total_return": 0.09656
+      }
+    },
+    "holdout_c": {
+      "label": "holdout_c",
+      "cost_bps": 10.0,
+      "n_candidates": 17390,
+      "n_trades": 3698,
+      "n_blocked_by_circuit_breaker": 574,
+      "n_blocked_by_risk_limits": 2071,
+      "n_blocked_by_no_conviction": 11047,
+      "metrics": {
+        "n_days": 350,
+        "n_trades": 3698,
+        "annualized_return": -0.050489,
+        "annualized_std": 0.098554,
+        "sharpe_ratio": -0.5123,
+        "sortino_ratio": -0.5389,
+        "max_drawdown": -0.133253,
+        "calmar_ratio": -0.3789,
+        "turnover_annualized": 34.8186,
+        "total_return": -0.069428
+      }
+    }
+  },
+  "regime_specific_backtests_10bps": {
+    "normal_calm_2024H1": {
+      "label": "normal_calm_2024H1",
+      "cost_bps": 10.0,
+      "n_candidates": 5548,
+      "n_trades": 1242,
+      "n_blocked_by_circuit_breaker": 37,
+      "n_blocked_by_risk_limits": 13,
+      "n_blocked_by_no_conviction": 4256,
+      "metrics": {
+        "n_days": 124,
+        "n_trades": 1242,
+        "annualized_return": 0.021802,
+        "annualized_std": 0.038889,
+        "sharpe_ratio": 0.5606,
+        "sortino_ratio": 0.7117,
+        "max_drawdown": -0.017785,
+        "calmar_ratio": 1.2258,
+        "turnover_annualized": 21.3449,
+        "total_return": 0.010669
+      }
+    },
+    "moderate_bear_2022H2": {
+      "label": "moderate_bear_2022H2",
+      "cost_bps": 10.0,
+      "n_candidates": 6213,
+      "n_trades": 1532,
+      "n_blocked_by_circuit_breaker": 41,
+      "n_blocked_by_risk_limits": 218,
+      "n_blocked_by_no_conviction": 4422,
+      "metrics": {
+        "n_days": 127,
+        "n_trades": 1532,
+        "annualized_return": 0.003874,
+        "annualized_std": 0.05816,
+        "sharpe_ratio": 0.0666,
+        "sortino_ratio": 0.0749,
+        "max_drawdown": -0.050531,
+        "calmar_ratio": 0.0767,
+        "turnover_annualized": 30.3588,
+        "total_return": 0.001951
+      }
+    },
+    "crash_shock_apr2025": {
+      "label": "crash_shock_apr2025",
+      "cost_bps": 10.0,
+      "n_candidates": 1188,
+      "n_trades": 275,
+      "n_blocked_by_circuit_breaker": 176,
+      "n_blocked_by_risk_limits": 0,
+      "n_blocked_by_no_conviction": 737,
+      "metrics": {
+        "n_days": 23,
+        "n_trades": 275,
+        "annualized_return": 0.042239,
+        "annualized_std": 0.054543,
+        "sharpe_ratio": 0.7744,
+        "sortino_ratio": 1.6083,
+        "max_drawdown": -0.0073,
+        "calmar_ratio": 5.7859,
+        "turnover_annualized": 23.8009,
+        "total_return": 0.003783
+      }
+    },
+    "bull_high_momentum_2023H2_2024": {
+      "label": "bull_high_momentum_2023H2_2024",
+      "cost_bps": 10.0,
+      "n_candidates": 13786,
+      "n_trades": 3031,
+      "n_blocked_by_circuit_breaker": 89,
+      "n_blocked_by_risk_limits": 106,
+      "n_blocked_by_no_conviction": 10560,
+      "metrics": {
+        "n_days": 299,
+        "n_trades": 3031,
+        "annualized_return": 0.0797,
+        "annualized_std": 0.048741,
+        "sharpe_ratio": 1.6352,
+        "sortino_ratio": 2.3951,
+        "max_drawdown": -0.023719,
+        "calmar_ratio": 3.3602,
+        "turnover_annualized": 21.5273,
+        "total_return": 0.095253
+      }
+    }
+  },
+  "regime_window_definitions": {
+    "normal_calm_2024H1": [
+      "2024-01-01",
+      "2024-06-30"
+    ],
+    "moderate_bear_2022H2": [
+      "2022-07-01",
+      "2022-12-31"
+    ],
+    "crash_shock_apr2025": [
+      "2025-03-25",
+      "2025-04-25"
+    ],
+    "bull_high_momentum_2023H2_2024": [
+      "2023-10-24",
+      "2024-12-31"
+    ]
+  },
+  "transaction_cost_sensitivity_sweep": {
+    "0.0bps": {
+      "holdout_a": {
+        "label": "holdout_a_cost0.0",
+        "cost_bps": 0.0,
+        "n_candidates": 16647,
+        "n_trades": 4088,
+        "n_blocked_by_circuit_breaker": 41,
+        "n_blocked_by_risk_limits": 351,
+        "n_blocked_by_no_conviction": 12167,
+        "metrics": {
+          "n_days": 345,
+          "n_trades": 4088,
+          "annualized_return": 0.007572,
+          "annualized_std": 0.063784,
+          "sharpe_ratio": 0.1187,
+          "sortino_ratio": 0.1362,
+          "max_drawdown": -0.081872,
+          "calmar_ratio": 0.0925,
+          "turnover_annualized": 28.0682,
+          "total_return": 0.010381
+        }
+      },
+      "holdout_b": {
+        "label": "holdout_b_cost0.0",
+        "cost_bps": 0.0,
+        "n_candidates": 16028,
+        "n_trades": 3646,
+        "n_blocked_by_circuit_breaker": 89,
+        "n_blocked_by_risk_limits": 192,
+        "n_blocked_by_no_conviction": 12101,
+        "metrics": {
+          "n_days": 344,
+          "n_trades": 3646,
+          "annualized_return": 0.094587,
+          "annualized_std": 0.048398,
+          "sharpe_ratio": 1.9544,
+          "sortino_ratio": 2.8862,
+          "max_drawdown": -0.034343,
+          "calmar_ratio": 2.7542,
+          "turnover_annualized": 23.2021,
+          "total_return": 0.131305
+        }
+      },
+      "holdout_c": {
+        "label": "holdout_c_cost0.0",
+        "cost_bps": 0.0,
+        "n_candidates": 17390,
+        "n_trades": 3698,
+        "n_blocked_by_circuit_breaker": 574,
+        "n_blocked_by_risk_limits": 2071,
+        "n_blocked_by_no_conviction": 11047,
+        "metrics": {
+          "n_days": 350,
+          "n_trades": 3698,
+          "annualized_return": -0.017217,
+          "annualized_std": 0.098625,
+          "sharpe_ratio": -0.1746,
+          "sortino_ratio": -0.1838,
+          "max_drawdown": -0.124624,
+          "calmar_ratio": -0.1381,
+          "turnover_annualized": 34.8186,
+          "total_return": -0.023832
+        }
+      }
+    },
+    "2.0bps": {
+      "holdout_a": {
+        "label": "holdout_a_cost2.0",
+        "cost_bps": 2.0,
+        "n_candidates": 16647,
+        "n_trades": 4088,
+        "n_blocked_by_circuit_breaker": 41,
+        "n_blocked_by_risk_limits": 351,
+        "n_blocked_by_no_conviction": 12167,
+        "metrics": {
+          "n_days": 345,
+          "n_trades": 4088,
+          "annualized_return": 0.001939,
+          "annualized_std": 0.063777,
+          "sharpe_ratio": 0.0304,
+          "sortino_ratio": 0.0348,
+          "max_drawdown": -0.086346,
+          "calmar_ratio": 0.0225,
+          "turnover_annualized": 28.0682,
+          "total_return": 0.002655
+        }
+      },
+      "holdout_b": {
+        "label": "holdout_b_cost2.0",
+        "cost_bps": 2.0,
+        "n_candidates": 16028,
+        "n_trades": 3646,
+        "n_blocked_by_circuit_breaker": 89,
+        "n_blocked_by_risk_limits": 192,
+        "n_blocked_by_no_conviction": 12101,
+        "metrics": {
+          "n_days": 344,
+          "n_trades": 3646,
+          "annualized_return": 0.089596,
+          "annualized_std": 0.048332,
+          "sharpe_ratio": 1.8538,
+          "sortino_ratio": 2.7254,
+          "max_drawdown": -0.035188,
+          "calmar_ratio": 2.5462,
+          "turnover_annualized": 23.2021,
+          "total_return": 0.124269
+        }
+      },
+      "holdout_c": {
+        "label": "holdout_c_cost2.0",
+        "cost_bps": 2.0,
+        "n_candidates": 17390,
+        "n_trades": 3698,
+        "n_blocked_by_circuit_breaker": 574,
+        "n_blocked_by_risk_limits": 2071,
+        "n_blocked_by_no_conviction": 11047,
+        "metrics": {
+          "n_days": 350,
+          "n_trades": 3698,
+          "annualized_return": -0.023963,
+          "annualized_std": 0.098609,
+          "sharpe_ratio": -0.243,
+          "sortino_ratio": -0.2558,
+          "max_drawdown": -0.126356,
+          "calmar_ratio": -0.1896,
+          "turnover_annualized": 34.8186,
+          "total_return": -0.033125
+        }
+      }
+    },
+    "5.0bps": {
+      "holdout_a": {
+        "label": "holdout_a_cost5.0",
+        "cost_bps": 5.0,
+        "n_candidates": 16647,
+        "n_trades": 4088,
+        "n_blocked_by_circuit_breaker": 41,
+        "n_blocked_by_risk_limits": 351,
+        "n_blocked_by_no_conviction": 12167,
+        "metrics": {
+          "n_days": 345,
+          "n_trades": 4088,
+          "annualized_return": -0.006452,
+          "annualized_std": 0.063767,
+          "sharpe_ratio": -0.1012,
+          "sortino_ratio": -0.1154,
+          "max_drawdown": -0.093016,
+          "calmar_ratio": -0.0694,
+          "turnover_annualized": 28.0682,
+          "total_return": -0.008823
+        }
+      },
+      "holdout_b": {
+        "label": "holdout_b_cost5.0",
+        "cost_bps": 5.0,
+        "n_candidates": 16028,
+        "n_trades": 3646,
+        "n_blocked_by_circuit_breaker": 89,
+        "n_blocked_by_risk_limits": 192,
+        "n_blocked_by_no_conviction": 12101,
+        "metrics": {
+          "n_days": 344,
+          "n_trades": 3646,
+          "annualized_return": 0.082152,
+          "annualized_std": 0.048235,
+          "sharpe_ratio": 1.7031,
+          "sortino_ratio": 2.4998,
+          "max_drawdown": -0.036455,
+          "calmar_ratio": 2.2535,
+          "turnover_annualized": 23.2021,
+          "total_return": 0.113797
+        }
+      },
+      "holdout_c": {
+        "label": "holdout_c_cost5.0",
+        "cost_bps": 5.0,
+        "n_candidates": 17390,
+        "n_trades": 3698,
+        "n_blocked_by_circuit_breaker": 574,
+        "n_blocked_by_risk_limits": 2071,
+        "n_blocked_by_no_conviction": 11047,
+        "metrics": {
+          "n_days": 350,
+          "n_trades": 3698,
+          "annualized_return": -0.033995,
+          "annualized_std": 0.098587,
+          "sharpe_ratio": -0.3448,
+          "sortino_ratio": -0.3626,
+          "max_drawdown": -0.128949,
+          "calmar_ratio": -0.2636,
+          "turnover_annualized": 34.8186,
+          "total_return": -0.046901
+        }
+      }
+    },
+    "10.0bps": {
+      "holdout_a": {
+        "label": "holdout_a_cost10.0",
+        "cost_bps": 10.0,
+        "n_candidates": 16647,
+        "n_trades": 4088,
+        "n_blocked_by_circuit_breaker": 41,
+        "n_blocked_by_risk_limits": 351,
+        "n_blocked_by_no_conviction": 12167,
+        "metrics": {
+          "n_days": 345,
+          "n_trades": 4088,
+          "annualized_return": -0.020283,
+          "annualized_std": 0.063754,
+          "sharpe_ratio": -0.3181,
+          "sortino_ratio": -0.3624,
+          "max_drawdown": -0.104025,
+          "calmar_ratio": -0.195,
+          "turnover_annualized": 28.0682,
+          "total_return": -0.027663
+        }
+      },
+      "holdout_b": {
+        "label": "holdout_b_cost10.0",
+        "cost_bps": 10.0,
+        "n_candidates": 16028,
+        "n_trades": 3646,
+        "n_blocked_by_circuit_breaker": 89,
+        "n_blocked_by_risk_limits": 192,
+        "n_blocked_by_no_conviction": 12101,
+        "metrics": {
+          "n_days": 344,
+          "n_trades": 3646,
+          "annualized_return": 0.069858,
+          "annualized_std": 0.048078,
+          "sharpe_ratio": 1.453,
+          "sortino_ratio": 2.1372,
+          "max_drawdown": -0.038562,
+          "calmar_ratio": 1.8116,
+          "turnover_annualized": 23.2021,
+          "total_return": 0.09656
+        }
+      },
+      "holdout_c": {
+        "label": "holdout_c_cost10.0",
+        "cost_bps": 10.0,
+        "n_candidates": 17390,
+        "n_trades": 3698,
+        "n_blocked_by_circuit_breaker": 574,
+        "n_blocked_by_risk_limits": 2071,
+        "n_blocked_by_no_conviction": 11047,
+        "metrics": {
+          "n_days": 350,
+          "n_trades": 3698,
+          "annualized_return": -0.050489,
+          "annualized_std": 0.098554,
+          "sharpe_ratio": -0.5123,
+          "sortino_ratio": -0.5389,
+          "max_drawdown": -0.133253,
+          "calmar_ratio": -0.3789,
+          "turnover_annualized": 34.8186,
+          "total_return": -0.069428
+        }
+      }
+    }
+  },
+  "unconditional_no_ml_filter_baseline_10bps": {
+    "holdout_a": {
+      "n_trades": 2231,
+      "metrics": {
+        "n_days": 345,
+        "n_trades": 2231,
+        "annualized_return": -0.1024,
+        "annualized_std": 0.03554,
+        "sharpe_ratio": -2.8813,
+        "sortino_ratio": -4.1794,
+        "max_drawdown": -0.146144,
+        "calmar_ratio": -0.7007,
+        "turnover_annualized": 48.6182,
+        "total_return": -0.137482
+      }
+    },
+    "holdout_b": {
+      "n_trades": 2165,
+      "metrics": {
+        "n_days": 344,
+        "n_trades": 2165,
+        "annualized_return": -0.014625,
+        "annualized_std": 0.043825,
+        "sharpe_ratio": -0.3337,
+        "sortino_ratio": -0.3602,
+        "max_drawdown": -0.054293,
+        "calmar_ratio": -0.2694,
+        "turnover_annualized": 47.317,
+        "total_return": -0.019911
+      }
+    },
+    "holdout_c": {
+      "n_trades": 2095,
+      "metrics": {
+        "n_days": 350,
+        "n_trades": 2095,
+        "annualized_return": -0.001298,
+        "annualized_std": 0.053829,
+        "sharpe_ratio": -0.0241,
+        "sortino_ratio": -0.0251,
+        "max_drawdown": -0.062155,
+        "calmar_ratio": -0.0209,
+        "turnover_annualized": 45.0022,
+        "total_return": -0.001802
+      }
+    }
+  }
+}

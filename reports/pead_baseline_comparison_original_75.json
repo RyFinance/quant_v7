@@ -1,0 +1,104 @@
+{
+  "holdout_a": {
+    "ml_filtered": {
+      "label": "holdout_a_ml_filtered",
+      "n_trades": 90,
+      "metrics": {
+        "n_days": 133,
+        "n_trades": 90,
+        "annualized_return": 0.019631,
+        "annualized_std": 0.034618,
+        "sharpe_ratio": 0.5671,
+        "sortino_ratio": 0.5019,
+        "max_drawdown": -0.01773,
+        "calmar_ratio": 1.1072,
+        "turnover_annualized": 6.0233,
+        "total_return": 0.010313
+      }
+    },
+    "raw_sue_threshold": {
+      "label": "holdout_a_raw_sue_threshold",
+      "n_trades": 45,
+      "metrics": {
+        "n_days": 133,
+        "n_trades": 45,
+        "annualized_return": 0.007696,
+        "annualized_std": 0.065199,
+        "sharpe_ratio": 0.118,
+        "sortino_ratio": 0.0454,
+        "max_drawdown": -0.040612,
+        "calmar_ratio": 0.1895,
+        "turnover_annualized": 6.5546,
+        "total_return": 0.004054
+      }
+    }
+  },
+  "holdout_b": {
+    "ml_filtered": {
+      "label": "holdout_b_ml_filtered",
+      "n_trades": 92,
+      "metrics": {
+        "n_days": 133,
+        "n_trades": 92,
+        "annualized_return": 0.081815,
+        "annualized_std": 0.043674,
+        "sharpe_ratio": 1.8733,
+        "sortino_ratio": 1.4111,
+        "max_drawdown": -0.020446,
+        "calmar_ratio": 4.0014,
+        "turnover_annualized": 6.3147,
+        "total_return": 0.042378
+      }
+    },
+    "raw_sue_threshold": {
+      "label": "holdout_b_raw_sue_threshold",
+      "n_trades": 43,
+      "metrics": {
+        "n_days": 133,
+        "n_trades": 43,
+        "annualized_return": -0.129873,
+        "annualized_std": 0.049265,
+        "sharpe_ratio": -2.6362,
+        "sortino_ratio": -1.6255,
+        "max_drawdown": -0.07166,
+        "calmar_ratio": -1.8123,
+        "turnover_annualized": 6.5552,
+        "total_return": -0.070792
+      }
+    }
+  },
+  "holdout_c": {
+    "ml_filtered": {
+      "label": "holdout_c_ml_filtered",
+      "n_trades": 108,
+      "metrics": {
+        "n_days": 153,
+        "n_trades": 108,
+        "annualized_return": 0.025062,
+        "annualized_std": 0.047095,
+        "sharpe_ratio": 0.5322,
+        "sortino_ratio": 0.4065,
+        "max_drawdown": -0.024595,
+        "calmar_ratio": 1.019,
+        "turnover_annualized": 5.8428,
+        "total_return": 0.015142
+      }
+    },
+    "raw_sue_threshold": {
+      "label": "holdout_c_raw_sue_threshold",
+      "n_trades": 46,
+      "metrics": {
+        "n_days": 153,
+        "n_trades": 46,
+        "annualized_return": -0.106696,
+        "annualized_std": 0.071423,
+        "sharpe_ratio": -1.4939,
+        "sortino_ratio": -0.8118,
+        "max_drawdown": -0.109999,
+        "calmar_ratio": -0.97,
+        "turnover_annualized": 6.251,
+        "total_return": -0.066209
+      }
+    }
+  }
+}

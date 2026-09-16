@@ -1,0 +1,1589 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PEAD Paper-Trading Bot — Live Dashboard</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<style>
+  :root {
+    --bg: #0b0e14;
+    --bg-panel: #131822;
+    --bg-panel-alt: #171d29;
+    --bg-inset: #0e1219;
+    --border: #232a3a;
+    --text: #e6e9ef;
+    --text-dim: #93a1b5;
+    --text-faint: #5b6577;
+    --accent: #5b8def;
+    --accent-dim: #3a5a99;
+    --green: #2ecc71;
+    --yellow: #f1c40f;
+    --red: #e74c3c;
+    --orange: #e67e22;
+    --blue: #3498db;
+    --gray: #6b7688;
+  }
+  @media (prefers-color-scheme: light) {
+    :root {
+      --bg: #f3f5f8;
+      --bg-panel: #ffffff;
+      --bg-panel-alt: #f7f8fa;
+      --bg-inset: #eef0f4;
+      --border: #dde1e8;
+      --text: #1b2230;
+      --text-dim: #5b6577;
+      --text-faint: #8993a5;
+      --accent: #2f6fed;
+      --accent-dim: #9dbcf7;
+      --green: #1e9e56;
+      --yellow: #b8930a;
+      --red: #d13a2f;
+      --orange: #c5680f;
+      --blue: #2274b5;
+      --gray: #6b7688;
+    }
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-size: 14px;
+  }
+  a { color: var(--accent); }
+  .wrap {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 18px 20px 60px;
+  }
+  header.topbar {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 16px;
+  }
+  header.topbar h1 {
+    font-size: 20px;
+    margin: 0;
+    font-weight: 650;
+    letter-spacing: -0.01em;
+  }
+  header.topbar .sub {
+    color: var(--text-dim);
+    font-size: 12.5px;
+    margin-top: 2px;
+  }
+  .topbar-right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 12.5px;
+    color: var(--text-dim);
+  }
+  #refresh-btn {
+    background: var(--bg-panel-alt);
+    border: 1px solid var(--border);
+    color: var(--text);
+    padding: 6px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 12.5px;
+  }
+  #refresh-btn:hover { border-color: var(--accent); }
+
+  #backend-banner {
+    display: none;
+    background: rgba(231, 76, 60, 0.12);
+    border: 1px solid var(--red);
+    color: var(--red);
+    padding: 10px 14px;
+    border-radius: 8px;
+    margin-bottom: 16px;
+    font-size: 13px;
+  }
+  #backend-banner.show { display: block; }
+
+  .panel {
+    background: var(--bg-panel);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 16px 18px;
+    margin-bottom: 16px;
+  }
+  .panel h2 {
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--text-dim);
+    margin: 0 0 12px 0;
+    font-weight: 650;
+  }
+  .panel h2 .count {
+    color: var(--text-faint);
+    text-transform: none;
+    letter-spacing: normal;
+    font-weight: 500;
+  }
+
+  /* status cards */
+  .status-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+  .status-card {
+    background: var(--bg-panel);
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--gray);
+    border-radius: 10px;
+    padding: 12px 14px;
+  }
+  .status-card.ok { border-left-color: var(--green); }
+  .status-card.warn { border-left-color: var(--yellow); }
+  .status-card.bad { border-left-color: var(--red); }
+  .status-card .label {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--text-dim);
+    margin-bottom: 6px;
+  }
+  .status-card .value {
+    font-size: 18px;
+    font-weight: 650;
+  }
+  .status-card .detail {
+    font-size: 12px;
+    color: var(--text-dim);
+    margin-top: 4px;
+  }
+
+  .badge {
+    display: inline-block;
+    padding: 2px 9px;
+    border-radius: 999px;
+    font-size: 11.5px;
+    font-weight: 650;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    background: rgba(107, 118, 136, 0.18);
+    color: var(--gray);
+  }
+  .badge-green { background: rgba(46, 204, 113, 0.15); color: var(--green); }
+  .badge-yellow { background: rgba(241, 196, 15, 0.16); color: var(--yellow); }
+  .badge-red { background: rgba(231, 76, 60, 0.16); color: var(--red); }
+  .badge-orange { background: rgba(230, 126, 34, 0.16); color: var(--orange); }
+  .badge-blue { background: rgba(52, 152, 219, 0.16); color: var(--blue); }
+  .badge-gray { background: rgba(107, 118, 136, 0.16); color: var(--gray); }
+
+  /* stats grid */
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 12px;
+  }
+  .stat-box {
+    background: var(--bg-inset);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 10px 12px;
+  }
+  .stat-box .label {
+    font-size: 11px;
+    color: var(--text-dim);
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    margin-bottom: 4px;
+  }
+  .stat-box .value {
+    font-size: 17px;
+    font-weight: 650;
+  }
+  .stat-box .value.pos { color: var(--green); }
+  .stat-box .value.neg { color: var(--red); }
+  .stats-note {
+    margin-top: 12px;
+    font-size: 12.5px;
+    color: var(--text-dim);
+    background: var(--bg-inset);
+    border: 1px dashed var(--border);
+    border-radius: 6px;
+    padding: 8px 10px;
+    display: none;
+  }
+  .stats-note.show { display: block; }
+
+  /* charts */
+  .charts-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+  @media (max-width: 980px) {
+    .charts-row { grid-template-columns: 1fr; }
+  }
+  .chart-container {
+    position: relative;
+    height: 300px;
+  }
+  .chart-empty-msg {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    height: 300px;
+    color: var(--text-faint);
+    font-size: 13px;
+    text-align: center;
+    border: 1px dashed var(--border);
+    border-radius: 8px;
+    background: var(--bg-inset);
+  }
+  .chart-empty-msg.show { display: flex; }
+  .chart-container.hide { display: none; }
+
+  /* tables */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 12.5px;
+  }
+  th, td {
+    text-align: left;
+    padding: 7px 10px;
+    border-bottom: 1px solid var(--border);
+    white-space: nowrap;
+  }
+  th {
+    color: var(--text-dim);
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 10.5px;
+    letter-spacing: 0.03em;
+    position: sticky;
+    top: 0;
+    background: var(--bg-panel);
+  }
+  tbody tr:hover { background: var(--bg-panel-alt); }
+  .table-scroll {
+    max-height: 420px;
+    overflow-y: auto;
+    overflow-x: auto;
+    border-radius: 8px;
+  }
+  .empty-row {
+    color: var(--text-faint);
+    text-align: center;
+    padding: 18px;
+    font-size: 12.5px;
+  }
+  .num { text-align: right; font-variant-numeric: tabular-nums; }
+  .mono { font-variant-numeric: tabular-nums; }
+  .pos { color: var(--green); }
+  .neg { color: var(--red); }
+  .dim { color: var(--text-faint); }
+
+  /* alerts */
+  .alerts-list { max-height: 380px; overflow-y: auto; }
+  .alert-item {
+    display: flex;
+    gap: 10px;
+    padding: 8px 4px;
+    border-bottom: 1px solid var(--border);
+    font-size: 12.5px;
+    align-items: flex-start;
+  }
+  .alert-item:last-child { border-bottom: none; }
+  .alert-ts {
+    color: var(--text-faint);
+    white-space: nowrap;
+    font-variant-numeric: tabular-nums;
+    min-width: 150px;
+  }
+  .alert-msg { flex: 1; word-break: break-word; }
+
+  .two-col {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    gap: 16px;
+  }
+  @media (max-width: 980px) {
+    .two-col { grid-template-columns: 1fr; }
+  }
+
+  .kv-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 10px;
+  }
+  .kv-box {
+    background: var(--bg-inset);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 9px 11px;
+  }
+  .kv-box .k {
+    font-size: 10.5px;
+    color: var(--text-dim);
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    margin-bottom: 3px;
+  }
+  .kv-box .v { font-size: 14px; font-weight: 600; }
+  .footnote {
+    font-size: 11.5px;
+    color: var(--text-faint);
+    margin-top: 10px;
+    line-height: 1.4;
+  }
+
+  footer.page-footer {
+    text-align: center;
+    color: var(--text-faint);
+    font-size: 11.5px;
+    margin-top: 24px;
+  }
+
+  /* ============ BOT CONTROL TERMINAL ============================
+     Scoped under .pead-term / pt- prefixed classes only, so nothing here
+     can collide with the app styling above (which stays theme-aware and
+     untouched). Deliberately always-black/monospace regardless of the
+     page's light/dark mode -- matches the polymarket_arb dashboard_canvas
+     terminal look this panel is styled after, which has no light mode
+     either; the point is a purposeful terminal aesthetic, not a themed one.
+
+     The --pt-* custom properties live on :root (not scoped to .pead-term)
+     because the confirm modal (#pt-confirm-overlay) is a DOM sibling of
+     .pead-term, not a descendant -- CSS custom properties only inherit
+     down the tree, so scoping them to .pead-term left the modal unable to
+     see them (found as a real bug: the modal rendered with a fully
+     transparent background, var(--pt-bg-alt) silently resolving to
+     nothing outside .pead-term's subtree). :root is visible everywhere,
+     and the pt- prefix already prevents any collision with the page's own
+     --bg/--text/etc. tokens. */
+  :root {
+    --pt-mono: SFMono-Regular, Menlo, Monaco, "Cascadia Mono", "Liberation Mono", Consolas, monospace;
+    --pt-bg: #000;
+    --pt-bg-alt: #0a0a0a;
+    --pt-border: #1e1e1e;
+    --pt-text: #d7dbe0;
+    --pt-dim: #6b7280;
+    --pt-green: #2ecc71;
+    --pt-amber: #f1c40f;
+    --pt-red: #e74c3c;
+  }
+  .pead-term {
+    background: var(--pt-bg);
+    border: 1px solid var(--pt-border);
+    border-radius: 8px;
+    padding: 10px 12px 12px;
+    margin-bottom: 16px;
+    font-family: var(--pt-mono);
+    color: var(--pt-text);
+    font-size: 12.5px;
+  }
+  .pead-term * { box-sizing: border-box; }
+
+  .pt-cmdbar {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    row-gap: 6px;
+    padding-bottom: 8px;
+    margin-bottom: 8px;
+    border-bottom: 1px solid var(--pt-border);
+  }
+  .pt-cmd-item { color: var(--pt-dim); white-space: nowrap; }
+  .pt-cmd-value { color: var(--pt-text); font-weight: 600; }
+  .pt-cmd-note { color: var(--pt-dim); font-style: italic; font-size: 11px; }
+  .pt-cmd-sep { color: var(--pt-border); margin: 0 8px; }
+  .pt-cmd-fill { flex: 1 1 auto; }
+  .pt-cmd-badge {
+    display: inline-block;
+    padding: 1px 6px;
+    border-radius: 3px;
+    font-weight: 700;
+    background: var(--pt-bg-alt);
+    border: 1px solid var(--pt-border);
+    color: var(--pt-dim);
+  }
+  .pt-cmd-badge.on { color: var(--pt-green); border-color: var(--pt-green); }
+  .pt-cmd-badge.off { color: var(--pt-dim); }
+  .pt-cmd-badge.err { color: var(--pt-red); border-color: var(--pt-red); }
+  .pt-cmd-badge.mode-ok { color: var(--pt-green); border-color: var(--pt-green); }
+  .pt-cmd-badge.mode-guard-failed { color: var(--pt-red); border-color: var(--pt-red); font-weight: 700; }
+
+  .pt-ctl-btn {
+    font-family: var(--pt-mono);
+    font-size: 11.5px;
+    font-weight: 700;
+    padding: 5px 10px;
+    border-radius: 4px;
+    border: 1px solid var(--pt-border);
+    background: var(--pt-bg-alt);
+    color: var(--pt-text);
+    cursor: pointer;
+    margin-left: 8px;
+  }
+  .pt-ctl-btn:hover:not(:disabled) { border-color: var(--pt-text); }
+  .pt-ctl-btn:disabled { opacity: 0.4; cursor: not-allowed; }
+  .pt-ctl-start { color: var(--pt-green); }
+  .pt-ctl-stop { color: var(--pt-red); }
+
+  .pt-action-msg {
+    font-size: 11.5px;
+    padding: 4px 0;
+    min-height: 1.4em;
+  }
+  .pt-action-msg.ok { color: var(--pt-green); }
+  .pt-action-msg.err { color: var(--pt-red); font-weight: 700; }
+  .pt-action-msg.pending { color: var(--pt-dim); }
+
+  .pt-panel-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 4px;
+  }
+  .pt-panel-title { color: var(--pt-text); font-weight: 700; letter-spacing: 0.02em; font-size: 11.5px; }
+  .pt-panel-age { color: var(--pt-dim); font-size: 11px; }
+
+  .pt-wire {
+    background: var(--pt-bg-alt);
+    border: 1px solid var(--pt-border);
+    border-radius: 4px;
+    height: 260px;
+    overflow-y: auto;
+    padding: 6px 8px;
+  }
+  .pt-wire-line {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 1px 0;
+  }
+  .pt-wire-time { color: var(--pt-dim); margin-right: 8px; }
+  .pt-wire-kind { display: inline-block; min-width: 110px; margin-right: 8px; }
+  .pt-wire-kind.pt-k-red { color: var(--pt-red); font-weight: 700; }
+  .pt-wire-kind.pt-k-green { color: var(--pt-green); font-weight: 700; }
+  .pt-wire-kind.pt-k-amber { color: var(--pt-amber); }
+  .pt-wire-kind.pt-k-dim { color: var(--pt-dim); }
+  .pt-empty { color: var(--pt-dim); padding: 8px 2px; }
+
+  /* In-page confirm modal for START/STOP -- NOT window.confirm(). Native
+     confirm() dialogs are silently suppressed in some real browser
+     configurations (repeated-dialog auto-suppression, some privacy
+     extensions, sandboxed contexts) and confirm() then just returns false
+     with no visible error -- from the user's side that is indistinguishable
+     from "the button does nothing." This modal is regular DOM, so it can't
+     be suppressed that way. */
+  .pt-modal-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+  }
+  .pt-modal-overlay.show { display: flex; }
+  .pt-modal-box {
+    background: var(--pt-bg-alt);
+    border: 1px solid var(--pt-border);
+    border-radius: 8px;
+    max-width: 480px;
+    width: calc(100% - 40px);
+    padding: 16px 18px;
+    font-family: var(--pt-mono);
+    color: var(--pt-text);
+    font-size: 12.5px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+  }
+  .pt-modal-title { font-weight: 700; font-size: 13.5px; margin-bottom: 10px; }
+  .pt-modal-title.danger { color: var(--pt-red); }
+  .pt-modal-body { white-space: pre-line; line-height: 1.5; color: var(--pt-text); margin-bottom: 16px; }
+  .pt-modal-actions { display: flex; justify-content: flex-end; gap: 8px; }
+  .pt-modal-btn {
+    font-family: var(--pt-mono);
+    font-size: 11.5px;
+    font-weight: 700;
+    padding: 6px 14px;
+    border-radius: 4px;
+    border: 1px solid var(--pt-border);
+    background: var(--pt-bg);
+    color: var(--pt-text);
+    cursor: pointer;
+  }
+  .pt-modal-btn:hover { border-color: var(--pt-text); }
+  .pt-modal-btn-confirm { color: var(--pt-bg); background: var(--pt-red); border-color: var(--pt-red); }
+
+  @media (max-width: 700px) {
+    .pt-cmdbar { font-size: 11px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="topbar">
+    <div>
+      <h1>PEAD Paper-Trading Bot — Live Dashboard</h1>
+      <div class="sub">Local, read-only monitor · paper trading only · reads real bot state files</div>
+    </div>
+    <div class="topbar-right">
+      <span id="last-updated">Loading…</span>
+      <button id="refresh-btn" type="button">Refresh now</button>
+    </div>
+  </header>
+
+  <section id="pead-term" class="pead-term">
+    <div class="pt-cmdbar">
+      <span class="pt-cmd-item">CONN <span class="pt-cmd-badge" id="pt-conn-state">…</span></span>
+      <span class="pt-cmd-sep">|</span>
+      <span class="pt-cmd-item">MODE <span class="pt-cmd-badge" id="pt-mode">…</span> <span class="pt-cmd-note">(paper-only; live path not implemented)</span></span>
+      <span class="pt-cmd-sep">|</span>
+      <span class="pt-cmd-item">KILL <span class="pt-cmd-badge" id="pt-kill">…</span></span>
+      <span class="pt-cmd-sep">|</span>
+      <span class="pt-cmd-item">BOT <span class="pt-cmd-badge" id="pt-job-bot">…</span></span>
+      <span class="pt-cmd-sep">|</span>
+      <span class="pt-cmd-item">WATCHDOG <span class="pt-cmd-badge" id="pt-job-watchdog">…</span></span>
+      <span class="pt-cmd-sep">|</span>
+      <span class="pt-cmd-item">LAST CYCLE <span class="pt-cmd-value" id="pt-sess">…</span></span>
+      <span class="pt-cmd-sep">|</span>
+      <span class="pt-cmd-item">CYCLES(win) <span class="pt-cmd-value" id="pt-loops">…</span></span>
+      <span class="pt-cmd-fill"></span>
+      <button id="pt-start-btn" class="pt-ctl-btn pt-ctl-start" type="button" disabled>START SCHEDULE</button>
+      <button id="pt-stop-btn" class="pt-ctl-btn pt-ctl-stop" type="button" disabled>STOP SCHEDULE</button>
+    </div>
+    <div class="pt-action-msg" id="pt-action-msg"></div>
+    <div class="pt-panel-head">
+      <span class="pt-panel-title">LOOP EVENTS WIRE — bot/state (cycle runs · entries · exits · alerts)</span>
+      <span class="pt-panel-age" id="pt-feed-age">…</span>
+    </div>
+    <div class="pt-wire" id="pt-wire-body"><div class="pt-empty">NO EVENTS YET</div></div>
+  </section>
+
+  <div id="pt-confirm-overlay" class="pt-modal-overlay">
+    <div class="pt-modal-box" role="dialog" aria-modal="true" aria-labelledby="pt-confirm-title">
+      <div class="pt-modal-title danger" id="pt-confirm-title">Confirm</div>
+      <div class="pt-modal-body" id="pt-confirm-body"></div>
+      <div class="pt-modal-actions">
+        <button id="pt-confirm-cancel" class="pt-modal-btn" type="button">Cancel</button>
+        <button id="pt-confirm-ok" class="pt-modal-btn pt-modal-btn-confirm" type="button">Proceed</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="backend-banner">
+    Backend unreachable at <code>/api/status</code>. Make sure the dashboard server is running
+    (<code>uvicorn live_backtest.dashboard.backend:app --port 8420 --host 127.0.0.1</code>) and this page was
+    loaded from <code>http://127.0.0.1:8420/</code>.
+  </div>
+
+  <!-- STATUS -->
+  <div class="status-grid">
+    <div class="status-card" id="card-kill-switch">
+      <div class="label">Kill Switch</div>
+      <div class="value" id="kill-switch-value">—</div>
+      <div class="detail" id="kill-switch-detail"></div>
+    </div>
+    <div class="status-card" id="card-breaker">
+      <div class="label">Circuit Breaker</div>
+      <div class="value" id="breaker-value">—</div>
+      <div class="detail" id="breaker-detail">&nbsp;</div>
+    </div>
+    <div class="status-card" id="card-heartbeat">
+      <div class="label">Heartbeat</div>
+      <div class="value" id="heartbeat-value">—</div>
+      <div class="detail" id="heartbeat-detail">&nbsp;</div>
+    </div>
+    <div class="status-card" id="card-last-cycle">
+      <div class="label">Last Cycle</div>
+      <div class="value" id="last-cycle-value">—</div>
+      <div class="detail" id="last-cycle-detail">&nbsp;</div>
+    </div>
+  </div>
+
+  <!-- STATS -->
+  <div class="panel">
+    <h2>Running Stats</h2>
+    <div class="stats-grid">
+      <div class="stat-box"><div class="label">Current NAV</div><div class="value" id="stat-nav">—</div></div>
+      <div class="stat-box"><div class="label">Total Return</div><div class="value" id="stat-return">—</div></div>
+      <div class="stat-box"><div class="label">Sharpe</div><div class="value" id="stat-sharpe">—</div></div>
+      <div class="stat-box"><div class="label">Sortino</div><div class="value" id="stat-sortino">—</div></div>
+      <div class="stat-box"><div class="label">Max Drawdown</div><div class="value" id="stat-maxdd">—</div></div>
+      <div class="stat-box"><div class="label">Win Rate</div><div class="value" id="stat-winrate">—</div></div>
+      <div class="stat-box"><div class="label">Trades (all)</div><div class="value" id="stat-ntrades">—</div></div>
+      <div class="stat-box"><div class="label">Trades (closed)</div><div class="value" id="stat-nclosed">—</div></div>
+    </div>
+    <div class="stats-note" id="stats-note">Insufficient data — fewer than 2 closed trades. Sharpe / Sortino / max drawdown / win rate need more closed trades before they're meaningful.</div>
+  </div>
+
+  <!-- CHARTS -->
+  <div class="charts-row">
+    <div class="panel">
+      <h2>Real Equity Curve <span class="count" id="equity-count"></span></h2>
+      <div class="chart-container" id="equity-chart-wrap">
+        <canvas id="equity-chart"></canvas>
+      </div>
+      <div class="chart-empty-msg" id="equity-chart-empty">No closed trades yet — the equity curve will appear once trades close.</div>
+    </div>
+    <div class="panel">
+      <h2>Monte Carlo Fan Chart <span class="count" id="mc-count"></span></h2>
+      <div class="chart-container" id="mc-chart-wrap">
+        <canvas id="mc-chart"></canvas>
+      </div>
+      <div class="chart-empty-msg" id="mc-chart-empty">Monte Carlo not yet available.</div>
+    </div>
+  </div>
+
+  <!-- POSITIONS -->
+  <div class="panel">
+    <h2>Open Positions <span class="count" id="positions-count"></span></h2>
+    <div class="table-scroll">
+      <table>
+        <thead>
+          <tr>
+            <th>Ticker</th><th>Direction</th><th>Entry Date</th>
+            <th class="num">Entry Price</th><th class="num">Size Fraction</th>
+            <th class="num">Notional</th><th class="num">Days Held</th>
+          </tr>
+        </thead>
+        <tbody id="positions-tbody"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- TRADES -->
+  <div class="panel">
+    <h2>Trade Log <span class="count" id="trades-count"></span></h2>
+    <div class="table-scroll">
+      <table>
+        <thead>
+          <tr>
+            <th>Status</th><th>Ticker</th><th>Direction</th>
+            <th>Entry Date</th><th class="num">Entry Price</th>
+            <th>Exit Date</th><th class="num">Exit Price</th>
+            <th class="num">Size Fraction</th><th class="num">Notional</th>
+            <th class="num">Realized P&amp;L</th>
+          </tr>
+        </thead>
+        <tbody id="trades-tbody"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="two-col">
+    <!-- ALERTS -->
+    <div class="panel">
+      <h2>Recent Alerts <span class="count" id="alerts-count"></span></h2>
+      <div class="alerts-list" id="alerts-list"></div>
+    </div>
+
+    <!-- CYCLE LOG -->
+    <div class="panel">
+      <h2>Recent Cycles <span class="count" id="cyclelog-count"></span></h2>
+      <div class="table-scroll">
+        <table>
+          <thead>
+            <tr>
+              <th>As Of</th><th>Tier</th><th>Kill Sw.</th>
+              <th class="num">NAV Before</th><th class="num">NAV After</th>
+              <th class="num">Entries</th><th class="num">Exits</th><th class="num">Errors</th>
+            </tr>
+          </thead>
+          <tbody id="cyclelog-tbody"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- LIVE-PATH HISTORICAL BACKTEST (reference) -->
+  <div class="panel">
+    <h2>Historical Live-Path Backtest <span class="count">(reference, not live)</span></h2>
+    <div id="lbm-content">
+      <div class="empty-row">Loading…</div>
+    </div>
+  </div>
+
+  <footer class="page-footer">
+    PEAD paper-trading bot &middot; local read-only dashboard &middot; polls every 20s &middot; never places orders
+  </footer>
+
+</div>
+
+<script>
+(function () {
+  "use strict";
+
+  // ---------- config ----------
+  const POLL_MS = 20000;
+  const HEARTBEAT_GREEN_MAX_S = 2 * 3600;   // < 2h -> green
+  const HEARTBEAT_STALE_S = 26 * 3600;      // backend's own threshold, mirrored here as fallback
+
+  // ---------- small utilities ----------
+
+  function isFiniteNum(x) {
+    return typeof x === "number" && Number.isFinite(x);
+  }
+
+  function esc(s) {
+    if (s === null || s === undefined) return "";
+    return String(s).replace(/[&<>"']/g, function (c) {
+      return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c];
+    });
+  }
+
+  function fmtNum(x, digits) {
+    digits = digits === undefined ? 2 : digits;
+    if (!isFiniteNum(x)) return "—";
+    return x.toLocaleString(undefined, { minimumFractionDigits: digits, maximumFractionDigits: digits });
+  }
+
+  function fmtInt(x) {
+    if (!isFiniteNum(x)) return "—";
+    return Math.round(x).toLocaleString();
+  }
+
+  function fmtPct(x, digits) {
+    digits = digits === undefined ? 2 : digits;
+    if (!isFiniteNum(x)) return "—";
+    return (x * 100).toFixed(digits) + "%";
+  }
+
+  function fmtMoney(x, digits) {
+    digits = digits === undefined ? 2 : digits;
+    if (!isFiniteNum(x)) return "—";
+    const sign = x < 0 ? "-" : "";
+    return sign + "$" + Math.abs(x).toLocaleString(undefined, { minimumFractionDigits: digits, maximumFractionDigits: digits });
+  }
+
+  function fmtDateStr(s) {
+    if (s === null || s === undefined || s === "") return "—";
+    return String(s);
+  }
+
+  function fmtTs(ts) {
+    if (!isFiniteNum(ts)) return "—";
+    try {
+      return new Date(ts * 1000).toLocaleString();
+    } catch (e) {
+      return "—";
+    }
+  }
+
+  function fmtDurationAgo(seconds) {
+    if (seconds === null || seconds === undefined || typeof seconds !== "number" || Number.isNaN(seconds)) return "—";
+    if (!Number.isFinite(seconds)) return "never";
+    const s = Math.max(0, Math.floor(seconds));
+    const d = Math.floor(s / 86400);
+    const h = Math.floor((s % 86400) / 3600);
+    const m = Math.floor((s % 3600) / 60);
+    const sec = s % 60;
+    if (d > 0) return d + "d " + h + "h ago";
+    if (h > 0) return h + "h " + m + "m ago";
+    if (m > 0) return m + "m " + sec + "s ago";
+    return sec + "s ago";
+  }
+
+  function setText(id, text) {
+    const el = document.getElementById(id);
+    if (el) el.textContent = text;
+  }
+
+  function setHTML(id, html) {
+    const el = document.getElementById(id);
+    if (el) el.innerHTML = html;
+  }
+
+  function cssVar(name) {
+    return getComputedStyle(document.documentElement).getPropertyValue(name).trim();
+  }
+
+  async function safeFetchJSON(url) {
+    try {
+      const res = await fetch(url, { cache: "no-store" });
+      if (!res.ok) {
+        console.warn("Non-OK response for", url, res.status);
+        return { __ok: false, __data: null };
+      }
+      const data = await res.json();
+      return { __ok: true, __data: data };
+    } catch (err) {
+      console.warn("Fetch failed for", url, err);
+      return { __ok: false, __data: null };
+    }
+  }
+
+  // ---------- backend availability banner ----------
+  function setBackendBanner(show) {
+    const el = document.getElementById("backend-banner");
+    if (!el) return;
+    el.classList.toggle("show", !!show);
+  }
+
+  // ---------- STATUS ----------
+  async function refreshStatus() {
+    const { __ok, __data } = await safeFetchJSON("/api/status");
+    setBackendBanner(!__ok);
+    if (!__ok || !__data) {
+      setText("kill-switch-value", "Unknown");
+      setText("kill-switch-detail", "status unavailable");
+      setText("breaker-value", "Unknown");
+      setText("breaker-detail", "status unavailable");
+      setText("heartbeat-value", "Unknown");
+      setText("heartbeat-detail", "status unavailable");
+      setText("last-cycle-value", "—");
+      setText("last-cycle-detail", "status unavailable");
+      document.getElementById("card-kill-switch").className = "status-card";
+      document.getElementById("card-breaker").className = "status-card";
+      document.getElementById("card-heartbeat").className = "status-card";
+      return;
+    }
+    const d = __data;
+
+    // Kill switch
+    const ksCard = document.getElementById("card-kill-switch");
+    if (d.kill_switch_engaged === true) {
+      ksCard.className = "status-card bad";
+      setText("kill-switch-value", "ENGAGED");
+      setText("kill-switch-detail", d.kill_switch_reason ? String(d.kill_switch_reason) : "no reason given");
+    } else if (d.kill_switch_engaged === false) {
+      ksCard.className = "status-card ok";
+      setText("kill-switch-value", "Clear");
+      setText("kill-switch-detail", "no restrictions");
+    } else {
+      ksCard.className = "status-card";
+      setText("kill-switch-value", "Unknown");
+      setText("kill-switch-detail", " ");
+    }
+
+    // Circuit breaker tier
+    const brCard = document.getElementById("card-breaker");
+    const tier = d.circuit_breaker_tier;
+    let tierClass = "";
+    let tierLabel = tier ? String(tier) : "unknown";
+    if (tier === "armed") tierClass = "ok";
+    else if (tier === "halt_new_entries") tierClass = "warn";
+    else if (tier === "full_flatten") tierClass = "bad";
+    brCard.className = "status-card " + tierClass;
+    setText("breaker-value", tierLabel);
+    setText("breaker-detail", tier === "armed" ? "normal operation"
+      : tier === "halt_new_entries" ? "new entries blocked"
+      : tier === "full_flatten" ? "flattening all positions"
+      : " ");
+
+    // Heartbeat
+    const hbCard = document.getElementById("card-heartbeat");
+    const age = d.heartbeat_age_seconds;
+    const stale = d.heartbeat_stale === true || (isFiniteNum(age) && age > HEARTBEAT_STALE_S);
+    let hbClass = "ok";
+    if (stale) hbClass = "bad";
+    else if (isFiniteNum(age) && age >= HEARTBEAT_GREEN_MAX_S) hbClass = "warn";
+    else if (!isFiniteNum(age)) hbClass = "bad";
+    hbCard.className = "status-card " + hbClass;
+    setText("heartbeat-value", fmtDurationAgo(age));
+    setText("heartbeat-detail", stale ? "STALE — bot may be down" : (isFiniteNum(age) ? fmtInt(age) + "s since last cycle" : " "));
+
+    // Last cycle
+    const lc = d.last_cycle;
+    if (lc && typeof lc === "object") {
+      setText("last-cycle-value", fmtDateStr(lc.as_of_date));
+      const tierPart = lc.breaker_tier ? String(lc.breaker_tier) : "—";
+      const errCount = Array.isArray(lc.errors) ? lc.errors.length : 0;
+      const ksPart = lc.kill_switch_engaged === true ? "kill-switch on" : "kill-switch off";
+      const errPart = errCount > 0 ? errCount + " error" + (errCount === 1 ? "" : "s") : "no errors";
+      setText("last-cycle-detail", tierPart + " · " + ksPart + " · " + errPart);
+    } else {
+      setText("last-cycle-value", "No cycles yet");
+      setText("last-cycle-detail", " ");
+    }
+  }
+
+  // ---------- POSITIONS ----------
+  async function refreshPositions() {
+    const { __ok, __data } = await safeFetchJSON("/api/positions");
+    const tbody = document.getElementById("positions-tbody");
+    const list = (__ok && Array.isArray(__data)) ? __data : [];
+    setText("positions-count", "(" + list.length + ")");
+    if (list.length === 0) {
+      tbody.innerHTML = '<tr><td colspan="7" class="empty-row">' +
+        (__ok ? "No open positions." : "Positions unavailable — backend unreachable.") + "</td></tr>";
+      return;
+    }
+    let html = "";
+    for (const p of list) {
+      const dirClass = p.direction === "short" ? "badge-orange" : "badge-blue";
+      html += "<tr>" +
+        "<td class=\"mono\">" + esc(p.ticker) + "</td>" +
+        "<td><span class=\"badge " + dirClass + "\">" + esc((p.direction || "").toUpperCase()) + "</span></td>" +
+        "<td>" + esc(fmtDateStr(p.entry_date)) + "</td>" +
+        "<td class=\"num\">" + fmtMoney(p.entry_price) + "</td>" +
+        "<td class=\"num\">" + fmtPct(p.size_fraction) + "</td>" +
+        "<td class=\"num\">" + fmtMoney(p.notional) + "</td>" +
+        "<td class=\"num\">" + fmtInt(p.days_held) + "</td>" +
+        "</tr>";
+    }
+    tbody.innerHTML = html;
+  }
+
+  // ---------- TRADES ----------
+  async function refreshTrades() {
+    const { __ok, __data } = await safeFetchJSON("/api/trades?limit=200");
+    const tbody = document.getElementById("trades-tbody");
+    const list = (__ok && Array.isArray(__data)) ? __data : [];
+    setText("trades-count", "(" + list.length + ")");
+    if (list.length === 0) {
+      tbody.innerHTML = '<tr><td colspan="10" class="empty-row">' +
+        (__ok ? "No trades yet." : "Trades unavailable — backend unreachable.") + "</td></tr>";
+      return;
+    }
+    let html = "";
+    for (const t of list) {
+      const open = t.open === true;
+      const statusBadge = open ? '<span class="badge badge-blue">OPEN</span>' : '<span class="badge badge-gray">CLOSED</span>';
+      const dirClass = t.direction === "short" ? "badge-orange" : "badge-blue";
+      const pnl = t.realized_pnl;
+      let pnlClass = "";
+      if (isFiniteNum(pnl)) pnlClass = pnl > 0 ? "pos" : (pnl < 0 ? "neg" : "");
+      html += "<tr>" +
+        "<td>" + statusBadge + "</td>" +
+        "<td class=\"mono\">" + esc(t.ticker) + "</td>" +
+        "<td><span class=\"badge " + dirClass + "\">" + esc((t.direction || "").toUpperCase()) + "</span></td>" +
+        "<td>" + esc(fmtDateStr(t.entry_date)) + "</td>" +
+        "<td class=\"num\">" + fmtMoney(t.entry_price) + "</td>" +
+        "<td>" + esc(fmtDateStr(t.exit_date)) + "</td>" +
+        "<td class=\"num\">" + fmtMoney(t.exit_price) + "</td>" +
+        "<td class=\"num\">" + fmtPct(t.size_fraction) + "</td>" +
+        "<td class=\"num\">" + fmtMoney(t.notional) + "</td>" +
+        "<td class=\"num " + pnlClass + "\">" + fmtMoney(pnl) + "</td>" +
+        "</tr>";
+    }
+    tbody.innerHTML = html;
+  }
+
+  // ---------- STATS ----------
+  async function refreshStats() {
+    const { __ok, __data } = await safeFetchJSON("/api/stats");
+    if (!__ok || !__data) {
+      setText("stat-nav", "—");
+      setText("stat-return", "—");
+      setText("stat-sharpe", "—");
+      setText("stat-sortino", "—");
+      setText("stat-maxdd", "—");
+      setText("stat-winrate", "—");
+      setText("stat-ntrades", "—");
+      setText("stat-nclosed", "—");
+      document.getElementById("stats-note").classList.remove("show");
+      return;
+    }
+    const d = __data;
+    setText("stat-nav", fmtMoney(d.current_nav));
+    const ret = d.total_return_pct;
+    const retEl = document.getElementById("stat-return");
+    retEl.textContent = fmtPct(ret);
+    retEl.className = "value" + (isFiniteNum(ret) ? (ret > 0 ? " pos" : ret < 0 ? " neg" : "") : "");
+
+    setText("stat-sharpe", fmtNum(d.sharpe_ratio));
+    setText("stat-sortino", fmtNum(d.sortino_ratio));
+
+    const mdd = d.max_drawdown;
+    const mddEl = document.getElementById("stat-maxdd");
+    mddEl.textContent = fmtPct(mdd);
+    mddEl.className = "value" + (isFiniteNum(mdd) && mdd < 0 ? " neg" : "");
+
+    setText("stat-winrate", fmtPct(d.win_rate));
+    setText("stat-ntrades", fmtInt(d.n_trades));
+    setText("stat-nclosed", fmtInt(d.n_closed_trades));
+
+    const note = document.getElementById("stats-note");
+    note.classList.toggle("show", d.insufficient_data === true);
+  }
+
+  // ---------- EQUITY CURVE ----------
+  let equityChart = null;
+
+  async function refreshEquityCurve() {
+    const { __ok, __data } = await safeFetchJSON("/api/equity_curve");
+    const wrap = document.getElementById("equity-chart-wrap");
+    const emptyMsg = document.getElementById("equity-chart-empty");
+
+    const dates = (__ok && __data && Array.isArray(__data.dates)) ? __data.dates : [];
+    const nav = (__ok && __data && Array.isArray(__data.nav)) ? __data.nav : [];
+    setText("equity-count", dates.length > 0 ? "(" + dates.length + " points)" : "");
+
+    if (!__ok || dates.length === 0 || nav.length === 0 || typeof Chart === "undefined") {
+      wrap.classList.add("hide");
+      emptyMsg.classList.add("show");
+      if (!__ok) emptyMsg.textContent = "Equity curve unavailable — backend unreachable.";
+      else if (typeof Chart === "undefined") emptyMsg.textContent = "Chart library failed to load.";
+      else emptyMsg.textContent = "No closed trades yet — the equity curve will appear once trades close.";
+      return;
+    }
+    wrap.classList.remove("hide");
+    emptyMsg.classList.remove("show");
+
+    const accent = cssVar("--accent") || "#5b8def";
+    const textDim = cssVar("--text-dim") || "#93a1b5";
+    const border = cssVar("--border") || "#232a3a";
+
+    const cfg = {
+      type: "line",
+      data: {
+        labels: dates,
+        datasets: [{
+          label: "NAV",
+          data: nav,
+          borderColor: accent,
+          backgroundColor: "transparent",
+          borderWidth: 2,
+          pointRadius: 0,
+          tension: 0.15,
+        }],
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        animation: false,
+        interaction: { mode: "index", intersect: false },
+        plugins: {
+          legend: { display: false },
+          tooltip: {
+            callbacks: {
+              label: function (ctx) { return "NAV: " + fmtMoney(ctx.parsed.y); },
+            },
+          },
+        },
+        scales: {
+          x: { ticks: { color: textDim, maxTicksLimit: 10, autoSkip: true }, grid: { color: border } },
+          y: {
+            ticks: { color: textDim, callback: function (v) { return "$" + Number(v).toLocaleString(); } },
+            grid: { color: border },
+          },
+        },
+      },
+    };
+
+    if (equityChart) {
+      equityChart.destroy();
+    }
+    const ctx = document.getElementById("equity-chart").getContext("2d");
+    equityChart = new Chart(ctx, cfg);
+  }
+
+  // ---------- MONTE CARLO FAN CHART ----------
+  let mcChart = null;
+
+  async function refreshMonteCarlo() {
+    const { __ok, __data } = await safeFetchJSON("/api/monte_carlo");
+    const wrap = document.getElementById("mc-chart-wrap");
+    const emptyMsg = document.getElementById("mc-chart-empty");
+
+    const available = __ok && __data && __data.available !== false;
+    const fan = available ? __data.fan_chart_nav_by_step : null;
+    const real = available ? __data.real_equity_curve_by_step : null;
+
+    const hasFan = fan && Array.isArray(fan.step) && Array.isArray(fan.p5) && Array.isArray(fan.p50) && Array.isArray(fan.p95) && fan.step.length > 0;
+    const hasReal = real && Array.isArray(real.step) && Array.isArray(real.nav) && real.nav.length > 0;
+
+    setText("mc-count", hasFan ? "(" + fan.step.length + " steps, n=" + (isFiniteNum(__data.n_trades) ? __data.n_trades : "?") + " trades)" : "");
+
+    if (!__ok || !available || !hasFan || typeof Chart === "undefined") {
+      wrap.classList.add("hide");
+      emptyMsg.classList.add("show");
+      if (!__ok) emptyMsg.textContent = "Monte Carlo unavailable — backend unreachable.";
+      else if (typeof Chart === "undefined") emptyMsg.textContent = "Chart library failed to load.";
+      else emptyMsg.textContent = "Monte Carlo not yet available.";
+      return;
+    }
+    wrap.classList.remove("hide");
+    emptyMsg.classList.remove("show");
+
+    const steps = fan.step;
+    const textDim = cssVar("--text-dim") || "#93a1b5";
+    const border = cssVar("--border") || "#232a3a";
+    const accent = cssVar("--accent") || "#5b8def";
+    const gray = cssVar("--gray") || "#6b7688";
+
+    const datasets = [
+      {
+        label: "P5 (simulated)",
+        data: fan.p5,
+        borderColor: "transparent",
+        backgroundColor: "transparent",
+        pointRadius: 0,
+        borderWidth: 0,
+        fill: false,
+        order: 3,
+      },
+      {
+        label: "P5–P95 band (simulated)",
+        data: fan.p95,
+        borderColor: "transparent",
+        backgroundColor: "rgba(91, 141, 239, 0.18)",
+        pointRadius: 0,
+        borderWidth: 0,
+        fill: "-1",
+        order: 3,
+      },
+      {
+        label: "P50 median (simulated)",
+        data: fan.p50,
+        borderColor: gray,
+        backgroundColor: "transparent",
+        borderDash: [4, 4],
+        pointRadius: 0,
+        borderWidth: 1.5,
+        fill: false,
+        order: 2,
+      },
+    ];
+
+    if (hasReal) {
+      datasets.push({
+        label: "Real NAV (actual trade sequence)",
+        data: real.nav,
+        borderColor: accent,
+        backgroundColor: "transparent",
+        pointRadius: 0,
+        borderWidth: 2.25,
+        fill: false,
+        order: 1,
+      });
+    }
+
+    const cfg = {
+      type: "line",
+      data: { labels: steps, datasets: datasets },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        animation: false,
+        interaction: { mode: "index", intersect: false },
+        plugins: {
+          legend: {
+            display: true,
+            labels: { color: textDim, boxWidth: 12, font: { size: 10.5 } },
+          },
+          tooltip: {
+            callbacks: {
+              label: function (ctx) {
+                const v = ctx.parsed.y;
+                return ctx.dataset.label + ": " + fmtMoney(v);
+              },
+            },
+          },
+        },
+        scales: {
+          x: {
+            title: { display: true, text: "trade step", color: textDim, font: { size: 10.5 } },
+            ticks: { color: textDim, maxTicksLimit: 10, autoSkip: true },
+            grid: { color: border },
+          },
+          y: {
+            ticks: { color: textDim, callback: function (v) { return "$" + Number(v).toLocaleString(); } },
+            grid: { color: border },
+          },
+        },
+      },
+    };
+
+    if (mcChart) {
+      mcChart.destroy();
+    }
+    const ctx = document.getElementById("mc-chart").getContext("2d");
+    mcChart = new Chart(ctx, cfg);
+  }
+
+  // ---------- ALERTS ----------
+  function alertKindClass(kind) {
+    const k = (kind || "").toLowerCase();
+    if (k.indexOf("kill_switch") !== -1 || k.indexOf("drawdown") !== -1) return "badge-red";
+    if (k.indexOf("circuit_breaker") !== -1 || k.indexOf("halt") !== -1) return "badge-orange";
+    if (k.indexOf("error") !== -1) return "badge-red";
+    if (k.indexOf("rearm") !== -1 || k.indexOf("recover") !== -1) return "badge-green";
+    return "badge-gray";
+  }
+
+  async function refreshAlerts() {
+    const { __ok, __data } = await safeFetchJSON("/api/alerts?limit=50");
+    const container = document.getElementById("alerts-list");
+    const list = (__ok && Array.isArray(__data)) ? __data : [];
+    setText("alerts-count", "(" + list.length + ")");
+    if (list.length === 0) {
+      container.innerHTML = '<div class="empty-row">' +
+        (__ok ? "No alerts." : "Alerts unavailable — backend unreachable.") + "</div>";
+      return;
+    }
+    let html = "";
+    for (const a of list) {
+      const kindBadge = a && a.kind ? '<span class="badge ' + alertKindClass(a.kind) + '">' + esc(a.kind) + "</span>" : "";
+      const msg = a && a.message !== undefined ? esc(a.message) : "";
+      html += '<div class="alert-item">' +
+        '<span class="alert-ts">' + esc(a ? fmtTs(a.ts) : "—") + "</span>" +
+        '<span class="alert-msg">' + kindBadge + " " + msg + "</span>" +
+        "</div>";
+    }
+    container.innerHTML = html;
+  }
+
+  // ---------- CYCLE LOG ----------
+  async function refreshCycleLog() {
+    const { __ok, __data } = await safeFetchJSON("/api/cycle_log?limit=50");
+    const tbody = document.getElementById("cyclelog-tbody");
+    const list = (__ok && Array.isArray(__data)) ? __data : [];
+    setText("cyclelog-count", "(" + list.length + ")");
+    if (list.length === 0) {
+      tbody.innerHTML = '<tr><td colspan="8" class="empty-row">' +
+        (__ok ? "No cycles logged yet." : "Cycle log unavailable — backend unreachable.") + "</td></tr>";
+      return;
+    }
+    let html = "";
+    for (const c of list) {
+      const tier = c ? c.breaker_tier : null;
+      let tierBadgeClass = "badge-gray";
+      if (tier === "armed") tierBadgeClass = "badge-green";
+      else if (tier === "halt_new_entries") tierBadgeClass = "badge-yellow";
+      else if (tier === "full_flatten") tierBadgeClass = "badge-red";
+      const ksBadge = c && c.kill_switch_engaged === true
+        ? '<span class="badge badge-red">ON</span>'
+        : '<span class="badge badge-gray">off</span>';
+      const nEntries = c && Array.isArray(c.entries) ? c.entries.length : 0;
+      const nExits = c && Array.isArray(c.exits) ? c.exits.length : 0;
+      const nErrors = c && Array.isArray(c.errors) ? c.errors.length : 0;
+      html += "<tr>" +
+        "<td>" + esc(c ? fmtDateStr(c.as_of_date) : "—") + "</td>" +
+        "<td><span class=\"badge " + tierBadgeClass + "\">" + esc(tier || "—") + "</span></td>" +
+        "<td>" + ksBadge + "</td>" +
+        "<td class=\"num\">" + fmtMoney(c ? c.nav_before : null) + "</td>" +
+        "<td class=\"num\">" + fmtMoney(c ? c.nav_after : null) + "</td>" +
+        "<td class=\"num\">" + nEntries + "</td>" +
+        "<td class=\"num\">" + nExits + "</td>" +
+        "<td class=\"num" + (nErrors > 0 ? " neg" : "") + "\">" + nErrors + "</td>" +
+        "</tr>";
+    }
+    tbody.innerHTML = html;
+  }
+
+  // ---------- LIVE BACKTEST METRICS (reference panel, generic passthrough) ----------
+  const KNOWN_LBM_FIELDS = [
+    ["n_trades", "N Trades", "int"],
+    ["win_rate", "Win Rate", "pct"],
+    ["sharpe_ratio", "Sharpe", "num"],
+    ["sortino_ratio", "Sortino", "num"],
+    ["max_drawdown", "Max Drawdown", "pct"],
+    ["annualized_return", "Annualized Return", "pct"],
+    ["total_return", "Total Return", "pct"],
+    ["calmar_ratio", "Calmar", "num"],
+    ["start_date", "Start Date", "str"],
+    ["end_date", "End Date", "str"],
+  ];
+  const SKIP_LBM_FIELDS = new Set(["available", "methodology"]);
+
+  function renderKvValue(kind, v) {
+    if (kind === "pct") return fmtPct(v);
+    if (kind === "num") return fmtNum(v);
+    if (kind === "int") return fmtInt(v);
+    if (v === null || v === undefined) return "—";
+    if (typeof v === "object") return "—"; // don't try to render nested structures generically
+    return esc(String(v));
+  }
+
+  async function refreshLiveBacktestMetrics() {
+    const { __ok, __data } = await safeFetchJSON("/api/live_backtest_metrics");
+    const container = document.getElementById("lbm-content");
+    if (!__ok) {
+      container.innerHTML = '<div class="empty-row">Live backtest metrics unavailable — backend unreachable.</div>';
+      return;
+    }
+    const d = __data;
+    if (!d || d.available === false) {
+      container.innerHTML = '<div class="empty-row">Live-path historical backtest metrics not yet available.</div>';
+      return;
+    }
+
+    let html = '<div class="kv-grid">';
+    const seen = new Set();
+    for (const [key, label, kind] of KNOWN_LBM_FIELDS) {
+      if (Object.prototype.hasOwnProperty.call(d, key)) {
+        html += '<div class="kv-box"><div class="k">' + esc(label) + '</div><div class="v">' + renderKvValue(kind, d[key]) + "</div></div>";
+        seen.add(key);
+      }
+    }
+    // Generically surface any other scalar fields not already shown, so the panel
+    // stays correct even if the upstream JSON's exact key set evolves.
+    for (const key of Object.keys(d)) {
+      if (seen.has(key) || SKIP_LBM_FIELDS.has(key)) continue;
+      const v = d[key];
+      if (v !== null && typeof v === "object") continue; // skip nested/array fields in the summary grid
+      html += '<div class="kv-box"><div class="k">' + esc(key) + '</div><div class="v">' + renderKvValue("str", v) + "</div></div>";
+    }
+    html += "</div>";
+    if (d.methodology) {
+      html += '<div class="footnote">' + esc(d.methodology) + "</div>";
+    }
+    container.innerHTML = html;
+  }
+
+  // ---------- orchestration ----------
+  // ---------- BOT CONTROL TERMINAL ----------
+  // The dashboard's one write surface: /api/control/start and
+  // /api/control/stop toggle the REAL launchd jobs (see backend.py's
+  // module docstring). Everything else in this section is read-only,
+  // same as the rest of the page.
+  const EVENT_FEED_LIMIT = 100;
+
+  function wireKindClass(kind) {
+    const RED = new Set(["kill_switch_engaged", "dead_mans_switch", "circuit_breaker_halt", "error", "drawdown_cap_tripped"]);
+    const GREEN = new Set(["entry_placed", "position_opened"]);
+    const AMBER = new Set(["exit", "position_closed", "entry_skipped", "risk_blocked"]);
+    if (RED.has(kind)) return "pt-k-red";
+    if (GREEN.has(kind)) return "pt-k-green";
+    if (AMBER.has(kind)) return "pt-k-amber";
+    return "pt-k-dim";
+  }
+
+  function renderWireLine(evt) {
+    const cls = wireKindClass(evt && evt.kind);
+    const time = fmtTs(evt ? evt.ts : null);
+    const kind = esc(evt && evt.kind ? evt.kind : "?");
+    const summary = esc(evt && evt.summary ? evt.summary : "");
+    return '<div class="pt-wire-line"><span class="pt-wire-time">' + time + "</span>" +
+      '<span class="pt-wire-kind ' + cls + '">' + kind + "</span>" + summary + "</div>";
+  }
+
+  function renderJobBadge(el, job) {
+    if (!el) return;
+    if (!job) { el.textContent = "UNKNOWN"; el.className = "pt-cmd-badge"; return; }
+    if (job.error) { el.textContent = "ERR"; el.className = "pt-cmd-badge err"; return; }
+    if (job.loaded) { el.textContent = "ON"; el.className = "pt-cmd-badge on"; }
+    else { el.textContent = "OFF"; el.className = "pt-cmd-badge off"; }
+  }
+
+  function setControlButtonsEnabled(enabled) {
+    document.getElementById("pt-start-btn").disabled = !enabled;
+    document.getElementById("pt-stop-btn").disabled = !enabled;
+  }
+
+  // Deliberately NOT using safeFetchJSON here: distinguishing "backend
+  // unreachable" from "backend reachable but the paper-mode guard failed
+  // (HTTP 500)" is safety-relevant (see backend.py's _paper_mode_or_500) --
+  // safeFetchJSON collapses both into the same __ok:false, which isn't
+  // enough to render the MODE badge correctly.
+  async function fetchLaunchdStatus() {
+    try {
+      const res = await fetch("/api/launchd_status", { cache: "no-store" });
+      let data = null;
+      try { data = await res.json(); } catch (e) { /* non-JSON body, tolerate */ }
+      return { reachable: true, status: res.status, ok: res.ok, data: data };
+    } catch (err) {
+      return { reachable: false, status: null, ok: false, data: null };
+    }
+  }
+
+  function renderLaunchdStatus(info) {
+    const connBadge = document.getElementById("pt-conn-state");
+    const modeBadge = document.getElementById("pt-mode");
+    const botBadge = document.getElementById("pt-job-bot");
+    const wdBadge = document.getElementById("pt-job-watchdog");
+
+    if (!info.reachable) {
+      connBadge.textContent = "OFFLINE"; connBadge.className = "pt-cmd-badge err";
+      modeBadge.textContent = "UNKNOWN"; modeBadge.className = "pt-cmd-badge";
+      renderJobBadge(botBadge, null);
+      renderJobBadge(wdBadge, null);
+      setControlButtonsEnabled(false);
+      return;
+    }
+    connBadge.textContent = "LIVE"; connBadge.className = "pt-cmd-badge on";
+
+    // The single most safety-critical branch on this page: a 500 here means
+    // bot.execution.assert_paper_only_mode() did not confirm paper-only
+    // mode. Refuse to show a job/mode badge that could be mistaken for a
+    // verified state, and disable the controls entirely.
+    if (info.status === 500 || !info.ok || !info.data) {
+      modeBadge.textContent = "GUARD FAILED — REFUSING TO CONTROL";
+      modeBadge.className = "pt-cmd-badge mode-guard-failed";
+      renderJobBadge(botBadge, null);
+      renderJobBadge(wdBadge, null);
+      setControlButtonsEnabled(false);
+      return;
+    }
+
+    const d = info.data;
+    if (d.mode_verified === true && d.mode) {
+      modeBadge.textContent = d.mode;
+      modeBadge.className = "pt-cmd-badge mode-ok";
+    } else {
+      modeBadge.textContent = "GUARD FAILED — REFUSING TO CONTROL";
+      modeBadge.className = "pt-cmd-badge mode-guard-failed";
+    }
+
+    const jobs = d.jobs || {};
+    renderJobBadge(botBadge, jobs.pead_bot);
+    renderJobBadge(wdBadge, jobs.pead_watchdog);
+    setControlButtonsEnabled(d.mode_verified === true);
+  }
+
+  async function refreshTermPanel() {
+    const [statusRes, launchdInfo, feedRes] = await Promise.all([
+      safeFetchJSON("/api/status"),
+      fetchLaunchdStatus(),
+      safeFetchJSON("/api/event_feed?limit=" + EVENT_FEED_LIMIT),
+    ]);
+
+    renderLaunchdStatus(launchdInfo);
+
+    const killBadge = document.getElementById("pt-kill");
+    if (statusRes.__ok && statusRes.__data) {
+      const engaged = statusRes.__data.kill_switch_engaged;
+      if (engaged === true) { killBadge.textContent = "ENGAGED"; killBadge.className = "pt-cmd-badge err"; }
+      else if (engaged === false) { killBadge.textContent = "clear"; killBadge.className = "pt-cmd-badge on"; }
+      else { killBadge.textContent = "?"; killBadge.className = "pt-cmd-badge"; }
+
+      const lc = statusRes.__data.last_cycle;
+      setText("pt-sess", lc && lc.as_of_date ? String(lc.as_of_date) : "none yet");
+    } else {
+      killBadge.textContent = "?"; killBadge.className = "pt-cmd-badge";
+      setText("pt-sess", "—");
+    }
+
+    if (!feedRes.__ok) {
+      setHTML("pt-wire-body", '<div class="pt-empty">NO EVENTS — BACKEND UNREACHABLE</div>');
+      setText("pt-loops", "—");
+      setText("pt-feed-age", "—");
+      return;
+    }
+    const events = Array.isArray(feedRes.__data) ? feedRes.__data : [];
+    if (events.length === 0) {
+      setHTML("pt-wire-body", '<div class="pt-empty">NO EVENTS YET</div>');
+    } else {
+      setHTML("pt-wire-body", events.map(renderWireLine).join(""));
+    }
+    const cycleCount = events.filter(function (e) { return e && e.kind === "cycle_run"; }).length;
+    setText("pt-loops", String(cycleCount) + (events.length >= EVENT_FEED_LIMIT ? "+" : ""));
+    setText("pt-feed-age", events.length && isFiniteNum(events[0].ts)
+      ? fmtDurationAgo((Date.now() / 1000) - events[0].ts) : "—");
+  }
+
+  function setActionMsg(text, cls) {
+    const el = document.getElementById("pt-action-msg");
+    el.textContent = text || "";
+    el.className = "pt-action-msg" + (cls ? " " + cls : "");
+  }
+
+  // In-page confirm modal -- see the .pt-modal-overlay CSS comment for why
+  // this exists instead of window.confirm(): native confirm() dialogs can
+  // be silently suppressed by the browser (repeated-dialog auto-suppression,
+  // some privacy extensions, sandboxed contexts), and a suppressed confirm()
+  // just returns false with no visible error -- indistinguishable, from the
+  // user's side, from the button doing nothing at all. This modal is plain
+  // DOM, so it can't be suppressed that way.
+  function showPtConfirm(title, message, onConfirm) {
+    const overlay = document.getElementById("pt-confirm-overlay");
+    document.getElementById("pt-confirm-title").textContent = title;
+    document.getElementById("pt-confirm-body").textContent = message;
+    overlay.classList.add("show");
+
+    const okBtn = document.getElementById("pt-confirm-ok");
+    const cancelBtn = document.getElementById("pt-confirm-cancel");
+
+    function cleanup() {
+      overlay.classList.remove("show");
+      okBtn.removeEventListener("click", onOk);
+      cancelBtn.removeEventListener("click", onCancel);
+      overlay.removeEventListener("click", onOverlayClick);
+      document.removeEventListener("keydown", onKeydown);
+    }
+    function onOk() { cleanup(); onConfirm(); }
+    function onCancel() { cleanup(); }
+    function onOverlayClick(e) { if (e.target === overlay) cleanup(); }
+    function onKeydown(e) { if (e.key === "Escape") cleanup(); }
+
+    okBtn.addEventListener("click", onOk);
+    cancelBtn.addEventListener("click", onCancel);
+    overlay.addEventListener("click", onOverlayClick);
+    document.addEventListener("keydown", onKeydown);
+  }
+
+  async function postControl(action) {
+    setControlButtonsEnabled(false);
+    setActionMsg((action === "start" ? "Starting" : "Stopping") + " — calling launchctl…", "pending");
+    try {
+      const res = await fetch("/api/control/" + action, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ confirm: true }),
+      });
+      let data = null;
+      try { data = await res.json(); } catch (e) { /* non-JSON body, tolerate */ }
+      if (!res.ok) {
+        setActionMsg("Control action failed (" + res.status + "): " +
+          (data && data.detail ? data.detail : "unknown error"), "err");
+      } else {
+        setActionMsg((action === "start" ? "Start" : "Stop") + " command sent successfully.", "ok");
+      }
+    } catch (err) {
+      setActionMsg("Control action failed: could not reach the backend.", "err");
+    } finally {
+      await refreshTermPanel();
+    }
+  }
+
+  document.getElementById("pt-start-btn").addEventListener("click", function () {
+    showPtConfirm(
+      "START the PAPER-TRADE schedule?",
+      "This calls launchctl bootstrap on the REAL pead_bot and pead_watchdog LaunchAgents. " +
+      "Because RunAtLoad=true, this immediately triggers one real (paper-only) run_cycle() " +
+      "invocation right now, in addition to future scheduled runs.\n\n" +
+      "This bot is PAPER-TRADE ONLY — no live-trading path exists.",
+      function () { postControl("start"); }
+    );
+  });
+
+  document.getElementById("pt-stop-btn").addEventListener("click", function () {
+    showPtConfirm(
+      "STOP the PAPER-TRADE schedule?",
+      "This unloads BOTH pead_bot AND its dead-man's-switch watchdog together, " +
+      "so no false stale-heartbeat alerts fire while intentionally paused.\n\n" +
+      "No further paper cycles will run until START is pressed again.",
+      function () { postControl("stop"); }
+    );
+  });
+
+  function setLastUpdated() {
+    setText("last-updated", "Last updated: " + new Date().toLocaleTimeString());
+  }
+
+  async function refreshAll() {
+    await Promise.allSettled([
+      refreshStatus(),
+      refreshPositions(),
+      refreshTrades(),
+      refreshStats(),
+      refreshEquityCurve(),
+      refreshMonteCarlo(),
+      refreshAlerts(),
+      refreshCycleLog(),
+      refreshLiveBacktestMetrics(),
+      refreshTermPanel(),
+    ]);
+    setLastUpdated();
+  }
+
+  document.getElementById("refresh-btn").addEventListener("click", function () {
+    refreshAll();
+  });
+
+  refreshAll();
+  setInterval(refreshAll, POLL_MS);
+})();
+</script>
+</body>
+</html>

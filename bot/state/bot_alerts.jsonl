@@ -1,0 +1,430 @@
+{"ts": 1787044159.324912, "kind": "circuit_breaker_halt", "message": "circuit breaker tier=halt_new_entries -- new entry for AAPL blocked", "ticker": "AAPL", "tier": "halt_new_entries"}
+{"ts": 1787044159.325508, "kind": "kill_switch_engaged", "message": "kill switch engaged -- order for AAPL blocked", "ticker": "AAPL"}
+{"ts": 1787044159.326068, "kind": "drawdown_cap_tripped", "message": "drawdown cap tripped, kill switch engaged: drawdown 30.00% from HWM 100000.00 (current 70000.00) vs cap 20.00%", "ticker": "AAPL", "drawdown_pct": 0.3}
+{"ts": 1787044159.3261251, "kind": "kill_switch_engaged", "message": "kill switch engaged -- order for AAPL blocked", "ticker": "AAPL"}
+{"ts": 1787044159.3265972, "kind": "circuit_breaker_halt", "message": "circuit breaker tier=halt_new_entries -- new entry for AAPL blocked", "ticker": "AAPL", "tier": "halt_new_entries"}
+{"ts": 1787044159.327064, "kind": "circuit_breaker_halt", "message": "circuit breaker tier=full_flatten -- new entry for AAPL blocked", "ticker": "AAPL", "tier": "full_flatten"}
+{"ts": 1787044159.327989, "kind": "risk_blocked", "message": "risk limits blocked order for AAPL: total exposure 59.00%+10.00% would exceed max 60.00%", "ticker": "AAPL", "size_fraction": 0.1}
+{"ts": 1787044159.328495, "kind": "risk_blocked", "message": "risk limits blocked order for AAPL: daily loss -5.00% breached -3.00% cap", "ticker": "AAPL", "size_fraction": 0.08958333333333333}
+{"ts": 1787044161.0419588, "kind": "position_opened", "message": "paper position opened: AAPL long @ 305.59", "ticker": "AAPL", "direction": "long", "fill_price": 305.59, "notional": 8958.33}
+{"ts": 1787044161.114322, "kind": "position_opened", "message": "paper position opened: AAPL long @ 305.59", "ticker": "AAPL", "direction": "long", "fill_price": 305.59, "notional": 8958.33}
+{"ts": 1787044161.231887, "kind": "position_opened", "message": "paper position opened: AAPL long @ 305.59", "ticker": "AAPL", "direction": "long", "fill_price": 305.59, "notional": 8958.33}
+{"ts": 1787044161.313189, "kind": "position_opened", "message": "paper position opened: AAPL long @ 305.59", "ticker": "AAPL", "direction": "long", "fill_price": 305.59, "notional": 8958.33}
+{"ts": 1787044161.381875, "kind": "position_closed", "message": "paper position closed: AAPL pnl=0.00 (holding_period_exit)", "ticker": "AAPL", "exit_price": 305.59, "realized_pnl": 0.0, "reason": "holding_period_exit"}
+{"ts": 1787044161.460059, "kind": "position_closed", "message": "paper position closed: AAPL pnl=10279.50 (holding_period_exit)", "ticker": "AAPL", "exit_price": 305.59, "realized_pnl": 10279.5, "reason": "holding_period_exit"}
+{"ts": 1787044169.532495, "kind": "position_opened", "message": "paper position opened: AAPL long @ 305.59", "ticker": "AAPL", "direction": "long", "fill_price": 305.59, "notional": 8958.33}
+{"ts": 1787044169.607113, "kind": "position_opened", "message": "paper position opened: AAPL long @ 305.59", "ticker": "AAPL", "direction": "long", "fill_price": 305.59, "notional": 8958.33}
+{"ts": 1787044169.677692, "kind": "position_opened", "message": "paper position opened: AAPL long @ 305.59", "ticker": "AAPL", "direction": "long", "fill_price": 305.59, "notional": 8958.33}
+{"ts": 1787044169.7436092, "kind": "position_opened", "message": "paper position opened: AAPL long @ 305.59", "ticker": "AAPL", "direction": "long", "fill_price": 305.59, "notional": 8958.33}
+{"ts": 1787044169.812029, "kind": "position_closed", "message": "paper position closed: AAPL pnl=0.00 (holding_period_exit)", "ticker": "AAPL", "exit_price": 305.59, "realized_pnl": 0.0, "reason": "holding_period_exit"}
+{"ts": 1787044169.8905091, "kind": "position_closed", "message": "paper position closed: AAPL pnl=10279.50 (holding_period_exit)", "ticker": "AAPL", "exit_price": 305.59, "realized_pnl": 10279.5, "reason": "holding_period_exit"}
+{"ts": 1787044169.8940742, "kind": "circuit_breaker_halt", "message": "circuit breaker tier=halt_new_entries -- new entry for AAPL blocked", "ticker": "AAPL", "tier": "halt_new_entries"}
+{"ts": 1787044169.8949919, "kind": "kill_switch_engaged", "message": "kill switch engaged -- order for AAPL blocked", "ticker": "AAPL"}
+{"ts": 1787044169.895916, "kind": "drawdown_cap_tripped", "message": "drawdown cap tripped, kill switch engaged: drawdown 30.00% from HWM 100000.00 (current 70000.00) vs cap 20.00%", "ticker": "AAPL", "drawdown_pct": 0.3}
+{"ts": 1787044169.896003, "kind": "kill_switch_engaged", "message": "kill switch engaged -- order for AAPL blocked", "ticker": "AAPL"}
+{"ts": 1787044169.896736, "kind": "circuit_breaker_halt", "message": "circuit breaker tier=halt_new_entries -- new entry for AAPL blocked", "ticker": "AAPL", "tier": "halt_new_entries"}
+{"ts": 1787044169.8974779, "kind": "circuit_breaker_halt", "message": "circuit breaker tier=full_flatten -- new entry for AAPL blocked", "ticker": "AAPL", "tier": "full_flatten"}
+{"ts": 1787044169.898923, "kind": "risk_blocked", "message": "risk limits blocked order for AAPL: total exposure 59.00%+10.00% would exceed max 60.00%", "ticker": "AAPL", "size_fraction": 0.1}
+{"ts": 1787044169.9000251, "kind": "risk_blocked", "message": "risk limits blocked order for AAPL: daily loss -5.00% breached -3.00% cap", "ticker": "AAPL", "size_fraction": 0.08958333333333333}
+{"ts": 1787044208.626268, "kind": "position_opened", "message": "paper position opened: AAPL long @ 305.59", "ticker": "AAPL", "direction": "long", "fill_price": 305.59, "notional": 8958.33}
+{"ts": 1787044208.6909041, "kind": "position_opened", "message": "paper position opened: AAPL long @ 305.59", "ticker": "AAPL", "direction": "long", "fill_price": 305.59, "notional": 8958.33}
+{"ts": 1787044208.758379, "kind": "position_opened", "message": "paper position opened: AAPL long @ 305.59", "ticker": "AAPL", "direction": "long", "fill_price": 305.59, "notional": 8958.33}
+{"ts": 1787044208.831127, "kind": "position_opened", "message": "paper position opened: AAPL long @ 305.59", "ticker": "AAPL", "direction": "long", "fill_price": 305.59, "notional": 8958.33}
+{"ts": 1787044208.904599, "kind": "position_closed", "message": "paper position closed: AAPL pnl=0.00 (holding_period_exit)", "ticker": "AAPL", "exit_price": 305.59, "realized_pnl": 0.0, "reason": "holding_period_exit"}
+{"ts": 1787044208.981704, "kind": "position_closed", "message": "paper position closed: AAPL pnl=10279.50 (holding_period_exit)", "ticker": "AAPL", "exit_price": 305.59, "realized_pnl": 10279.5, "reason": "holding_period_exit"}
+{"ts": 1787044208.985847, "kind": "circuit_breaker_halt", "message": "circuit breaker tier=halt_new_entries -- new entry for AAPL blocked", "ticker": "AAPL", "tier": "halt_new_entries"}
+{"ts": 1787044208.986828, "kind": "kill_switch_engaged", "message": "kill switch engaged -- order for AAPL blocked", "ticker": "AAPL"}
+{"ts": 1787044208.987746, "kind": "drawdown_cap_tripped", "message": "drawdown cap tripped, kill switch engaged: drawdown 30.00% from HWM 100000.00 (current 70000.00) vs cap 20.00%", "ticker": "AAPL", "drawdown_pct": 0.3}
+{"ts": 1787044208.987838, "kind": "kill_switch_engaged", "message": "kill switch engaged -- order for AAPL blocked", "ticker": "AAPL"}
+{"ts": 1787044208.988611, "kind": "circuit_breaker_halt", "message": "circuit breaker tier=halt_new_entries -- new entry for AAPL blocked", "ticker": "AAPL", "tier": "halt_new_entries"}
+{"ts": 1787044208.9893272, "kind": "circuit_breaker_halt", "message": "circuit breaker tier=full_flatten -- new entry for AAPL blocked", "ticker": "AAPL", "tier": "full_flatten"}
+{"ts": 1787044208.990638, "kind": "risk_blocked", "message": "risk limits blocked order for AAPL: total exposure 59.00%+10.00% would exceed max 60.00%", "ticker": "AAPL", "size_fraction": 0.1}
+{"ts": 1787044208.991335, "kind": "risk_blocked", "message": "risk limits blocked order for AAPL: daily loss -5.00% breached -3.00% cap", "ticker": "AAPL", "size_fraction": 0.08958333333333333}
+{"ts": 1787044258.1890812, "kind": "position_opened", "message": "paper position opened: AAPL long @ 305.59", "ticker": "AAPL", "direction": "long", "fill_price": 305.59, "notional": 8958.33}
+{"ts": 1787044258.2574599, "kind": "position_opened", "message": "paper position opened: AAPL long @ 305.59", "ticker": "AAPL", "direction": "long", "fill_price": 305.59, "notional": 8958.33}
+{"ts": 1787044258.325675, "kind": "position_opened", "message": "paper position opened: AAPL long @ 305.59", "ticker": "AAPL", "direction": "long", "fill_price": 305.59, "notional": 8958.33}
+{"ts": 1787044258.426111, "kind": "position_opened", "message": "paper position opened: AAPL long @ 305.59", "ticker": "AAPL", "direction": "long", "fill_price": 305.59, "notional": 8958.33}
+{"ts": 1787044258.492687, "kind": "position_closed", "message": "paper position closed: AAPL pnl=0.00 (holding_period_exit)", "ticker": "AAPL", "exit_price": 305.59, "realized_pnl": 0.0, "reason": "holding_period_exit"}
+{"ts": 1787044258.565687, "kind": "position_closed", "message": "paper position closed: AAPL pnl=10279.50 (holding_period_exit)", "ticker": "AAPL", "exit_price": 305.59, "realized_pnl": 10279.5, "reason": "holding_period_exit"}
+{"ts": 1787044258.569278, "kind": "circuit_breaker_halt", "message": "circuit breaker tier=halt_new_entries -- new entry for AAPL blocked", "ticker": "AAPL", "tier": "halt_new_entries"}
+{"ts": 1787044258.570108, "kind": "kill_switch_engaged", "message": "kill switch engaged -- order for AAPL blocked", "ticker": "AAPL"}
+{"ts": 1787044258.570899, "kind": "drawdown_cap_tripped", "message": "drawdown cap tripped, kill switch engaged: drawdown 30.00% from HWM 100000.00 (current 70000.00) vs cap 20.00%", "ticker": "AAPL", "drawdown_pct": 0.3}
+{"ts": 1787044258.570979, "kind": "kill_switch_engaged", "message": "kill switch engaged -- order for AAPL blocked", "ticker": "AAPL"}
+{"ts": 1787044258.571637, "kind": "circuit_breaker_halt", "message": "circuit breaker tier=halt_new_entries -- new entry for AAPL blocked", "ticker": "AAPL", "tier": "halt_new_entries"}
+{"ts": 1787044258.572547, "kind": "circuit_breaker_halt", "message": "circuit breaker tier=full_flatten -- new entry for AAPL blocked", "ticker": "AAPL", "tier": "full_flatten"}
+{"ts": 1787044258.5739908, "kind": "risk_blocked", "message": "risk limits blocked order for AAPL: total exposure 59.00%+10.00% would exceed max 60.00%", "ticker": "AAPL", "size_fraction": 0.1}
+{"ts": 1787044258.574694, "kind": "risk_blocked", "message": "risk limits blocked order for AAPL: daily loss -5.00% breached -3.00% cap", "ticker": "AAPL", "size_fraction": 0.08958333333333333}
+{"ts": 1787044839.418236, "kind": "position_opened", "message": "paper position opened: AAPL long @ 305.59", "ticker": "AAPL", "direction": "long", "fill_price": 305.59, "notional": 8958.33}
+{"ts": 1787044839.48086, "kind": "position_opened", "message": "paper position opened: AAPL long @ 305.59", "ticker": "AAPL", "direction": "long", "fill_price": 305.59, "notional": 8958.33}
+{"ts": 1787044839.5470731, "kind": "position_opened", "message": "paper position opened: AAPL long @ 305.59", "ticker": "AAPL", "direction": "long", "fill_price": 305.59, "notional": 8958.33}
+{"ts": 1787044839.6147141, "kind": "position_opened", "message": "paper position opened: AAPL long @ 305.59", "ticker": "AAPL", "direction": "long", "fill_price": 305.59, "notional": 8958.33}
+{"ts": 1787044839.6844, "kind": "position_closed", "message": "paper position closed: AAPL pnl=0.00 (holding_period_exit)", "ticker": "AAPL", "exit_price": 305.59, "realized_pnl": 0.0, "reason": "holding_period_exit"}
+{"ts": 1787044839.7546492, "kind": "position_closed", "message": "paper position closed: AAPL pnl=10279.50 (holding_period_exit)", "ticker": "AAPL", "exit_price": 305.59, "realized_pnl": 10279.5, "reason": "holding_period_exit"}
+{"ts": 1787044839.756981, "kind": "circuit_breaker_halt", "message": "circuit breaker tier=halt_new_entries -- new entry for AAPL blocked", "ticker": "AAPL", "tier": "halt_new_entries"}
+{"ts": 1787044839.7575822, "kind": "kill_switch_engaged", "message": "kill switch engaged -- order for AAPL blocked", "ticker": "AAPL"}
+{"ts": 1787044839.758163, "kind": "drawdown_cap_tripped", "message": "drawdown cap tripped, kill switch engaged: drawdown 30.00% from HWM 100000.00 (current 70000.00) vs cap 20.00%", "ticker": "AAPL", "drawdown_pct": 0.3}
+{"ts": 1787044839.758239, "kind": "kill_switch_engaged", "message": "kill switch engaged -- order for AAPL blocked", "ticker": "AAPL"}
+{"ts": 1787044839.758732, "kind": "circuit_breaker_halt", "message": "circuit breaker tier=halt_new_entries -- new entry for AAPL blocked", "ticker": "AAPL", "tier": "halt_new_entries"}
+{"ts": 1787044839.75922, "kind": "circuit_breaker_halt", "message": "circuit breaker tier=full_flatten -- new entry for AAPL blocked", "ticker": "AAPL", "tier": "full_flatten"}
+{"ts": 1787044839.760159, "kind": "risk_blocked", "message": "risk limits blocked order for AAPL: total exposure 59.00%+10.00% would exceed max 60.00%", "ticker": "AAPL", "size_fraction": 0.1}
+{"ts": 1787044839.7606678, "kind": "risk_blocked", "message": "risk limits blocked order for AAPL: daily loss -5.00% breached -3.00% cap", "ticker": "AAPL", "size_fraction": 0.08958333333333333}
+{"ts": 1787044951.376033, "kind": "position_opened", "message": "paper position opened: AAPL long @ 305.59", "ticker": "AAPL", "direction": "long", "fill_price": 305.59, "notional": 8958.33}
+{"ts": 1787044951.4530282, "kind": "position_opened", "message": "paper position opened: AAPL long @ 305.59", "ticker": "AAPL", "direction": "long", "fill_price": 305.59, "notional": 8958.33}
+{"ts": 1787044951.525474, "kind": "position_opened", "message": "paper position opened: AAPL long @ 305.59", "ticker": "AAPL", "direction": "long", "fill_price": 305.59, "notional": 8958.33}
+{"ts": 1787044951.590265, "kind": "position_opened", "message": "paper position opened: AAPL long @ 305.59", "ticker": "AAPL", "direction": "long", "fill_price": 305.59, "notional": 8958.33}
+{"ts": 1787044951.66505, "kind": "position_closed", "message": "paper position closed: AAPL pnl=0.00 (holding_period_exit)", "ticker": "AAPL", "exit_price": 305.59, "realized_pnl": 0.0, "reason": "holding_period_exit"}
+{"ts": 1787044951.7461061, "kind": "position_closed", "message": "paper position closed: AAPL pnl=10279.50 (holding_period_exit)", "ticker": "AAPL", "exit_price": 305.59, "realized_pnl": 10279.5, "reason": "holding_period_exit"}
+{"ts": 1787044951.749769, "kind": "circuit_breaker_halt", "message": "circuit breaker tier=halt_new_entries -- new entry for AAPL blocked", "ticker": "AAPL", "tier": "halt_new_entries"}
+{"ts": 1787044951.750638, "kind": "kill_switch_engaged", "message": "kill switch engaged -- order for AAPL blocked", "ticker": "AAPL"}
+{"ts": 1787044951.751544, "kind": "drawdown_cap_tripped", "message": "drawdown cap tripped, kill switch engaged: drawdown 30.00% from HWM 100000.00 (current 70000.00) vs cap 20.00%", "ticker": "AAPL", "drawdown_pct": 0.3}
+{"ts": 1787044951.7516391, "kind": "kill_switch_engaged", "message": "kill switch engaged -- order for AAPL blocked", "ticker": "AAPL"}
+{"ts": 1787044951.752343, "kind": "circuit_breaker_halt", "message": "circuit breaker tier=halt_new_entries -- new entry for AAPL blocked", "ticker": "AAPL", "tier": "halt_new_entries"}
+{"ts": 1787044951.753047, "kind": "circuit_breaker_halt", "message": "circuit breaker tier=full_flatten -- new entry for AAPL blocked", "ticker": "AAPL", "tier": "full_flatten"}
+{"ts": 1787044951.754362, "kind": "risk_blocked", "message": "risk limits blocked order for AAPL: total exposure 59.00%+10.00% would exceed max 60.00%", "ticker": "AAPL", "size_fraction": 0.1}
+{"ts": 1787044951.755046, "kind": "risk_blocked", "message": "risk limits blocked order for AAPL: daily loss -5.00% breached -3.00% cap", "ticker": "AAPL", "size_fraction": 0.08958333333333333}
+{"ts": 1787062694.548223, "kind": "position_opened", "message": "paper position opened: AAPL long @ 309.63", "ticker": "AAPL", "direction": "long", "fill_price": 309.6300048828125, "notional": 8958.33}
+{"ts": 1787062694.618145, "kind": "position_opened", "message": "paper position opened: AAPL long @ 309.63", "ticker": "AAPL", "direction": "long", "fill_price": 309.6300048828125, "notional": 8958.33}
+{"ts": 1787062694.700048, "kind": "position_opened", "message": "paper position opened: AAPL long @ 309.63", "ticker": "AAPL", "direction": "long", "fill_price": 309.6300048828125, "notional": 8958.33}
+{"ts": 1787062694.820161, "kind": "position_opened", "message": "paper position opened: AAPL long @ 309.63", "ticker": "AAPL", "direction": "long", "fill_price": 309.6300048828125, "notional": 8958.33}
+{"ts": 1787062694.9508202, "kind": "position_closed", "message": "paper position closed: AAPL pnl=0.00 (holding_period_exit)", "ticker": "AAPL", "exit_price": 309.6300048828125, "realized_pnl": 0.0, "reason": "holding_period_exit"}
+{"ts": 1787062695.0834801, "kind": "position_opened", "message": "paper position opened: AAPL long @ 309.63", "ticker": "AAPL", "direction": "long", "fill_price": 309.6300048828125, "notional": 8958.33}
+{"ts": 1787062695.189294, "kind": "position_opened", "message": "paper position opened: AAPL long @ 309.63", "ticker": "AAPL", "direction": "long", "fill_price": 309.6300048828125, "notional": 8958.33}
+{"ts": 1787062695.310496, "kind": "position_closed", "message": "paper position closed: AAPL pnl=0.00 (holding_period_exit)", "ticker": "AAPL", "exit_price": 309.6300048828125, "realized_pnl": 0.0, "reason": "holding_period_exit"}
+{"ts": 1787062695.39478, "kind": "position_opened", "message": "paper position opened: AAPL long @ 309.63", "ticker": "AAPL", "direction": "long", "fill_price": 309.6300048828125, "notional": 8958.33}
+{"ts": 1787062695.715296, "kind": "position_opened", "message": "paper position opened: MSFT long @ 481.95", "ticker": "MSFT", "direction": "long", "fill_price": 481.94500732421875, "notional": 8958.33}
+{"ts": 1787062822.183391, "kind": "kill_switch_engaged", "message": "kill switch engaged -- order for AAPL blocked", "ticker": "AAPL"}
+{"ts": 1787062822.470346, "kind": "position_opened", "message": "paper position opened: AAPL long @ 309.44", "ticker": "AAPL", "direction": "long", "fill_price": 309.4435119628906, "notional": 10000.0}
+{"ts": 1787062822.578825, "kind": "position_opened", "message": "paper position opened: AAPL long @ 309.44", "ticker": "AAPL", "direction": "long", "fill_price": 309.4435119628906, "notional": 10000.0}
+{"ts": 1787062822.764242, "kind": "position_closed", "message": "paper position closed: AAPL pnl=0.00 (holding_period_exit)", "ticker": "AAPL", "exit_price": 309.4435119628906, "realized_pnl": 0.0, "reason": "holding_period_exit"}
+{"ts": 1787062832.482944, "kind": "position_opened", "message": "paper position opened: AAPL long @ 309.54", "ticker": "AAPL", "direction": "long", "fill_price": 309.53900146484375, "notional": 8958.33}
+{"ts": 1787062832.55341, "kind": "position_opened", "message": "paper position opened: AAPL long @ 309.54", "ticker": "AAPL", "direction": "long", "fill_price": 309.53900146484375, "notional": 8958.33}
+{"ts": 1787062832.6276832, "kind": "position_opened", "message": "paper position opened: AAPL long @ 309.54", "ticker": "AAPL", "direction": "long", "fill_price": 309.53900146484375, "notional": 8958.33}
+{"ts": 1787062832.705538, "kind": "position_opened", "message": "paper position opened: AAPL long @ 309.54", "ticker": "AAPL", "direction": "long", "fill_price": 309.53900146484375, "notional": 8958.33}
+{"ts": 1787062832.7992299, "kind": "position_closed", "message": "paper position closed: AAPL pnl=0.00 (holding_period_exit)", "ticker": "AAPL", "exit_price": 309.53900146484375, "realized_pnl": 0.0, "reason": "holding_period_exit"}
+{"ts": 1787062832.919571, "kind": "position_opened", "message": "paper position opened: AAPL long @ 309.54", "ticker": "AAPL", "direction": "long", "fill_price": 309.53900146484375, "notional": 8958.33}
+{"ts": 1787062833.065278, "kind": "position_opened", "message": "paper position opened: AAPL long @ 309.54", "ticker": "AAPL", "direction": "long", "fill_price": 309.53900146484375, "notional": 8958.33}
+{"ts": 1787062833.168143, "kind": "position_closed", "message": "paper position closed: AAPL pnl=0.00 (holding_period_exit)", "ticker": "AAPL", "exit_price": 309.53900146484375, "realized_pnl": 0.0, "reason": "holding_period_exit"}
+{"ts": 1787062833.250139, "kind": "position_opened", "message": "paper position opened: AAPL long @ 309.54", "ticker": "AAPL", "direction": "long", "fill_price": 309.53900146484375, "notional": 8958.33}
+{"ts": 1787062833.417226, "kind": "position_opened", "message": "paper position opened: MSFT long @ 482.29", "ticker": "MSFT", "direction": "long", "fill_price": 482.2900085449219, "notional": 8958.33}
+{"ts": 1787062833.7973278, "kind": "position_closed", "message": "paper position closed: AAPL pnl=10476.95 (holding_period_exit)", "ticker": "AAPL", "exit_price": 309.53900146484375, "realized_pnl": 10476.95, "reason": "holding_period_exit"}
+{"ts": 1787062833.802568, "kind": "circuit_breaker_halt", "message": "circuit breaker tier=halt_new_entries -- new entry for AAPL blocked", "ticker": "AAPL", "tier": "halt_new_entries"}
+{"ts": 1787062833.8037682, "kind": "kill_switch_engaged", "message": "kill switch engaged -- order for AAPL blocked", "ticker": "AAPL"}
+{"ts": 1787062833.804998, "kind": "drawdown_cap_tripped", "message": "drawdown cap tripped, kill switch engaged: drawdown 30.00% from HWM 100000.00 (current 70000.00) vs cap 20.00%", "ticker": "AAPL", "drawdown_pct": 0.3}
+{"ts": 1787062833.805155, "kind": "kill_switch_engaged", "message": "kill switch engaged -- order for AAPL blocked", "ticker": "AAPL"}
+{"ts": 1787062833.806453, "kind": "circuit_breaker_halt", "message": "circuit breaker tier=halt_new_entries -- new entry for AAPL blocked", "ticker": "AAPL", "tier": "halt_new_entries"}
+{"ts": 1787062833.807489, "kind": "circuit_breaker_halt", "message": "circuit breaker tier=full_flatten -- new entry for AAPL blocked", "ticker": "AAPL", "tier": "full_flatten"}
+{"ts": 1787062833.809258, "kind": "risk_blocked", "message": "risk limits blocked order for AAPL: total exposure 59.00%+10.00% would exceed max 60.00%", "ticker": "AAPL", "size_fraction": 0.1}
+{"ts": 1787062833.810143, "kind": "risk_blocked", "message": "risk limits blocked order for AAPL: daily loss -5.00% breached -3.00% cap", "ticker": "AAPL", "size_fraction": 0.08958333333333333}
+{"ts": 1787062843.8103511, "kind": "kill_switch_engaged", "message": "kill switch engaged -- order for AAPL blocked", "ticker": "AAPL"}
+{"ts": 1787062844.008505, "kind": "position_opened", "message": "paper position opened: AAPL long @ 309.49", "ticker": "AAPL", "direction": "long", "fill_price": 309.4949951171875, "notional": 10000.0}
+{"ts": 1787062844.0825658, "kind": "position_opened", "message": "paper position opened: AAPL long @ 309.49", "ticker": "AAPL", "direction": "long", "fill_price": 309.4949951171875, "notional": 10000.0}
+{"ts": 1787062844.1512818, "kind": "position_closed", "message": "paper position closed: AAPL pnl=0.00 (holding_period_exit)", "ticker": "AAPL", "exit_price": 309.4949951171875, "realized_pnl": 0.0, "reason": "holding_period_exit"}
+{"ts": 1787063146.5695932, "kind": "position_opened", "message": "paper position opened: AAPL long @ 308.97", "ticker": "AAPL", "direction": "long", "fill_price": 308.9700012207031, "notional": 8958.33}
+{"ts": 1787063146.644275, "kind": "position_opened", "message": "paper position opened: AAPL long @ 308.97", "ticker": "AAPL", "direction": "long", "fill_price": 308.9700012207031, "notional": 8958.33}
+{"ts": 1787063146.720703, "kind": "position_opened", "message": "paper position opened: AAPL long @ 308.97", "ticker": "AAPL", "direction": "long", "fill_price": 308.9700012207031, "notional": 8958.33}
+{"ts": 1787063146.794718, "kind": "position_opened", "message": "paper position opened: AAPL long @ 308.97", "ticker": "AAPL", "direction": "long", "fill_price": 308.9700012207031, "notional": 8958.33}
+{"ts": 1787063146.919873, "kind": "position_closed", "message": "paper position closed: AAPL pnl=0.00 (holding_period_exit)", "ticker": "AAPL", "exit_price": 308.9700012207031, "realized_pnl": 0.0, "reason": "holding_period_exit"}
+{"ts": 1787063147.053298, "kind": "position_opened", "message": "paper position opened: AAPL long @ 308.97", "ticker": "AAPL", "direction": "long", "fill_price": 308.9700012207031, "notional": 8958.33}
+{"ts": 1787063147.168073, "kind": "position_opened", "message": "paper position opened: AAPL long @ 308.97", "ticker": "AAPL", "direction": "long", "fill_price": 308.9700012207031, "notional": 8958.33}
+{"ts": 1787063147.257906, "kind": "position_closed", "message": "paper position closed: AAPL pnl=0.00 (holding_period_exit)", "ticker": "AAPL", "exit_price": 308.9700012207031, "realized_pnl": 0.0, "reason": "holding_period_exit"}
+{"ts": 1787063147.328425, "kind": "position_opened", "message": "paper position opened: AAPL long @ 308.97", "ticker": "AAPL", "direction": "long", "fill_price": 308.9700012207031, "notional": 8958.33}
+{"ts": 1787063147.493666, "kind": "position_opened", "message": "paper position opened: MSFT long @ 482.41", "ticker": "MSFT", "direction": "long", "fill_price": 482.4100036621094, "notional": 8958.33}
+{"ts": 1787063147.578103, "kind": "position_closed", "message": "paper position closed: AAPL pnl=10448.50 (holding_period_exit)", "ticker": "AAPL", "exit_price": 308.9700012207031, "realized_pnl": 10448.5, "reason": "holding_period_exit"}
+{"ts": 1787063147.580468, "kind": "circuit_breaker_halt", "message": "circuit breaker tier=halt_new_entries -- new entry for AAPL blocked", "ticker": "AAPL", "tier": "halt_new_entries"}
+{"ts": 1787063147.5812721, "kind": "kill_switch_engaged", "message": "kill switch engaged -- order for AAPL blocked", "ticker": "AAPL"}
+{"ts": 1787063147.5818849, "kind": "drawdown_cap_tripped", "message": "drawdown cap tripped, kill switch engaged: drawdown 30.00% from HWM 100000.00 (current 70000.00) vs cap 20.00%", "ticker": "AAPL", "drawdown_pct": 0.3}
+{"ts": 1787063147.58196, "kind": "kill_switch_engaged", "message": "kill switch engaged -- order for AAPL blocked", "ticker": "AAPL"}
+{"ts": 1787063147.582537, "kind": "circuit_breaker_halt", "message": "circuit breaker tier=halt_new_entries -- new entry for AAPL blocked", "ticker": "AAPL", "tier": "halt_new_entries"}
+{"ts": 1787063147.5830872, "kind": "circuit_breaker_halt", "message": "circuit breaker tier=full_flatten -- new entry for AAPL blocked", "ticker": "AAPL", "tier": "full_flatten"}
+{"ts": 1787063147.584119, "kind": "risk_blocked", "message": "risk limits blocked order for AAPL: total exposure 59.00%+10.00% would exceed max 60.00%", "ticker": "AAPL", "size_fraction": 0.1}
+{"ts": 1787063147.5846348, "kind": "risk_blocked", "message": "risk limits blocked order for AAPL: daily loss -5.00% breached -3.00% cap", "ticker": "AAPL", "size_fraction": 0.08958333333333333}
+{"ts": 1787063164.21418, "kind": "kill_switch_engaged", "message": "kill switch engaged -- order for AAPL blocked", "ticker": "AAPL"}
+{"ts": 1787063164.431637, "kind": "position_opened", "message": "paper position opened: AAPL long @ 308.93", "ticker": "AAPL", "direction": "long", "fill_price": 308.9299011230469, "notional": 10000.0}
+{"ts": 1787063164.564769, "kind": "position_opened", "message": "paper position opened: AAPL long @ 308.93", "ticker": "AAPL", "direction": "long", "fill_price": 308.9299011230469, "notional": 10000.0}
+{"ts": 1787063164.6793668, "kind": "position_closed", "message": "paper position closed: AAPL pnl=0.00 (holding_period_exit)", "ticker": "AAPL", "exit_price": 308.9299011230469, "realized_pnl": 0.0, "reason": "holding_period_exit"}
+{"ts": 1787063256.67855, "kind": "position_opened", "message": "paper position opened: AAPL long @ 309.08", "ticker": "AAPL", "direction": "long", "fill_price": 309.0758056640625, "notional": 8958.33}
+{"ts": 1787063256.838437, "kind": "position_opened", "message": "paper position opened: AAPL long @ 309.08", "ticker": "AAPL", "direction": "long", "fill_price": 309.0758056640625, "notional": 8958.33}
+{"ts": 1787063257.001465, "kind": "position_opened", "message": "paper position opened: AAPL long @ 309.08", "ticker": "AAPL", "direction": "long", "fill_price": 309.0758056640625, "notional": 8958.33}
+{"ts": 1787063257.160053, "kind": "position_opened", "message": "paper position opened: AAPL long @ 309.08", "ticker": "AAPL", "direction": "long", "fill_price": 309.0758056640625, "notional": 8958.33}
+{"ts": 1787063257.311571, "kind": "position_closed", "message": "paper position closed: AAPL pnl=0.00 (holding_period_exit)", "ticker": "AAPL", "exit_price": 309.0758056640625, "realized_pnl": 0.0, "reason": "holding_period_exit"}
+{"ts": 1787063257.444235, "kind": "position_opened", "message": "paper position opened: AAPL long @ 309.08", "ticker": "AAPL", "direction": "long", "fill_price": 309.0758056640625, "notional": 8958.33}
+{"ts": 1787063257.576213, "kind": "position_opened", "message": "paper position opened: AAPL long @ 309.08", "ticker": "AAPL", "direction": "long", "fill_price": 309.0758056640625, "notional": 8958.33}
+{"ts": 1787063257.71328, "kind": "position_closed", "message": "paper position closed: AAPL pnl=0.00 (holding_period_exit)", "ticker": "AAPL", "exit_price": 309.0758056640625, "realized_pnl": 0.0, "reason": "holding_period_exit"}
+{"ts": 1787063257.84873, "kind": "position_opened", "message": "paper position opened: AAPL long @ 309.08", "ticker": "AAPL", "direction": "long", "fill_price": 309.0758056640625, "notional": 8958.33}
+{"ts": 1787063258.0878441, "kind": "position_opened", "message": "paper position opened: MSFT long @ 481.91", "ticker": "MSFT", "direction": "long", "fill_price": 481.9100036621094, "notional": 8958.33}
+{"ts": 1787063258.4275231, "kind": "position_closed", "message": "paper position closed: AAPL pnl=10453.79 (holding_period_exit)", "ticker": "AAPL", "exit_price": 309.0758056640625, "realized_pnl": 10453.79, "reason": "holding_period_exit"}
+{"ts": 1787063258.432998, "kind": "circuit_breaker_halt", "message": "circuit breaker tier=halt_new_entries -- new entry for AAPL blocked", "ticker": "AAPL", "tier": "halt_new_entries"}
+{"ts": 1787063258.4344199, "kind": "kill_switch_engaged", "message": "kill switch engaged -- order for AAPL blocked", "ticker": "AAPL"}
+{"ts": 1787063258.435592, "kind": "drawdown_cap_tripped", "message": "drawdown cap tripped, kill switch engaged: drawdown 30.00% from HWM 100000.00 (current 70000.00) vs cap 20.00%", "ticker": "AAPL", "drawdown_pct": 0.3}
+{"ts": 1787063258.435735, "kind": "kill_switch_engaged", "message": "kill switch engaged -- order for AAPL blocked", "ticker": "AAPL"}
+{"ts": 1787063258.436739, "kind": "circuit_breaker_halt", "message": "circuit breaker tier=halt_new_entries -- new entry for AAPL blocked", "ticker": "AAPL", "tier": "halt_new_entries"}
+{"ts": 1787063258.4383302, "kind": "circuit_breaker_halt", "message": "circuit breaker tier=full_flatten -- new entry for AAPL blocked", "ticker": "AAPL", "tier": "full_flatten"}
+{"ts": 1787063258.440323, "kind": "risk_blocked", "message": "risk limits blocked order for AAPL: total exposure 59.00%+10.00% would exceed max 60.00%", "ticker": "AAPL", "size_fraction": 0.1}
+{"ts": 1787063258.441314, "kind": "risk_blocked", "message": "risk limits blocked order for AAPL: daily loss -5.00% breached -3.00% cap", "ticker": "AAPL", "size_fraction": 0.08958333333333333}
+{"ts": 1787063280.128546, "kind": "kill_switch_engaged", "message": "kill switch engaged -- order for AAPL blocked", "ticker": "AAPL"}
+{"ts": 1787063280.347393, "kind": "position_opened", "message": "paper position opened: AAPL long @ 309.26", "ticker": "AAPL", "direction": "long", "fill_price": 309.260009765625, "notional": 10000.0}
+{"ts": 1787063280.432535, "kind": "position_opened", "message": "paper position opened: AAPL long @ 309.26", "ticker": "AAPL", "direction": "long", "fill_price": 309.260009765625, "notional": 10000.0}
+{"ts": 1787063280.519914, "kind": "position_closed", "message": "paper position closed: AAPL pnl=0.00 (holding_period_exit)", "ticker": "AAPL", "exit_price": 309.260009765625, "realized_pnl": 0.0, "reason": "holding_period_exit"}
+{"ts": 1787127745.3724968, "kind": "position_opened", "message": "paper position opened: AAPL long @ 310.03", "ticker": "AAPL", "direction": "long", "fill_price": 310.0299987792969, "notional": 8958.33}
+{"ts": 1787127745.482156, "kind": "position_opened", "message": "paper position opened: AAPL long @ 310.03", "ticker": "AAPL", "direction": "long", "fill_price": 310.0299987792969, "notional": 8958.33}
+{"ts": 1787127745.578654, "kind": "position_opened", "message": "paper position opened: AAPL long @ 310.03", "ticker": "AAPL", "direction": "long", "fill_price": 310.0299987792969, "notional": 8958.33}
+{"ts": 1787127745.685179, "kind": "position_opened", "message": "paper position opened: AAPL long @ 310.03", "ticker": "AAPL", "direction": "long", "fill_price": 310.0299987792969, "notional": 8958.33}
+{"ts": 1787127745.773077, "kind": "position_closed", "message": "paper position closed: AAPL pnl=0.00 (holding_period_exit)", "ticker": "AAPL", "exit_price": 310.0299987792969, "realized_pnl": 0.0, "reason": "holding_period_exit"}
+{"ts": 1787127745.862674, "kind": "position_opened", "message": "paper position opened: AAPL long @ 310.03", "ticker": "AAPL", "direction": "long", "fill_price": 310.0299987792969, "notional": 8958.33}
+{"ts": 1787127745.944374, "kind": "position_opened", "message": "paper position opened: AAPL long @ 310.03", "ticker": "AAPL", "direction": "long", "fill_price": 310.0299987792969, "notional": 8958.33}
+{"ts": 1787127746.02093, "kind": "position_closed", "message": "paper position closed: AAPL pnl=0.00 (holding_period_exit)", "ticker": "AAPL", "exit_price": 310.0299987792969, "realized_pnl": 0.0, "reason": "holding_period_exit"}
+{"ts": 1787127746.10488, "kind": "position_opened", "message": "paper position opened: AAPL long @ 310.03", "ticker": "AAPL", "direction": "long", "fill_price": 310.0299987792969, "notional": 8958.33}
+{"ts": 1787127746.323485, "kind": "position_opened", "message": "paper position opened: MSFT long @ 481.63", "ticker": "MSFT", "direction": "long", "fill_price": 481.6300048828125, "notional": 8958.33}
+{"ts": 1787127746.433426, "kind": "position_closed", "message": "paper position closed: AAPL pnl=10501.50 (holding_period_exit)", "ticker": "AAPL", "exit_price": 310.0299987792969, "realized_pnl": 10501.5, "reason": "holding_period_exit"}
+{"ts": 1787127746.4360268, "kind": "circuit_breaker_halt", "message": "circuit breaker tier=halt_new_entries -- new entry for AAPL blocked", "ticker": "AAPL", "tier": "halt_new_entries"}
+{"ts": 1787127746.436741, "kind": "kill_switch_engaged", "message": "kill switch engaged -- order for AAPL blocked", "ticker": "AAPL"}
+{"ts": 1787127746.4373708, "kind": "drawdown_cap_tripped", "message": "drawdown cap tripped, kill switch engaged: drawdown 30.00% from HWM 100000.00 (current 70000.00) vs cap 20.00%", "ticker": "AAPL", "drawdown_pct": 0.3}
+{"ts": 1787127746.437435, "kind": "kill_switch_engaged", "message": "kill switch engaged -- order for AAPL blocked", "ticker": "AAPL"}
+{"ts": 1787127746.43795, "kind": "circuit_breaker_halt", "message": "circuit breaker tier=halt_new_entries -- new entry for AAPL blocked", "ticker": "AAPL", "tier": "halt_new_entries"}
+{"ts": 1787127746.438474, "kind": "circuit_breaker_halt", "message": "circuit breaker tier=full_flatten -- new entry for AAPL blocked", "ticker": "AAPL", "tier": "full_flatten"}
+{"ts": 1787127746.439465, "kind": "risk_blocked", "message": "risk limits blocked order for AAPL: total exposure 59.00%+10.00% would exceed max 60.00%", "ticker": "AAPL", "size_fraction": 0.1}
+{"ts": 1787127746.439989, "kind": "risk_blocked", "message": "risk limits blocked order for AAPL: daily loss -5.00% breached -3.00% cap", "ticker": "AAPL", "size_fraction": 0.08958333333333333}
+{"ts": 1787127762.477086, "kind": "kill_switch_engaged", "message": "kill switch engaged -- order for AAPL blocked", "ticker": "AAPL"}
+{"ts": 1787127762.675297, "kind": "position_opened", "message": "paper position opened: AAPL long @ 310.03", "ticker": "AAPL", "direction": "long", "fill_price": 310.0299987792969, "notional": 10000.0}
+{"ts": 1787127762.7503831, "kind": "position_opened", "message": "paper position opened: AAPL long @ 310.03", "ticker": "AAPL", "direction": "long", "fill_price": 310.0299987792969, "notional": 10000.0}
+{"ts": 1787127762.8256261, "kind": "position_closed", "message": "paper position closed: AAPL pnl=0.00 (holding_period_exit)", "ticker": "AAPL", "exit_price": 310.0299987792969, "realized_pnl": 0.0, "reason": "holding_period_exit"}
+{"ts": 1787127996.50694, "kind": "position_opened", "message": "paper position opened: AAPL long @ 310.03", "ticker": "AAPL", "direction": "long", "fill_price": 310.0299987792969, "notional": 10000.0}
+{"ts": 1787127999.264792, "kind": "position_opened", "message": "paper position opened: MSFT long @ 481.63", "ticker": "MSFT", "direction": "long", "fill_price": 481.6300048828125, "notional": 10000.0}
+{"ts": 1787128001.936928, "kind": "position_opened", "message": "paper position opened: NVDA long @ 219.74", "ticker": "NVDA", "direction": "long", "fill_price": 219.74000549316406, "notional": 10000.0}
+{"ts": 1787128083.5830579, "kind": "position_opened", "message": "paper position opened: AAPL long @ 310.03", "ticker": "AAPL", "direction": "long", "fill_price": 310.0299987792969, "notional": 10000.0}
+{"ts": 1787128122.5283232, "kind": "position_opened", "message": "paper position opened: AAPL long @ 310.03", "ticker": "AAPL", "direction": "long", "fill_price": 310.0299987792969, "notional": 10000.0}
+{"ts": 1787128125.267434, "kind": "position_opened", "message": "paper position opened: MSFT long @ 481.63", "ticker": "MSFT", "direction": "long", "fill_price": 481.6300048828125, "notional": 10000.0}
+{"ts": 1787128127.9512992, "kind": "position_opened", "message": "paper position opened: NVDA long @ 219.74", "ticker": "NVDA", "direction": "long", "fill_price": 219.74000549316406, "notional": 10000.0}
+{"ts": 1787128162.995761, "kind": "position_opened", "message": "paper position opened: AAPL long @ 310.03", "ticker": "AAPL", "direction": "long", "fill_price": 310.0299987792969, "notional": 10000.0}
+{"ts": 1787128218.644495, "kind": "position_opened", "message": "paper position opened: AAPL long @ 310.03", "ticker": "AAPL", "direction": "long", "fill_price": 310.0299987792969, "notional": 10000.0}
+{"ts": 1787128307.823134, "kind": "position_opened", "message": "paper position opened: AAPL long @ 310.03", "ticker": "AAPL", "direction": "long", "fill_price": 310.0299987792969, "notional": 10000.0}
+{"ts": 1787128341.411765, "kind": "position_opened", "message": "paper position opened: AAPL long @ 310.03", "ticker": "AAPL", "direction": "long", "fill_price": 310.0299987792969, "notional": 10000.0}
+{"ts": 1787128376.3171651, "kind": "position_opened", "message": "paper position opened: AAPL long @ 310.03", "ticker": "AAPL", "direction": "long", "fill_price": 310.0299987792969, "notional": 10000.0}
+{"ts": 1787128392.780232, "kind": "position_opened", "message": "paper position opened: AAPL long @ 310.03", "ticker": "AAPL", "direction": "long", "fill_price": 310.0299987792969, "notional": 10000.0}
+{"ts": 1787128409.5040152, "kind": "position_opened", "message": "paper position opened: AAPL long @ 310.03", "ticker": "AAPL", "direction": "long", "fill_price": 310.0299987792969, "notional": 8958.33}
+{"ts": 1787128409.580719, "kind": "position_opened", "message": "paper position opened: AAPL long @ 310.03", "ticker": "AAPL", "direction": "long", "fill_price": 310.0299987792969, "notional": 8958.33}
+{"ts": 1787128409.6632771, "kind": "position_opened", "message": "paper position opened: AAPL long @ 310.03", "ticker": "AAPL", "direction": "long", "fill_price": 310.0299987792969, "notional": 8958.33}
+{"ts": 1787128409.745132, "kind": "position_opened", "message": "paper position opened: AAPL long @ 310.03", "ticker": "AAPL", "direction": "long", "fill_price": 310.0299987792969, "notional": 8958.33}
+{"ts": 1787128409.828019, "kind": "position_closed", "message": "paper position closed: AAPL pnl=0.00 (holding_period_exit)", "ticker": "AAPL", "exit_price": 310.0299987792969, "realized_pnl": 0.0, "reason": "holding_period_exit"}
+{"ts": 1787128409.92418, "kind": "position_opened", "message": "paper position opened: AAPL long @ 310.03", "ticker": "AAPL", "direction": "long", "fill_price": 310.0299987792969, "notional": 8958.33}
+{"ts": 1787128410.009931, "kind": "position_opened", "message": "paper position opened: AAPL long @ 310.03", "ticker": "AAPL", "direction": "long", "fill_price": 310.0299987792969, "notional": 8958.33}
+{"ts": 1787128410.1009028, "kind": "position_closed", "message": "paper position closed: AAPL pnl=0.00 (holding_period_exit)", "ticker": "AAPL", "exit_price": 310.0299987792969, "realized_pnl": 0.0, "reason": "holding_period_exit"}
+{"ts": 1787128410.230731, "kind": "position_opened", "message": "paper position opened: AAPL long @ 310.03", "ticker": "AAPL", "direction": "long", "fill_price": 310.0299987792969, "notional": 8958.33}
+{"ts": 1787128410.410403, "kind": "position_opened", "message": "paper position opened: MSFT long @ 481.63", "ticker": "MSFT", "direction": "long", "fill_price": 481.6300048828125, "notional": 8958.33}
+{"ts": 1787128417.818899, "kind": "position_opened", "message": "paper position opened: AAPL long @ 310.03", "ticker": "AAPL", "direction": "long", "fill_price": 310.0299987792969, "notional": 10000.0}
+{"ts": 1787128419.5781739, "kind": "position_closed", "message": "paper position closed: AAPL pnl=10501.50 (holding_period_exit)", "ticker": "AAPL", "exit_price": 310.0299987792969, "realized_pnl": 10501.5, "reason": "holding_period_exit"}
+{"ts": 1787128419.582113, "kind": "circuit_breaker_halt", "message": "circuit breaker tier=halt_new_entries -- new entry for AAPL blocked", "ticker": "AAPL", "tier": "halt_new_entries"}
+{"ts": 1787128419.583263, "kind": "kill_switch_engaged", "message": "kill switch engaged -- order for AAPL blocked", "ticker": "AAPL"}
+{"ts": 1787128419.584345, "kind": "drawdown_cap_tripped", "message": "drawdown cap tripped, kill switch engaged: drawdown 30.00% from HWM 100000.00 (current 70000.00) vs cap 20.00%", "ticker": "AAPL", "drawdown_pct": 0.3}
+{"ts": 1787128419.58445, "kind": "kill_switch_engaged", "message": "kill switch engaged -- order for AAPL blocked", "ticker": "AAPL"}
+{"ts": 1787128419.585354, "kind": "circuit_breaker_halt", "message": "circuit breaker tier=halt_new_entries -- new entry for AAPL blocked", "ticker": "AAPL", "tier": "halt_new_entries"}
+{"ts": 1787128419.586266, "kind": "circuit_breaker_halt", "message": "circuit breaker tier=full_flatten -- new entry for AAPL blocked", "ticker": "AAPL", "tier": "full_flatten"}
+{"ts": 1787128419.587988, "kind": "risk_blocked", "message": "risk limits blocked order for AAPL: total exposure 59.00%+10.00% would exceed max 60.00%", "ticker": "AAPL", "size_fraction": 0.1}
+{"ts": 1787128419.588863, "kind": "risk_blocked", "message": "risk limits blocked order for AAPL: daily loss -5.00% breached -3.00% cap", "ticker": "AAPL", "size_fraction": 0.08958333333333333}
+{"ts": 1787128436.296169, "kind": "kill_switch_engaged", "message": "kill switch engaged -- order for AAPL blocked", "ticker": "AAPL"}
+{"ts": 1787128436.4906182, "kind": "position_opened", "message": "paper position opened: AAPL long @ 310.03", "ticker": "AAPL", "direction": "long", "fill_price": 310.0299987792969, "notional": 10000.0}
+{"ts": 1787128436.5618591, "kind": "position_opened", "message": "paper position opened: AAPL long @ 310.03", "ticker": "AAPL", "direction": "long", "fill_price": 310.0299987792969, "notional": 10000.0}
+{"ts": 1787128436.6489532, "kind": "position_closed", "message": "paper position closed: AAPL pnl=0.00 (holding_period_exit)", "ticker": "AAPL", "exit_price": 310.0299987792969, "realized_pnl": 0.0, "reason": "holding_period_exit"}
+{"ts": 1787129413.914939, "kind": "position_opened", "message": "paper position opened: AAPL long @ 310.03", "ticker": "AAPL", "direction": "long", "fill_price": 310.0299987792969, "notional": 8958.33}
+{"ts": 1787129413.985663, "kind": "position_opened", "message": "paper position opened: AAPL long @ 310.03", "ticker": "AAPL", "direction": "long", "fill_price": 310.0299987792969, "notional": 8958.33}
+{"ts": 1787129414.06387, "kind": "position_opened", "message": "paper position opened: AAPL long @ 310.03", "ticker": "AAPL", "direction": "long", "fill_price": 310.0299987792969, "notional": 8958.33}
+{"ts": 1787129414.131495, "kind": "position_opened", "message": "paper position opened: AAPL long @ 310.03", "ticker": "AAPL", "direction": "long", "fill_price": 310.0299987792969, "notional": 8958.33}
+{"ts": 1787129414.2070148, "kind": "position_closed", "message": "paper position closed: AAPL pnl=0.00 (holding_period_exit)", "ticker": "AAPL", "exit_price": 310.0299987792969, "realized_pnl": 0.0, "reason": "holding_period_exit"}
+{"ts": 1787129414.279117, "kind": "position_opened", "message": "paper position opened: AAPL long @ 310.03", "ticker": "AAPL", "direction": "long", "fill_price": 310.0299987792969, "notional": 8958.33}
+{"ts": 1787129414.347212, "kind": "position_opened", "message": "paper position opened: AAPL long @ 310.03", "ticker": "AAPL", "direction": "long", "fill_price": 310.0299987792969, "notional": 8958.33}
+{"ts": 1787129414.423501, "kind": "position_closed", "message": "paper position closed: AAPL pnl=0.00 (holding_period_exit)", "ticker": "AAPL", "exit_price": 310.0299987792969, "realized_pnl": 0.0, "reason": "holding_period_exit"}
+{"ts": 1787129414.495716, "kind": "position_opened", "message": "paper position opened: AAPL long @ 310.03", "ticker": "AAPL", "direction": "long", "fill_price": 310.0299987792969, "notional": 8958.33}
+{"ts": 1787129414.6727848, "kind": "position_opened", "message": "paper position opened: MSFT long @ 481.63", "ticker": "MSFT", "direction": "long", "fill_price": 481.6300048828125, "notional": 8958.33}
+{"ts": 1787129419.923587, "kind": "position_opened", "message": "paper position opened: AAPL long @ 310.03", "ticker": "AAPL", "direction": "long", "fill_price": 310.0299987792969, "notional": 10000.0}
+{"ts": 1787129421.0894709, "kind": "position_closed", "message": "paper position closed: AAPL pnl=10501.50 (holding_period_exit)", "ticker": "AAPL", "exit_price": 310.0299987792969, "realized_pnl": 10501.5, "reason": "holding_period_exit"}
+{"ts": 1787129421.09179, "kind": "circuit_breaker_halt", "message": "circuit breaker tier=halt_new_entries -- new entry for AAPL blocked", "ticker": "AAPL", "tier": "halt_new_entries"}
+{"ts": 1787129421.092544, "kind": "kill_switch_engaged", "message": "kill switch engaged -- order for AAPL blocked", "ticker": "AAPL"}
+{"ts": 1787129421.093249, "kind": "drawdown_cap_tripped", "message": "drawdown cap tripped, kill switch engaged: drawdown 30.00% from HWM 100000.00 (current 70000.00) vs cap 20.00%", "ticker": "AAPL", "drawdown_pct": 0.3}
+{"ts": 1787129421.093323, "kind": "kill_switch_engaged", "message": "kill switch engaged -- order for AAPL blocked", "ticker": "AAPL"}
+{"ts": 1787129421.093868, "kind": "circuit_breaker_halt", "message": "circuit breaker tier=halt_new_entries -- new entry for AAPL blocked", "ticker": "AAPL", "tier": "halt_new_entries"}
+{"ts": 1787129421.0943959, "kind": "circuit_breaker_halt", "message": "circuit breaker tier=full_flatten -- new entry for AAPL blocked", "ticker": "AAPL", "tier": "full_flatten"}
+{"ts": 1787129421.095393, "kind": "risk_blocked", "message": "risk limits blocked order for AAPL: total exposure 59.00%+10.00% would exceed max 60.00%", "ticker": "AAPL", "size_fraction": 0.1}
+{"ts": 1787129421.096085, "kind": "risk_blocked", "message": "risk limits blocked order for AAPL: daily loss -5.00% breached -3.00% cap", "ticker": "AAPL", "size_fraction": 0.08958333333333333}
+{"ts": 1787129438.2098508, "kind": "kill_switch_engaged", "message": "kill switch engaged -- order for AAPL blocked", "ticker": "AAPL"}
+{"ts": 1787129438.4291992, "kind": "position_opened", "message": "paper position opened: AAPL long @ 310.03", "ticker": "AAPL", "direction": "long", "fill_price": 310.0299987792969, "notional": 10000.0}
+{"ts": 1787129438.513622, "kind": "position_opened", "message": "paper position opened: AAPL long @ 310.03", "ticker": "AAPL", "direction": "long", "fill_price": 310.0299987792969, "notional": 10000.0}
+{"ts": 1787129438.6018, "kind": "position_closed", "message": "paper position closed: AAPL pnl=0.00 (holding_period_exit)", "ticker": "AAPL", "exit_price": 310.0299987792969, "realized_pnl": 0.0, "reason": "holding_period_exit"}
+{"ts": 1787129670.764371, "kind": "position_opened", "message": "paper position opened: AAPL long @ 310.03", "ticker": "AAPL", "direction": "long", "fill_price": 310.0299987792969, "notional": 8958.33}
+{"ts": 1787129670.8336508, "kind": "position_opened", "message": "paper position opened: AAPL long @ 310.03", "ticker": "AAPL", "direction": "long", "fill_price": 310.0299987792969, "notional": 8958.33}
+{"ts": 1787129671.091132, "kind": "position_opened", "message": "paper position opened: AAPL long @ 310.03", "ticker": "AAPL", "direction": "long", "fill_price": 310.0299987792969, "notional": 8958.33}
+{"ts": 1787129671.171526, "kind": "position_opened", "message": "paper position opened: AAPL long @ 310.03", "ticker": "AAPL", "direction": "long", "fill_price": 310.0299987792969, "notional": 8958.33}
+{"ts": 1787129671.235774, "kind": "position_closed", "message": "paper position closed: AAPL pnl=0.00 (holding_period_exit)", "ticker": "AAPL", "exit_price": 310.0299987792969, "realized_pnl": 0.0, "reason": "holding_period_exit"}
+{"ts": 1787129671.307967, "kind": "position_opened", "message": "paper position opened: AAPL long @ 310.03", "ticker": "AAPL", "direction": "long", "fill_price": 310.0299987792969, "notional": 8958.33}
+{"ts": 1787129671.5434182, "kind": "position_opened", "message": "paper position opened: AAPL long @ 310.03", "ticker": "AAPL", "direction": "long", "fill_price": 310.0299987792969, "notional": 8958.33}
+{"ts": 1787129671.624081, "kind": "position_closed", "message": "paper position closed: AAPL pnl=0.00 (holding_period_exit)", "ticker": "AAPL", "exit_price": 310.0299987792969, "realized_pnl": 0.0, "reason": "holding_period_exit"}
+{"ts": 1787129671.693591, "kind": "position_opened", "message": "paper position opened: AAPL long @ 310.03", "ticker": "AAPL", "direction": "long", "fill_price": 310.0299987792969, "notional": 8958.33}
+{"ts": 1787129671.852472, "kind": "position_opened", "message": "paper position opened: MSFT long @ 481.63", "ticker": "MSFT", "direction": "long", "fill_price": 481.6300048828125, "notional": 8958.33}
+{"ts": 1787129676.978102, "kind": "position_opened", "message": "paper position opened: AAPL long @ 310.03", "ticker": "AAPL", "direction": "long", "fill_price": 310.0299987792969, "notional": 10000.0}
+{"ts": 1787129678.134318, "kind": "position_closed", "message": "paper position closed: AAPL pnl=10501.50 (holding_period_exit)", "ticker": "AAPL", "exit_price": 310.0299987792969, "realized_pnl": 10501.5, "reason": "holding_period_exit"}
+{"ts": 1787129678.136939, "kind": "circuit_breaker_halt", "message": "circuit breaker tier=halt_new_entries -- new entry for AAPL blocked", "ticker": "AAPL", "tier": "halt_new_entries"}
+{"ts": 1787129678.1376388, "kind": "kill_switch_engaged", "message": "kill switch engaged -- order for AAPL blocked", "ticker": "AAPL"}
+{"ts": 1787129678.13834, "kind": "drawdown_cap_tripped", "message": "drawdown cap tripped, kill switch engaged: drawdown 30.00% from HWM 100000.00 (current 70000.00) vs cap 20.00%", "ticker": "AAPL", "drawdown_pct": 0.3}
+{"ts": 1787129678.13841, "kind": "kill_switch_engaged", "message": "kill switch engaged -- order for AAPL blocked", "ticker": "AAPL"}
+{"ts": 1787129678.1389692, "kind": "circuit_breaker_halt", "message": "circuit breaker tier=halt_new_entries -- new entry for AAPL blocked", "ticker": "AAPL", "tier": "halt_new_entries"}
+{"ts": 1787129678.139528, "kind": "circuit_breaker_halt", "message": "circuit breaker tier=full_flatten -- new entry for AAPL blocked", "ticker": "AAPL", "tier": "full_flatten"}
+{"ts": 1787129678.1407502, "kind": "risk_blocked", "message": "risk limits blocked order for AAPL: total exposure 59.00%+10.00% would exceed max 60.00%", "ticker": "AAPL", "size_fraction": 0.1}
+{"ts": 1787129678.141336, "kind": "risk_blocked", "message": "risk limits blocked order for AAPL: daily loss -5.00% breached -3.00% cap", "ticker": "AAPL", "size_fraction": 0.08958333333333333}
+{"ts": 1787129692.751209, "kind": "kill_switch_engaged", "message": "kill switch engaged -- order for AAPL blocked", "ticker": "AAPL"}
+{"ts": 1787129692.924885, "kind": "position_opened", "message": "paper position opened: AAPL long @ 310.03", "ticker": "AAPL", "direction": "long", "fill_price": 310.0299987792969, "notional": 10000.0}
+{"ts": 1787129693.044995, "kind": "position_opened", "message": "paper position opened: AAPL long @ 310.03", "ticker": "AAPL", "direction": "long", "fill_price": 310.0299987792969, "notional": 10000.0}
+{"ts": 1787129693.127118, "kind": "position_closed", "message": "paper position closed: AAPL pnl=0.00 (holding_period_exit)", "ticker": "AAPL", "exit_price": 310.0299987792969, "realized_pnl": 0.0, "reason": "holding_period_exit"}
+{"ts": 1787152073.8261938, "kind": "position_opened", "message": "paper position opened: AAPL long @ 318.67", "ticker": "AAPL", "direction": "long", "fill_price": 318.6700134277344, "notional": 10000.0}
+{"ts": 1787152184.605227, "kind": "position_opened", "message": "paper position opened: AAPL long @ 318.67", "ticker": "AAPL", "direction": "long", "fill_price": 318.6700134277344, "notional": 8958.33}
+{"ts": 1787152184.708935, "kind": "position_opened", "message": "paper position opened: AAPL long @ 318.67", "ticker": "AAPL", "direction": "long", "fill_price": 318.6700134277344, "notional": 8958.33}
+{"ts": 1787152184.808086, "kind": "position_opened", "message": "paper position opened: AAPL long @ 318.67", "ticker": "AAPL", "direction": "long", "fill_price": 318.6700134277344, "notional": 8958.33}
+{"ts": 1787152184.9014761, "kind": "position_opened", "message": "paper position opened: AAPL long @ 318.67", "ticker": "AAPL", "direction": "long", "fill_price": 318.6700134277344, "notional": 8958.33}
+{"ts": 1787152185.0088, "kind": "position_closed", "message": "paper position closed: AAPL pnl=0.00 (holding_period_exit)", "ticker": "AAPL", "exit_price": 318.6700134277344, "realized_pnl": 0.0, "reason": "holding_period_exit"}
+{"ts": 1787152185.1372778, "kind": "position_opened", "message": "paper position opened: AAPL long @ 318.67", "ticker": "AAPL", "direction": "long", "fill_price": 318.6700134277344, "notional": 8958.33}
+{"ts": 1787152185.510584, "kind": "position_opened", "message": "paper position opened: AAPL long @ 318.67", "ticker": "AAPL", "direction": "long", "fill_price": 318.6700134277344, "notional": 8958.33}
+{"ts": 1787152185.5894778, "kind": "position_closed", "message": "paper position closed: AAPL pnl=0.00 (holding_period_exit)", "ticker": "AAPL", "exit_price": 318.6700134277344, "realized_pnl": 0.0, "reason": "holding_period_exit"}
+{"ts": 1787152185.665266, "kind": "position_opened", "message": "paper position opened: AAPL long @ 318.67", "ticker": "AAPL", "direction": "long", "fill_price": 318.6700134277344, "notional": 8958.33}
+{"ts": 1787152185.821368, "kind": "position_opened", "message": "paper position opened: MSFT long @ 484.01", "ticker": "MSFT", "direction": "long", "fill_price": 484.010009765625, "notional": 8958.33}
+{"ts": 1787152190.838172, "kind": "position_opened", "message": "paper position opened: AAPL long @ 318.54", "ticker": "AAPL", "direction": "long", "fill_price": 318.5400085449219, "notional": 10000.0}
+{"ts": 1787152191.973068, "kind": "position_closed", "message": "paper position closed: AAPL pnl=10933.50 (holding_period_exit)", "ticker": "AAPL", "exit_price": 318.6700134277344, "realized_pnl": 10933.5, "reason": "holding_period_exit"}
+{"ts": 1787152191.976054, "kind": "circuit_breaker_halt", "message": "circuit breaker tier=halt_new_entries -- new entry for AAPL blocked", "ticker": "AAPL", "tier": "halt_new_entries"}
+{"ts": 1787152191.976873, "kind": "kill_switch_engaged", "message": "kill switch engaged -- order for AAPL blocked", "ticker": "AAPL"}
+{"ts": 1787152191.977626, "kind": "drawdown_cap_tripped", "message": "drawdown cap tripped, kill switch engaged: drawdown 30.00% from HWM 100000.00 (current 70000.00) vs cap 20.00%", "ticker": "AAPL", "drawdown_pct": 0.3}
+{"ts": 1787152191.977698, "kind": "kill_switch_engaged", "message": "kill switch engaged -- order for AAPL blocked", "ticker": "AAPL"}
+{"ts": 1787152191.978334, "kind": "circuit_breaker_halt", "message": "circuit breaker tier=halt_new_entries -- new entry for AAPL blocked", "ticker": "AAPL", "tier": "halt_new_entries"}
+{"ts": 1787152191.978985, "kind": "circuit_breaker_halt", "message": "circuit breaker tier=full_flatten -- new entry for AAPL blocked", "ticker": "AAPL", "tier": "full_flatten"}
+{"ts": 1787152191.980227, "kind": "risk_blocked", "message": "risk limits blocked order for AAPL: total exposure 59.00%+10.00% would exceed max 60.00%", "ticker": "AAPL", "size_fraction": 0.1}
+{"ts": 1787152191.98086, "kind": "risk_blocked", "message": "risk limits blocked order for AAPL: daily loss -5.00% breached -3.00% cap", "ticker": "AAPL", "size_fraction": 0.08958333333333333}
+{"ts": 1787152208.398944, "kind": "kill_switch_engaged", "message": "kill switch engaged -- order for AAPL blocked", "ticker": "AAPL"}
+{"ts": 1787152208.610284, "kind": "position_opened", "message": "paper position opened: AAPL long @ 318.60", "ticker": "AAPL", "direction": "long", "fill_price": 318.59600830078125, "notional": 10000.0}
+{"ts": 1787152208.676179, "kind": "position_opened", "message": "paper position opened: AAPL long @ 318.60", "ticker": "AAPL", "direction": "long", "fill_price": 318.59600830078125, "notional": 10000.0}
+{"ts": 1787152208.7424798, "kind": "position_closed", "message": "paper position closed: AAPL pnl=0.00 (holding_period_exit)", "ticker": "AAPL", "exit_price": 318.59600830078125, "realized_pnl": 0.0, "reason": "holding_period_exit"}
+{"ts": 1787152257.355131, "kind": "position_opened", "message": "paper position opened: AAPL long @ 318.60", "ticker": "AAPL", "direction": "long", "fill_price": 318.5950012207031, "notional": 8958.33}
+{"ts": 1787152257.429893, "kind": "position_opened", "message": "paper position opened: AAPL long @ 318.60", "ticker": "AAPL", "direction": "long", "fill_price": 318.5950012207031, "notional": 8958.33}
+{"ts": 1787152257.500063, "kind": "position_opened", "message": "paper position opened: AAPL long @ 318.60", "ticker": "AAPL", "direction": "long", "fill_price": 318.5950012207031, "notional": 8958.33}
+{"ts": 1787152257.576641, "kind": "position_opened", "message": "paper position opened: AAPL long @ 318.60", "ticker": "AAPL", "direction": "long", "fill_price": 318.5950012207031, "notional": 8958.33}
+{"ts": 1787152257.6510668, "kind": "position_closed", "message": "paper position closed: AAPL pnl=0.00 (holding_period_exit)", "ticker": "AAPL", "exit_price": 318.5950012207031, "realized_pnl": 0.0, "reason": "holding_period_exit"}
+{"ts": 1787152257.7295501, "kind": "position_opened", "message": "paper position opened: AAPL long @ 318.60", "ticker": "AAPL", "direction": "long", "fill_price": 318.5950012207031, "notional": 8958.33}
+{"ts": 1787152257.812198, "kind": "position_opened", "message": "paper position opened: AAPL long @ 318.60", "ticker": "AAPL", "direction": "long", "fill_price": 318.5950012207031, "notional": 8958.33}
+{"ts": 1787152257.8768508, "kind": "position_closed", "message": "paper position closed: AAPL pnl=0.00 (holding_period_exit)", "ticker": "AAPL", "exit_price": 318.5950012207031, "realized_pnl": 0.0, "reason": "holding_period_exit"}
+{"ts": 1787152257.9482172, "kind": "position_opened", "message": "paper position opened: AAPL long @ 318.60", "ticker": "AAPL", "direction": "long", "fill_price": 318.5950012207031, "notional": 8958.33}
+{"ts": 1787152258.12319, "kind": "position_opened", "message": "paper position opened: MSFT long @ 484.39", "ticker": "MSFT", "direction": "long", "fill_price": 484.3900146484375, "notional": 8958.33}
+{"ts": 1787152263.182539, "kind": "position_opened", "message": "paper position opened: AAPL long @ 318.57", "ticker": "AAPL", "direction": "long", "fill_price": 318.57000732421875, "notional": 10000.0}
+{"ts": 1787152264.288756, "kind": "position_closed", "message": "paper position closed: AAPL pnl=10929.75 (holding_period_exit)", "ticker": "AAPL", "exit_price": 318.5950012207031, "realized_pnl": 10929.75, "reason": "holding_period_exit"}
+{"ts": 1787152264.2913122, "kind": "circuit_breaker_halt", "message": "circuit breaker tier=halt_new_entries -- new entry for AAPL blocked", "ticker": "AAPL", "tier": "halt_new_entries"}
+{"ts": 1787152264.2920241, "kind": "kill_switch_engaged", "message": "kill switch engaged -- order for AAPL blocked", "ticker": "AAPL"}
+{"ts": 1787152264.292827, "kind": "drawdown_cap_tripped", "message": "drawdown cap tripped, kill switch engaged: drawdown 30.00% from HWM 100000.00 (current 70000.00) vs cap 20.00%", "ticker": "AAPL", "drawdown_pct": 0.3}
+{"ts": 1787152264.292921, "kind": "kill_switch_engaged", "message": "kill switch engaged -- order for AAPL blocked", "ticker": "AAPL"}
+{"ts": 1787152264.293531, "kind": "circuit_breaker_halt", "message": "circuit breaker tier=halt_new_entries -- new entry for AAPL blocked", "ticker": "AAPL", "tier": "halt_new_entries"}
+{"ts": 1787152264.294092, "kind": "circuit_breaker_halt", "message": "circuit breaker tier=full_flatten -- new entry for AAPL blocked", "ticker": "AAPL", "tier": "full_flatten"}
+{"ts": 1787152264.2951639, "kind": "risk_blocked", "message": "risk limits blocked order for AAPL: total exposure 59.00%+10.00% would exceed max 60.00%", "ticker": "AAPL", "size_fraction": 0.1}
+{"ts": 1787152264.295747, "kind": "risk_blocked", "message": "risk limits blocked order for AAPL: daily loss -5.00% breached -3.00% cap", "ticker": "AAPL", "size_fraction": 0.08958333333333333}
+{"ts": 1787152283.749105, "kind": "kill_switch_engaged", "message": "kill switch engaged -- order for AAPL blocked", "ticker": "AAPL"}
+{"ts": 1787152283.95321, "kind": "position_opened", "message": "paper position opened: AAPL long @ 318.58", "ticker": "AAPL", "direction": "long", "fill_price": 318.5758056640625, "notional": 10000.0}
+{"ts": 1787152284.0362592, "kind": "position_opened", "message": "paper position opened: AAPL long @ 318.58", "ticker": "AAPL", "direction": "long", "fill_price": 318.5758056640625, "notional": 10000.0}
+{"ts": 1787152284.130562, "kind": "position_closed", "message": "paper position closed: AAPL pnl=0.00 (holding_period_exit)", "ticker": "AAPL", "exit_price": 318.5758056640625, "realized_pnl": 0.0, "reason": "holding_period_exit"}
+{"ts": 1787152823.149809, "kind": "position_opened", "message": "paper position opened: AAPL long @ 318.79", "ticker": "AAPL", "direction": "long", "fill_price": 318.785400390625, "notional": 8958.33}
+{"ts": 1787152823.2248378, "kind": "position_opened", "message": "paper position opened: AAPL long @ 318.79", "ticker": "AAPL", "direction": "long", "fill_price": 318.785400390625, "notional": 8958.33}
+{"ts": 1787152823.296934, "kind": "position_opened", "message": "paper position opened: AAPL long @ 318.79", "ticker": "AAPL", "direction": "long", "fill_price": 318.785400390625, "notional": 8958.33}
+{"ts": 1787152823.3697212, "kind": "position_opened", "message": "paper position opened: AAPL long @ 318.79", "ticker": "AAPL", "direction": "long", "fill_price": 318.785400390625, "notional": 8958.33}
+{"ts": 1787152823.448064, "kind": "position_closed", "message": "paper position closed: AAPL pnl=0.00 (holding_period_exit)", "ticker": "AAPL", "exit_price": 318.785400390625, "realized_pnl": 0.0, "reason": "holding_period_exit"}
+{"ts": 1787152823.524866, "kind": "position_opened", "message": "paper position opened: AAPL long @ 318.79", "ticker": "AAPL", "direction": "long", "fill_price": 318.785400390625, "notional": 8958.33}
+{"ts": 1787152823.7281458, "kind": "position_opened", "message": "paper position opened: AAPL long @ 318.79", "ticker": "AAPL", "direction": "long", "fill_price": 318.785400390625, "notional": 8958.33}
+{"ts": 1787152823.876105, "kind": "position_closed", "message": "paper position closed: AAPL pnl=0.00 (holding_period_exit)", "ticker": "AAPL", "exit_price": 318.785400390625, "realized_pnl": 0.0, "reason": "holding_period_exit"}
+{"ts": 1787152823.955432, "kind": "position_opened", "message": "paper position opened: AAPL long @ 318.79", "ticker": "AAPL", "direction": "long", "fill_price": 318.785400390625, "notional": 8958.33}
+{"ts": 1787152824.1224298, "kind": "position_opened", "message": "paper position opened: MSFT long @ 484.63", "ticker": "MSFT", "direction": "long", "fill_price": 484.6300048828125, "notional": 8958.33}
+{"ts": 1787152829.184101, "kind": "position_opened", "message": "paper position opened: AAPL long @ 318.80", "ticker": "AAPL", "direction": "long", "fill_price": 318.7950134277344, "notional": 10000.0}
+{"ts": 1787152830.293906, "kind": "position_closed", "message": "paper position closed: AAPL pnl=10939.27 (holding_period_exit)", "ticker": "AAPL", "exit_price": 318.785400390625, "realized_pnl": 10939.27, "reason": "holding_period_exit"}
+{"ts": 1787152830.296711, "kind": "circuit_breaker_halt", "message": "circuit breaker tier=halt_new_entries -- new entry for AAPL blocked", "ticker": "AAPL", "tier": "halt_new_entries"}
+{"ts": 1787152830.297656, "kind": "kill_switch_engaged", "message": "kill switch engaged -- order for AAPL blocked", "ticker": "AAPL"}
+{"ts": 1787152830.2984068, "kind": "drawdown_cap_tripped", "message": "drawdown cap tripped, kill switch engaged: drawdown 30.00% from HWM 100000.00 (current 70000.00) vs cap 20.00%", "ticker": "AAPL", "drawdown_pct": 0.3}
+{"ts": 1787152830.2984781, "kind": "kill_switch_engaged", "message": "kill switch engaged -- order for AAPL blocked", "ticker": "AAPL"}
+{"ts": 1787152830.2990642, "kind": "circuit_breaker_halt", "message": "circuit breaker tier=halt_new_entries -- new entry for AAPL blocked", "ticker": "AAPL", "tier": "halt_new_entries"}
+{"ts": 1787152830.2996411, "kind": "circuit_breaker_halt", "message": "circuit breaker tier=full_flatten -- new entry for AAPL blocked", "ticker": "AAPL", "tier": "full_flatten"}
+{"ts": 1787152830.300748, "kind": "risk_blocked", "message": "risk limits blocked order for AAPL: total exposure 59.00%+10.00% would exceed max 60.00%", "ticker": "AAPL", "size_fraction": 0.1}
+{"ts": 1787152830.301323, "kind": "risk_blocked", "message": "risk limits blocked order for AAPL: daily loss -5.00% breached -3.00% cap", "ticker": "AAPL", "size_fraction": 0.08958333333333333}
+{"ts": 1787152846.4904552, "kind": "kill_switch_engaged", "message": "kill switch engaged -- order for AAPL blocked", "ticker": "AAPL"}
+{"ts": 1787152846.685388, "kind": "position_opened", "message": "paper position opened: AAPL long @ 318.81", "ticker": "AAPL", "direction": "long", "fill_price": 318.80999755859375, "notional": 10000.0}
+{"ts": 1787152846.767194, "kind": "position_opened", "message": "paper position opened: AAPL long @ 318.81", "ticker": "AAPL", "direction": "long", "fill_price": 318.80999755859375, "notional": 10000.0}
+{"ts": 1787152846.846194, "kind": "position_closed", "message": "paper position closed: AAPL pnl=0.00 (holding_period_exit)", "ticker": "AAPL", "exit_price": 318.80999755859375, "realized_pnl": 0.0, "reason": "holding_period_exit"}
+{"ts": 1787152873.787457, "kind": "position_opened", "message": "paper position opened: AAPL long @ 318.60", "ticker": "AAPL", "direction": "long", "fill_price": 318.6000061035156, "notional": 8958.33}
+{"ts": 1787152873.868326, "kind": "position_opened", "message": "paper position opened: AAPL long @ 318.60", "ticker": "AAPL", "direction": "long", "fill_price": 318.6000061035156, "notional": 8958.33}
+{"ts": 1787152873.938913, "kind": "position_opened", "message": "paper position opened: AAPL long @ 318.60", "ticker": "AAPL", "direction": "long", "fill_price": 318.6000061035156, "notional": 8958.33}
+{"ts": 1787152874.022128, "kind": "position_opened", "message": "paper position opened: AAPL long @ 318.60", "ticker": "AAPL", "direction": "long", "fill_price": 318.6000061035156, "notional": 8958.33}
+{"ts": 1787152874.088991, "kind": "position_closed", "message": "paper position closed: AAPL pnl=0.00 (holding_period_exit)", "ticker": "AAPL", "exit_price": 318.6000061035156, "realized_pnl": 0.0, "reason": "holding_period_exit"}
+{"ts": 1787152874.165285, "kind": "position_opened", "message": "paper position opened: AAPL long @ 318.60", "ticker": "AAPL", "direction": "long", "fill_price": 318.6000061035156, "notional": 8958.33}
+{"ts": 1787152874.246803, "kind": "position_opened", "message": "paper position opened: AAPL long @ 318.60", "ticker": "AAPL", "direction": "long", "fill_price": 318.6000061035156, "notional": 8958.33}
+{"ts": 1787152874.35158, "kind": "position_closed", "message": "paper position closed: AAPL pnl=0.00 (holding_period_exit)", "ticker": "AAPL", "exit_price": 318.6000061035156, "realized_pnl": 0.0, "reason": "holding_period_exit"}
+{"ts": 1787152874.459271, "kind": "position_opened", "message": "paper position opened: AAPL long @ 318.60", "ticker": "AAPL", "direction": "long", "fill_price": 318.6000061035156, "notional": 8958.33}
+{"ts": 1787152874.6645849, "kind": "position_opened", "message": "paper position opened: MSFT long @ 484.24", "ticker": "MSFT", "direction": "long", "fill_price": 484.2449951171875, "notional": 8958.33}
+{"ts": 1787152879.726495, "kind": "position_opened", "message": "paper position opened: AAPL long @ 318.63", "ticker": "AAPL", "direction": "long", "fill_price": 318.6300048828125, "notional": 10000.0}
+{"ts": 1787152880.812871, "kind": "position_closed", "message": "paper position closed: AAPL pnl=10930.00 (holding_period_exit)", "ticker": "AAPL", "exit_price": 318.6000061035156, "realized_pnl": 10930.0, "reason": "holding_period_exit"}
+{"ts": 1787152880.8153758, "kind": "circuit_breaker_halt", "message": "circuit breaker tier=halt_new_entries -- new entry for AAPL blocked", "ticker": "AAPL", "tier": "halt_new_entries"}
+{"ts": 1787152880.816097, "kind": "kill_switch_engaged", "message": "kill switch engaged -- order for AAPL blocked", "ticker": "AAPL"}
+{"ts": 1787152880.816776, "kind": "drawdown_cap_tripped", "message": "drawdown cap tripped, kill switch engaged: drawdown 30.00% from HWM 100000.00 (current 70000.00) vs cap 20.00%", "ticker": "AAPL", "drawdown_pct": 0.3}
+{"ts": 1787152880.816839, "kind": "kill_switch_engaged", "message": "kill switch engaged -- order for AAPL blocked", "ticker": "AAPL"}
+{"ts": 1787152880.817375, "kind": "circuit_breaker_halt", "message": "circuit breaker tier=halt_new_entries -- new entry for AAPL blocked", "ticker": "AAPL", "tier": "halt_new_entries"}
+{"ts": 1787152880.817914, "kind": "circuit_breaker_halt", "message": "circuit breaker tier=full_flatten -- new entry for AAPL blocked", "ticker": "AAPL", "tier": "full_flatten"}
+{"ts": 1787152880.818934, "kind": "risk_blocked", "message": "risk limits blocked order for AAPL: total exposure 59.00%+10.00% would exceed max 60.00%", "ticker": "AAPL", "size_fraction": 0.1}
+{"ts": 1787152880.8194802, "kind": "risk_blocked", "message": "risk limits blocked order for AAPL: daily loss -5.00% breached -3.00% cap", "ticker": "AAPL", "size_fraction": 0.08958333333333333}
+{"ts": 1787152895.920418, "kind": "kill_switch_engaged", "message": "kill switch engaged -- order for AAPL blocked", "ticker": "AAPL"}
+{"ts": 1787152896.085527, "kind": "position_opened", "message": "paper position opened: AAPL long @ 318.58", "ticker": "AAPL", "direction": "long", "fill_price": 318.5799865722656, "notional": 10000.0}
+{"ts": 1787152896.151592, "kind": "position_opened", "message": "paper position opened: AAPL long @ 318.58", "ticker": "AAPL", "direction": "long", "fill_price": 318.5799865722656, "notional": 10000.0}
+{"ts": 1787152896.22634, "kind": "position_closed", "message": "paper position closed: AAPL pnl=0.00 (holding_period_exit)", "ticker": "AAPL", "exit_price": 318.5799865722656, "realized_pnl": 0.0, "reason": "holding_period_exit"}
+{"ts": 1787152958.216556, "kind": "position_opened", "message": "paper position opened: AAPL long @ 318.75", "ticker": "AAPL", "direction": "long", "fill_price": 318.75, "notional": 8958.33}
+{"ts": 1787152958.307789, "kind": "position_opened", "message": "paper position opened: AAPL long @ 318.75", "ticker": "AAPL", "direction": "long", "fill_price": 318.75, "notional": 8958.33}
+{"ts": 1787152958.3806841, "kind": "position_opened", "message": "paper position opened: AAPL long @ 318.75", "ticker": "AAPL", "direction": "long", "fill_price": 318.75, "notional": 8958.33}
+{"ts": 1787152958.460979, "kind": "position_opened", "message": "paper position opened: AAPL long @ 318.75", "ticker": "AAPL", "direction": "long", "fill_price": 318.75, "notional": 8958.33}
+{"ts": 1787152958.527266, "kind": "position_closed", "message": "paper position closed: AAPL pnl=0.00 (holding_period_exit)", "ticker": "AAPL", "exit_price": 318.75, "realized_pnl": 0.0, "reason": "holding_period_exit"}
+{"ts": 1787152958.5983639, "kind": "position_opened", "message": "paper position opened: AAPL long @ 318.75", "ticker": "AAPL", "direction": "long", "fill_price": 318.75, "notional": 8958.33}
+{"ts": 1787152958.6702988, "kind": "position_opened", "message": "paper position opened: AAPL long @ 318.75", "ticker": "AAPL", "direction": "long", "fill_price": 318.75, "notional": 8958.33}
+{"ts": 1787152958.7489762, "kind": "position_closed", "message": "paper position closed: AAPL pnl=0.00 (holding_period_exit)", "ticker": "AAPL", "exit_price": 318.75, "realized_pnl": 0.0, "reason": "holding_period_exit"}
+{"ts": 1787152958.822272, "kind": "position_opened", "message": "paper position opened: AAPL long @ 318.75", "ticker": "AAPL", "direction": "long", "fill_price": 318.75, "notional": 8958.33}
+{"ts": 1787152958.9705658, "kind": "position_opened", "message": "paper position opened: MSFT long @ 483.79", "ticker": "MSFT", "direction": "long", "fill_price": 483.7900085449219, "notional": 8958.33}
+{"ts": 1787152964.291043, "kind": "position_opened", "message": "paper position opened: AAPL long @ 318.70", "ticker": "AAPL", "direction": "long", "fill_price": 318.70001220703125, "notional": 10000.0}
+{"ts": 1787152965.41221, "kind": "position_closed", "message": "paper position closed: AAPL pnl=10937.50 (holding_period_exit)", "ticker": "AAPL", "exit_price": 318.75, "realized_pnl": 10937.5, "reason": "holding_period_exit"}
+{"ts": 1787152965.4147909, "kind": "circuit_breaker_halt", "message": "circuit breaker tier=halt_new_entries -- new entry for AAPL blocked", "ticker": "AAPL", "tier": "halt_new_entries"}
+{"ts": 1787152965.4156039, "kind": "kill_switch_engaged", "message": "kill switch engaged -- order for AAPL blocked", "ticker": "AAPL"}
+{"ts": 1787152965.416401, "kind": "drawdown_cap_tripped", "message": "drawdown cap tripped, kill switch engaged: drawdown 30.00% from HWM 100000.00 (current 70000.00) vs cap 20.00%", "ticker": "AAPL", "drawdown_pct": 0.3}
+{"ts": 1787152965.4164639, "kind": "kill_switch_engaged", "message": "kill switch engaged -- order for AAPL blocked", "ticker": "AAPL"}
+{"ts": 1787152965.41698, "kind": "circuit_breaker_halt", "message": "circuit breaker tier=halt_new_entries -- new entry for AAPL blocked", "ticker": "AAPL", "tier": "halt_new_entries"}
+{"ts": 1787152965.417498, "kind": "circuit_breaker_halt", "message": "circuit breaker tier=full_flatten -- new entry for AAPL blocked", "ticker": "AAPL", "tier": "full_flatten"}
+{"ts": 1787152965.41852, "kind": "risk_blocked", "message": "risk limits blocked order for AAPL: total exposure 59.00%+10.00% would exceed max 60.00%", "ticker": "AAPL", "size_fraction": 0.1}
+{"ts": 1787152965.4190478, "kind": "risk_blocked", "message": "risk limits blocked order for AAPL: daily loss -5.00% breached -3.00% cap", "ticker": "AAPL", "size_fraction": 0.08958333333333333}
+{"ts": 1787152981.579981, "kind": "kill_switch_engaged", "message": "kill switch engaged -- order for AAPL blocked", "ticker": "AAPL"}
+{"ts": 1787152981.775091, "kind": "position_opened", "message": "paper position opened: AAPL long @ 318.70", "ticker": "AAPL", "direction": "long", "fill_price": 318.69500732421875, "notional": 10000.0}
+{"ts": 1787152981.851137, "kind": "position_opened", "message": "paper position opened: AAPL long @ 318.70", "ticker": "AAPL", "direction": "long", "fill_price": 318.69500732421875, "notional": 10000.0}
+{"ts": 1787152981.932896, "kind": "position_closed", "message": "paper position closed: AAPL pnl=0.00 (holding_period_exit)", "ticker": "AAPL", "exit_price": 318.69500732421875, "realized_pnl": 0.0, "reason": "holding_period_exit"}
+{"ts": 1787153291.145113, "kind": "position_opened", "message": "paper position opened: AAPL long @ 318.11", "ticker": "AAPL", "direction": "long", "fill_price": 318.114990234375, "notional": 8958.33}
+{"ts": 1787153291.212729, "kind": "position_opened", "message": "paper position opened: AAPL long @ 318.11", "ticker": "AAPL", "direction": "long", "fill_price": 318.114990234375, "notional": 8958.33}
+{"ts": 1787153291.285138, "kind": "position_opened", "message": "paper position opened: AAPL long @ 318.11", "ticker": "AAPL", "direction": "long", "fill_price": 318.114990234375, "notional": 8958.33}
+{"ts": 1787153291.370503, "kind": "position_opened", "message": "paper position opened: AAPL long @ 318.11", "ticker": "AAPL", "direction": "long", "fill_price": 318.114990234375, "notional": 8958.33}
+{"ts": 1787153291.5080588, "kind": "position_closed", "message": "paper position closed: AAPL pnl=0.00 (holding_period_exit)", "ticker": "AAPL", "exit_price": 318.114990234375, "realized_pnl": 0.0, "reason": "holding_period_exit"}
+{"ts": 1787153291.581284, "kind": "position_opened", "message": "paper position opened: AAPL long @ 318.11", "ticker": "AAPL", "direction": "long", "fill_price": 318.114990234375, "notional": 8958.33}
+{"ts": 1787153291.6510851, "kind": "position_opened", "message": "paper position opened: AAPL long @ 318.11", "ticker": "AAPL", "direction": "long", "fill_price": 318.114990234375, "notional": 8958.33}
+{"ts": 1787153291.717344, "kind": "position_closed", "message": "paper position closed: AAPL pnl=0.00 (holding_period_exit)", "ticker": "AAPL", "exit_price": 318.114990234375, "realized_pnl": 0.0, "reason": "holding_period_exit"}
+{"ts": 1787153291.7864451, "kind": "position_opened", "message": "paper position opened: AAPL long @ 318.11", "ticker": "AAPL", "direction": "long", "fill_price": 318.114990234375, "notional": 8958.33}
+{"ts": 1787153292.031704, "kind": "position_opened", "message": "paper position opened: MSFT long @ 483.95", "ticker": "MSFT", "direction": "long", "fill_price": 483.94500732421875, "notional": 8958.33}
+{"ts": 1787153297.338965, "kind": "position_opened", "message": "paper position opened: AAPL long @ 318.10", "ticker": "AAPL", "direction": "long", "fill_price": 318.1000061035156, "notional": 10000.0}
+{"ts": 1787153298.4313002, "kind": "position_closed", "message": "paper position closed: AAPL pnl=10905.75 (holding_period_exit)", "ticker": "AAPL", "exit_price": 318.114990234375, "realized_pnl": 10905.75, "reason": "holding_period_exit"}
+{"ts": 1787153298.434056, "kind": "circuit_breaker_halt", "message": "circuit breaker tier=halt_new_entries -- new entry for AAPL blocked", "ticker": "AAPL", "tier": "halt_new_entries"}
+{"ts": 1787153298.434747, "kind": "kill_switch_engaged", "message": "kill switch engaged -- order for AAPL blocked", "ticker": "AAPL"}
+{"ts": 1787153298.435406, "kind": "drawdown_cap_tripped", "message": "drawdown cap tripped, kill switch engaged: drawdown 30.00% from HWM 100000.00 (current 70000.00) vs cap 20.00%", "ticker": "AAPL", "drawdown_pct": 0.3}
+{"ts": 1787153298.4354718, "kind": "kill_switch_engaged", "message": "kill switch engaged -- order for AAPL blocked", "ticker": "AAPL"}
+{"ts": 1787153298.4360309, "kind": "circuit_breaker_halt", "message": "circuit breaker tier=halt_new_entries -- new entry for AAPL blocked", "ticker": "AAPL", "tier": "halt_new_entries"}
+{"ts": 1787153298.4365811, "kind": "circuit_breaker_halt", "message": "circuit breaker tier=full_flatten -- new entry for AAPL blocked", "ticker": "AAPL", "tier": "full_flatten"}
+{"ts": 1787153298.437873, "kind": "risk_blocked", "message": "risk limits blocked order for AAPL: total exposure 59.00%+10.00% would exceed max 60.00%", "ticker": "AAPL", "size_fraction": 0.1}
+{"ts": 1787153298.438567, "kind": "risk_blocked", "message": "risk limits blocked order for AAPL: daily loss -5.00% breached -3.00% cap", "ticker": "AAPL", "size_fraction": 0.08958333333333333}
+{"ts": 1787153312.6159968, "kind": "kill_switch_engaged", "message": "kill switch engaged -- order for AAPL blocked", "ticker": "AAPL"}
+{"ts": 1787153312.808883, "kind": "position_opened", "message": "paper position opened: AAPL long @ 318.15", "ticker": "AAPL", "direction": "long", "fill_price": 318.1549987792969, "notional": 10000.0}
+{"ts": 1787153312.904682, "kind": "position_opened", "message": "paper position opened: AAPL long @ 318.15", "ticker": "AAPL", "direction": "long", "fill_price": 318.1549987792969, "notional": 10000.0}
+{"ts": 1787153312.980185, "kind": "position_closed", "message": "paper position closed: AAPL pnl=0.00 (holding_period_exit)", "ticker": "AAPL", "exit_price": 318.1549987792969, "realized_pnl": 0.0, "reason": "holding_period_exit"}
+{"ts": 1787153614.508559, "kind": "position_closed", "message": "paper position closed: AAPL pnl=10884.50 (holding_period_exit)", "ticker": "AAPL", "exit_price": 317.69000244140625, "realized_pnl": 10884.5, "reason": "holding_period_exit"}
+{"ts": 1787564880.536432, "kind": "dead_mans_switch", "message": "no successful paper-trading cycle in 35.7h (threshold 26.0h) -- last heartbeat: 2026-08-22T15:03:51.532000", "age_hours": 35.74, "last_heartbeat": "2026-08-22T15:03:51.532000"}
+{"ts": 1787579280.607075, "kind": "dead_mans_switch", "message": "no successful paper-trading cycle in 39.7h (threshold 26.0h) -- last heartbeat: 2026-08-22T15:03:51.532000", "age_hours": 39.74, "last_heartbeat": "2026-08-22T15:03:51.532000"}
+{"ts": 1787593680.684424, "kind": "dead_mans_switch", "message": "no successful paper-trading cycle in 43.7h (threshold 26.0h) -- last heartbeat: 2026-08-22T15:03:51.532000", "age_hours": 43.74, "last_heartbeat": "2026-08-22T15:03:51.532000"}
+{"ts": 1787608080.776685, "kind": "dead_mans_switch", "message": "no successful paper-trading cycle in 47.7h (threshold 26.0h) -- last heartbeat: 2026-08-22T15:03:51.532000", "age_hours": 47.74, "last_heartbeat": "2026-08-22T15:03:51.532000"}
+{"ts": 1788767314.5803552, "kind": "dead_mans_switch", "message": "no successful paper-trading cycle in 56.7h (threshold 26.0h) -- last heartbeat: 2026-09-04T16:04:19.238000", "age_hours": 56.74, "last_heartbeat": "2026-09-04T16:04:19.238000"}
+{"ts": 1788781714.728431, "kind": "dead_mans_switch", "message": "no successful paper-trading cycle in 60.7h (threshold 26.0h) -- last heartbeat: 2026-09-04T16:04:19.238000", "age_hours": 60.74, "last_heartbeat": "2026-09-04T16:04:19.238000"}
+{"ts": 1789374820.99231, "kind": "dead_mans_switch", "message": "no successful paper-trading cycle in 57.2h (threshold 26.0h) -- last heartbeat: 2026-09-11T16:24:08.730000", "age_hours": 57.16, "last_heartbeat": "2026-09-11T16:24:08.730000"}
+{"ts": 1789389221.099273, "kind": "dead_mans_switch", "message": "no successful paper-trading cycle in 61.2h (threshold 26.0h) -- last heartbeat: 2026-09-11T16:24:08.730000", "age_hours": 61.16, "last_heartbeat": "2026-09-11T16:24:08.730000"}
+{"ts": 1789403621.191981, "kind": "dead_mans_switch", "message": "no successful paper-trading cycle in 65.2h (threshold 26.0h) -- last heartbeat: 2026-09-11T16:24:08.730000", "age_hours": 65.16, "last_heartbeat": "2026-09-11T16:24:08.730000"}

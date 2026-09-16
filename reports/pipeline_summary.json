@@ -1,0 +1,35 @@
+{
+  "universe_size": 75,
+  "universe_selection_rule": "Top 75 S&P 500 constituents (as of current Wikipedia constituent list) by 63-trading-day average dollar volume (close * volume), computed 2026-08-18.",
+  "tickers_ingested": 75,
+  "data_date_range": [
+    "2015-03-31",
+    "2026-08-14"
+  ],
+  "correlation_lookback_days": 60,
+  "n_correlation_snapshots": 2801,
+  "k_ev_stats": {
+    "min": 22,
+    "max": 30,
+    "mean": 27.02427704391289,
+    "median": 27.0
+  },
+  "ari_vs_prev_stats": {
+    "mean": 0.35331402144417184,
+    "median": 0.3405261844026358,
+    "pct_below_0.5": 0.9053909318100678
+  },
+  "anomalies": {
+    "cluster_count_collapse_dates": [],
+    "n_collapse_events": 0,
+    "negative_ari_dates_sample": [],
+    "n_negative_ari_events": 0
+  },
+  "data_quality": {
+    "tickers_with_gaps": 0,
+    "stale_feed_tickers": 0
+  },
+  "method_comparison_sample_size": 134,
+  "mean_ari_spectral_vs_sponge": 0.16622287055984417,
+  "runtime_seconds": 78.2
+}

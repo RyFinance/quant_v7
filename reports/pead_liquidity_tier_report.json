@@ -1,0 +1,248 @@
+{
+  "most_liquid": {
+    "tier": "most_liquid",
+    "n_events_total": 6245,
+    "partitions": [
+      {
+        "name": "train",
+        "start": "2015-04-28",
+        "end": "2020-05-12",
+        "n_dates": 742,
+        "n_rows": 3013
+      },
+      {
+        "name": "validation",
+        "start": "2020-07-15",
+        "end": "2021-08-06",
+        "n_dates": 170,
+        "n_rows": 732
+      },
+      {
+        "name": "holdout_a",
+        "start": "2021-09-29",
+        "end": "2022-11-09",
+        "n_dates": 171,
+        "n_rows": 769
+      },
+      {
+        "name": "holdout_b",
+        "start": "2023-01-19",
+        "end": "2024-02-09",
+        "n_dates": 170,
+        "n_rows": 747
+      },
+      {
+        "name": "holdout_c",
+        "start": "2024-03-22",
+        "end": "2025-06-27",
+        "n_dates": 191,
+        "n_rows": 817
+      }
+    ],
+    "holdout_results": {
+      "holdout_a": {
+        "n_events": 769,
+        "n_trades": 58,
+        "auc": 0.5612312564283009,
+        "accuracy": 0.5344603381014305,
+        "majority_accuracy": 0.490247,
+        "beats_majority": true,
+        "sharpe_ratio": 2.2396,
+        "annualized_return": 0.096207,
+        "max_drawdown": -0.02662
+      },
+      "holdout_b": {
+        "n_events": 747,
+        "n_trades": 64,
+        "auc": 0.6071537789427698,
+        "accuracy": 0.6037483266398929,
+        "majority_accuracy": 0.562249,
+        "beats_majority": true,
+        "sharpe_ratio": -0.07,
+        "annualized_return": -0.003013,
+        "max_drawdown": -0.042822
+      },
+      "holdout_c": {
+        "n_events": 817,
+        "n_trades": 66,
+        "auc": 0.5397622303798075,
+        "accuracy": 0.5385556915544676,
+        "majority_accuracy": 0.5153,
+        "beats_majority": true,
+        "sharpe_ratio": 2.5422,
+        "annualized_return": 0.115745,
+        "max_drawdown": -0.022263
+      }
+    },
+    "ensemble_weights": {
+      "mlp": 0.0821403857797768,
+      "adaboost": 0.23800925525473624,
+      "lightgbm": 0.3349299368566731,
+      "random_forest": 0.34492042210881385
+    }
+  },
+  "mid_liquid": {
+    "tier": "mid_liquid",
+    "n_events_total": 6216,
+    "partitions": [
+      {
+        "name": "train",
+        "start": "2015-04-28",
+        "end": "2020-04-14",
+        "n_dates": 695,
+        "n_rows": 2936
+      },
+      {
+        "name": "validation",
+        "start": "2020-05-22",
+        "end": "2021-07-22",
+        "n_dates": 158,
+        "n_rows": 661
+      },
+      {
+        "name": "holdout_a",
+        "start": "2021-09-10",
+        "end": "2022-10-26",
+        "n_dates": 159,
+        "n_rows": 672
+      },
+      {
+        "name": "holdout_b",
+        "start": "2022-12-15",
+        "end": "2024-02-07",
+        "n_dates": 159,
+        "n_rows": 708
+      },
+      {
+        "name": "holdout_c",
+        "start": "2024-03-22",
+        "end": "2025-06-25",
+        "n_dates": 179,
+        "n_rows": 795
+      }
+    ],
+    "holdout_results": {
+      "holdout_a": {
+        "n_events": 672,
+        "n_trades": 81,
+        "auc": 0.5764287994891443,
+        "accuracy": 0.5476190476190477,
+        "majority_accuracy": 0.517857,
+        "beats_majority": true,
+        "sharpe_ratio": 1.066,
+        "annualized_return": 0.038234,
+        "max_drawdown": -0.014131
+      },
+      "holdout_b": {
+        "n_events": 708,
+        "n_trades": 106,
+        "auc": 0.5850446879928823,
+        "accuracy": 0.5536723163841808,
+        "majority_accuracy": 0.55791,
+        "beats_majority": false,
+        "sharpe_ratio": 1.1997,
+        "annualized_return": 0.045283,
+        "max_drawdown": -0.018322
+      },
+      "holdout_c": {
+        "n_events": 795,
+        "n_trades": 101,
+        "auc": 0.6120635084682264,
+        "accuracy": 0.5937106918238994,
+        "majority_accuracy": 0.571069,
+        "beats_majority": true,
+        "sharpe_ratio": 2.2878,
+        "annualized_return": 0.089181,
+        "max_drawdown": -0.016542
+      }
+    },
+    "ensemble_weights": {
+      "mlp": 0.0,
+      "adaboost": 0.23103633709764146,
+      "lightgbm": 0.3528309134209112,
+      "random_forest": 0.4161327494814473
+    }
+  },
+  "least_liquid": {
+    "tier": "least_liquid",
+    "n_events_total": 6217,
+    "partitions": [
+      {
+        "name": "train",
+        "start": "2015-04-28",
+        "end": "2020-02-19",
+        "n_dates": 592,
+        "n_rows": 2927
+      },
+      {
+        "name": "validation",
+        "start": "2020-04-28",
+        "end": "2021-06-03",
+        "n_dates": 133,
+        "n_rows": 732
+      },
+      {
+        "name": "holdout_a",
+        "start": "2021-08-09",
+        "end": "2022-10-19",
+        "n_dates": 133,
+        "n_rows": 643
+      },
+      {
+        "name": "holdout_b",
+        "start": "2022-12-15",
+        "end": "2024-01-30",
+        "n_dates": 133,
+        "n_rows": 648
+      },
+      {
+        "name": "holdout_c",
+        "start": "2024-02-29",
+        "end": "2025-06-26",
+        "n_dates": 154,
+        "n_rows": 797
+      }
+    ],
+    "holdout_results": {
+      "holdout_a": {
+        "n_events": 643,
+        "n_trades": 83,
+        "auc": 0.5998089641395628,
+        "accuracy": 0.578538102643857,
+        "majority_accuracy": 0.524106,
+        "beats_majority": true,
+        "sharpe_ratio": 2.1046,
+        "annualized_return": 0.058054,
+        "max_drawdown": -0.013794
+      },
+      "holdout_b": {
+        "n_events": 648,
+        "n_trades": 90,
+        "auc": 0.5894895160576837,
+        "accuracy": 0.5694444444444444,
+        "majority_accuracy": 0.587963,
+        "beats_majority": false,
+        "sharpe_ratio": 0.6214,
+        "annualized_return": 0.013663,
+        "max_drawdown": -0.008654
+      },
+      "holdout_c": {
+        "n_events": 797,
+        "n_trades": 107,
+        "auc": 0.6242086193745232,
+        "accuracy": 0.589711417816813,
+        "majority_accuracy": 0.548306,
+        "beats_majority": true,
+        "sharpe_ratio": 1.0505,
+        "annualized_return": 0.037932,
+        "max_drawdown": -0.016942
+      }
+    },
+    "ensemble_weights": {
+      "mlp": 0.0,
+      "adaboost": 0.291971381886828,
+      "lightgbm": 0.26405127147548274,
+      "random_forest": 0.44397734663768934
+    }
+  }
+}

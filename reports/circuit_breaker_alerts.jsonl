@@ -1,0 +1,223 @@
+{"ts": 1787040758.432075, "kind": "halt_new_entries", "message": "halt new entries: ['magnitude']", "date": "2016-04-22 00:00:00", "details": ["single-asset AMD=52.29% (thr 35.00%), index=0.85% (thr 6.00%)"]}
+{"ts": 1787040758.432661, "kind": "rearmed", "message": "circuit breaker re-armed after 3 clean days", "date": "2016-04-27 00:00:00"}
+{"ts": 1787040758.477188, "kind": "halt_new_entries", "message": "halt new entries: ['magnitude']", "date": "2018-10-04 00:00:00", "details": ["single-asset SMCI=41.12% (thr 35.00%), index=-1.97% (thr 6.00%)"]}
+{"ts": 1787040758.477607, "kind": "rearmed", "message": "circuit breaker re-armed after 3 clean days", "date": "2018-10-09 00:00:00"}
+{"ts": 1787040758.503737, "kind": "halt_new_entries", "message": "halt new entries: ['magnitude']", "date": "2020-03-09 00:00:00", "details": ["single-asset C=16.17% (thr 35.00%), index=-8.28% (thr 6.00%)"]}
+{"ts": 1787040758.504132, "kind": "full_flatten", "message": "full flatten: 2 categories fired simultaneously", "date": "2020-03-12 00:00:00", "categories": ["magnitude", "structural"], "details": ["single-asset VRT=18.31% (thr 35.00%), index=-10.17% (thr 6.00%)", "mean |pairwise correlation|=0.65 (thr 0.60)"]}
+{"ts": 1787040758.509077, "kind": "rearmed", "message": "circuit breaker re-armed after 3 clean days", "date": "2020-06-16 00:00:00"}
+{"ts": 1787040758.529282, "kind": "halt_new_entries", "message": "halt new entries: ['magnitude']", "date": "2021-08-04 00:00:00", "details": ["single-asset HOOD=50.41% (thr 35.00%), index=0.84% (thr 6.00%)"]}
+{"ts": 1787040758.529653, "kind": "rearmed", "message": "circuit breaker re-armed after 3 clean days", "date": "2021-08-09 00:00:00"}
+{"ts": 1787040758.5396469, "kind": "halt_new_entries", "message": "halt new entries: ['magnitude']", "date": "2022-02-23 00:00:00", "details": ["single-asset VRT=36.74% (thr 35.00%), index=-2.58% (thr 6.00%)"]}
+{"ts": 1787040758.539961, "kind": "rearmed", "message": "circuit breaker re-armed after 3 clean days", "date": "2022-02-28 00:00:00"}
+{"ts": 1787040758.542576, "kind": "halt_new_entries", "message": "halt new entries: ['magnitude']", "date": "2022-04-20 00:00:00", "details": ["single-asset NFLX=35.12% (thr 35.00%), index=-0.78% (thr 6.00%)"]}
+{"ts": 1787040758.542867, "kind": "rearmed", "message": "circuit breaker re-armed after 3 clean days", "date": "2022-04-25 00:00:00"}
+{"ts": 1787040758.5526888, "kind": "halt_new_entries", "message": "halt new entries: ['magnitude']", "date": "2022-11-10 00:00:00", "details": ["single-asset APP=18.49% (thr 35.00%), index=7.16% (thr 6.00%)"]}
+{"ts": 1787040758.553003, "kind": "rearmed", "message": "circuit breaker re-armed after 3 clean days", "date": "2022-11-15 00:00:00"}
+{"ts": 1787040758.573521, "kind": "halt_new_entries", "message": "halt new entries: ['magnitude']", "date": "2024-01-19 00:00:00", "details": ["single-asset SMCI=35.94% (thr 35.00%), index=2.32% (thr 6.00%)"]}
+{"ts": 1787040758.5738702, "kind": "rearmed", "message": "circuit breaker re-armed after 3 clean days", "date": "2024-01-24 00:00:00"}
+{"ts": 1787040758.5883389, "kind": "halt_new_entries", "message": "halt new entries: ['magnitude']", "date": "2024-11-07 00:00:00", "details": ["single-asset APP=46.27% (thr 35.00%), index=1.80% (thr 6.00%)"]}
+{"ts": 1787040758.588667, "kind": "rearmed", "message": "circuit breaker re-armed after 3 clean days", "date": "2024-11-12 00:00:00"}
+{"ts": 1787040758.595278, "kind": "halt_new_entries", "message": "halt new entries: ['magnitude']", "date": "2025-04-03 00:00:00", "details": ["single-asset COHR=20.18% (thr 35.00%), index=-7.44% (thr 6.00%)"]}
+{"ts": 1787040758.595836, "kind": "rearmed", "message": "circuit breaker re-armed after 3 clean days", "date": "2025-04-14 00:00:00"}
+{"ts": 1787040758.598017, "kind": "halt_new_entries", "message": "halt new entries: ['structural']", "date": "2025-05-29 00:00:00", "details": ["mean |pairwise correlation|=0.60 (thr 0.60)"]}
+{"ts": 1787040758.599692, "kind": "rearmed", "message": "circuit breaker re-armed after 3 clean days", "date": "2025-07-02 00:00:00"}
+{"ts": 1787040758.6033149, "kind": "halt_new_entries", "message": "halt new entries: ['magnitude']", "date": "2025-09-10 00:00:00", "details": ["single-asset ORCL=35.95% (thr 35.00%), index=1.25% (thr 6.00%)"]}
+{"ts": 1787040758.603682, "kind": "rearmed", "message": "circuit breaker re-armed after 3 clean days", "date": "2025-09-15 00:00:00"}
+{"ts": 1787040839.839932, "kind": "halt_new_entries", "message": "halt new entries: ['magnitude']", "date": "day0", "details": ["test"]}
+{"ts": 1787040839.840384, "kind": "full_flatten", "message": "full flatten: 2 categories fired simultaneously", "date": "day0", "categories": ["magnitude", "structural"], "details": ["test", "test"]}
+{"ts": 1787040839.840652, "kind": "halt_new_entries", "message": "halt new entries: ['magnitude']", "date": "day0", "details": ["test"]}
+{"ts": 1787040839.840724, "kind": "rearmed", "message": "circuit breaker re-armed after 3 clean days", "date": "day3"}
+{"ts": 1787040839.840972, "kind": "halt_new_entries", "message": "halt new entries: ['magnitude']", "date": "day0", "details": ["test"]}
+{"ts": 1787040839.841224, "kind": "full_flatten", "message": "full flatten: 2 categories fired simultaneously", "date": "day0", "categories": ["magnitude", "structural"], "details": ["test", "test"]}
+{"ts": 1787041461.034185, "kind": "halt_new_entries", "message": "halt new entries: ['magnitude']", "date": "day0", "details": ["test"]}
+{"ts": 1787041461.035291, "kind": "full_flatten", "message": "full flatten: 2 categories fired simultaneously", "date": "day0", "categories": ["magnitude", "structural"], "details": ["test", "test"]}
+{"ts": 1787041461.035618, "kind": "halt_new_entries", "message": "halt new entries: ['magnitude']", "date": "day0", "details": ["test"]}
+{"ts": 1787041461.035698, "kind": "rearmed", "message": "circuit breaker re-armed after 3 clean days", "date": "day3"}
+{"ts": 1787041461.035985, "kind": "halt_new_entries", "message": "halt new entries: ['magnitude']", "date": "day0", "details": ["test"]}
+{"ts": 1787041461.036279, "kind": "full_flatten", "message": "full flatten: 2 categories fired simultaneously", "date": "day0", "categories": ["magnitude", "structural"], "details": ["test", "test"]}
+{"ts": 1787041488.1243892, "kind": "halt_new_entries", "message": "halt new entries: ['magnitude']", "date": "day0", "details": ["test"]}
+{"ts": 1787041488.1250482, "kind": "full_flatten", "message": "full flatten: 2 categories fired simultaneously", "date": "day0", "categories": ["magnitude", "structural"], "details": ["test", "test"]}
+{"ts": 1787041488.1254091, "kind": "halt_new_entries", "message": "halt new entries: ['magnitude']", "date": "day0", "details": ["test"]}
+{"ts": 1787041488.125494, "kind": "rearmed", "message": "circuit breaker re-armed after 3 clean days", "date": "day3"}
+{"ts": 1787041488.1258051, "kind": "halt_new_entries", "message": "halt new entries: ['magnitude']", "date": "day0", "details": ["test"]}
+{"ts": 1787041488.126126, "kind": "full_flatten", "message": "full flatten: 2 categories fired simultaneously", "date": "day0", "categories": ["magnitude", "structural"], "details": ["test", "test"]}
+{"ts": 1787041513.542301, "kind": "halt_new_entries", "message": "halt new entries: ['magnitude']", "date": "day0", "details": ["test"]}
+{"ts": 1787041513.542836, "kind": "full_flatten", "message": "full flatten: 2 categories fired simultaneously", "date": "day0", "categories": ["magnitude", "structural"], "details": ["test", "test"]}
+{"ts": 1787041513.543253, "kind": "halt_new_entries", "message": "halt new entries: ['magnitude']", "date": "day0", "details": ["test"]}
+{"ts": 1787041513.543349, "kind": "rearmed", "message": "circuit breaker re-armed after 3 clean days", "date": "day3"}
+{"ts": 1787041513.543679, "kind": "halt_new_entries", "message": "halt new entries: ['magnitude']", "date": "day0", "details": ["test"]}
+{"ts": 1787041513.544013, "kind": "full_flatten", "message": "full flatten: 2 categories fired simultaneously", "date": "day0", "categories": ["magnitude", "structural"], "details": ["test", "test"]}
+{"ts": 1787041603.415064, "kind": "halt_new_entries", "message": "halt new entries: ['magnitude']", "date": "day0", "details": ["test"]}
+{"ts": 1787041603.415802, "kind": "full_flatten", "message": "full flatten: 2 categories fired simultaneously", "date": "day0", "categories": ["magnitude", "structural"], "details": ["test", "test"]}
+{"ts": 1787041603.417214, "kind": "halt_new_entries", "message": "halt new entries: ['magnitude']", "date": "day0", "details": ["test"]}
+{"ts": 1787041603.417453, "kind": "rearmed", "message": "circuit breaker re-armed after 3 clean days", "date": "day3"}
+{"ts": 1787041603.4180532, "kind": "halt_new_entries", "message": "halt new entries: ['magnitude']", "date": "day0", "details": ["test"]}
+{"ts": 1787041603.4185169, "kind": "full_flatten", "message": "full flatten: 2 categories fired simultaneously", "date": "day0", "categories": ["magnitude", "structural"], "details": ["test", "test"]}
+{"ts": 1787042731.2395961, "kind": "halt_new_entries", "message": "halt new entries: ['magnitude']", "date": "day0", "details": ["test"]}
+{"ts": 1787042731.240135, "kind": "full_flatten", "message": "full flatten: 2 categories fired simultaneously", "date": "day0", "categories": ["magnitude", "structural"], "details": ["test", "test"]}
+{"ts": 1787042731.240406, "kind": "halt_new_entries", "message": "halt new entries: ['magnitude']", "date": "day0", "details": ["test"]}
+{"ts": 1787042731.24049, "kind": "rearmed", "message": "circuit breaker re-armed after 3 clean days", "date": "day3"}
+{"ts": 1787042731.240756, "kind": "halt_new_entries", "message": "halt new entries: ['magnitude']", "date": "day0", "details": ["test"]}
+{"ts": 1787042731.2410119, "kind": "full_flatten", "message": "full flatten: 2 categories fired simultaneously", "date": "day0", "categories": ["magnitude", "structural"], "details": ["test", "test"]}
+{"ts": 1787042797.500244, "kind": "halt_new_entries", "message": "halt new entries: ['magnitude']", "date": "day0", "details": ["test"]}
+{"ts": 1787042797.500748, "kind": "full_flatten", "message": "full flatten: 2 categories fired simultaneously", "date": "day0", "categories": ["magnitude", "structural"], "details": ["test", "test"]}
+{"ts": 1787042797.501002, "kind": "halt_new_entries", "message": "halt new entries: ['magnitude']", "date": "day0", "details": ["test"]}
+{"ts": 1787042797.501066, "kind": "rearmed", "message": "circuit breaker re-armed after 3 clean days", "date": "day3"}
+{"ts": 1787042797.501313, "kind": "halt_new_entries", "message": "halt new entries: ['magnitude']", "date": "day0", "details": ["test"]}
+{"ts": 1787042797.501565, "kind": "full_flatten", "message": "full flatten: 2 categories fired simultaneously", "date": "day0", "categories": ["magnitude", "structural"], "details": ["test", "test"]}
+{"ts": 1787043638.705535, "kind": "halt_new_entries", "message": "halt new entries: ['magnitude']", "date": "day0", "details": ["test"]}
+{"ts": 1787043638.7060502, "kind": "full_flatten", "message": "full flatten: 2 categories fired simultaneously", "date": "day0", "categories": ["magnitude", "structural"], "details": ["test", "test"]}
+{"ts": 1787043638.7063198, "kind": "halt_new_entries", "message": "halt new entries: ['magnitude']", "date": "day0", "details": ["test"]}
+{"ts": 1787043638.706387, "kind": "rearmed", "message": "circuit breaker re-armed after 3 clean days", "date": "day3"}
+{"ts": 1787043638.7066429, "kind": "halt_new_entries", "message": "halt new entries: ['magnitude']", "date": "day0", "details": ["test"]}
+{"ts": 1787043638.706898, "kind": "full_flatten", "message": "full flatten: 2 categories fired simultaneously", "date": "day0", "categories": ["magnitude", "structural"], "details": ["test", "test"]}
+{"ts": 1787044172.564617, "kind": "halt_new_entries", "message": "halt new entries: ['magnitude']", "date": "day0", "details": ["test"]}
+{"ts": 1787044172.566449, "kind": "full_flatten", "message": "full flatten: 2 categories fired simultaneously", "date": "day0", "categories": ["magnitude", "structural"], "details": ["test", "test"]}
+{"ts": 1787044172.567256, "kind": "halt_new_entries", "message": "halt new entries: ['magnitude']", "date": "day0", "details": ["test"]}
+{"ts": 1787044172.5675452, "kind": "rearmed", "message": "circuit breaker re-armed after 3 clean days", "date": "day3"}
+{"ts": 1787044172.568245, "kind": "halt_new_entries", "message": "halt new entries: ['magnitude']", "date": "day0", "details": ["test"]}
+{"ts": 1787044172.5688488, "kind": "full_flatten", "message": "full flatten: 2 categories fired simultaneously", "date": "day0", "categories": ["magnitude", "structural"], "details": ["test", "test"]}
+{"ts": 1787044211.36758, "kind": "halt_new_entries", "message": "halt new entries: ['magnitude']", "date": "day0", "details": ["test"]}
+{"ts": 1787044211.3689668, "kind": "full_flatten", "message": "full flatten: 2 categories fired simultaneously", "date": "day0", "categories": ["magnitude", "structural"], "details": ["test", "test"]}
+{"ts": 1787044211.369636, "kind": "halt_new_entries", "message": "halt new entries: ['magnitude']", "date": "day0", "details": ["test"]}
+{"ts": 1787044211.369814, "kind": "rearmed", "message": "circuit breaker re-armed after 3 clean days", "date": "day3"}
+{"ts": 1787044211.37044, "kind": "halt_new_entries", "message": "halt new entries: ['magnitude']", "date": "day0", "details": ["test"]}
+{"ts": 1787044211.3710752, "kind": "full_flatten", "message": "full flatten: 2 categories fired simultaneously", "date": "day0", "categories": ["magnitude", "structural"], "details": ["test", "test"]}
+{"ts": 1787044260.7937212, "kind": "halt_new_entries", "message": "halt new entries: ['magnitude']", "date": "day0", "details": ["test"]}
+{"ts": 1787044260.794959, "kind": "full_flatten", "message": "full flatten: 2 categories fired simultaneously", "date": "day0", "categories": ["magnitude", "structural"], "details": ["test", "test"]}
+{"ts": 1787044260.795699, "kind": "halt_new_entries", "message": "halt new entries: ['magnitude']", "date": "day0", "details": ["test"]}
+{"ts": 1787044260.795892, "kind": "rearmed", "message": "circuit breaker re-armed after 3 clean days", "date": "day3"}
+{"ts": 1787044260.796441, "kind": "halt_new_entries", "message": "halt new entries: ['magnitude']", "date": "day0", "details": ["test"]}
+{"ts": 1787044260.7969532, "kind": "full_flatten", "message": "full flatten: 2 categories fired simultaneously", "date": "day0", "categories": ["magnitude", "structural"], "details": ["test", "test"]}
+{"ts": 1787044842.3035169, "kind": "halt_new_entries", "message": "halt new entries: ['magnitude']", "date": "day0", "details": ["test"]}
+{"ts": 1787044842.3044329, "kind": "full_flatten", "message": "full flatten: 2 categories fired simultaneously", "date": "day0", "categories": ["magnitude", "structural"], "details": ["test", "test"]}
+{"ts": 1787044842.304954, "kind": "halt_new_entries", "message": "halt new entries: ['magnitude']", "date": "day0", "details": ["test"]}
+{"ts": 1787044842.305093, "kind": "rearmed", "message": "circuit breaker re-armed after 3 clean days", "date": "day3"}
+{"ts": 1787044842.3055549, "kind": "halt_new_entries", "message": "halt new entries: ['magnitude']", "date": "day0", "details": ["test"]}
+{"ts": 1787044842.306015, "kind": "full_flatten", "message": "full flatten: 2 categories fired simultaneously", "date": "day0", "categories": ["magnitude", "structural"], "details": ["test", "test"]}
+{"ts": 1787044954.344219, "kind": "halt_new_entries", "message": "halt new entries: ['magnitude']", "date": "day0", "details": ["test"]}
+{"ts": 1787044954.345361, "kind": "full_flatten", "message": "full flatten: 2 categories fired simultaneously", "date": "day0", "categories": ["magnitude", "structural"], "details": ["test", "test"]}
+{"ts": 1787044954.345985, "kind": "halt_new_entries", "message": "halt new entries: ['magnitude']", "date": "day0", "details": ["test"]}
+{"ts": 1787044954.346144, "kind": "rearmed", "message": "circuit breaker re-armed after 3 clean days", "date": "day3"}
+{"ts": 1787044954.346635, "kind": "halt_new_entries", "message": "halt new entries: ['magnitude']", "date": "day0", "details": ["test"]}
+{"ts": 1787044954.347161, "kind": "full_flatten", "message": "full flatten: 2 categories fired simultaneously", "date": "day0", "categories": ["magnitude", "structural"], "details": ["test", "test"]}
+{"ts": 1787062846.942081, "kind": "halt_new_entries", "message": "halt new entries: ['magnitude']", "date": "day0", "details": ["test"]}
+{"ts": 1787062846.9429178, "kind": "full_flatten", "message": "full flatten: 2 categories fired simultaneously", "date": "day0", "categories": ["magnitude", "structural"], "details": ["test", "test"]}
+{"ts": 1787062846.943391, "kind": "halt_new_entries", "message": "halt new entries: ['magnitude']", "date": "day0", "details": ["test"]}
+{"ts": 1787062846.943512, "kind": "rearmed", "message": "circuit breaker re-armed after 3 clean days", "date": "day3"}
+{"ts": 1787062846.943957, "kind": "halt_new_entries", "message": "halt new entries: ['magnitude']", "date": "day0", "details": ["test"]}
+{"ts": 1787062846.944404, "kind": "full_flatten", "message": "full flatten: 2 categories fired simultaneously", "date": "day0", "categories": ["magnitude", "structural"], "details": ["test", "test"]}
+{"ts": 1787063170.375471, "kind": "halt_new_entries", "message": "halt new entries: ['magnitude']", "date": "day0", "details": ["test"]}
+{"ts": 1787063170.376637, "kind": "full_flatten", "message": "full flatten: 2 categories fired simultaneously", "date": "day0", "categories": ["magnitude", "structural"], "details": ["test", "test"]}
+{"ts": 1787063170.377068, "kind": "halt_new_entries", "message": "halt new entries: ['magnitude']", "date": "day0", "details": ["test"]}
+{"ts": 1787063170.3771992, "kind": "rearmed", "message": "circuit breaker re-armed after 3 clean days", "date": "day3"}
+{"ts": 1787063170.37765, "kind": "halt_new_entries", "message": "halt new entries: ['magnitude']", "date": "day0", "details": ["test"]}
+{"ts": 1787063170.3779972, "kind": "full_flatten", "message": "full flatten: 2 categories fired simultaneously", "date": "day0", "categories": ["magnitude", "structural"], "details": ["test", "test"]}
+{"ts": 1787063283.934207, "kind": "halt_new_entries", "message": "halt new entries: ['magnitude']", "date": "day0", "details": ["test"]}
+{"ts": 1787063283.935321, "kind": "full_flatten", "message": "full flatten: 2 categories fired simultaneously", "date": "day0", "categories": ["magnitude", "structural"], "details": ["test", "test"]}
+{"ts": 1787063283.936172, "kind": "halt_new_entries", "message": "halt new entries: ['magnitude']", "date": "day0", "details": ["test"]}
+{"ts": 1787063283.9363751, "kind": "rearmed", "message": "circuit breaker re-armed after 3 clean days", "date": "day3"}
+{"ts": 1787063283.936933, "kind": "halt_new_entries", "message": "halt new entries: ['magnitude']", "date": "day0", "details": ["test"]}
+{"ts": 1787063283.93758, "kind": "full_flatten", "message": "full flatten: 2 categories fired simultaneously", "date": "day0", "categories": ["magnitude", "structural"], "details": ["test", "test"]}
+{"ts": 1787127766.738923, "kind": "halt_new_entries", "message": "halt new entries: ['magnitude']", "date": "day0", "details": ["test"]}
+{"ts": 1787127766.7396631, "kind": "full_flatten", "message": "full flatten: 2 categories fired simultaneously", "date": "day0", "categories": ["magnitude", "structural"], "details": ["test", "test"]}
+{"ts": 1787127766.740044, "kind": "halt_new_entries", "message": "halt new entries: ['magnitude']", "date": "day0", "details": ["test"]}
+{"ts": 1787127766.740138, "kind": "rearmed", "message": "circuit breaker re-armed after 3 clean days", "date": "day3"}
+{"ts": 1787127766.740417, "kind": "halt_new_entries", "message": "halt new entries: ['magnitude']", "date": "day0", "details": ["test"]}
+{"ts": 1787127766.741024, "kind": "full_flatten", "message": "full flatten: 2 categories fired simultaneously", "date": "day0", "categories": ["magnitude", "structural"], "details": ["test", "test"]}
+{"ts": 1787128447.6977448, "kind": "halt_new_entries", "message": "halt new entries: ['magnitude']", "date": "day0", "details": ["test"]}
+{"ts": 1787128447.699544, "kind": "full_flatten", "message": "full flatten: 2 categories fired simultaneously", "date": "day0", "categories": ["magnitude", "structural"], "details": ["test", "test"]}
+{"ts": 1787128447.700587, "kind": "halt_new_entries", "message": "halt new entries: ['magnitude']", "date": "day0", "details": ["test"]}
+{"ts": 1787128447.7007701, "kind": "rearmed", "message": "circuit breaker re-armed after 3 clean days", "date": "day3"}
+{"ts": 1787128447.701344, "kind": "halt_new_entries", "message": "halt new entries: ['magnitude']", "date": "day0", "details": ["test"]}
+{"ts": 1787128447.701932, "kind": "full_flatten", "message": "full flatten: 2 categories fired simultaneously", "date": "day0", "categories": ["magnitude", "structural"], "details": ["test", "test"]}
+{"ts": 1787129443.6940658, "kind": "halt_new_entries", "message": "halt new entries: ['magnitude']", "date": "day0", "details": ["test"]}
+{"ts": 1787129443.695285, "kind": "full_flatten", "message": "full flatten: 2 categories fired simultaneously", "date": "day0", "categories": ["magnitude", "structural"], "details": ["test", "test"]}
+{"ts": 1787129443.695723, "kind": "halt_new_entries", "message": "halt new entries: ['magnitude']", "date": "day0", "details": ["test"]}
+{"ts": 1787129443.69581, "kind": "rearmed", "message": "circuit breaker re-armed after 3 clean days", "date": "day3"}
+{"ts": 1787129443.696099, "kind": "halt_new_entries", "message": "halt new entries: ['magnitude']", "date": "day0", "details": ["test"]}
+{"ts": 1787129443.6966882, "kind": "full_flatten", "message": "full flatten: 2 categories fired simultaneously", "date": "day0", "categories": ["magnitude", "structural"], "details": ["test", "test"]}
+{"ts": 1787129697.459394, "kind": "halt_new_entries", "message": "halt new entries: ['magnitude']", "date": "day0", "details": ["test"]}
+{"ts": 1787129697.460634, "kind": "full_flatten", "message": "full flatten: 2 categories fired simultaneously", "date": "day0", "categories": ["magnitude", "structural"], "details": ["test", "test"]}
+{"ts": 1787129697.4626539, "kind": "halt_new_entries", "message": "halt new entries: ['magnitude']", "date": "day0", "details": ["test"]}
+{"ts": 1787129697.463029, "kind": "rearmed", "message": "circuit breaker re-armed after 3 clean days", "date": "day3"}
+{"ts": 1787129697.463757, "kind": "halt_new_entries", "message": "halt new entries: ['magnitude']", "date": "day0", "details": ["test"]}
+{"ts": 1787129697.4643042, "kind": "full_flatten", "message": "full flatten: 2 categories fired simultaneously", "date": "day0", "categories": ["magnitude", "structural"], "details": ["test", "test"]}
+{"ts": 1787152213.2944021, "kind": "halt_new_entries", "message": "halt new entries: ['magnitude']", "date": "day0", "details": ["test"]}
+{"ts": 1787152213.295667, "kind": "full_flatten", "message": "full flatten: 2 categories fired simultaneously", "date": "day0", "categories": ["magnitude", "structural"], "details": ["test", "test"]}
+{"ts": 1787152213.296313, "kind": "halt_new_entries", "message": "halt new entries: ['magnitude']", "date": "day0", "details": ["test"]}
+{"ts": 1787152213.296483, "kind": "rearmed", "message": "circuit breaker re-armed after 3 clean days", "date": "day3"}
+{"ts": 1787152213.297066, "kind": "halt_new_entries", "message": "halt new entries: ['magnitude']", "date": "day0", "details": ["test"]}
+{"ts": 1787152213.297618, "kind": "full_flatten", "message": "full flatten: 2 categories fired simultaneously", "date": "day0", "categories": ["magnitude", "structural"], "details": ["test", "test"]}
+{"ts": 1787152287.795417, "kind": "halt_new_entries", "message": "halt new entries: ['magnitude']", "date": "day0", "details": ["test"]}
+{"ts": 1787152287.796567, "kind": "full_flatten", "message": "full flatten: 2 categories fired simultaneously", "date": "day0", "categories": ["magnitude", "structural"], "details": ["test", "test"]}
+{"ts": 1787152287.797238, "kind": "halt_new_entries", "message": "halt new entries: ['magnitude']", "date": "day0", "details": ["test"]}
+{"ts": 1787152287.7973871, "kind": "rearmed", "message": "circuit breaker re-armed after 3 clean days", "date": "day3"}
+{"ts": 1787152287.798041, "kind": "halt_new_entries", "message": "halt new entries: ['magnitude']", "date": "day0", "details": ["test"]}
+{"ts": 1787152287.7987368, "kind": "full_flatten", "message": "full flatten: 2 categories fired simultaneously", "date": "day0", "categories": ["magnitude", "structural"], "details": ["test", "test"]}
+{"ts": 1787152850.733602, "kind": "halt_new_entries", "message": "halt new entries: ['magnitude']", "date": "day0", "details": ["test"]}
+{"ts": 1787152850.735102, "kind": "full_flatten", "message": "full flatten: 2 categories fired simultaneously", "date": "day0", "categories": ["magnitude", "structural"], "details": ["test", "test"]}
+{"ts": 1787152850.735806, "kind": "halt_new_entries", "message": "halt new entries: ['magnitude']", "date": "day0", "details": ["test"]}
+{"ts": 1787152850.735971, "kind": "rearmed", "message": "circuit breaker re-armed after 3 clean days", "date": "day3"}
+{"ts": 1787152850.736534, "kind": "halt_new_entries", "message": "halt new entries: ['magnitude']", "date": "day0", "details": ["test"]}
+{"ts": 1787152850.73707, "kind": "full_flatten", "message": "full flatten: 2 categories fired simultaneously", "date": "day0", "categories": ["magnitude", "structural"], "details": ["test", "test"]}
+{"ts": 1787152899.8269708, "kind": "halt_new_entries", "message": "halt new entries: ['magnitude']", "date": "day0", "details": ["test"]}
+{"ts": 1787152899.8287308, "kind": "full_flatten", "message": "full flatten: 2 categories fired simultaneously", "date": "day0", "categories": ["magnitude", "structural"], "details": ["test", "test"]}
+{"ts": 1787152899.8292842, "kind": "halt_new_entries", "message": "halt new entries: ['magnitude']", "date": "day0", "details": ["test"]}
+{"ts": 1787152899.829422, "kind": "rearmed", "message": "circuit breaker re-armed after 3 clean days", "date": "day3"}
+{"ts": 1787152899.829937, "kind": "halt_new_entries", "message": "halt new entries: ['magnitude']", "date": "day0", "details": ["test"]}
+{"ts": 1787152899.830474, "kind": "full_flatten", "message": "full flatten: 2 categories fired simultaneously", "date": "day0", "categories": ["magnitude", "structural"], "details": ["test", "test"]}
+{"ts": 1787152985.4412942, "kind": "halt_new_entries", "message": "halt new entries: ['magnitude']", "date": "day0", "details": ["test"]}
+{"ts": 1787152985.4429288, "kind": "full_flatten", "message": "full flatten: 2 categories fired simultaneously", "date": "day0", "categories": ["magnitude", "structural"], "details": ["test", "test"]}
+{"ts": 1787152985.443386, "kind": "halt_new_entries", "message": "halt new entries: ['magnitude']", "date": "day0", "details": ["test"]}
+{"ts": 1787152985.443512, "kind": "rearmed", "message": "circuit breaker re-armed after 3 clean days", "date": "day3"}
+{"ts": 1787152985.4438982, "kind": "halt_new_entries", "message": "halt new entries: ['magnitude']", "date": "day0", "details": ["test"]}
+{"ts": 1787152985.4443579, "kind": "full_flatten", "message": "full flatten: 2 categories fired simultaneously", "date": "day0", "categories": ["magnitude", "structural"], "details": ["test", "test"]}
+{"ts": 1787153316.959698, "kind": "halt_new_entries", "message": "halt new entries: ['magnitude']", "date": "day0", "details": ["test"]}
+{"ts": 1787153316.960688, "kind": "full_flatten", "message": "full flatten: 2 categories fired simultaneously", "date": "day0", "categories": ["magnitude", "structural"], "details": ["test", "test"]}
+{"ts": 1787153316.961459, "kind": "halt_new_entries", "message": "halt new entries: ['magnitude']", "date": "day0", "details": ["test"]}
+{"ts": 1787153316.961653, "kind": "rearmed", "message": "circuit breaker re-armed after 3 clean days", "date": "day3"}
+{"ts": 1787153316.962181, "kind": "halt_new_entries", "message": "halt new entries: ['magnitude']", "date": "day0", "details": ["test"]}
+{"ts": 1787153316.9626791, "kind": "full_flatten", "message": "full flatten: 2 categories fired simultaneously", "date": "day0", "categories": ["magnitude", "structural"], "details": ["test", "test"]}
+{"ts": 1787153633.8597481, "kind": "halt_new_entries", "message": "halt new entries: ['magnitude']", "date": "day0", "details": ["test"]}
+{"ts": 1787153633.8607428, "kind": "full_flatten", "message": "full flatten: 2 categories fired simultaneously", "date": "day0", "categories": ["magnitude", "structural"], "details": ["test", "test"]}
+{"ts": 1787153633.861273, "kind": "halt_new_entries", "message": "halt new entries: ['magnitude']", "date": "day0", "details": ["test"]}
+{"ts": 1787153633.861415, "kind": "rearmed", "message": "circuit breaker re-armed after 3 clean days", "date": "day3"}
+{"ts": 1787153633.861887, "kind": "halt_new_entries", "message": "halt new entries: ['magnitude']", "date": "day0", "details": ["test"]}
+{"ts": 1787153633.862357, "kind": "full_flatten", "message": "full flatten: 2 categories fired simultaneously", "date": "day0", "categories": ["magnitude", "structural"], "details": ["test", "test"]}
+{"ts": 1787153713.45282, "kind": "halt_new_entries", "message": "halt new entries: ['magnitude']", "date": "day0", "details": ["test"]}
+{"ts": 1787153713.45414, "kind": "full_flatten", "message": "full flatten: 2 categories fired simultaneously", "date": "day0", "categories": ["magnitude", "structural"], "details": ["test", "test"]}
+{"ts": 1787153713.454771, "kind": "halt_new_entries", "message": "halt new entries: ['magnitude']", "date": "day0", "details": ["test"]}
+{"ts": 1787153713.454957, "kind": "rearmed", "message": "circuit breaker re-armed after 3 clean days", "date": "day3"}
+{"ts": 1787153713.4554949, "kind": "halt_new_entries", "message": "halt new entries: ['magnitude']", "date": "day0", "details": ["test"]}
+{"ts": 1787153713.4560692, "kind": "full_flatten", "message": "full flatten: 2 categories fired simultaneously", "date": "day0", "categories": ["magnitude", "structural"], "details": ["test", "test"]}
+{"ts": 1787153799.079815, "kind": "halt_new_entries", "message": "halt new entries: ['magnitude']", "date": "day0", "details": ["test"]}
+{"ts": 1787153799.0811331, "kind": "full_flatten", "message": "full flatten: 2 categories fired simultaneously", "date": "day0", "categories": ["magnitude", "structural"], "details": ["test", "test"]}
+{"ts": 1787153799.0817611, "kind": "halt_new_entries", "message": "halt new entries: ['magnitude']", "date": "day0", "details": ["test"]}
+{"ts": 1787153799.0819452, "kind": "rearmed", "message": "circuit breaker re-armed after 3 clean days", "date": "day3"}
+{"ts": 1787153799.0825138, "kind": "halt_new_entries", "message": "halt new entries: ['magnitude']", "date": "day0", "details": ["test"]}
+{"ts": 1787153799.083083, "kind": "full_flatten", "message": "full flatten: 2 categories fired simultaneously", "date": "day0", "categories": ["magnitude", "structural"], "details": ["test", "test"]}
+{"ts": 1787187033.81934, "kind": "halt_new_entries", "message": "halt new entries: ['magnitude']", "date": "day0", "details": ["test"]}
+{"ts": 1787187033.8209438, "kind": "full_flatten", "message": "full flatten: 2 categories fired simultaneously", "date": "day0", "categories": ["magnitude", "structural"], "details": ["test", "test"]}
+{"ts": 1787187033.821779, "kind": "halt_new_entries", "message": "halt new entries: ['magnitude']", "date": "day0", "details": ["test"]}
+{"ts": 1787187033.8220181, "kind": "rearmed", "message": "circuit breaker re-armed after 3 clean days", "date": "day3"}
+{"ts": 1787187033.822764, "kind": "halt_new_entries", "message": "halt new entries: ['magnitude']", "date": "day0", "details": ["test"]}
+{"ts": 1787187033.82339, "kind": "full_flatten", "message": "full flatten: 2 categories fired simultaneously", "date": "day0", "categories": ["magnitude", "structural"], "details": ["test", "test"]}
+{"ts": 1787197495.378287, "kind": "halt_new_entries", "message": "halt new entries: ['magnitude']", "date": "day0", "details": ["test"]}
+{"ts": 1787197495.3793862, "kind": "full_flatten", "message": "full flatten: 2 categories fired simultaneously", "date": "day0", "categories": ["magnitude", "structural"], "details": ["test", "test"]}
+{"ts": 1787197495.380214, "kind": "halt_new_entries", "message": "halt new entries: ['magnitude']", "date": "day0", "details": ["test"]}
+{"ts": 1787197495.3805099, "kind": "rearmed", "message": "circuit breaker re-armed after 3 clean days", "date": "day3"}
+{"ts": 1787197495.381048, "kind": "halt_new_entries", "message": "halt new entries: ['magnitude']", "date": "day0", "details": ["test"]}
+{"ts": 1787197495.381579, "kind": "full_flatten", "message": "full flatten: 2 categories fired simultaneously", "date": "day0", "categories": ["magnitude", "structural"], "details": ["test", "test"]}
+{"ts": 1787198624.299805, "kind": "halt_new_entries", "message": "halt new entries: ['magnitude']", "date": "day0", "details": ["test"]}
+{"ts": 1787198624.300659, "kind": "full_flatten", "message": "full flatten: 2 categories fired simultaneously", "date": "day0", "categories": ["magnitude", "structural"], "details": ["test", "test"]}
+{"ts": 1787198624.3011682, "kind": "halt_new_entries", "message": "halt new entries: ['magnitude']", "date": "day0", "details": ["test"]}
+{"ts": 1787198624.301304, "kind": "rearmed", "message": "circuit breaker re-armed after 3 clean days", "date": "day3"}
+{"ts": 1787198624.3019829, "kind": "halt_new_entries", "message": "halt new entries: ['magnitude']", "date": "day0", "details": ["test"]}
+{"ts": 1787198624.30246, "kind": "full_flatten", "message": "full flatten: 2 categories fired simultaneously", "date": "day0", "categories": ["magnitude", "structural"], "details": ["test", "test"]}
+{"ts": 1787361534.983808, "kind": "halt_new_entries", "message": "halt new entries: ['magnitude']", "date": "day0", "details": ["test"]}
+{"ts": 1787361534.985012, "kind": "full_flatten", "message": "full flatten: 2 categories fired simultaneously", "date": "day0", "categories": ["magnitude", "structural"], "details": ["test", "test"]}
+{"ts": 1787361534.9854379, "kind": "halt_new_entries", "message": "halt new entries: ['magnitude']", "date": "day0", "details": ["test"]}
+{"ts": 1787361534.985538, "kind": "rearmed", "message": "circuit breaker re-armed after 3 clean days", "date": "day3"}
+{"ts": 1787361534.985895, "kind": "halt_new_entries", "message": "halt new entries: ['magnitude']", "date": "day0", "details": ["test"]}
+{"ts": 1787361534.986391, "kind": "full_flatten", "message": "full flatten: 2 categories fired simultaneously", "date": "day0", "categories": ["magnitude", "structural"], "details": ["test", "test"]}
