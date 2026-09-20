@@ -1,0 +1,236 @@
+{
+  "london_reversal": {
+    "orders": 1683,
+    "missing_signal_days_pairs": 6,
+    "base": {
+      "development": {
+        "days": 1043,
+        "ann_mean": -0.005460502617209369,
+        "return_vol_ratio": -0.3456050663856409,
+        "cagr": -0.005569685808100799,
+        "ann_vol": 0.015799833822795605,
+        "max_daily_drawdown": -0.054538881433098485,
+        "ann_cost_drag": 0.015106382552759819,
+        "gross_return_vol_ratio": 0.6097549228932471,
+        "pair_ann_contribution": {
+          "EURUSD": -0.0023467745783539444,
+          "GBPUSD": 0.00020744628681967673,
+          "USDJPY": -0.0033211743256749927
+        }
+      },
+      "validation": {
+        "days": 1043,
+        "ann_mean": -0.013019133345142212,
+        "return_vol_ratio": -0.9240751162150769,
+        "cagr": -0.013033016999327796,
+        "ann_vol": 0.014088825807221534,
+        "max_daily_drawdown": -0.057582423318741305,
+        "ann_cost_drag": 0.015059789675493318,
+        "gross_return_vol_ratio": 0.14512970580790938,
+        "pair_ann_contribution": {
+          "EURUSD": -0.0020946616197573906,
+          "GBPUSD": -0.005128822467046452,
+          "USDJPY": -0.005795649258338815
+        }
+      }
+    },
+    "stress_2x": {
+      "development": {
+        "days": 1043,
+        "ann_mean": -0.021103863048822658,
+        "return_vol_ratio": -1.3305803588023144,
+        "cagr": -0.021006658490032692,
+        "ann_vol": 0.015860645250933007,
+        "max_daily_drawdown": -0.0868981135189818,
+        "ann_cost_drag": 0.030749742984373232,
+        "gross_return_vol_ratio": 0.6097549228932473,
+        "pair_ann_contribution": {
+          "EURUSD": -0.007613527690716719,
+          "GBPUSD": -0.0057395893108409465,
+          "USDJPY": -0.00775074604726501
+        }
+      },
+      "validation": {
+        "days": 1043,
+        "ann_mean": -0.02983025498170199,
+        "return_vol_ratio": -2.0984068985205573,
+        "cagr": -0.02948951363125163,
+        "ann_vol": 0.014215667610859104,
+        "max_daily_drawdown": -0.11719112364289763,
+        "ann_cost_drag": 0.03187091131205236,
+        "gross_return_vol_ratio": 0.14512970580790932,
+        "pair_ann_contribution": {
+          "EURUSD": -0.007673403942753146,
+          "GBPUSD": -0.011024605984329848,
+          "USDJPY": -0.011132245054618706
+        }
+      }
+    },
+    "stress_3x": {
+      "development": {
+        "days": 1043,
+        "ann_mean": -0.03734124372485072,
+        "return_vol_ratio": -2.332363572604469,
+        "cagr": -0.03677872684419936,
+        "ann_vol": 0.016010044130106635,
+        "max_daily_drawdown": -0.14366441057927826,
+        "ann_cost_drag": 0.046987123660400455,
+        "gross_return_vol_ratio": 0.6097549228932472,
+        "pair_ann_contribution": {
+          "EURUSD": -0.013070995103902971,
+          "GBPUSD": -0.011907547785903558,
+          "USDJPY": -0.012362700835043374
+        }
+      },
+      "validation": {
+        "days": 1043,
+        "ann_mean": -0.04888015508697684,
+        "return_vol_ratio": -3.376023676917025,
+        "cagr": -0.04780911735645532,
+        "ann_vol": 0.014478617380910686,
+        "max_daily_drawdown": -0.1835284101397746,
+        "ann_cost_drag": 0.050920811417326586,
+        "gross_return_vol_ratio": 0.14512970580790938,
+        "pair_ann_contribution": {
+          "EURUSD": -0.013998107196425254,
+          "GBPUSD": -0.017698929303984135,
+          "USDJPY": -0.017183118586566536
+        }
+      }
+    },
+    "validation_uncertainty_20d": {
+      "ann_mean_ci95": [
+        -0.026763114539409168,
+        0.00018640388631930256
+      ],
+      "ratio_ci95": [
+        -1.8591468887818514,
+        0.015261030327589076
+      ],
+      "one_sided_null_p": 0.9702059588082383,
+      "three_candidate_bonferroni_p": 1.0
+    },
+    "validation_uncertainty_63d": {
+      "ann_mean_ci95": [
+        -0.025233584489825364,
+        -0.00018958725515619905
+      ],
+      "ratio_ci95": [
+        -1.7872721976045558,
+        -0.013446441757290487
+      ],
+      "one_sided_null_p": 0.9802039592081584,
+      "three_candidate_bonferroni_p": 1.0
+    }
+  },
+  "new_york_continuation": {
+    "orders": 1731,
+    "missing_signal_days_pairs": 1,
+    "base": {
+      "development": {
+        "days": 1043,
+        "ann_mean": -0.030447833323461165,
+        "return_vol_ratio": -1.977246604440224,
+        "cagr": -0.030105729720842134,
+        "ann_vol": 0.0153991076556084,
+        "max_daily_drawdown": -0.12229936633912475,
+        "ann_cost_drag": 0.01646664197064673,
+        "gross_return_vol_ratio": -0.9145454228442622,
+        "pair_ann_contribution": {
+          "EURUSD": -0.01570129030749545,
+          "GBPUSD": -0.00750076125849037,
+          "USDJPY": -0.007245781757475148
+        }
+      },
+      "validation": {
+        "days": 1043,
+        "ann_mean": -0.013774848226240661,
+        "return_vol_ratio": -0.8442993325141802,
+        "cagr": -0.013812052124849927,
+        "ann_vol": 0.016315123908983202,
+        "max_daily_drawdown": -0.06342054129962282,
+        "ann_cost_drag": 0.01622050782937007,
+        "gross_return_vol_ratio": 0.15008933348425155,
+        "pair_ann_contribution": {
+          "EURUSD": -0.0044731291681896325,
+          "GBPUSD": -0.00572584765239492,
+          "USDJPY": -0.00357587140565614
+        }
+      }
+    },
+    "stress_2x": {
+      "development": {
+        "days": 1043,
+        "ann_mean": -0.04758626387305931,
+        "return_vol_ratio": -3.053186650933391,
+        "cagr": -0.0465918825396231,
+        "ann_vol": 0.015585769660859648,
+        "max_daily_drawdown": -0.18012869817642996,
+        "ann_cost_drag": 0.0336050725202454,
+        "gross_return_vol_ratio": -0.9145454228442621,
+        "pair_ann_contribution": {
+          "EURUSD": -0.02197368409876895,
+          "GBPUSD": -0.013245257216498881,
+          "USDJPY": -0.0123673225577918
+        }
+      },
+      "validation": {
+        "days": 1043,
+        "ann_mean": -0.03216637747246147,
+        "return_vol_ratio": -1.9585877358425825,
+        "cagr": -0.03178716720311425,
+        "ann_vol": 0.01642325073511375,
+        "max_daily_drawdown": -0.1296821286648927,
+        "ann_cost_drag": 0.03461203707559129,
+        "gross_return_vol_ratio": 0.15008933348425135,
+        "pair_ann_contribution": {
+          "EURUSD": -0.010859478863610484,
+          "GBPUSD": -0.0119835794555005,
+          "USDJPY": -0.009323319153350927
+        }
+      }
+    },
+    "stress_3x": {
+      "development": {
+        "days": 1043,
+        "ann_mean": -0.06547655426033083,
+        "return_vol_ratio": -4.129660263783929,
+        "cagr": -0.06350471938245195,
+        "ann_vol": 0.015855191487431444,
+        "max_daily_drawdown": -0.2383904947705141,
+        "ann_cost_drag": 0.05149536290751657,
+        "gross_return_vol_ratio": -0.9145454228442621,
+        "pair_ann_contribution": {
+          "EURUSD": -0.028517136290260495,
+          "GBPUSD": -0.019245741339514157,
+          "USDJPY": -0.01771367663055616
+        }
+      },
+      "validation": {
+        "days": 1043,
+        "ann_mean": -0.053413129136678394,
+        "return_vol_ratio": -3.2062554355248074,
+        "cagr": -0.05214871379231312,
+        "ann_vol": 0.016659037375771533,
+        "max_daily_drawdown": -0.20065505047696064,
+        "ann_cost_drag": 0.05585878873980733,
+        "gross_return_vol_ratio": 0.15008933348425152,
+        "pair_ann_contribution": {
+          "EURUSD": -0.018236521162010747,
+          "GBPUSD": -0.01921694610712184,
+          "USDJPY": -0.01595966186754537
+        }
+      }
+    }
+  },
+  "london_fix_reversal": {
+    "invalid": "london_fix_reversal: missing scheduled fill EURUSD 2016-12-26 14/16"
+  },
+  "decision": {
+    "selected": "london_reversal",
+    "passes_pilot_gate": false,
+    "later_data_evaluated": false,
+    "live_trading_changed": false
+  },
+  "code_sha256": "9038e44390faf6bb65b576c878da8f45b4d7ec519a8f64054ef6e9733d318943"
+}

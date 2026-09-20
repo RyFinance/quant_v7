@@ -4,6 +4,8 @@ project convention in tests/test_ingestion.py.
 """
 from __future__ import annotations
 
+import json
+
 import pytest
 
 import bot.execution as ex
@@ -193,3 +195,136 @@ def test_from_ledger_open_then_reopen_across_two_tickers(isolated_kill_switch, t
     client3 = ex.PaperExecutionClient.from_ledger(starting_capital=100_000.0, ledger_path=ledger_path)
     assert set(client3.positions.keys()) == {"AAPL", "MSFT"}
     assert all(p.open for p in client3.positions.values())
+
+
+def test_close_position_charges_the_round_trip_cost(tmp_path, monkeypatch):
+    """The paper account must quote returns net of the same 10 bps round trip
+    the cost-adjusted label and every research backtest already assume."""
+    import json
+    from bot.alerting import BotAlerter
+    from risk.limits import RiskLimits
+
+    alerter = BotAlerter(webhook_url="", alerts_path=tmp_path / "alerts.jsonl")
+    client = ex.PaperExecutionClient(ledger_path=tmp_path / "ledger.jsonl", alerter=alerter)
+    decision = _approved_decision(calibrated_proba=0.99, limits=RiskLimits(max_position_pct=0.05))
+    assert decision.size_fraction == pytest.approx(0.05)
+
+    monkeypatch.setattr(ex, "get_current_price", lambda ticker: 100.0)
+    client.place_order("AAPL", "long", decision, entry_date="2026-09-01")
+    monkeypatch.setattr(ex, "get_current_price", lambda ticker: 110.0)
+    pnl = client.close_position("AAPL", exit_date="2026-09-29")
+
+    notional = 5_000.0                                     # 5% of 100k
+    gross = notional * 0.10                                # +10% move
+    cost = (notional + notional * 1.10) * (10.0 / 2 / 10_000)
+    assert pnl == pytest.approx(gross - cost)
+    assert client.nav() == pytest.approx(100_000.0 + gross - cost)
+
+    record = json.loads((tmp_path / "ledger.jsonl").read_text().strip().splitlines()[-1])
+    assert record["gross_pnl"] == pytest.approx(gross)
+    assert record["cost"] == pytest.approx(cost)
+    assert record["cost_bps_round_trip"] == 10.0
+    # NAV replayed from the ledger must match the in-process client exactly.
+    assert ex.PaperExecutionClient.from_ledger(ledger_path=tmp_path / "ledger.jsonl").nav() == pytest.approx(client.nav())
+
+
+def test_cost_free_client_reproduces_the_old_gross_accounting(tmp_path, monkeypatch):
+    """The cost is a parameter, not a hardcode: research callers can still
+    replay gross by passing 0 bps."""
+    from bot.alerting import BotAlerter
+    from risk.limits import RiskLimits
+
+    client = ex.PaperExecutionClient(ledger_path=tmp_path / "ledger.jsonl", round_trip_cost_bps=0.0,
+                                     alerter=BotAlerter(webhook_url="", alerts_path=tmp_path / "alerts.jsonl"))
+    monkeypatch.setattr(ex, "get_current_price", lambda ticker: 100.0)
+    client.place_order("MSFT", "long", _approved_decision(calibrated_proba=0.99, limits=RiskLimits(max_position_pct=0.05)),
+                       entry_date="2026-09-01")
+    monkeypatch.setattr(ex, "get_current_price", lambda ticker: 110.0)
+    assert client.close_position("MSFT", exit_date="2026-09-29") == pytest.approx(500.0)
+
+
+# -- marked-to-market NAV ------------------------------------------------------
+
+def _priced_client(tmp_path, monkeypatch, price: float = 100.0):
+    """Client whose fills and default marks come from a settable price table."""
+    from bot.alerting import BotAlerter
+
+    prices = {}
+    monkeypatch.setattr(ex, "get_current_price", lambda ticker: prices.get(ticker, price))
+    client = ex.PaperExecutionClient(ledger_path=tmp_path / "ledger.jsonl",
+                                     alerter=BotAlerter(webhook_url="", alerts_path=tmp_path / "alerts.jsonl"))
+    return client, prices
+
+
+def _five_pct_decision(ticker="AAPL"):
+    from risk.limits import RiskLimits
+    return _approved_decision(ticker=ticker, calibrated_proba=0.99, limits=RiskLimits(max_position_pct=0.05))
+
+
+def test_marked_nav_moves_on_non_exit_days_while_cash_basis_stays_put(isolated_kill_switch, tmp_path, monkeypatch):
+    client, prices = _priced_client(tmp_path, monkeypatch)
+    client.place_order("AAPL", "long", _five_pct_decision(), entry_date="2026-09-01")  # $5,000 at 100
+    client.place_order("MSFT", "short", _five_pct_decision("MSFT"), entry_date="2026-09-01")
+
+    day0 = client.marked_nav()
+    assert day0.nav == pytest.approx(100_000.0)  # marked at the fill price on the entry day
+
+    # Day 1: AAPL +10%, MSFT (short) +4% against us. Nothing closes.
+    prices.update(AAPL=110.0, MSFT=104.0)
+    day1 = client.marked_nav()
+    assert day1.unrealized_pnl == pytest.approx(500.0 - 200.0)
+    assert day1.nav == pytest.approx(100_300.0)
+    assert day1.marks == {"AAPL": 110.0, "MSFT": 104.0} and day1.unmarked == []
+
+    # Day 2: both move again; still no exit.
+    prices.update(AAPL=95.0, MSFT=90.0)
+    day2 = client.marked_nav()
+    assert day2.nav == pytest.approx(100_000.0 - 250.0 + 500.0)
+
+    # The cash-basis NAV -- the one sizing and the risk gate read -- never moved.
+    assert day0.cash_basis_nav == day1.cash_basis_nav == day2.cash_basis_nav == client.nav() == 100_000.0
+    assert len({day0.nav, day1.nav, day2.nav}) == 3
+
+
+def test_marked_and_cash_basis_nav_agree_after_all_positions_close(isolated_kill_switch, tmp_path, monkeypatch):
+    client, prices = _priced_client(tmp_path, monkeypatch)
+    client.place_order("AAPL", "long", _five_pct_decision(), entry_date="2026-09-01")
+    client.place_order("MSFT", "short", _five_pct_decision("MSFT"), entry_date="2026-09-01")
+    prices.update(AAPL=112.0, MSFT=97.0)
+    assert client.marked_nav().nav != pytest.approx(client.nav())
+
+    client.close_position("AAPL", exit_date="2026-09-29")
+    partly = client.marked_nav()
+    assert partly.marks == {"MSFT": 97.0}  # a closed position is no longer marked
+    client.close_position("MSFT", exit_date="2026-09-29")
+
+    closed = client.marked_nav()
+    assert closed.unrealized_pnl == 0.0 and closed.marks == {}
+    assert closed.nav == pytest.approx(client.nav())
+    assert closed.nav == pytest.approx(100_000.0 + client.realized_pnl)
+    # ...and the last marks were exactly what closing realised, before its cost.
+    record = [json.loads(l) for l in (tmp_path / "ledger.jsonl").read_text().splitlines()][-1]
+    assert partly.unrealized_pnl == pytest.approx(record["gross_pnl"])
+
+
+def test_marked_nav_carries_an_unpriceable_position_at_cost(isolated_kill_switch, tmp_path, monkeypatch):
+    client, _ = _priced_client(tmp_path, monkeypatch)
+    client.place_order("AAPL", "long", _five_pct_decision(), entry_date="2026-09-01")
+
+    def no_price(ticker):
+        raise RuntimeError("yfinance returned nothing")
+
+    marked = client.marked_nav(price_for=no_price)
+    assert marked.unmarked == ["AAPL"] and marked.marks == {}
+    assert marked.nav == client.nav()
+
+
+def test_marked_nav_does_not_change_state_or_the_ledger(isolated_kill_switch, tmp_path, monkeypatch):
+    client, prices = _priced_client(tmp_path, monkeypatch)
+    client.place_order("AAPL", "long", _five_pct_decision(), entry_date="2026-09-01")
+    ledger_before = (tmp_path / "ledger.jsonl").read_text()
+    prices["AAPL"] = 80.0
+    client.marked_nav()
+    assert (tmp_path / "ledger.jsonl").read_text() == ledger_before
+    assert client.nav() == 100_000.0 and client.high_water_mark == 100_000.0
+    assert client.current_total_exposure_pct() == pytest.approx(0.05)

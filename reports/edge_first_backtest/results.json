@@ -1,0 +1,422 @@
+{
+  "pead_long_only__net_10bps": {
+    "n_trades": 1441,
+    "skipped_no_fill": 0,
+    "stale_marks": 0,
+    "discovery": {
+      "cagr": 0.3430222211655378,
+      "ann_vol": 10854.588374766976,
+      "sharpe": 0.7469155330629663,
+      "max_drawdown": -2.175802324324238,
+      "total_pnl": 48612.591509763995,
+      "total_return": 4.861259150976402
+    },
+    "validation": {
+      "cagr": 0.6022567881017185,
+      "ann_vol": 10813.56340637415,
+      "sharpe": 0.9564065731048607,
+      "max_drawdown": -1.3227629555123905,
+      "total_pnl": 30903.368372097008,
+      "total_return": 3.0903368372096987
+    },
+    "confirmation": {
+      "cagr": 0.37166971405816507,
+      "ann_vol": 9036.904958580935,
+      "sharpe": 0.5430467193233207,
+      "max_drawdown": -2.028600594361889,
+      "total_pnl": 12794.453432620141,
+      "total_return": 1.2794453432620148
+    },
+    "full": {
+      "cagr": 0.1137821601253548,
+      "ann_vol": 7669.36050760006,
+      "sharpe": 0.5577670826609036,
+      "max_drawdown": -2.175802324324238,
+      "total_pnl": 92310.41331448115,
+      "total_return": 9.231041331448125
+    }
+  },
+  "all_events_long_control__net_10bps": {
+    "n_trades": 1450,
+    "skipped_no_fill": 0,
+    "stale_marks": 0,
+    "discovery": {
+      "cagr": 0.364646303498543,
+      "ann_vol": 11029.57913523801,
+      "sharpe": 0.8241444817356439,
+      "max_drawdown": -2.3838268572400474,
+      "total_pnl": 54503.729384291284,
+      "total_return": 5.450372938429121
+    },
+    "validation": {
+      "cagr": 0.5657425936074592,
+      "ann_vol": 10902.768880963175,
+      "sharpe": 0.8650064231448907,
+      "max_drawdown": -1.550581107100211,
+      "total_pnl": 28180.6219421005,
+      "total_return": 2.818062194210051
+    },
+    "confirmation": {
+      "cagr": 0.42373177357915415,
+      "ann_vol": 8351.213748397364,
+      "sharpe": 0.694416429320495,
+      "max_drawdown": -1.7910766945538918,
+      "total_pnl": 15119.395082527346,
+      "total_return": 1.5119395082527323
+    },
+    "full": {
+      "cagr": 0.11648485850480061,
+      "ann_vol": 7662.6658779039035,
+      "sharpe": 0.5914757442581716,
+      "max_drawdown": -2.3838268572400474,
+      "total_pnl": 97803.74640891913,
+      "total_return": 9.7803746408919
+    }
+  },
+  "pead_long_short__net_10bps": {
+    "n_trades": 1450,
+    "skipped_no_fill": 0,
+    "stale_marks": 0,
+    "discovery": {
+      "cagr": 0.24812171069510014,
+      "ann_vol": 7466.211224579986,
+      "sharpe": 0.6203387566955259,
+      "max_drawdown": -1.1315187102011806,
+      "total_pnl": 27771.10184323133,
+      "total_return": 2.7771101843231345
+    },
+    "validation": {
+      "cagr": 0.6052587909906069,
+      "ann_vol": 7857.164649067116,
+      "sharpe": 1.3260435958610919,
+      "max_drawdown": -0.7907308051773431,
+      "total_pnl": 31132.79355946339,
+      "total_return": 3.1132793559463385
+    },
+    "confirmation": {
+      "cagr": 0.29546008155414705,
+      "ann_vol": 6878.343678154613,
+      "sharpe": 0.53747103027393,
+      "max_drawdown": -1.3775216354013713,
+      "total_pnl": 9638.373707826539,
+      "total_return": 0.9638373707826533
+    },
+    "full": {
+      "cagr": 0.10022016517143939,
+      "ann_vol": 5456.972832793288,
+      "sharpe": 0.5820603600564818,
+      "max_drawdown": -1.377521635401371,
+      "total_pnl": 68542.26911052126,
+      "total_return": 6.854226911052129
+    }
+  },
+  "pead_large_sue_long__net_10bps": {
+    "n_trades": 1256,
+    "skipped_no_fill": 0,
+    "stale_marks": 0,
+    "discovery": {
+      "cagr": 0.3043166359106093,
+      "ann_vol": 9276.350230128433,
+      "sharpe": 0.704512009130067,
+      "max_drawdown": -1.903334875028663,
+      "total_pnl": 39185.86709742521,
+      "total_return": 3.9185867097425184
+    },
+    "validation": {
+      "cagr": 0.5014298780626179,
+      "ann_vol": 9609.86324592126,
+      "sharpe": 0.8247637155014061,
+      "max_drawdown": -1.0921594025080623,
+      "total_pnl": 23683.243994735374,
+      "total_return": 2.3683243994735377
+    },
+    "confirmation": {
+      "cagr": 0.5181390483375541,
+      "ann_vol": 7856.688829289895,
+      "sharpe": 0.9615778480756054,
+      "max_drawdown": -1.3744718826915188,
+      "total_pnl": 19696.489622685014,
+      "total_return": 1.9696489622685003
+    },
+    "full": {
+      "cagr": 0.10862794849687396,
+      "ann_vol": 6646.065385895849,
+      "sharpe": 0.5756995272930522,
+      "max_drawdown": -1.903334875028663,
+      "total_pnl": 82565.60071484558,
+      "total_return": 8.25656007148455
+    }
+  },
+  "pead_abs_sue_long__net_10bps": {
+    "n_trades": 1291,
+    "skipped_no_fill": 0,
+    "stale_marks": 0,
+    "discovery": {
+      "cagr": 0.30894509395020253,
+      "ann_vol": 10674.45826511047,
+      "sharpe": 0.6287339318790999,
+      "max_drawdown": -2.3284318265219035,
+      "total_pnl": 40241.73217788141,
+      "total_return": 4.024173217788139
+    },
+    "validation": {
+      "cagr": 0.5075116481211503,
+      "ann_vol": 10383.120386413944,
+      "sharpe": 0.7765349364196382,
+      "max_drawdown": -1.5900791557301854,
+      "total_pnl": 24092.580809576804,
+      "total_return": 2.4092580809576787
+    },
+    "confirmation": {
+      "cagr": 0.46670627406363985,
+      "ann_vol": 7587.042871041627,
+      "sharpe": 0.8667325272287093,
+      "max_drawdown": -1.385314251224421,
+      "total_pnl": 17144.406766148728,
+      "total_return": 1.7144406766148736
+    },
+    "full": {
+      "cagr": 0.10802131984489072,
+      "ann_vol": 7317.881937571712,
+      "sharpe": 0.515964872608388,
+      "max_drawdown": -2.3284318265219035,
+      "total_pnl": 81478.71975360694,
+      "total_return": 8.147871975360678
+    }
+  },
+  "pead_long_only__net_25bps": {
+    "n_trades": 1441,
+    "skipped_no_fill": 0,
+    "stale_marks": 0,
+    "discovery": {
+      "cagr": 0.31883007415465503,
+      "ann_vol": 10858.466635929044,
+      "sharpe": 0.6536874216103573,
+      "max_drawdown": -2.191177324324237,
+      "total_pnl": 42560.091509763995,
+      "total_return": 4.256009150976401
+    },
+    "validation": {
+      "cagr": 0.5600643512565204,
+      "ann_vol": 10814.445421844965,
+      "sharpe": 0.8593135765572597,
+      "max_drawdown": -1.38763795551239,
+      "total_pnl": 27768.368372097008,
+      "total_return": 2.7768368372096988
+    },
+    "confirmation": {
+      "cagr": 0.33342645255201697,
+      "ann_vol": 9031.441407122935,
+      "sharpe": 0.47457449308146604,
+      "max_drawdown": -2.064600594361889,
+      "total_pnl": 11174.453432620141,
+      "total_return": 1.1174453432620153
+    },
+    "full": {
+      "cagr": 0.10803489780123643,
+      "ann_vol": 7669.304285272081,
+      "sharpe": 0.4924685505371356,
+      "max_drawdown": -2.191177324324237,
+      "total_pnl": 81502.91331448115,
+      "total_return": 8.150291331448129
+    }
+  },
+  "all_events_long_control__net_25bps": {
+    "n_trades": 1450,
+    "skipped_no_fill": 0,
+    "stale_marks": 0,
+    "discovery": {
+      "cagr": 0.34223245909748035,
+      "ann_vol": 11034.03183293302,
+      "sharpe": 0.7316495307038812,
+      "max_drawdown": -2.3986833439753283,
+      "total_pnl": 48406.22938429128,
+      "total_return": 4.840622938429129
+    },
+    "validation": {
+      "cagr": 0.5211587277232177,
+      "ann_vol": 10905.66181775022,
+      "sharpe": 0.7678829606998865,
+      "max_drawdown": -1.6203311071002113,
+      "total_pnl": 25023.1219421005,
+      "total_return": 2.502312194210051
+    },
+    "confirmation": {
+      "cagr": 0.38778794680170625,
+      "ann_vol": 8344.99185926253,
+      "sharpe": 0.6204739628228,
+      "max_drawdown": -1.8278266945538912,
+      "total_pnl": 13499.39508252735,
+      "total_return": 1.3499395082527337
+    },
+    "full": {
+      "cagr": 0.11099670781402438,
+      "ann_vol": 7663.170951031174,
+      "sharpe": 0.5256736890567776,
+      "max_drawdown": -2.3986833439753283,
+      "total_pnl": 86928.74640891913,
+      "total_return": 8.692874640891901
+    }
+  },
+  "pead_long_short__net_25bps": {
+    "n_trades": 1450,
+    "skipped_no_fill": 0,
+    "stale_marks": 0,
+    "discovery": {
+      "cagr": 0.21200609421140193,
+      "ann_vol": 7468.520277647516,
+      "sharpe": 0.4839857811278283,
+      "max_drawdown": -1.16498843668075,
+      "total_pnl": 21673.601843231332,
+      "total_return": 2.1673601843231345
+    },
+    "validation": {
+      "cagr": 0.5629195959636577,
+      "ann_vol": 7856.97753328501,
+      "sharpe": 1.191584117145313,
+      "max_drawdown": -0.845855805177343,
+      "total_pnl": 27975.293559463385,
+      "total_return": 2.797529355946339
+    },
+    "confirmation": {
+      "cagr": 0.25337980273932437,
+      "ann_vol": 6874.357849581897,
+      "sharpe": 0.4473931482122786,
+      "max_drawdown": -1.4142716354013716,
+      "total_pnl": 8018.3737078265385,
+      "total_return": 0.8018373707826534
+    },
+    "full": {
+      "cagr": 0.09264785357241179,
+      "ann_vol": 5456.194099194535,
+      "sharpe": 0.489779847244618,
+      "max_drawdown": -1.4142716354013705,
+      "total_pnl": 57667.26911052126,
+      "total_return": 5.766726911052121
+    }
+  },
+  "pead_large_sue_long__net_25bps": {
+    "n_trades": 1256,
+    "skipped_no_fill": 0,
+    "stale_marks": 0,
+    "discovery": {
+      "cagr": 0.2795548776605026,
+      "ann_vol": 9278.957199320505,
+      "sharpe": 0.6083346439551657,
+      "max_drawdown": -1.9168348750286626,
+      "total_pnl": 33845.86709742521,
+      "total_return": 3.3845867097425204
+    },
+    "validation": {
+      "cagr": 0.46085549003521353,
+      "ann_vol": 9609.282647472672,
+      "sharpe": 0.7326093776378809,
+      "max_drawdown": -1.109409402508063,
+      "total_pnl": 21035.743994735378,
+      "total_return": 2.1035743994735374
+    },
+    "confirmation": {
+      "cagr": 0.4896212175013752,
+      "ann_vol": 7851.395954818762,
+      "sharpe": 0.8922446305072909,
+      "max_drawdown": -1.406721882691518,
+      "total_pnl": 18263.989622685014,
+      "total_return": 1.8263989622685015
+    },
+    "full": {
+      "cagr": 0.10312791072566507,
+      "ann_vol": 6645.408969068565,
+      "sharpe": 0.5100677146361055,
+      "max_drawdown": -1.9168348750286626,
+      "total_pnl": 73145.60071484558,
+      "total_return": 7.314560071484552
+    }
+  },
+  "pead_abs_sue_long__net_25bps": {
+    "n_trades": 1291,
+    "skipped_no_fill": 0,
+    "stale_marks": 0,
+    "discovery": {
+      "cagr": 0.28392629717915696,
+      "ann_vol": 10679.358304678928,
+      "sharpe": 0.5427094391926774,
+      "max_drawdown": -2.3468068265219038,
+      "total_pnl": 34751.73217788141,
+      "total_return": 3.475173217788142
+    },
+    "validation": {
+      "cagr": 0.46575138434186303,
+      "ann_vol": 10383.340805862777,
+      "sharpe": 0.6880454416694914,
+      "max_drawdown": -1.6193388000477187,
+      "total_pnl": 21347.580809576804,
+      "total_return": 2.134758080957679
+    },
+    "confirmation": {
+      "cagr": 0.43619884174804446,
+      "ann_vol": 7582.009197471553,
+      "sharpe": 0.7940812528117492,
+      "max_drawdown": -1.4175642512244204,
+      "total_pnl": 15696.906766148726,
+      "total_return": 1.5696906766148748
+    },
+    "full": {
+      "cagr": 0.10229179565519897,
+      "ann_vol": 7318.528880856332,
+      "sharpe": 0.45461014663280985,
+      "max_drawdown": -2.3468068265219038,
+      "total_pnl": 71796.21975360694,
+      "total_return": 7.179621975360686
+    }
+  },
+  "spy_buy_hold_gross": {
+    "full": {
+      "cagr": 1.2255595546628584e-05,
+      "ann_vol": 0.18922239115484657,
+      "sharpe": 0.6477637821749547,
+      "max_drawdown": -7.000440069841716e-05,
+      "total_pnl": 2.6450132428057698,
+      "total_return": 0.00026450132428057493
+    },
+    "discovery": {
+      "cagr": 1.362236100899139e-05,
+      "ann_vol": 0.1833524956780121,
+      "sharpe": 0.7429855001739971,
+      "max_drawdown": -3.816222931454831e-05,
+      "total_pnl": 0.8168288859802457,
+      "total_return": 8.16828885978893e-05
+    },
+    "validation": {
+      "cagr": 1.1069961514564852e-05,
+      "ann_vol": 0.1760391320904828,
+      "sharpe": 0.6288421897007386,
+      "max_drawdown": -2.581408929418103e-05,
+      "total_pnl": 0.33078463282733317,
+      "total_return": 3.307846328270969e-05
+    },
+    "confirmation": {
+      "cagr": 2.1202197581837723e-05,
+      "ann_vol": 0.15783690753436222,
+      "sharpe": 1.3433207192544547,
+      "max_drawdown": -2.0230158628692153e-05,
+      "total_pnl": 0.5527809976871055,
+      "total_return": 5.527809976868525e-05
+    }
+  },
+  "paired_pead_minus_control": {
+    "units": "dollars per year on $10k equity",
+    "annualized_mean_diff_dollars": -254.56416693607432,
+    "boot95_annualized_dollars": [
+      -1059.8364187125014,
+      674.8823594430856
+    ],
+    "excludes_zero": false
+  },
+  "verdict": {
+    "confirmation_net10_sharpe": 0.5430467193233207,
+    "control_confirmation_net10_sharpe": 0.694416429320495,
+    "edge_confirmed_by_predeclared_rule": false,
+    "large_sue_confirmation_net10_sharpe": 0.9615778480756054,
+    "abs_sue_confirmation_net10_sharpe": 0.8667325272287093
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "objective": "Daily marked, net excess Sharpe >=2 and total-return CAGR >10 percent; paper qualification only",
+  "hypothesis": "Distinguish temporary price pressure from persistent information using the composition of recent returns, volume and volatility; learn expected five-session stock returns relative to the market, rather than earnings direction.",
+  "data": "Existing consistent 503-stock OHLCV cache plus SPY. Current constituents, survivorship-biased; adjusted OHLC and approximate dollar volume. Exploratory screen cannot establish unbiased production performance.",
+  "features": ["market_residual_1d", "market_residual_5d", "market_residual_21d", "momentum_252_skip21", "intraday_market_residual", "overnight_market_residual", "volume_relative_20d", "volatility_20d", "volatility_20_over_126", "distance_sma_200", "market_return_5d", "market_volatility_20d"],
+  "label": "Stock next-open to sixth-next-open return minus current trailing126 beta times same SPY return. Winsorize training labels at +/-20 percent. Exact label end strictly precedes each annual training cutoff.",
+  "training": "2010 onward, expanding annual retraining, first prediction year 2017. Deterministic every-other training date to limit compute. Training-only feature standardization for Ridge. No parameter search.",
+  "development_selection": ["2017-01-01", "2020-12-31"],
+  "evaluation": ["2021-01-01", "2025-06-27"],
+  "models": {
+    "ridge": "StandardScaler and Ridge alpha1000",
+    "gradient_boost": "HistGradientBoostingRegressor squared_error, max_iter100, max_leaf_nodes15, learning_rate0.05, min_samples_leaf200, l2_regularization10, early_stoppingFalse, random_state20260918"
+  },
+  "rules": {
+    "liquidity_shock": "Fade one-day beta residual when magnitude >=1.5 trailing20 residual sigma, volume>=1.5 trailing20 mean, overnight residual magnitude<=0.5 trailing20 total sigma. Rank by residual z. Both sides, same holding convention as models.",
+    "trend_pullback": "Buy most negative five-day residuals among positive 252-skip21 momentum, with residual z5<=-1. Hedge with SPY; no individual-stock shorts."
+  },
+  "portfolio": "At each close select at most10 longs and10 shorts; models rank predictions centered across eligible names that day, require long>10bps/5 sessions and short<-16bps/5 sessions. Each long or short weight is fixed 1 percent of NAV per cohort (up to0.2 gross). Average holdings from last5 cohort decisions by summing those weights, then add lag-informed SPY dollar-beta hedge and rescale if gross>1. Stock cap5percent, SPY cap60percent. Empty slots stay cash. Next-open fills; mark daily; target updates pay costs. No volatility target or leverage optimization.",
+  "eligibility": "252 sessions history, complete finite features, trailing63 adjusted-price dollar volume>$20m, top300 trailing ADV. Beta estimated126 sessions, clipped0to3 for hedging.",
+  "costs": {"base_round_trip_bps":10, "base_short_borrow":0.03, "stress_round_trip_bps":25, "stress_short_borrow":0.10},
+  "cash": "Free cash earns French RF; no short-collateral rebate. Conventional Sharpe subtracts same RF. Broker minimums, impact and locates not verified; no production claim even if numerical target met.",
+  "selection": "Choose highest 2017-2020 excess Sharpe from four candidates before reporting later results; all four shown. Also report one fixed equal-initial-capital blend of all four as a separately counted fifth portfolio.",
+  "target_gate": "Selected candidate evaluation excess Sharpe>=2 and CAGR>10percent, positive stressed excess mean, positive excess mean in every full evaluation year2021-2024, five-family Bonferroni centered20day bootstrap p<.05. No changing rules after evaluation.",
+  "contamination": "Equity market periods already studied throughout project. Chronological retraining and purged labels prevent computational leakage but do not create a virgin historical holdout. New live paper data required. All candidate failures retained."
+}

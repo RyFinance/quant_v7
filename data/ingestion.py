@@ -80,6 +80,44 @@ def ingest_universe(
     return results
 
 
+def refresh_cached_history(
+    tickers: list[str],
+    out_dir: Path = RAW_DATA_DIR,
+    overlap_days: int = 7,
+) -> dict[str, pd.Timestamp | None]:
+    """Bring each ticker's cached parquet up to date by re-fetching from a
+    few days before its last cached bar and merging (newer bars win, so a
+    bar fetched mid-session is overwritten once the session closes). The
+    live bot calls this every cycle: the circuit breaker reads this cache,
+    and without a refresh it silently evaluated a weeks-old market.
+
+    Returns the latest cached bar date per ticker (None when nothing is
+    cached and the fetch failed). A failed fetch leaves the file untouched."""
+    out_dir.mkdir(parents=True, exist_ok=True)
+    latest: dict[str, pd.Timestamp | None] = {}
+    for ticker in tickers:
+        path = out_dir / f"{ticker}.parquet"
+        existing = pd.read_parquet(path) if path.exists() else pd.DataFrame()
+        start = (existing["timestamp"].max() - pd.Timedelta(days=overlap_days)).strftime("%Y-%m-%d") \
+            if not existing.empty else DEFAULT_START
+        try:
+            fresh = fetch_ticker_history(ticker, start=start)
+        except Exception as e:
+            logger.warning(f"{ticker}: price refresh failed ({e!r})")
+            fresh = pd.DataFrame()
+        bars = to_bars(ticker, fresh) if not fresh.empty else []
+        if bars:
+            fresh_clean = pd.DataFrame([b.model_dump() for b in bars])
+            combined = pd.concat([existing, fresh_clean], ignore_index=True) if not existing.empty else fresh_clean
+            combined["timestamp"] = pd.to_datetime(combined["timestamp"])
+            combined = combined.drop_duplicates(subset=["timestamp"], keep="last").sort_values("timestamp")
+            combined.to_parquet(path, index=False)
+            existing = combined
+        latest[ticker] = existing["timestamp"].max() if not existing.empty else None
+        time.sleep(INTER_REQUEST_SLEEP_S)
+    return latest
+
+
 def load_universe(tickers: list[str], data_dir: Path = RAW_DATA_DIR) -> dict[str, pd.DataFrame]:
     out = {}
     for ticker in tickers:

@@ -98,3 +98,47 @@ def test_labeling_fixed_stricter_than_cost_adjusted():
     labeled = build_labeled_pead_signals(resid, sig.head(200), holding_period=20, fixed_threshold=0.01, cost_bps=10.0)
     fixed_positive = labeled[labeled["label_fixed_threshold"] == 1]
     assert (fixed_positive["label_cost_adjusted"] == 1).all()
+
+
+def test_live_earnings_history_prefers_announcement_dates(monkeypatch):
+    """Quarter-end-dated rows are only a fallback for quarters with no
+    announcement; one quarter must never appear under two dates."""
+    import earnings.ingestion as ing
+
+    announced = pd.DataFrame({
+        "ticker": "AAPL", "earnings_date": pd.to_datetime(["2026-04-30 16:30", "2026-07-30 16:30"]),
+        "eps_estimate": [1.94, 1.89], "eps_actual": [2.01, 2.02], "surprise_pct": [3.46, 6.74],
+    })
+    quarter_end = pd.DataFrame({
+        "ticker": "AAPL", "earnings_date": pd.to_datetime(["2025-12-31", "2026-03-31", "2026-06-30"]),
+        "eps_estimate": [2.67, 1.94, 1.89], "eps_actual": [2.84, 2.01, 2.02], "surprise_pct": [6.34, 3.46, 6.74],
+    })
+    monkeypatch.setattr(ing, "fetch_ticker_earnings", lambda ticker, limit=100: announced)
+    monkeypatch.setattr(ing, "fetch_recent_earnings_actuals", lambda ticker: quarter_end)
+
+    live = ing.fetch_ticker_earnings_live("AAPL")
+    assert live["earnings_date"].tolist() == [pd.Timestamp("2025-12-31"), pd.Timestamp("2026-04-30 16:30"), pd.Timestamp("2026-07-30 16:30")]
+
+
+def test_earnings_fetch_treats_missing_surprise_columns_as_no_data(monkeypatch, tmp_path):
+    """Regression: a symbol whose earnings rows carry no surprise column used to
+    raise KeyError out of every caller (hit live on FDXF, once per replayed
+    day). Without a surprise there is no SUE, so it is simply no data."""
+    import earnings.ingestion as ing
+
+    class FakeTicker:
+        def __init__(self, *_a, **_k):
+            pass
+
+        def get_earnings_dates(self, limit=100):
+            return pd.DataFrame({"EPS Estimate": [1.0]}, index=pd.to_datetime(["2026-06-30"]))
+
+        @property
+        def earnings_history(self):
+            return pd.DataFrame({"epsActual": [1.1]}, index=pd.to_datetime(["2026-06-30"]))
+
+    monkeypatch.setattr(ing.yf, "Ticker", FakeTicker)
+    monkeypatch.setattr(ing, "RAW_DIR", tmp_path)   # no cached history to fall back on
+    assert ing.fetch_ticker_earnings("FDXF").empty
+    assert ing.fetch_recent_earnings_actuals("FDXF").empty
+    assert ing.fetch_ticker_earnings_live("FDXF").empty

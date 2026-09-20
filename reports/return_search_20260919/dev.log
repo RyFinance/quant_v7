@@ -1,0 +1,98 @@
+Options underlying aggregates 20
+Options underlying aggregates 40
+Options fields loaded 46 underlyings
+stocks ridge_price 2019: 113,376 train / 2,391 predicted
+stocks boost_price 2019: 113,376 train / 2,391 predicted
+stocks ridge_enriched 2019: 113,376 train / 2,391 predicted
+stocks boost_enriched 2019: 113,376 train / 2,391 predicted
+stocks ridge_price 2020: 123,736 train / 2,386 predicted
+stocks boost_price 2020: 123,736 train / 2,386 predicted
+stocks ridge_enriched 2020: 123,736 train / 2,386 predicted
+stocks boost_enriched 2020: 123,736 train / 2,386 predicted
+stocks ridge_price 2021: 134,272 train / 2,366 predicted
+stocks boost_price 2021: 134,272 train / 2,366 predicted
+stocks ridge_enriched 2021: 134,272 train / 2,366 predicted
+stocks boost_enriched 2021: 134,272 train / 2,366 predicted
+stocks ridge_price 2022: 144,532 train / 2,392 predicted
+stocks boost_price 2022: 144,532 train / 2,392 predicted
+stocks ridge_enriched 2022: 144,532 train / 2,392 predicted
+stocks boost_enriched 2022: 144,532 train / 2,392 predicted
+stocks ridge_price 2023: 154,892 train / 2,394 predicted
+stocks boost_price 2023: 154,892 train / 2,394 predicted
+stocks ridge_enriched 2023: 154,892 train / 2,394 predicted
+stocks boost_enriched 2023: 154,892 train / 2,394 predicted
+stocks ridge_price 2024: 165,269 train / 2,388 predicted
+stocks boost_price 2024: 165,269 train / 2,388 predicted
+stocks ridge_enriched 2024: 165,269 train / 2,388 predicted
+stocks boost_enriched 2024: 165,269 train / 2,388 predicted
+stocks ridge_price 2025: 175,625 train / 1,194 predicted
+stocks boost_price 2025: 175,625 train / 1,194 predicted
+stocks ridge_enriched 2025: 175,625 train / 1,194 predicted
+stocks boost_enriched 2025: 175,625 train / 1,194 predicted
+RESULT stocks__momentum {"cagr": 0.3066207020792999, "total_return": 4.652056720405177, "excess_sharpe": 0.9349914039503817, "ann_excess_mean": 0.2907336880342124, "vol": 0.31094504622633246, "max_dd": -0.3549864909402063, "annual_cost": 0.003982987734754394, "annual_turnover": 7.965975469508789, "average_exposure": 1.0, "days": 1632, "years": 6.476190476190476}
+RESULT stocks__trend {"cagr": 0.2502684365626917, "total_return": 3.2482653623382847, "excess_sharpe": 0.9259246301494037, "ann_excess_mean": 0.22870399201487723, "vol": 0.24697808617704958, "max_dd": -0.32171851181410527, "annual_cost": 0.005218766550139915, "annual_turnover": 10.43753310027983, "average_exposure": 1.0, "days": 1632, "years": 6.476190476190476}
+RESULT stocks__breakout {"cagr": 0.10706477804546055, "total_return": 0.9322929962851594, "excess_sharpe": 0.4953325126605392, "ann_excess_mean": 0.09464618788972903, "vol": 0.1910500060331767, "max_dd": -0.2706419691933458, "annual_cost": 0.008849840613583132, "annual_turnover": 17.699681227166266, "average_exposure": 0.9933470924762727, "days": 1632, "years": 6.476190476190476}
+RESULT stocks__ridge_price {"cagr": 0.2879987384492688, "total_return": 4.150309291139289, "excess_sharpe": 0.8095421616261181, "ann_excess_mean": 0.29354305268421577, "vol": 0.3626050729713501, "max_dd": -0.46967426747615804, "annual_cost": 0.006089253685127903, "annual_turnover": 12.178507370255804, "average_exposure": 0.9993872549019608, "days": 1632, "years": 6.476190476190476}
+RESULT stocks__boost_price {"cagr": 0.26796808202543243, "total_return": 3.653172245254134, "excess_sharpe": 0.7500054406764451, "ann_excess_mean": 0.2839980182267321, "vol": 0.37867179689854585, "max_dd": -0.5271486380694134, "annual_cost": 0.006488500458352392, "annual_turnover": 12.977000916704784, "average_exposure": 0.9993872549019608, "days": 1632, "years": 6.476190476190476}
+RESULT stocks__ridge_enriched {"cagr": 0.28511266428299686, "total_return": 4.076027707194664, "excess_sharpe": 0.8295924527964842, "ann_excess_mean": 0.2844634827275958, "vol": 0.3429026357904509, "max_dd": -0.5061871697932291, "annual_cost": 0.00678940413068423, "annual_turnover": 13.578808261368462, "average_exposure": 0.9993872549019608, "days": 1632, "years": 6.476190476190476}
+RESULT stocks__boost_enriched {"cagr": 0.21466706097719013, "total_return": 2.5233944641419153, "excess_sharpe": 0.6472863923775034, "ann_excess_mean": 0.23492391108632582, "vol": 0.3629186897211128, "max_dd": -0.47646348167605734, "annual_cost": 0.004928511784044897, "annual_turnover": 9.857023568089792, "average_exposure": 0.7527692670523839, "days": 1632, "years": 6.476190476190476}
+RESULT stocks__passive {"cagr": 0.19130382664418621, "total_return": 2.106965485586669, "excess_sharpe": 0.8144203550448269, "ann_excess_mean": 0.17209736610507548, "vol": 0.21128892466985416, "max_dd": -0.3832648881264118, "annual_cost": 0.0005004672629059061, "annual_turnover": 1.0009345258118123, "average_exposure": 1.0, "days": 1632, "years": 6.476190476190476}
+etf ridge_price 2019: 20,920 train / 444 predicted
+etf boost_price 2019: 20,920 train / 444 predicted
+etf ridge_enriched 2019: 20,920 train / 444 predicted
+etf boost_enriched 2019: 20,920 train / 444 predicted
+etf ridge_price 2020: 22,844 train / 444 predicted
+etf boost_price 2020: 22,844 train / 444 predicted
+etf ridge_enriched 2020: 22,844 train / 444 predicted
+etf boost_enriched 2020: 22,844 train / 444 predicted
+etf ridge_price 2021: 24,805 train / 444 predicted
+etf boost_price 2021: 24,805 train / 444 predicted
+etf ridge_enriched 2021: 24,805 train / 444 predicted
+etf boost_enriched 2021: 24,805 train / 444 predicted
+etf ridge_price 2022: 26,729 train / 444 predicted
+etf boost_price 2022: 26,729 train / 444 predicted
+etf ridge_enriched 2022: 26,729 train / 444 predicted
+etf boost_enriched 2022: 26,729 train / 444 predicted
+etf ridge_price 2023: 28,653 train / 444 predicted
+etf boost_price 2023: 28,653 train / 444 predicted
+etf ridge_enriched 2023: 28,653 train / 444 predicted
+etf boost_enriched 2023: 28,653 train / 444 predicted
+etf ridge_price 2024: 30,577 train / 444 predicted
+etf boost_price 2024: 30,577 train / 444 predicted
+etf ridge_enriched 2024: 30,577 train / 444 predicted
+etf boost_enriched 2024: 30,577 train / 444 predicted
+etf ridge_price 2025: 32,501 train / 222 predicted
+etf boost_price 2025: 32,501 train / 222 predicted
+etf ridge_enriched 2025: 32,501 train / 222 predicted
+etf boost_enriched 2025: 32,501 train / 222 predicted
+RESULT etf__momentum {"cagr": 0.10572711035750615, "total_return": 0.9172223744716739, "excess_sharpe": 0.49169779229151084, "ann_excess_mean": 0.09301931970432975, "vol": 0.18909513274857323, "max_dd": -0.4281183619824962, "annual_cost": 0.0037732736495026367, "annual_turnover": 7.546547299005272, "average_exposure": 0.9971099305884906, "days": 1632, "years": 6.476190476190476}
+RESULT etf__trend {"cagr": 0.0314810696356953, "total_return": 0.22229967538110906, "excess_sharpe": 0.11052075473934608, "ann_excess_mean": 0.015732485132803432, "vol": 0.14230369393024622, "max_dd": -0.2590380147356026, "annual_cost": 0.004635191248472947, "annual_turnover": 9.270382496945896, "average_exposure": 1.0, "days": 1632, "years": 6.476190476190476}
+RESULT etf__breakout {"cagr": 0.03760158038585226, "total_return": 0.2700399379285767, "excess_sharpe": 0.1620766133616636, "ann_excess_mean": 0.017009881635, "vol": 0.10491017572332575, "max_dd": -0.26190103083220395, "annual_cost": 0.00726847212644519, "annual_turnover": 14.536944252890379, "average_exposure": 0.9542763065857175, "days": 1632, "years": 6.476190476190476}
+RESULT etf__ridge_price {"cagr": 0.08774742267081481, "total_return": 0.7241009586302123, "excess_sharpe": 0.3947548016764875, "ann_excess_mean": 0.07843659038127451, "vol": 0.19865880311418635, "max_dd": -0.28981439396574005, "annual_cost": 0.007200362794868388, "annual_turnover": 14.400725589736776, "average_exposure": 0.9960249792739714, "days": 1632, "years": 6.476190476190476}
+RESULT etf__boost_price {"cagr": 0.05868042657470296, "total_return": 0.44671206703633315, "excess_sharpe": 0.2550974954798478, "ann_excess_mean": 0.05533996254407148, "vol": 0.21689633962150376, "max_dd": -0.4001892331603609, "annual_cost": 0.006758977925388592, "annual_turnover": 13.517955850777184, "average_exposure": 0.9993872549019608, "days": 1632, "years": 6.476190476190476}
+RESULT etf__ridge_enriched {"cagr": 0.02994012408543001, "total_return": 0.21052233587536628, "excess_sharpe": 0.10200702676449369, "ann_excess_mean": 0.015243908275756692, "vol": 0.14937535460278004, "max_dd": -0.2981020223096742, "annual_cost": 0.009075963684417057, "annual_turnover": 18.151927368834112, "average_exposure": 0.9573768722164212, "days": 1632, "years": 6.476190476190476}
+RESULT etf__boost_enriched {"cagr": 0.06106579681452451, "total_return": 0.4679529557811182, "excess_sharpe": 0.2725412790585803, "ann_excess_mean": 0.05252185104643982, "vol": 0.19267391508298654, "max_dd": -0.37984692926945973, "annual_cost": 0.006031120559819425, "annual_turnover": 12.062241119638852, "average_exposure": 0.7085137629035501, "days": 1632, "years": 6.476190476190476}
+RESULT etf__passive {"cagr": 0.06658988010174238, "total_return": 0.5181576616552048, "excess_sharpe": 0.4094305099544603, "ann_excess_mean": 0.04513373272972867, "vol": 0.11018194492194734, "max_dd": -0.2224479064860141, "annual_cost": 0.00034758573275961576, "annual_turnover": 0.6951714655192316, "average_exposure": 1.0, "days": 1632, "years": 6.476190476190476}
+crypto ridge_price 2019: 202 train / 104 predicted
+crypto boost_price 2019: 202 train / 104 predicted
+crypto ridge_price 2020: 306 train / 104 predicted
+crypto boost_price 2020: 306 train / 104 predicted
+crypto ridge_price 2021: 410 train / 104 predicted
+crypto boost_price 2021: 410 train / 104 predicted
+crypto ridge_price 2022: 516 train / 104 predicted
+crypto boost_price 2022: 516 train / 104 predicted
+crypto ridge_price 2023: 620 train / 104 predicted
+crypto boost_price 2023: 620 train / 104 predicted
+crypto ridge_price 2024: 724 train / 106 predicted
+crypto boost_price 2024: 724 train / 106 predicted
+crypto ridge_price 2025: 828 train / 52 predicted
+crypto boost_price 2025: 828 train / 52 predicted
+RESULT crypto__trend {"cagr": 0.5428591605279154, "total_return": 15.76404521222107, "excess_sharpe": 1.0254623345653717, "ann_excess_mean": 0.5574032391556465, "vol": 0.5435372449219685, "max_dd": -0.6780681246611395, "annual_cost": 0.007528014340343111, "annual_turnover": 3.764007170171555, "average_exposure": 0.6972498676523043, "days": 2373, "years": 6.501369863013698}
+RESULT crypto__breakout {"cagr": 0.21710779137004166, "total_return": 2.5872006195667043, "excess_sharpe": 0.6863859888618333, "ann_excess_mean": 0.2253846380240777, "vol": 0.32833354828394345, "max_dd": -0.46255731370889897, "annual_cost": 0.0143743426140338, "annual_turnover": 7.187171307016898, "average_exposure": 0.29191242578103066, "days": 2373, "years": 6.501369863013698}
+RESULT crypto__ridge_price {"cagr": 0.46042260449384775, "total_return": 10.731022409838788, "excess_sharpe": 0.8799556747378977, "ann_excess_mean": 0.5641407791343879, "vol": 0.6410887172255847, "max_dd": -0.7636794663031242, "annual_cost": 0.007089648046925324, "annual_turnover": 3.544824023462662, "average_exposure": 0.9038371194855152, "days": 2373, "years": 6.501369863013698}
+RESULT crypto__boost_price {"cagr": 0.21552775242425803, "total_return": 2.5570324672159863, "excess_sharpe": 0.5917745368171062, "ann_excess_mean": 0.3453867341879808, "vol": 0.5836370737649175, "max_dd": -0.7316788588751284, "annual_cost": 0.015315482712550335, "annual_turnover": 7.657741356275167, "average_exposure": 0.762818615616843, "days": 2373, "years": 6.501369863013698}
+RESULT crypto__passive {"cagr": 0.6632063109331734, "total_return": 26.318224732657733, "excess_sharpe": 1.0509232454041455, "ann_excess_mean": 0.729228244528866, "vol": 0.6938736493657245, "max_dd": -0.7636794663031247, "annual_cost": 0.0030963056349150165, "annual_turnover": 1.5481528174575085, "average_exposure": 1.0, "days": 2373, "years": 6.501369863013698}
+RESULT vol__contango {"cagr": 0.08282126760243491, "total_return": 0.67415733857017, "excess_sharpe": 0.33430761107681356, "ann_excess_mean": 0.11093007153426614, "vol": 0.3318255349218948, "max_dd": -0.5271591054914657, "annual_cost": 0.009878071914665339, "annual_turnover": 9.878071914665338, "average_exposure": 0.9264705882352942, "days": 1632, "years": 6.476190476190476}
+RESULT vol__contango_trend {"cagr": 0.03876702718712699, "total_return": 0.2793068418790283, "excess_sharpe": 0.20057969495592834, "ann_excess_mean": 0.06201975362558158, "vol": 0.30920401699559785, "max_dd": -0.5388638957002552, "annual_cost": 0.011421418274188166, "annual_turnover": 11.421418274188168, "average_exposure": 0.7800245098039216, "days": 1632, "years": 6.476190476190476}
+RESULT vol__passive {"cagr": 0.11652716312418887, "total_return": 1.0417880627576608, "excess_sharpe": 0.4193907269835599, "ann_excess_mean": 0.16207640197648468, "vol": 0.386465290061907, "max_dd": -0.6218511588289017, "annual_cost": 0.00030932448562379105, "annual_turnover": 0.309324485623791, "average_exposure": 1.0, "days": 1632, "years": 6.476190476190476}
+FROZEN SELECTION {"family_winners": {"stocks": "stocks__momentum", "etf": "etf__momentum", "crypto": "crypto__breakout", "vol": null}, "primary": "crypto__breakout", "fixed_equal_weight_blend": ["etf__momentum", "crypto__breakout"], "stock_survivorship_exclusion": true, "plan_sha256": "426d11b5e2efc2eb6061a1d9d31aff5a7057f6350d7d183751e415bd805b89e6", "code_sha256": "017cd978f6d8c675b2139ebb5a8e5b4eb9e78cb0e421dbcd1a66afcda8bc97e6", "results_sha256": "57ed4faca09979f519f7e96a89a893f56a9cd94610097beb1e265fe6a70022b8"}

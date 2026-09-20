@@ -1,0 +1,26 @@
+{
+  "A cache universe 2019..2026": {
+    "sharpe": 1.004576826224435,
+    "ci95": [
+      0.3722128678014575,
+      1.6601332190465492
+    ],
+    "vs_0.70_benchmark": "positive (interval excludes 0)"
+  },
+  "B members only 2019..2026": {
+    "sharpe": 0.664027746427981,
+    "ci95": [
+      0.08404120268873416,
+      1.2662636547058692
+    ],
+    "vs_0.70_benchmark": "positive (interval excludes 0)"
+  },
+  "B members only 2008..2026": {
+    "sharpe": 0.5798927111088507,
+    "ci95": [
+      0.1927525243655331,
+      0.9855942693886462
+    ],
+    "vs_0.70_benchmark": "positive (interval excludes 0)"
+  }
+}

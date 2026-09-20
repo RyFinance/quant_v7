@@ -1,0 +1,1310 @@
+{
+  "jsonrpc": "2.0",
+  "id": 2,
+  "result": {
+    "tools": [
+      {
+        "name": "terminal_status",
+        "description": "Is LSE Terminal running, and its state: engine URL/version, whether the LSE data key is set, data providers and timeframes, sim accounts with balance/equity, brokers with mode (paper/live) and connection, and algo runs. Start here. Never launches the app.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {}
+        },
+        "annotations": {
+          "readOnlyHint": true,
+          "openWorldHint": false
+        }
+      },
+      {
+        "name": "launch_terminal",
+        "description": "Open the LSE Terminal app if it is not running and wait (up to 90 s) for its engine. Returns terminal_status.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {}
+        },
+        "annotations": {
+          "readOnlyHint": false,
+          "destructiveHint": false,
+          "openWorldHint": false
+        }
+      },
+      {
+        "name": "screenshot",
+        "description": "PNG screenshot of the LSE Terminal window, to see what the user sees (chart, panels). Read numbers through the data tools instead; vision misreads digits. Needs macOS Screen Recording permission for the app running Claude Code.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "max_px": {
+              "type": "integer",
+              "description": "Longest side in pixels (default 1600)"
+            }
+          }
+        },
+        "annotations": {
+          "readOnlyHint": true,
+          "openWorldHint": false
+        }
+      },
+      {
+        "name": "search_instruments",
+        "description": "Find tradeable/chartable symbols by name or ticker on a data provider.",
+        "inputSchema": {
+          "type": "object",
+          "required": [
+            "query"
+          ],
+          "properties": {
+            "query": {
+              "type": "string"
+            },
+            "provider": {
+              "type": "string",
+              "description": "lse (default), demo, userdata, broker:<name>"
+            },
+            "limit": {
+              "type": "integer",
+              "description": "default 20, max 200"
+            }
+          }
+        },
+        "annotations": {
+          "readOnlyHint": true,
+          "openWorldHint": false
+        }
+      },
+      {
+        "name": "get_quotes",
+        "description": "Latest price, bid and ask for one or more symbols from the LSE feed.",
+        "inputSchema": {
+          "type": "object",
+          "required": [
+            "symbols"
+          ],
+          "properties": {
+            "symbols": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "description": "e.g. [\"AAPL\", \"BTC/USD\", \"EUR/USD\"]"
+            },
+            "provider": {
+              "type": "string",
+              "description": "lse (default)"
+            }
+          }
+        },
+        "annotations": {
+          "readOnlyHint": true,
+          "openWorldHint": false
+        }
+      },
+      {
+        "name": "get_history",
+        "description": "OHLCV bars for any symbol, timeframe and date range, as CSV (UTC times). Unlike the built-in get_candles this is not tied to the open chart and goes up to 5000 bars. Optional indicators are computed by the terminal.",
+        "inputSchema": {
+          "type": "object",
+          "required": [
+            "symbol"
+          ],
+          "properties": {
+            "symbol": {
+              "type": "string"
+            },
+            "provider": {
+              "type": "string",
+              "description": "lse (default), userdata (MY DATA imports), demo, broker:<name>"
+            },
+            "timeframe": {
+              "type": "string",
+              "description": "tick, 1s, 30s, 1m, 5m, 15m, 30m, 1h (default), 4h, 1d, 1w"
+            },
+            "start": {
+              "type": "string",
+              "description": "YYYY-MM-DD or ISO time"
+            },
+            "end": {
+              "type": "string",
+              "description": "YYYY-MM-DD or ISO time"
+            },
+            "limit": {
+              "type": "integer",
+              "description": "most recent N bars in range; default 200, max 5000"
+            },
+            "indicators": {
+              "type": "string",
+              "description": "comma list of indicator ids (see api_get /api/indicators)"
+            }
+          }
+        },
+        "annotations": {
+          "readOnlyHint": true,
+          "openWorldHint": false
+        }
+      },
+      {
+        "name": "screener",
+        "description": "Filter and rank the LSE screener (~4200 stocks, ETFs, crypto, FX, commodities, futures, indices) on price, momentum, technical, fundamental, options, COT, insider, news and event columns. Columns: symbol name asset_class market_open price change_1h_pct change_24h_pct change_1w_pct change_1m_pct change_3m_pct change_ytd_pct change_1y_pct gap_pct week52_high_dist_pct week52_low_dist_pct volume_today avg_volume_20d rel_volume dollar_volume rsi_14 atr_pct realized_vol_20d sma20_dist_pct sma50_dist_pct sma200_dist_pct bb_pctb move_percentile corr_spx_60d corr_dxy_60d corr_btc_60d beta_spx_1y sector industry country market_cap pe_ratio beta dividend_yield profit_margin revenue_ttm revenue_growth_yoy next_earnings_date days_to_earnings eps_surprise_last_pct next_ex_div_date div_amount has_upcoming_split opt_volume opt_pc_ratio opt_net_premium opt_atm_iv opt_iv_rank opt_skew opt_top_strike opt_front_expiry_dte opt_biggest_print opt_oi_pc_ratio opt_max_pain cot_net_noncomm cot_net_change_1w cot_pct_long insider_net_shares_90d insider_buys_90d insider_sells_90d insider_net_notional_90d news_count_24h news_sentiment_24h sector_sentiment_score latest_headline next_event_at next_event_name next_event_impact event_risk_score macro_surprise_30d event_move_avg_pct description website ceo employees ipo_date",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "asset_class": {
+              "type": "string",
+              "enum": [
+                "stock",
+                "etf",
+                "crypto",
+                "forex",
+                "commodity",
+                "futures",
+                "index",
+                "interest_rates",
+                "currency_index",
+                "volatility"
+              ]
+            },
+            "query": {
+              "type": "string",
+              "description": "substring of symbol or name"
+            },
+            "sector": {
+              "type": "string"
+            },
+            "filters": {
+              "type": "array",
+              "description": "all must hold, e.g. [{\"col\":\"rsi_14\",\"op\":\"<\",\"value\":30},{\"col\":\"market_cap\",\"op\":\">\",\"value\":1e10}]",
+              "items": {
+                "type": "object",
+                "required": [
+                  "col",
+                  "op",
+                  "value"
+                ],
+                "properties": {
+                  "col": {
+                    "type": "string"
+                  },
+                  "op": {
+                    "type": "string",
+                    "enum": [
+                      ">",
+                      ">=",
+                      "<",
+                      "<=",
+                      "==",
+                      "!="
+                    ]
+                  },
+                  "value": {}
+                }
+              }
+            },
+            "sort": {
+              "type": "string",
+              "description": "column to rank by (default dollar_volume)"
+            },
+            "ascending": {
+              "type": "boolean",
+              "description": "default false (largest first)"
+            },
+            "columns": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "description": "default symbol, name, asset_class, price, change_24h_pct, change_1m_pct, rsi_14, rel_volume, market_cap, sector"
+            },
+            "limit": {
+              "type": "integer",
+              "description": "default 25, max 200"
+            }
+          }
+        },
+        "annotations": {
+          "readOnlyHint": true,
+          "openWorldHint": false
+        }
+      },
+      {
+        "name": "options_chain",
+        "description": "Options chain for an underlying (e.g. SPY, AAPL, TSLA): strikes, expiries, quotes, greeks/IV as the terminal provides them. List underlyings with api_get /api/options/underlyings.",
+        "inputSchema": {
+          "type": "object",
+          "required": [
+            "underlying"
+          ],
+          "properties": {
+            "underlying": {
+              "type": "string"
+            },
+            "type": {
+              "type": "string",
+              "enum": [
+                "call",
+                "put"
+              ]
+            },
+            "expiry": {
+              "type": "string",
+              "description": "YYYY-MM-DD"
+            },
+            "limit": {
+              "type": "integer",
+              "description": "default 200, max 5000"
+            }
+          }
+        },
+        "annotations": {
+          "readOnlyHint": true,
+          "openWorldHint": false
+        }
+      },
+      {
+        "name": "options_flow",
+        "description": "Unusual options flow: large recent prints, optionally for one underlying and above a premium.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "underlying": {
+              "type": "string"
+            },
+            "type": {
+              "type": "string",
+              "enum": [
+                "call",
+                "put"
+              ]
+            },
+            "min_premium": {
+              "type": "number",
+              "description": "USD"
+            },
+            "limit": {
+              "type": "integer",
+              "description": "default 50, max 300"
+            }
+          }
+        },
+        "annotations": {
+          "readOnlyHint": true,
+          "openWorldHint": false
+        }
+      },
+      {
+        "name": "news",
+        "description": "The terminal's live world-news feed (headline, summary, source, url, country, time).",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "query": {
+              "type": "string",
+              "description": "substring filter on headline/summary"
+            },
+            "limit": {
+              "type": "integer",
+              "description": "default 20"
+            }
+          }
+        },
+        "annotations": {
+          "readOnlyHint": true,
+          "openWorldHint": false
+        }
+      },
+      {
+        "name": "macro_search",
+        "description": "Search the LSE macro catalog (thousands of economic series: rates, inflation, GDP, yields, ...) for symbols to pass to macro_series.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "query": {
+              "type": "string",
+              "description": "every word must appear in symbol, name, category or source, e.g. \"10Y yield\", \"CPI\""
+            },
+            "country": {
+              "type": "string",
+              "description": "ISO code (US) or name (United States)"
+            },
+            "category": {
+              "type": "string"
+            },
+            "limit": {
+              "type": "integer",
+              "description": "default 30, max 300"
+            }
+          }
+        },
+        "annotations": {
+          "readOnlyHint": true,
+          "openWorldHint": false
+        }
+      },
+      {
+        "name": "macro_series",
+        "description": "Observations of one macro series (symbol from macro_search).",
+        "inputSchema": {
+          "type": "object",
+          "required": [
+            "symbol"
+          ],
+          "properties": {
+            "symbol": {
+              "type": "string"
+            },
+            "dataset": {
+              "type": "string",
+              "description": "from macro_search, if the symbol is ambiguous"
+            },
+            "start": {
+              "type": "string",
+              "description": "YYYY-MM-DD"
+            },
+            "end": {
+              "type": "string",
+              "description": "YYYY-MM-DD"
+            },
+            "order": {
+              "type": "string",
+              "enum": [
+                "asc",
+                "desc"
+              ],
+              "description": "desc = newest first"
+            },
+            "limit": {
+              "type": "integer",
+              "description": "default 500, max 5000"
+            }
+          }
+        },
+        "annotations": {
+          "readOnlyHint": true,
+          "openWorldHint": false
+        }
+      },
+      {
+        "name": "get_book",
+        "description": "One paper account's book: balance/equity, open positions (with SL/TP), working orders, and recent fills. The built-in get_positions/get_fills summarise every account at once.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "account": {
+              "type": "string",
+              "description": "Paper account: \"sim\" = the LSE sim account (pick with account_id), or a paper broker name from terminal_status, e.g. \"paper\" (the built-in simulator) or \"lse-sim\". Live brokers are refused. Default \"sim\"."
+            },
+            "account_id": {
+              "type": "integer",
+              "description": "Which LSE sim account when account=\"sim\" (default: the first)"
+            },
+            "fills": {
+              "type": "integer",
+              "description": "recent fills to include (default 20)"
+            }
+          }
+        },
+        "annotations": {
+          "readOnlyHint": true,
+          "openWorldHint": false
+        }
+      },
+      {
+        "name": "place_order",
+        "description": "Place a PAPER order: market, or a resting limit/stop at `price`, with optional stop-loss and take-profit, on the named paper `account`. Live brokers are refused. The sim uses the terminal's symbols (as in get_quotes); broker spellings are mapped.",
+        "inputSchema": {
+          "type": "object",
+          "required": [
+            "symbol",
+            "side",
+            "qty",
+            "account"
+          ],
+          "properties": {
+            "symbol": {
+              "type": "string"
+            },
+            "side": {
+              "type": "string",
+              "enum": [
+                "buy",
+                "sell"
+              ]
+            },
+            "qty": {
+              "type": "number",
+              "description": "units / shares / coins"
+            },
+            "type": {
+              "type": "string",
+              "enum": [
+                "market",
+                "limit",
+                "stop"
+              ],
+              "description": "default market"
+            },
+            "price": {
+              "type": "number",
+              "description": "limit or stop level (required unless market)"
+            },
+            "sl": {
+              "type": "number",
+              "description": "stop-loss price"
+            },
+            "tp": {
+              "type": "number",
+              "description": "take-profit price"
+            },
+            "account": {
+              "type": "string",
+              "description": "Paper account: \"sim\" = the LSE sim account (pick with account_id), or a paper broker name from terminal_status, e.g. \"paper\" (the built-in simulator) or \"lse-sim\". Live brokers are refused."
+            },
+            "account_id": {
+              "type": "integer",
+              "description": "Which LSE sim account when account=\"sim\" (default: the first)"
+            }
+          }
+        },
+        "annotations": {
+          "readOnlyHint": false,
+          "destructiveHint": true,
+          "openWorldHint": false
+        }
+      },
+      {
+        "name": "cancel_order",
+        "description": "Cancel a working (resting) paper order by id (ids from get_book).",
+        "inputSchema": {
+          "type": "object",
+          "required": [
+            "order_id",
+            "account"
+          ],
+          "properties": {
+            "order_id": {
+              "type": [
+                "string",
+                "integer"
+              ]
+            },
+            "account": {
+              "type": "string",
+              "description": "Paper account: \"sim\" = the LSE sim account (pick with account_id), or a paper broker name from terminal_status, e.g. \"paper\" (the built-in simulator) or \"lse-sim\". Live brokers are refused."
+            },
+            "account_id": {
+              "type": "integer",
+              "description": "Which LSE sim account when account=\"sim\" (default: the first)"
+            }
+          }
+        },
+        "annotations": {
+          "readOnlyHint": false,
+          "destructiveHint": true,
+          "openWorldHint": false
+        }
+      },
+      {
+        "name": "modify_position",
+        "description": "Set or clear the stop-loss / take-profit of an open paper position. Omit a side to keep it, pass null to clear it.",
+        "inputSchema": {
+          "type": "object",
+          "required": [
+            "account"
+          ],
+          "properties": {
+            "symbol": {
+              "type": "string"
+            },
+            "position_id": {
+              "type": [
+                "string",
+                "integer"
+              ],
+              "description": "instead of symbol, when there are several"
+            },
+            "sl": {
+              "type": [
+                "number",
+                "null"
+              ]
+            },
+            "tp": {
+              "type": [
+                "number",
+                "null"
+              ]
+            },
+            "account": {
+              "type": "string",
+              "description": "Paper account: \"sim\" = the LSE sim account (pick with account_id), or a paper broker name from terminal_status, e.g. \"paper\" (the built-in simulator) or \"lse-sim\". Live brokers are refused."
+            },
+            "account_id": {
+              "type": "integer",
+              "description": "Which LSE sim account when account=\"sim\" (default: the first)"
+            }
+          }
+        },
+        "annotations": {
+          "readOnlyHint": false,
+          "destructiveHint": true,
+          "openWorldHint": false
+        }
+      },
+      {
+        "name": "close_position",
+        "description": "Close an open paper position at market, fully or partly (qty).",
+        "inputSchema": {
+          "type": "object",
+          "required": [
+            "account"
+          ],
+          "properties": {
+            "symbol": {
+              "type": "string"
+            },
+            "position_id": {
+              "type": [
+                "string",
+                "integer"
+              ],
+              "description": "instead of symbol, when there are several"
+            },
+            "qty": {
+              "type": "number",
+              "description": "partial close size; omit to close it all"
+            },
+            "account": {
+              "type": "string",
+              "description": "Paper account: \"sim\" = the LSE sim account (pick with account_id), or a paper broker name from terminal_status, e.g. \"paper\" (the built-in simulator) or \"lse-sim\". Live brokers are refused."
+            },
+            "account_id": {
+              "type": "integer",
+              "description": "Which LSE sim account when account=\"sim\" (default: the first)"
+            }
+          }
+        },
+        "annotations": {
+          "readOnlyHint": false,
+          "destructiveHint": true,
+          "openWorldHint": false
+        }
+      },
+      {
+        "name": "algo_start",
+        "description": "Run a strategy LIVE against the terminal's paper broker adapter (the BACKTEST editor's \"algo\" button). Pass the source as script, or a workspace path as file. Monitor with algo_status.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "script": {
+              "type": "string",
+              "description": "strategy source"
+            },
+            "file": {
+              "type": "string",
+              "description": "workspace path, e.g. strategies/kalman_slope_trend.py"
+            },
+            "symbol": {
+              "type": "string",
+              "description": "default EURUSD"
+            },
+            "timeframe": {
+              "type": "string",
+              "description": "default 1m"
+            },
+            "warmup": {
+              "type": "integer",
+              "description": "warmup bars (default 100)"
+            },
+            "bars": {
+              "type": "integer",
+              "description": "max bars to run (default 100000)"
+            }
+          }
+        },
+        "annotations": {
+          "readOnlyHint": false,
+          "destructiveHint": true,
+          "openWorldHint": false
+        }
+      },
+      {
+        "name": "algo_status",
+        "description": "Algo runs (no id), or one run's journal of events and log tail (with id).",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string"
+            },
+            "limit": {
+              "type": "integer",
+              "description": "journal events (default 100)"
+            }
+          }
+        },
+        "annotations": {
+          "readOnlyHint": true,
+          "openWorldHint": false
+        }
+      },
+      {
+        "name": "algo_stop",
+        "description": "Stop one algo run by id. Its positions stay open.",
+        "inputSchema": {
+          "type": "object",
+          "required": [
+            "id"
+          ],
+          "properties": {
+            "id": {
+              "type": "string"
+            }
+          }
+        },
+        "annotations": {
+          "readOnlyHint": false,
+          "destructiveHint": true,
+          "openWorldHint": false
+        }
+      },
+      {
+        "name": "algo_kill_all",
+        "description": "KILL SWITCH: stop every algo run and flatten their positions.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {}
+        },
+        "annotations": {
+          "readOnlyHint": false,
+          "destructiveHint": true,
+          "openWorldHint": false
+        }
+      },
+      {
+        "name": "api_get",
+        "description": "Read-only escape hatch: GET any engine route under /api/ (e.g. /api/indicators, /api/options/underlyings, /api/directory, /api/lse/databank, /api/ml/jobs, /api/ai/chats). The full route list is at /openapi.json on the engine. Output is truncated at 60k chars.",
+        "inputSchema": {
+          "type": "object",
+          "required": [
+            "path"
+          ],
+          "properties": {
+            "path": {
+              "type": "string",
+              "description": "e.g. /api/indicators"
+            },
+            "query": {
+              "type": "object",
+              "description": "query parameters",
+              "additionalProperties": true
+            }
+          }
+        },
+        "annotations": {
+          "readOnlyHint": true,
+          "openWorldHint": false
+        }
+      },
+      {
+        "name": "run_backtest",
+        "description": "Backtest a PLAIN PYTHON strategy through the local LSE Terminal engine and return the stats. Pass the code via script= or a workspace file via file=. There is NOTHING to import and no base class: `df` is already in scope, a pandas DataFrame with ts/open/high/low/close/volume. Use ordinary pandas (df.close.ewm(span=9).mean()), then leave a list `trades` of dicts: {'entry_i': 10, 'exit_i': 25, 'dir': 'long'} where entry_i/exit_i are bar indexes (entry_ts/exit_ts epoch seconds also work), dir defaults to long, prices default to those bars' opens, and qty defaults to the whole account. Read tunable values from the injected `params` dict so run_walkforward can sweep them. There is NO Strategy class, no init/next(self, i), no self.buy/self.sma, no self.I: that API no longer exists.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "script": {
+              "type": "string",
+              "description": "Python strategy source"
+            },
+            "file": {
+              "type": "string",
+              "description": "workspace-relative .py path, e.g. strategies/sma_cross.py"
+            },
+            "engine": {
+              "type": "string",
+              "description": "python (the only engine)"
+            },
+            "symbol": {
+              "type": "string",
+              "description": "dataset / symbol to test on"
+            },
+            "timeframe": {
+              "type": "string"
+            },
+            "from": {
+              "type": "string",
+              "description": "YYYY-MM-DD"
+            },
+            "to": {
+              "type": "string",
+              "description": "YYYY-MM-DD"
+            }
+          }
+        }
+      },
+      {
+        "name": "get_fills",
+        "description": "The user's CLOSED trades and realised P&L: per fill the symbol, side, qty, price, realised P&L and timestamp, plus totals. USE THIS for \"what was my last trade\", \"did that make money\", \"how am I doing overall\". realized_pnl is null on an opening fill and a number on a closing one, so a null is not a break-even trade.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "limit": {
+              "type": "integer",
+              "description": "how many fills, newest first (default 50)"
+            }
+          }
+        }
+      },
+      {
+        "name": "get_positions",
+        "description": "The user's LIVE account and open positions as DATA: balance, equity, leverage, and per position the symbol, side, qty, average price, current price and unrealized P&L. USE THIS for any question about what the user is holding, how a trade is doing, or what their account is worth. NEVER read those numbers off the screenshot: a vision model misreads digits and flips P&L signs. If no sim account is open this says so; report that rather than calling it an empty book.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {}
+        }
+      },
+      {
+        "name": "get_candles",
+        "description": "Recent OHLCV candles from the terminal for a symbol (defaults to the chart the user has open).",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "symbol": {
+              "type": "string"
+            },
+            "timeframe": {
+              "type": "string"
+            },
+            "limit": {
+              "type": "integer",
+              "maximum": 500
+            }
+          }
+        }
+      },
+      {
+        "name": "list_datasets",
+        "description": "The user's imported MY DATA datasets (names, kinds, rows, file paths).",
+        "inputSchema": {
+          "type": "object",
+          "properties": {}
+        }
+      },
+      {
+        "name": "run_montecarlo",
+        "description": "Monte Carlo stress test of a strategy: backtests it, then resamples the trade PnL sequence into N equity paths and reports percentile distributions (finalEquity, maxDrawdownPct), probability of loss, and risk of ruin. Same script/file/symbol semantics as run_backtest. Needs a strategy that actually trades (>= 2 trades).",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "script": {
+              "type": "string",
+              "description": "Python strategy source"
+            },
+            "file": {
+              "type": "string",
+              "description": "workspace-relative .py path"
+            },
+            "engine": {
+              "type": "string",
+              "description": "python (the only engine)"
+            },
+            "symbol": {
+              "type": "string"
+            },
+            "timeframe": {
+              "type": "string"
+            },
+            "runs": {
+              "type": "integer",
+              "description": "paths, default 1000"
+            },
+            "seed": {
+              "type": "integer"
+            },
+            "bars": {
+              "type": "integer",
+              "maximum": 50000
+            },
+            "from": {
+              "type": "string",
+              "description": "YYYY-MM-DD"
+            },
+            "to": {
+              "type": "string",
+              "description": "YYYY-MM-DD"
+            }
+          }
+        }
+      },
+      {
+        "name": "run_walkforward",
+        "description": "Walk-forward analysis: optimizes the given param grid on each rolling train window, replays the best combo out-of-sample, and reports per-fold bestParams, OOS net profit and efficiency (OOS rate / train rate; > 0.5 is usually considered robust). params values are grids: \"10:50:10\" (lo:hi:step) or \"12,26,50\". Param names are the keys the script reads with params.get(name, default). Keep grids small (each combo is a full backtest per fold; capped at 500 combos, and at 24 combos when bars > 5000). bars defaults to 2000; pass the same bars as the backtest you are validating (up to 50000) so the folds cover the same history.",
+        "inputSchema": {
+          "type": "object",
+          "required": [
+            "params"
+          ],
+          "properties": {
+            "script": {
+              "type": "string"
+            },
+            "file": {
+              "type": "string"
+            },
+            "engine": {
+              "type": "string",
+              "description": "python (the only engine)"
+            },
+            "symbol": {
+              "type": "string"
+            },
+            "timeframe": {
+              "type": "string"
+            },
+            "params": {
+              "type": "object",
+              "description": "{\"length\": \"10:50:10\", \"mult\": \"1,2,3\"}"
+            },
+            "folds": {
+              "type": "integer",
+              "description": "default 4"
+            },
+            "train": {
+              "type": "number",
+              "description": "train fraction, default 0.7"
+            },
+            "metric": {
+              "type": "string",
+              "description": "netProfit (default), profitFactor, winRate, avgTrade"
+            },
+            "bars": {
+              "type": "integer",
+              "maximum": 50000
+            },
+            "from": {
+              "type": "string"
+            },
+            "to": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      {
+        "name": "get_economics",
+        "description": "The LSE macro-economic calendar: releases with actual/forecast/previous values and next release dates. Filter by region (country name, comma list), event substring, and date window; released_only=true limits to rows that already printed (event studies). Needs the user's LSE key linked.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "region": {
+              "type": "string",
+              "description": "e.g. United States"
+            },
+            "event": {
+              "type": "string",
+              "description": "e.g. CPI"
+            },
+            "from": {
+              "type": "string",
+              "description": "YYYY-MM-DD"
+            },
+            "to": {
+              "type": "string",
+              "description": "YYYY-MM-DD"
+            },
+            "released_only": {
+              "type": "boolean"
+            },
+            "order": {
+              "type": "string",
+              "description": "asc (default) or desc"
+            },
+            "limit": {
+              "type": "integer",
+              "maximum": 1000
+            }
+          }
+        }
+      },
+      {
+        "name": "import_lse_data",
+        "description": "Download history from the LSE databank (the vault behind the user's key) into their library, like the Import from LSE dialog: pick a dataset class + symbol + timeframe and it lands as a chartable dataset (tick pulls stay Parquet files). Waits up to ~90s; a deep pull returns status + job_id, call again with job_id to finish. Uses the user's monthly databank quota.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "dataset": {
+              "type": "string",
+              "description": "class: fx, stocks, crypto, etf, index, commodity, ..."
+            },
+            "symbol": {
+              "type": "string",
+              "description": "e.g. XAUUSD"
+            },
+            "timeframe": {
+              "type": "string",
+              "description": "tick, 1m, 1h (default), 1d, ..."
+            },
+            "from": {
+              "type": "string",
+              "description": "YYYY-MM-DD"
+            },
+            "to": {
+              "type": "string",
+              "description": "YYYY-MM-DD"
+            },
+            "folder": {
+              "type": "string",
+              "description": "library folder, default LSE"
+            },
+            "job_id": {
+              "type": "string",
+              "description": "check a still-running import"
+            }
+          }
+        }
+      },
+      {
+        "name": "list_ml_models",
+        "description": "The terminal's 20 trainable ML models with their full parameter schemas and the selectable feature ids. Read this before writing or editing a training blueprint.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {}
+        }
+      },
+      {
+        "name": "generate_ml_blueprint",
+        "description": "A runnable Python training blueprint for a model (blueprint.train call with every parameter at its default). Edit it, then run with run_ml_blueprint.",
+        "inputSchema": {
+          "type": "object",
+          "required": [
+            "model"
+          ],
+          "properties": {
+            "model": {
+              "type": "string",
+              "description": "model key from list_ml_models"
+            },
+            "dataset": {
+              "type": "string",
+              "description": "MY DATA import or built ML dataset name"
+            },
+            "timeframe": {
+              "type": "string"
+            },
+            "bars": {
+              "type": "integer"
+            }
+          }
+        }
+      },
+      {
+        "name": "build_ml_dataset",
+        "description": "Compose a named training dataset from an imported MY DATA file: resample, slice a date window, optionally bake indicator feature columns in.",
+        "inputSchema": {
+          "type": "object",
+          "required": [
+            "name",
+            "source"
+          ],
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "source": {
+              "type": "string",
+              "description": "MY DATA dataset to build from"
+            },
+            "timeframe": {
+              "type": "string"
+            },
+            "bars": {
+              "type": "integer"
+            },
+            "start": {
+              "type": "string",
+              "description": "YYYY-MM-DD"
+            },
+            "to": {
+              "type": "string",
+              "description": "YYYY-MM-DD (alias: end)"
+            },
+            "features": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "description": "feature ids to bake in as columns"
+            }
+          }
+        }
+      },
+      {
+        "name": "run_ml_blueprint",
+        "description": "Start a training blueprint (Python code calling lse_terminal.ml.blueprint) on this machine. Returns a job_id immediately; poll get_ml_job for the log and results. Training can take minutes.",
+        "inputSchema": {
+          "type": "object",
+          "required": [
+            "code"
+          ],
+          "properties": {
+            "code": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      {
+        "name": "get_ml_job",
+        "description": "Status, recent log lines, and (when finished) results of an ML training job.",
+        "inputSchema": {
+          "type": "object",
+          "required": [
+            "job_id"
+          ],
+          "properties": {
+            "job_id": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      {
+        "name": "open_in_app",
+        "description": "Open something on the user's LSE Terminal screen: an imported dataset's preview (view=dataset), a workspace strategy file in the editor (view=file), or a page (view=section: markets, backtest:py, backtest:ml, backtest:manual, economic, workspace, research, guide, mydata). Call this whenever the user asks to open, show, or go to something that exists in the app.",
+        "inputSchema": {
+          "type": "object",
+          "required": [
+            "view",
+            "name"
+          ],
+          "properties": {
+            "view": {
+              "type": "string",
+              "enum": [
+                "dataset",
+                "file",
+                "section"
+              ]
+            },
+            "name": {
+              "type": "string",
+              "description": "dataset name / workspace path / section key"
+            }
+          }
+        }
+      },
+      {
+        "name": "list_research",
+        "description": "The RESEARCH tab's live papers feed: the newest quant-finance papers (arXiv q-fin + NBER/BIS/Fed/ECB working papers), each row with source, date, category, title, authors and the link read_research_paper takes.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "source": {
+              "type": "string",
+              "description": "optional: ARXIV, NBER, BIS, FED or ECB"
+            },
+            "category": {
+              "type": "string",
+              "description": "optional, e.g. Machine Learning, Options & Volatility"
+            }
+          }
+        }
+      },
+      {
+        "name": "read_research_paper",
+        "description": "The FULL TEXT of a paper from the research feed, extracted from the publisher's PDF (fetched by this machine and cached). Read it before building a strategy or diagram from a paper, so the method comes from the paper itself rather than the abstract.",
+        "inputSchema": {
+          "type": "object",
+          "required": [
+            "link"
+          ],
+          "properties": {
+            "link": {
+              "type": "string",
+              "description": "the paper's link, from list_research or the user's message"
+            },
+            "pages": {
+              "type": "string",
+              "description": "optional page range like '1-8' (default: whole paper, capped)"
+            }
+          }
+        }
+      },
+      {
+        "name": "read_guide",
+        "description": "The terminal's built-in user guide (the TERMINAL WALKTHROUGH tab): every tab, feature and workflow, written by the terminal's authors. Read it before answering what the terminal is, what it can do, or how to do something in it. Returns one section by number or title, or the whole guide when section is empty.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "section": {
+              "type": "string",
+              "description": "section number or title (case-insensitive, substring ok); empty for the whole guide"
+            }
+          }
+        }
+      },
+      {
+        "name": "web_search",
+        "description": "Search the live web. USE THIS whenever the answer depends on anything current: a rate, an economic release, company or market news, a policy, a definition you are unsure of. Your training data has a cutoff and the user is asking today. Returns titles, URLs and snippets; call fetch_url on a result to read the whole page. Prices and positions the user already has on screen come from the terminal's own tools, not from here.",
+        "inputSchema": {
+          "type": "object",
+          "required": [
+            "query"
+          ],
+          "properties": {
+            "query": {
+              "type": "string",
+              "description": "the search query"
+            },
+            "category": {
+              "type": "string",
+              "enum": [
+                "web",
+                "news"
+              ]
+            },
+            "recency": {
+              "type": "string",
+              "enum": [
+                "day",
+                "week",
+                "month",
+                "year"
+              ],
+              "description": "optional: only results this recent"
+            }
+          }
+        }
+      },
+      {
+        "name": "fetch_url",
+        "description": "Read a web page or PDF and get its text. Use it on a URL from web_search when the snippet is not enough, or on a URL the user gives you. Never guess a URL; search first. If it comes back with almost no text, the page is JavaScript-rendered: use browse instead.",
+        "inputSchema": {
+          "type": "object",
+          "required": [
+            "url"
+          ],
+          "properties": {
+            "url": {
+              "type": "string",
+              "description": "the full http(s) URL"
+            },
+            "max_chars": {
+              "type": "integer",
+              "description": "cap on returned text, default 8000"
+            }
+          }
+        }
+      },
+      {
+        "name": "browse",
+        "description": "Load a page in a real browser so JavaScript runs, then return its text and its links. Slower than fetch_url, so use it when fetch_url came back empty or blocked, or when the content only appears after the page renders. Uses the user's installed Chrome or Edge when present.",
+        "inputSchema": {
+          "type": "object",
+          "required": [
+            "url"
+          ],
+          "properties": {
+            "url": {
+              "type": "string"
+            },
+            "max_chars": {
+              "type": "integer"
+            }
+          }
+        }
+      },
+      {
+        "name": "run_python",
+        "description": "Run Python in the user's strategy workspace and get its output back. For analysis the terminal does not do itself: correlations, distributions, joins, data-quality checks, quick numbers off their MY DATA CSVs. pandas and numpy are available. This is NOT how you backtest: use run_backtest, whose numbers match the terminal's own UI. Print what you want to see; only stdout comes back.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "code": {
+              "type": "string",
+              "description": "Python source to run"
+            },
+            "file": {
+              "type": "string",
+              "description": "or a workspace-relative .py file to run instead"
+            },
+            "timeout": {
+              "type": "integer",
+              "description": "seconds, default 120, max 600"
+            }
+          }
+        }
+      },
+      {
+        "name": "remember",
+        "description": "Save one durable fact about this user or their work, so you still know it in a NEW chat: how they trade, what they are building, preferences they have stated, decisions already made. One fact per call, written so it makes sense months later. Do not save secrets, and do not save what is already in the workspace or on screen.",
+        "inputSchema": {
+          "type": "object",
+          "required": [
+            "note"
+          ],
+          "properties": {
+            "note": {
+              "type": "string",
+              "description": "the fact, one sentence"
+            }
+          }
+        }
+      },
+      {
+        "name": "recall",
+        "description": "Everything you have previously remembered about this user, with the id of each note. Your saved notes are also handed to you at the start of every chat, so call this only when you need to check or clean up the list.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "forget_id": {
+              "type": "integer",
+              "description": "optional: delete this note instead of listing"
+            }
+          }
+        }
+      },
+      {
+        "name": "list_workspace",
+        "description": "The user's strategy workspace files (the same tree the BACKTEST editor shows), as relative paths.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {}
+        }
+      },
+      {
+        "name": "read_workspace_file",
+        "description": "Read a strategy workspace file by its relative path.",
+        "inputSchema": {
+          "type": "object",
+          "required": [
+            "path"
+          ],
+          "properties": {
+            "path": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      {
+        "name": "write_workspace_file",
+        "description": "Create or overwrite a strategy workspace file (.py, .md, .txt, .json, .csv, .svg). Diagrams are self-contained .svg files (no external refs). Strategy .py files are plain Python following the contract described on run_backtest: `df` in scope, `trades` list out, nothing imported from us. Unless the user granted edit autonomy, this shows them an Allow / Deny card first; a deny is their answer, do not retry it.",
+        "inputSchema": {
+          "type": "object",
+          "required": [
+            "path",
+            "content"
+          ],
+          "properties": {
+            "path": {
+              "type": "string",
+              "description": "workspace-relative, e.g. strategies/x.py"
+            },
+            "content": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    ]
+  }
+}

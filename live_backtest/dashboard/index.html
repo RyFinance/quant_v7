@@ -3,1587 +3,522 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PEAD Paper-Trading Bot — Live Dashboard</title>
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<style>
-  :root {
-    --bg: #0b0e14;
-    --bg-panel: #131822;
-    --bg-panel-alt: #171d29;
-    --bg-inset: #0e1219;
-    --border: #232a3a;
-    --text: #e6e9ef;
-    --text-dim: #93a1b5;
-    --text-faint: #5b6577;
-    --accent: #5b8def;
-    --accent-dim: #3a5a99;
-    --green: #2ecc71;
-    --yellow: #f1c40f;
-    --red: #e74c3c;
-    --orange: #e67e22;
-    --blue: #3498db;
-    --gray: #6b7688;
-  }
-  @media (prefers-color-scheme: light) {
-    :root {
-      --bg: #f3f5f8;
-      --bg-panel: #ffffff;
-      --bg-panel-alt: #f7f8fa;
-      --bg-inset: #eef0f4;
-      --border: #dde1e8;
-      --text: #1b2230;
-      --text-dim: #5b6577;
-      --text-faint: #8993a5;
-      --accent: #2f6fed;
-      --accent-dim: #9dbcf7;
-      --green: #1e9e56;
-      --yellow: #b8930a;
-      --red: #d13a2f;
-      --orange: #c5680f;
-      --blue: #2274b5;
-      --gray: #6b7688;
-    }
-  }
-  * { box-sizing: border-box; }
-  html, body {
-    margin: 0;
-    padding: 0;
-    background: var(--bg);
-    color: var(--text);
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    font-size: 14px;
-  }
-  a { color: var(--accent); }
-  .wrap {
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 18px 20px 60px;
-  }
-  header.topbar {
-    display: flex;
-    align-items: baseline;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin-bottom: 16px;
-  }
-  header.topbar h1 {
-    font-size: 20px;
-    margin: 0;
-    font-weight: 650;
-    letter-spacing: -0.01em;
-  }
-  header.topbar .sub {
-    color: var(--text-dim);
-    font-size: 12.5px;
-    margin-top: 2px;
-  }
-  .topbar-right {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-size: 12.5px;
-    color: var(--text-dim);
-  }
-  #refresh-btn {
-    background: var(--bg-panel-alt);
-    border: 1px solid var(--border);
-    color: var(--text);
-    padding: 6px 12px;
-    border-radius: 6px;
-    cursor: pointer;
-    font-size: 12.5px;
-  }
-  #refresh-btn:hover { border-color: var(--accent); }
-
-  #backend-banner {
-    display: none;
-    background: rgba(231, 76, 60, 0.12);
-    border: 1px solid var(--red);
-    color: var(--red);
-    padding: 10px 14px;
-    border-radius: 8px;
-    margin-bottom: 16px;
-    font-size: 13px;
-  }
-  #backend-banner.show { display: block; }
-
-  .panel {
-    background: var(--bg-panel);
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    padding: 16px 18px;
-    margin-bottom: 16px;
-  }
-  .panel h2 {
-    font-size: 13px;
-    text-transform: uppercase;
-    letter-spacing: 0.04em;
-    color: var(--text-dim);
-    margin: 0 0 12px 0;
-    font-weight: 650;
-  }
-  .panel h2 .count {
-    color: var(--text-faint);
-    text-transform: none;
-    letter-spacing: normal;
-    font-weight: 500;
-  }
-
-  /* status cards */
-  .status-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 12px;
-    margin-bottom: 16px;
-  }
-  .status-card {
-    background: var(--bg-panel);
-    border: 1px solid var(--border);
-    border-left: 4px solid var(--gray);
-    border-radius: 10px;
-    padding: 12px 14px;
-  }
-  .status-card.ok { border-left-color: var(--green); }
-  .status-card.warn { border-left-color: var(--yellow); }
-  .status-card.bad { border-left-color: var(--red); }
-  .status-card .label {
-    font-size: 11px;
-    text-transform: uppercase;
-    letter-spacing: 0.04em;
-    color: var(--text-dim);
-    margin-bottom: 6px;
-  }
-  .status-card .value {
-    font-size: 18px;
-    font-weight: 650;
-  }
-  .status-card .detail {
-    font-size: 12px;
-    color: var(--text-dim);
-    margin-top: 4px;
-  }
-
-  .badge {
-    display: inline-block;
-    padding: 2px 9px;
-    border-radius: 999px;
-    font-size: 11.5px;
-    font-weight: 650;
-    text-transform: uppercase;
-    letter-spacing: 0.02em;
-    background: rgba(107, 118, 136, 0.18);
-    color: var(--gray);
-  }
-  .badge-green { background: rgba(46, 204, 113, 0.15); color: var(--green); }
-  .badge-yellow { background: rgba(241, 196, 15, 0.16); color: var(--yellow); }
-  .badge-red { background: rgba(231, 76, 60, 0.16); color: var(--red); }
-  .badge-orange { background: rgba(230, 126, 34, 0.16); color: var(--orange); }
-  .badge-blue { background: rgba(52, 152, 219, 0.16); color: var(--blue); }
-  .badge-gray { background: rgba(107, 118, 136, 0.16); color: var(--gray); }
-
-  /* stats grid */
-  .stats-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-    gap: 12px;
-  }
-  .stat-box {
-    background: var(--bg-inset);
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    padding: 10px 12px;
-  }
-  .stat-box .label {
-    font-size: 11px;
-    color: var(--text-dim);
-    text-transform: uppercase;
-    letter-spacing: 0.03em;
-    margin-bottom: 4px;
-  }
-  .stat-box .value {
-    font-size: 17px;
-    font-weight: 650;
-  }
-  .stat-box .value.pos { color: var(--green); }
-  .stat-box .value.neg { color: var(--red); }
-  .stats-note {
-    margin-top: 12px;
-    font-size: 12.5px;
-    color: var(--text-dim);
-    background: var(--bg-inset);
-    border: 1px dashed var(--border);
-    border-radius: 6px;
-    padding: 8px 10px;
-    display: none;
-  }
-  .stats-note.show { display: block; }
-
-  /* charts */
-  .charts-row {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 16px;
-  }
-  @media (max-width: 980px) {
-    .charts-row { grid-template-columns: 1fr; }
-  }
-  .chart-container {
-    position: relative;
-    height: 300px;
-  }
-  .chart-empty-msg {
-    display: none;
-    align-items: center;
-    justify-content: center;
-    height: 300px;
-    color: var(--text-faint);
-    font-size: 13px;
-    text-align: center;
-    border: 1px dashed var(--border);
-    border-radius: 8px;
-    background: var(--bg-inset);
-  }
-  .chart-empty-msg.show { display: flex; }
-  .chart-container.hide { display: none; }
-
-  /* tables */
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    font-size: 12.5px;
-  }
-  th, td {
-    text-align: left;
-    padding: 7px 10px;
-    border-bottom: 1px solid var(--border);
-    white-space: nowrap;
-  }
-  th {
-    color: var(--text-dim);
-    font-weight: 600;
-    text-transform: uppercase;
-    font-size: 10.5px;
-    letter-spacing: 0.03em;
-    position: sticky;
-    top: 0;
-    background: var(--bg-panel);
-  }
-  tbody tr:hover { background: var(--bg-panel-alt); }
-  .table-scroll {
-    max-height: 420px;
-    overflow-y: auto;
-    overflow-x: auto;
-    border-radius: 8px;
-  }
-  .empty-row {
-    color: var(--text-faint);
-    text-align: center;
-    padding: 18px;
-    font-size: 12.5px;
-  }
-  .num { text-align: right; font-variant-numeric: tabular-nums; }
-  .mono { font-variant-numeric: tabular-nums; }
-  .pos { color: var(--green); }
-  .neg { color: var(--red); }
-  .dim { color: var(--text-faint); }
-
-  /* alerts */
-  .alerts-list { max-height: 380px; overflow-y: auto; }
-  .alert-item {
-    display: flex;
-    gap: 10px;
-    padding: 8px 4px;
-    border-bottom: 1px solid var(--border);
-    font-size: 12.5px;
-    align-items: flex-start;
-  }
-  .alert-item:last-child { border-bottom: none; }
-  .alert-ts {
-    color: var(--text-faint);
-    white-space: nowrap;
-    font-variant-numeric: tabular-nums;
-    min-width: 150px;
-  }
-  .alert-msg { flex: 1; word-break: break-word; }
-
-  .two-col {
-    display: grid;
-    grid-template-columns: 1.3fr 1fr;
-    gap: 16px;
-  }
-  @media (max-width: 980px) {
-    .two-col { grid-template-columns: 1fr; }
-  }
-
-  .kv-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-    gap: 10px;
-  }
-  .kv-box {
-    background: var(--bg-inset);
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    padding: 9px 11px;
-  }
-  .kv-box .k {
-    font-size: 10.5px;
-    color: var(--text-dim);
-    text-transform: uppercase;
-    letter-spacing: 0.03em;
-    margin-bottom: 3px;
-  }
-  .kv-box .v { font-size: 14px; font-weight: 600; }
-  .footnote {
-    font-size: 11.5px;
-    color: var(--text-faint);
-    margin-top: 10px;
-    line-height: 1.4;
-  }
-
-  footer.page-footer {
-    text-align: center;
-    color: var(--text-faint);
-    font-size: 11.5px;
-    margin-top: 24px;
-  }
-
-  /* ============ BOT CONTROL TERMINAL ============================
-     Scoped under .pead-term / pt- prefixed classes only, so nothing here
-     can collide with the app styling above (which stays theme-aware and
-     untouched). Deliberately always-black/monospace regardless of the
-     page's light/dark mode -- matches the polymarket_arb dashboard_canvas
-     terminal look this panel is styled after, which has no light mode
-     either; the point is a purposeful terminal aesthetic, not a themed one.
-
-     The --pt-* custom properties live on :root (not scoped to .pead-term)
-     because the confirm modal (#pt-confirm-overlay) is a DOM sibling of
-     .pead-term, not a descendant -- CSS custom properties only inherit
-     down the tree, so scoping them to .pead-term left the modal unable to
-     see them (found as a real bug: the modal rendered with a fully
-     transparent background, var(--pt-bg-alt) silently resolving to
-     nothing outside .pead-term's subtree). :root is visible everywhere,
-     and the pt- prefix already prevents any collision with the page's own
-     --bg/--text/etc. tokens. */
-  :root {
-    --pt-mono: SFMono-Regular, Menlo, Monaco, "Cascadia Mono", "Liberation Mono", Consolas, monospace;
-    --pt-bg: #000;
-    --pt-bg-alt: #0a0a0a;
-    --pt-border: #1e1e1e;
-    --pt-text: #d7dbe0;
-    --pt-dim: #6b7280;
-    --pt-green: #2ecc71;
-    --pt-amber: #f1c40f;
-    --pt-red: #e74c3c;
-  }
-  .pead-term {
-    background: var(--pt-bg);
-    border: 1px solid var(--pt-border);
-    border-radius: 8px;
-    padding: 10px 12px 12px;
-    margin-bottom: 16px;
-    font-family: var(--pt-mono);
-    color: var(--pt-text);
-    font-size: 12.5px;
-  }
-  .pead-term * { box-sizing: border-box; }
-
-  .pt-cmdbar {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    row-gap: 6px;
-    padding-bottom: 8px;
-    margin-bottom: 8px;
-    border-bottom: 1px solid var(--pt-border);
-  }
-  .pt-cmd-item { color: var(--pt-dim); white-space: nowrap; }
-  .pt-cmd-value { color: var(--pt-text); font-weight: 600; }
-  .pt-cmd-note { color: var(--pt-dim); font-style: italic; font-size: 11px; }
-  .pt-cmd-sep { color: var(--pt-border); margin: 0 8px; }
-  .pt-cmd-fill { flex: 1 1 auto; }
-  .pt-cmd-badge {
-    display: inline-block;
-    padding: 1px 6px;
-    border-radius: 3px;
-    font-weight: 700;
-    background: var(--pt-bg-alt);
-    border: 1px solid var(--pt-border);
-    color: var(--pt-dim);
-  }
-  .pt-cmd-badge.on { color: var(--pt-green); border-color: var(--pt-green); }
-  .pt-cmd-badge.off { color: var(--pt-dim); }
-  .pt-cmd-badge.err { color: var(--pt-red); border-color: var(--pt-red); }
-  .pt-cmd-badge.mode-ok { color: var(--pt-green); border-color: var(--pt-green); }
-  .pt-cmd-badge.mode-guard-failed { color: var(--pt-red); border-color: var(--pt-red); font-weight: 700; }
-
-  .pt-ctl-btn {
-    font-family: var(--pt-mono);
-    font-size: 11.5px;
-    font-weight: 700;
-    padding: 5px 10px;
-    border-radius: 4px;
-    border: 1px solid var(--pt-border);
-    background: var(--pt-bg-alt);
-    color: var(--pt-text);
-    cursor: pointer;
-    margin-left: 8px;
-  }
-  .pt-ctl-btn:hover:not(:disabled) { border-color: var(--pt-text); }
-  .pt-ctl-btn:disabled { opacity: 0.4; cursor: not-allowed; }
-  .pt-ctl-start { color: var(--pt-green); }
-  .pt-ctl-stop { color: var(--pt-red); }
-
-  .pt-action-msg {
-    font-size: 11.5px;
-    padding: 4px 0;
-    min-height: 1.4em;
-  }
-  .pt-action-msg.ok { color: var(--pt-green); }
-  .pt-action-msg.err { color: var(--pt-red); font-weight: 700; }
-  .pt-action-msg.pending { color: var(--pt-dim); }
-
-  .pt-panel-head {
-    display: flex;
-    align-items: baseline;
-    justify-content: space-between;
-    margin-bottom: 4px;
-  }
-  .pt-panel-title { color: var(--pt-text); font-weight: 700; letter-spacing: 0.02em; font-size: 11.5px; }
-  .pt-panel-age { color: var(--pt-dim); font-size: 11px; }
-
-  .pt-wire {
-    background: var(--pt-bg-alt);
-    border: 1px solid var(--pt-border);
-    border-radius: 4px;
-    height: 260px;
-    overflow-y: auto;
-    padding: 6px 8px;
-  }
-  .pt-wire-line {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    padding: 1px 0;
-  }
-  .pt-wire-time { color: var(--pt-dim); margin-right: 8px; }
-  .pt-wire-kind { display: inline-block; min-width: 110px; margin-right: 8px; }
-  .pt-wire-kind.pt-k-red { color: var(--pt-red); font-weight: 700; }
-  .pt-wire-kind.pt-k-green { color: var(--pt-green); font-weight: 700; }
-  .pt-wire-kind.pt-k-amber { color: var(--pt-amber); }
-  .pt-wire-kind.pt-k-dim { color: var(--pt-dim); }
-  .pt-empty { color: var(--pt-dim); padding: 8px 2px; }
-
-  /* In-page confirm modal for START/STOP -- NOT window.confirm(). Native
-     confirm() dialogs are silently suppressed in some real browser
-     configurations (repeated-dialog auto-suppression, some privacy
-     extensions, sandboxed contexts) and confirm() then just returns false
-     with no visible error -- from the user's side that is indistinguishable
-     from "the button does nothing." This modal is regular DOM, so it can't
-     be suppressed that way. */
-  .pt-modal-overlay {
-    display: none;
-    position: fixed;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.6);
-    z-index: 1000;
-    align-items: center;
-    justify-content: center;
-  }
-  .pt-modal-overlay.show { display: flex; }
-  .pt-modal-box {
-    background: var(--pt-bg-alt);
-    border: 1px solid var(--pt-border);
-    border-radius: 8px;
-    max-width: 480px;
-    width: calc(100% - 40px);
-    padding: 16px 18px;
-    font-family: var(--pt-mono);
-    color: var(--pt-text);
-    font-size: 12.5px;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
-  }
-  .pt-modal-title { font-weight: 700; font-size: 13.5px; margin-bottom: 10px; }
-  .pt-modal-title.danger { color: var(--pt-red); }
-  .pt-modal-body { white-space: pre-line; line-height: 1.5; color: var(--pt-text); margin-bottom: 16px; }
-  .pt-modal-actions { display: flex; justify-content: flex-end; gap: 8px; }
-  .pt-modal-btn {
-    font-family: var(--pt-mono);
-    font-size: 11.5px;
-    font-weight: 700;
-    padding: 6px 14px;
-    border-radius: 4px;
-    border: 1px solid var(--pt-border);
-    background: var(--pt-bg);
-    color: var(--pt-text);
-    cursor: pointer;
-  }
-  .pt-modal-btn:hover { border-color: var(--pt-text); }
-  .pt-modal-btn-confirm { color: var(--pt-bg); background: var(--pt-red); border-color: var(--pt-red); }
-
-  @media (max-width: 700px) {
-    .pt-cmdbar { font-size: 11px; }
-  }
-</style>
+<meta name="color-scheme" content="dark light">
+<title>PEAD Desk · Paper Trading</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230a84ff'/%3E%3Cpath d='M7 21l6-6 4 4 8-8' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<script>
+  // Apply a pinned theme before first paint so there is no flash.
+  (function () {
+    try {
+      var t = localStorage.getItem("pead.theme");
+      if (t === "light" || t === "dark") document.documentElement.setAttribute("data-theme", t);
+    } catch (e) { /* storage unavailable: follow the OS setting */ }
+  })();
+</script>
+<link rel="stylesheet" href="styles.css?v=10">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js" defer></script>
+<script src="app.js?v=10" defer></script>
 </head>
 <body>
-<div class="wrap">
 
-  <header class="topbar">
+<header class="chrome">
+  <div class="chrome-inner">
+    <div class="brand">
+      <span class="brand-mark" aria-hidden="true">
+        <svg class="icon" viewBox="0 0 24 24"><path d="M4 16l5-5 4 4 7-7"/><path d="M15 8h5v5"/></svg>
+      </span>
+      <span class="brand-name">PEAD Desk</span>
+      <span class="pill-paper" title="Paper trading only. No live-trading path exists.">
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></svg>
+        Paper
+      </span>
+    </div>
+
+    <nav class="nav" role="tablist" aria-label="Views">
+      <button role="tab" type="button" id="nav-overview" data-view="overview" aria-selected="true" aria-controls="view-overview">Overview</button>
+      <button role="tab" type="button" id="nav-activity" data-view="activity" aria-selected="false" aria-controls="view-activity">Activity</button>
+      <button role="tab" type="button" id="nav-research" data-view="research" aria-selected="false" aria-controls="view-research">Research</button>
+    </nav>
+
+    <div class="chrome-right">
+      <span class="status-pill" id="conn" data-state="pending">
+        <span class="status-dot"></span>
+        <span id="conn-label">Connecting</span>
+        <span class="status-time" id="last-updated"></span>
+      </span>
+
+      <button class="btn" id="palette-btn" type="button" title="Command palette">
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        <span class="kbd">⌘K</span>
+      </button>
+
+      <div class="menu" id="bot-menu">
+        <button class="btn" type="button" id="bot-menu-btn" aria-haspopup="menu" aria-expanded="false">
+          Bot
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+        </button>
+        <div class="menu-panel" role="menu" aria-labelledby="bot-menu-btn" hidden>
+          <div class="menu-label">Schedule</div>
+          <button class="menu-item" role="menuitem" type="button" id="menu-start">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4.5v15l12-7.5z"/></svg>
+            Start schedule…
+          </button>
+          <button class="menu-item danger" role="menuitem" type="button" id="menu-stop">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="6" width="12" height="12" rx="2"/></svg>
+            Stop schedule…
+          </button>
+          <div class="menu-sep"></div>
+          <div class="menu-label">Auto-refresh</div>
+          <button class="menu-item" role="menuitemradio" type="button" data-poll="10000"><span>Every 10 seconds</span><svg class="icon check" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 13 4 4L19 7"/></svg></button>
+          <button class="menu-item" role="menuitemradio" type="button" data-poll="20000"><span>Every 20 seconds</span><svg class="icon check" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 13 4 4L19 7"/></svg></button>
+          <button class="menu-item" role="menuitemradio" type="button" data-poll="60000"><span>Every minute</span><svg class="icon check" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 13 4 4L19 7"/></svg></button>
+          <button class="menu-item" role="menuitemradio" type="button" data-poll="0"><span>Off</span><svg class="icon check" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 13 4 4L19 7"/></svg></button>
+          <div class="menu-sep"></div>
+          <div class="menu-label">Appearance</div>
+          <button class="menu-item" role="menuitemradio" type="button" data-theme="system"><span>System</span><svg class="icon check" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 13 4 4L19 7"/></svg></button>
+          <button class="menu-item" role="menuitemradio" type="button" data-theme="light"><span>Light</span><svg class="icon check" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 13 4 4L19 7"/></svg></button>
+          <button class="menu-item" role="menuitemradio" type="button" data-theme="dark"><span>Dark</span><svg class="icon check" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 13 4 4L19 7"/></svg></button>
+        </div>
+      </div>
+
+      <button class="btn btn-icon" id="refresh-btn" type="button" title="Refresh now" aria-label="Refresh now">
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12a9 9 0 1 1-9-9c2.52 0 4.93 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/></svg>
+      </button>
+    </div>
+  </div>
+  <div class="poll-line" aria-hidden="true"><span id="poll-line"></span></div>
+</header>
+
+<main class="wrap">
+  <div class="banner" data-tone="crit" id="backend-banner" role="alert" hidden>
+    <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg>
     <div>
-      <h1>PEAD Paper-Trading Bot — Live Dashboard</h1>
-      <div class="sub">Local, read-only monitor · paper trading only · reads real bot state files</div>
+      <strong>Backend unreachable</strong>
+      Start the dashboard server with
+      <code>PYTHONPATH=. .venv/bin/python -m uvicorn live_backtest.dashboard.backend:app --port 8420 --host 127.0.0.1</code>
+      and open this page from <code>http://127.0.0.1:8420/</code>.
     </div>
-    <div class="topbar-right">
-      <span id="last-updated">Loading…</span>
-      <button id="refresh-btn" type="button">Refresh now</button>
-    </div>
-  </header>
+  </div>
 
-  <section id="pead-term" class="pead-term">
-    <div class="pt-cmdbar">
-      <span class="pt-cmd-item">CONN <span class="pt-cmd-badge" id="pt-conn-state">…</span></span>
-      <span class="pt-cmd-sep">|</span>
-      <span class="pt-cmd-item">MODE <span class="pt-cmd-badge" id="pt-mode">…</span> <span class="pt-cmd-note">(paper-only; live path not implemented)</span></span>
-      <span class="pt-cmd-sep">|</span>
-      <span class="pt-cmd-item">KILL <span class="pt-cmd-badge" id="pt-kill">…</span></span>
-      <span class="pt-cmd-sep">|</span>
-      <span class="pt-cmd-item">BOT <span class="pt-cmd-badge" id="pt-job-bot">…</span></span>
-      <span class="pt-cmd-sep">|</span>
-      <span class="pt-cmd-item">WATCHDOG <span class="pt-cmd-badge" id="pt-job-watchdog">…</span></span>
-      <span class="pt-cmd-sep">|</span>
-      <span class="pt-cmd-item">LAST CYCLE <span class="pt-cmd-value" id="pt-sess">…</span></span>
-      <span class="pt-cmd-sep">|</span>
-      <span class="pt-cmd-item">CYCLES(win) <span class="pt-cmd-value" id="pt-loops">…</span></span>
-      <span class="pt-cmd-fill"></span>
-      <button id="pt-start-btn" class="pt-ctl-btn pt-ctl-start" type="button" disabled>START SCHEDULE</button>
-      <button id="pt-stop-btn" class="pt-ctl-btn pt-ctl-stop" type="button" disabled>STOP SCHEDULE</button>
+  <div class="banner" data-tone="crit" id="guard-banner" role="alert" hidden>
+    <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg>
+    <div>
+      <strong>Paper-mode guard failed. Schedule controls are disabled.</strong>
+      The backend could not confirm that live execution is still an unimplemented stub
+      (<code>bot.execution.assert_paper_only_mode</code>). Investigate before starting or stopping anything.
     </div>
-    <div class="pt-action-msg" id="pt-action-msg"></div>
-    <div class="pt-panel-head">
-      <span class="pt-panel-title">LOOP EVENTS WIRE — bot/state (cycle runs · entries · exits · alerts)</span>
-      <span class="pt-panel-age" id="pt-feed-age">…</span>
+  </div>
+
+  <!-- ==================== OVERVIEW ==================== -->
+  <section class="view" id="view-overview" role="tabpanel" aria-labelledby="nav-overview">
+    <div class="grid">
+      <section class="card col-4" aria-labelledby="account-title">
+        <div class="card-head">
+          <div>
+            <h2 class="card-title" id="account-title">Account</h2>
+            <p class="card-sub">Cash-basis NAV from the paper ledger</p>
+          </div>
+        </div>
+        <div class="hero">
+          <span class="hero-label">Net asset value</span>
+          <span class="hero-value" id="nav-value" data-skel>—</span>
+          <div class="hero-row">
+            <span class="delta" id="nav-delta" data-tone="neutral">—</span>
+            <span id="nav-delta-note"></span>
+          </div>
+          <div class="hero-marked" id="nav-marked" hidden></div>
+          <dl class="cells mini-stats">
+            <div><dt>Realized P&amp;L</dt><dd class="signed" id="acct-pnl" data-skel>—</dd></div>
+            <div><dt>Open P&amp;L <span class="muted" id="acct-mark-date"></span></dt><dd class="signed" id="acct-unrealized" data-skel>—</dd></div>
+            <div><dt>Open positions</dt><dd id="acct-open" data-skel>—</dd></div>
+            <div><dt>Trades closed</dt><dd id="acct-closed" data-skel>—</dd></div>
+          </dl>
+          <p class="note" id="backfill-note" hidden></p>
+        </div>
+      </section>
+
+      <section class="card col-8" aria-labelledby="health-title">
+        <div class="card-head">
+          <div>
+            <h2 class="card-title" id="health-title">System health</h2>
+            <p class="card-sub"><span class="chip" data-tone="neutral" id="mode-chip">Checking trading mode</span></p>
+          </div>
+          <div class="card-actions">
+            <button class="btn" id="btn-start" type="button" disabled>
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4.5v15l12-7.5z"/></svg>
+              Start schedule
+            </button>
+            <button class="btn" id="btn-stop" type="button" disabled>
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="6" width="12" height="12" rx="2"/></svg>
+              Stop schedule
+            </button>
+          </div>
+        </div>
+        <div class="cells health-grid">
+          <div class="health-item" id="hi-schedule" data-tone="neutral"><div class="health-label">Bot schedule</div><div class="health-value" data-skel>Loading</div><div class="health-detail">&nbsp;</div></div>
+          <div class="health-item" id="hi-watchdog" data-tone="neutral"><div class="health-label">Watchdog</div><div class="health-value" data-skel>Loading</div><div class="health-detail">&nbsp;</div></div>
+          <div class="health-item" id="hi-kill" data-tone="neutral"><div class="health-label">Kill switch</div><div class="health-value" data-skel>Loading</div><div class="health-detail">&nbsp;</div></div>
+          <div class="health-item" id="hi-breaker" data-tone="neutral"><div class="health-label">Circuit breaker</div><div class="health-value" data-skel>Loading</div><div class="health-detail">&nbsp;</div></div>
+          <div class="health-item" id="hi-heartbeat" data-tone="neutral"><div class="health-label">Heartbeat</div><div class="health-value" data-skel>Loading</div><div class="health-detail">&nbsp;</div></div>
+          <div class="health-item" id="hi-cycle" data-tone="neutral"><div class="health-label">Last cycle</div><div class="health-value" data-skel>Loading</div><div class="health-detail">&nbsp;</div></div>
+        </div>
+      </section>
     </div>
-    <div class="pt-wire" id="pt-wire-body"><div class="pt-empty">NO EVENTS YET</div></div>
+
+    <div class="grid">
+      <section class="card col-12" aria-labelledby="perf-title">
+        <div class="card-head">
+          <div>
+            <h2 class="card-title" id="perf-title">Live performance</h2>
+            <p class="card-sub" id="equity-sub">NAV marked at each day's close</p>
+          </div>
+          <div class="card-actions">
+            <span class="chip" data-tone="neutral" id="stats-note" hidden>Ratios need 2+ closed trades</span>
+            <div class="seg" role="group" aria-label="Chart range">
+              <button type="button" data-range="30" aria-pressed="false">1M</button>
+              <button type="button" data-range="90" aria-pressed="false">3M</button>
+              <button type="button" data-range="all" aria-pressed="true">All</button>
+            </div>
+          </div>
+        </div>
+        <div class="perf">
+          <div class="perf-side">
+            <div class="cells kpi-grid">
+              <div class="kpi"><div class="kpi-label">Sharpe ratio</div><div class="kpi-value" id="kpi-sharpe" data-skel>—</div><div class="kpi-note">Annualized, over T‑bills</div></div>
+              <div class="kpi"><div class="kpi-label">Sortino ratio</div><div class="kpi-value" id="kpi-sortino" data-skel>—</div><div class="kpi-note">Annualized, over T‑bills</div></div>
+              <div class="kpi"><div class="kpi-label">Max drawdown</div><div class="kpi-value" id="kpi-maxdd" data-skel>—</div><div class="kpi-note">Marked NAV, from peak</div></div>
+              <div class="kpi"><div class="kpi-label">Win rate</div><div class="kpi-value" id="kpi-winrate" data-skel>—</div><div class="kpi-note" id="kpi-winrate-note">Closed trades</div></div>
+            </div>
+            <p class="footnote" id="perf-basis" hidden></p>
+          </div>
+          <div class="perf-chart">
+            <div class="legend" id="equity-legend" hidden></div>
+            <div class="chart-box" id="equity-box">
+              <canvas id="equity-chart" role="img" aria-label="Equity curve: NAV marked to market daily, with the cash-basis NAV"></canvas>
+              <div class="chart-empty" id="equity-empty" hidden></div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <div class="grid">
+      <section class="card col-7 table-card" aria-labelledby="upcoming-title">
+        <div class="card-head">
+          <div>
+            <h2 class="card-title" id="upcoming-title">Upcoming earnings <span class="count" id="count-upcoming">0</span></h2>
+            <p class="card-sub" id="upcoming-sub">Scheduled reports in the traded universe</p>
+          </div>
+        </div>
+        <div class="table-wrap">
+          <table class="data" id="table-upcoming">
+            <thead><tr>
+              <th data-sort-key="earnings_date"><button type="button">Report date <span class="arrow"></span></button></th>
+              <th data-sort-key="timing"><button type="button">Timing <span class="arrow"></span></button></th>
+              <th data-sort-key="ticker"><button type="button">Ticker <span class="arrow"></span></button></th>
+              <th class="num" data-sort-key="eps_estimate"><button type="button">EPS estimate <span class="arrow"></span></button></th>
+              <th class="num" data-sort-key="tradable"><button type="button">Tradable from <span class="arrow"></span></button></th>
+              <th class="num" data-sort-key="days_until"><button type="button">In <span class="arrow"></span></button></th>
+            </tr></thead>
+            <tbody id="upcoming-tbody"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="card col-5 table-card" aria-labelledby="feed-title">
+        <div class="card-head">
+          <div>
+            <h2 class="card-title" id="feed-title">Event feed</h2>
+            <p class="card-sub" id="feed-age">Cycle runs, fills and risk alerts</p>
+          </div>
+          <div class="seg" role="group" aria-label="Filter events">
+            <button type="button" data-filter="all" aria-pressed="true">All <span class="n" id="fc-all"></span></button>
+            <button type="button" data-filter="cycles" aria-pressed="false">Cycles <span class="n" id="fc-cycles"></span></button>
+            <button type="button" data-filter="trades" aria-pressed="false">Trades <span class="n" id="fc-trades"></span></button>
+            <button type="button" data-filter="risk" aria-pressed="false">Risk <span class="n" id="fc-risk"></span></button>
+          </div>
+        </div>
+        <ul class="feed" id="feed-list" aria-live="off"></ul>
+      </section>
+    </div>
   </section>
 
-  <div id="pt-confirm-overlay" class="pt-modal-overlay">
-    <div class="pt-modal-box" role="dialog" aria-modal="true" aria-labelledby="pt-confirm-title">
-      <div class="pt-modal-title danger" id="pt-confirm-title">Confirm</div>
-      <div class="pt-modal-body" id="pt-confirm-body"></div>
-      <div class="pt-modal-actions">
-        <button id="pt-confirm-cancel" class="pt-modal-btn" type="button">Cancel</button>
-        <button id="pt-confirm-ok" class="pt-modal-btn pt-modal-btn-confirm" type="button">Proceed</button>
+  <!-- ==================== ACTIVITY ==================== -->
+  <section class="view" id="view-activity" role="tabpanel" aria-labelledby="nav-activity" hidden>
+    <div class="filters">
+      <label class="search">
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        <input type="search" id="filter-search" placeholder="Search ticker or text…" autocomplete="off" aria-label="Search">
+        <button class="search-clear" id="search-clear" type="button" aria-label="Clear search" hidden>
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>
+        </button>
+      </label>
+
+      <div class="menu" id="menu-side">
+        <button class="btn" type="button" aria-haspopup="menu" aria-expanded="false">Side: <span data-value>All</span>
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+        </button>
+        <div class="menu-panel" role="menu" hidden>
+          <button class="menu-item" role="menuitemradio" type="button" data-option="all"><span>All sides</span><svg class="icon check" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 13 4 4L19 7"/></svg></button>
+          <button class="menu-item" role="menuitemradio" type="button" data-option="long"><span>Long</span><svg class="icon check" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 13 4 4L19 7"/></svg></button>
+          <button class="menu-item" role="menuitemradio" type="button" data-option="short"><span>Short</span><svg class="icon check" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 13 4 4L19 7"/></svg></button>
+        </div>
       </div>
-    </div>
-  </div>
 
-  <div id="backend-banner">
-    Backend unreachable at <code>/api/status</code>. Make sure the dashboard server is running
-    (<code>uvicorn live_backtest.dashboard.backend:app --port 8420 --host 127.0.0.1</code>) and this page was
-    loaded from <code>http://127.0.0.1:8420/</code>.
-  </div>
-
-  <!-- STATUS -->
-  <div class="status-grid">
-    <div class="status-card" id="card-kill-switch">
-      <div class="label">Kill Switch</div>
-      <div class="value" id="kill-switch-value">—</div>
-      <div class="detail" id="kill-switch-detail"></div>
-    </div>
-    <div class="status-card" id="card-breaker">
-      <div class="label">Circuit Breaker</div>
-      <div class="value" id="breaker-value">—</div>
-      <div class="detail" id="breaker-detail">&nbsp;</div>
-    </div>
-    <div class="status-card" id="card-heartbeat">
-      <div class="label">Heartbeat</div>
-      <div class="value" id="heartbeat-value">—</div>
-      <div class="detail" id="heartbeat-detail">&nbsp;</div>
-    </div>
-    <div class="status-card" id="card-last-cycle">
-      <div class="label">Last Cycle</div>
-      <div class="value" id="last-cycle-value">—</div>
-      <div class="detail" id="last-cycle-detail">&nbsp;</div>
-    </div>
-  </div>
-
-  <!-- STATS -->
-  <div class="panel">
-    <h2>Running Stats</h2>
-    <div class="stats-grid">
-      <div class="stat-box"><div class="label">Current NAV</div><div class="value" id="stat-nav">—</div></div>
-      <div class="stat-box"><div class="label">Total Return</div><div class="value" id="stat-return">—</div></div>
-      <div class="stat-box"><div class="label">Sharpe</div><div class="value" id="stat-sharpe">—</div></div>
-      <div class="stat-box"><div class="label">Sortino</div><div class="value" id="stat-sortino">—</div></div>
-      <div class="stat-box"><div class="label">Max Drawdown</div><div class="value" id="stat-maxdd">—</div></div>
-      <div class="stat-box"><div class="label">Win Rate</div><div class="value" id="stat-winrate">—</div></div>
-      <div class="stat-box"><div class="label">Trades (all)</div><div class="value" id="stat-ntrades">—</div></div>
-      <div class="stat-box"><div class="label">Trades (closed)</div><div class="value" id="stat-nclosed">—</div></div>
-    </div>
-    <div class="stats-note" id="stats-note">Insufficient data — fewer than 2 closed trades. Sharpe / Sortino / max drawdown / win rate need more closed trades before they're meaningful.</div>
-  </div>
-
-  <!-- CHARTS -->
-  <div class="charts-row">
-    <div class="panel">
-      <h2>Real Equity Curve <span class="count" id="equity-count"></span></h2>
-      <div class="chart-container" id="equity-chart-wrap">
-        <canvas id="equity-chart"></canvas>
+      <div class="menu" id="menu-status">
+        <button class="btn" type="button" aria-haspopup="menu" aria-expanded="false">Status: <span data-value>All</span>
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+        </button>
+        <div class="menu-panel" role="menu" hidden>
+          <button class="menu-item" role="menuitemradio" type="button" data-option="all"><span>All statuses</span><svg class="icon check" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 13 4 4L19 7"/></svg></button>
+          <button class="menu-item" role="menuitemradio" type="button" data-option="open"><span>Open only</span><svg class="icon check" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 13 4 4L19 7"/></svg></button>
+          <button class="menu-item" role="menuitemradio" type="button" data-option="closed"><span>Closed only</span><svg class="icon check" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 13 4 4L19 7"/></svg></button>
+          <button class="menu-item" role="menuitemradio" type="button" data-option="winners"><span>Winners</span><svg class="icon check" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 13 4 4L19 7"/></svg></button>
+          <button class="menu-item" role="menuitemradio" type="button" data-option="losers"><span>Losers</span><svg class="icon check" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 13 4 4L19 7"/></svg></button>
+        </div>
       </div>
-      <div class="chart-empty-msg" id="equity-chart-empty">No closed trades yet — the equity curve will appear once trades close.</div>
-    </div>
-    <div class="panel">
-      <h2>Monte Carlo Fan Chart <span class="count" id="mc-count"></span></h2>
-      <div class="chart-container" id="mc-chart-wrap">
-        <canvas id="mc-chart"></canvas>
+
+      <div class="menu" id="menu-range">
+        <button class="btn" type="button" aria-haspopup="menu" aria-expanded="false">Range: <span data-value>All time</span>
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+        </button>
+        <div class="menu-panel" role="menu" hidden>
+          <button class="menu-item" role="menuitemradio" type="button" data-option="all"><span>All time</span><svg class="icon check" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 13 4 4L19 7"/></svg></button>
+          <button class="menu-item" role="menuitemradio" type="button" data-option="7"><span>Last 7 days</span><svg class="icon check" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 13 4 4L19 7"/></svg></button>
+          <button class="menu-item" role="menuitemradio" type="button" data-option="30"><span>Last 30 days</span><svg class="icon check" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 13 4 4L19 7"/></svg></button>
+          <button class="menu-item" role="menuitemradio" type="button" data-option="90"><span>Last 90 days</span><svg class="icon check" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 13 4 4L19 7"/></svg></button>
+        </div>
       </div>
-      <div class="chart-empty-msg" id="mc-chart-empty">Monte Carlo not yet available.</div>
-    </div>
-  </div>
 
-  <!-- POSITIONS -->
-  <div class="panel">
-    <h2>Open Positions <span class="count" id="positions-count"></span></h2>
-    <div class="table-scroll">
-      <table>
-        <thead>
-          <tr>
-            <th>Ticker</th><th>Direction</th><th>Entry Date</th>
-            <th class="num">Entry Price</th><th class="num">Size Fraction</th>
-            <th class="num">Notional</th><th class="num">Days Held</th>
-          </tr>
-        </thead>
-        <tbody id="positions-tbody"></tbody>
-      </table>
-    </div>
-  </div>
-
-  <!-- TRADES -->
-  <div class="panel">
-    <h2>Trade Log <span class="count" id="trades-count"></span></h2>
-    <div class="table-scroll">
-      <table>
-        <thead>
-          <tr>
-            <th>Status</th><th>Ticker</th><th>Direction</th>
-            <th>Entry Date</th><th class="num">Entry Price</th>
-            <th>Exit Date</th><th class="num">Exit Price</th>
-            <th class="num">Size Fraction</th><th class="num">Notional</th>
-            <th class="num">Realized P&amp;L</th>
-          </tr>
-        </thead>
-        <tbody id="trades-tbody"></tbody>
-      </table>
-    </div>
-  </div>
-
-  <div class="two-col">
-    <!-- ALERTS -->
-    <div class="panel">
-      <h2>Recent Alerts <span class="count" id="alerts-count"></span></h2>
-      <div class="alerts-list" id="alerts-list"></div>
+      <button class="btn" id="filter-clear" type="button" hidden>Clear filters</button>
+      <span class="filter-result" id="filter-result"></span>
     </div>
 
-    <!-- CYCLE LOG -->
-    <div class="panel">
-      <h2>Recent Cycles <span class="count" id="cyclelog-count"></span></h2>
-      <div class="table-scroll">
-        <table>
-          <thead>
-            <tr>
-              <th>As Of</th><th>Tier</th><th>Kill Sw.</th>
-              <th class="num">NAV Before</th><th class="num">NAV After</th>
-              <th class="num">Entries</th><th class="num">Exits</th><th class="num">Errors</th>
-            </tr>
-          </thead>
-          <tbody id="cyclelog-tbody"></tbody>
+    <section class="card table-card" aria-labelledby="activity-title">
+      <div class="card-head">
+        <div>
+          <h2 class="card-title" id="activity-title">Trading activity</h2>
+          <p class="card-sub">Click any row for the full detail</p>
+        </div>
+        <div class="seg" id="activity-tabs" role="tablist" aria-label="Trading activity">
+          <button role="tab" type="button" data-tab="trades" aria-selected="true">Trades <span class="n" id="count-trades">0</span></button>
+          <button role="tab" type="button" data-tab="positions" aria-selected="false">Positions <span class="n" id="count-positions">0</span></button>
+          <button role="tab" type="button" data-tab="signals" aria-selected="false">Signals <span class="n" id="count-signals">0</span></button>
+          <button role="tab" type="button" data-tab="cycles" aria-selected="false">Cycles <span class="n" id="count-cycles">0</span></button>
+          <button role="tab" type="button" data-tab="alerts" aria-selected="false">Alerts <span class="n" id="count-alerts">0</span></button>
+        </div>
+      </div>
+
+      <div class="table-wrap" id="panel-trades">
+        <table class="data" id="table-trades">
+          <thead><tr>
+            <th data-sort-key="open"><button type="button">Status <span class="arrow"></span></button></th>
+            <th data-sort-key="ticker"><button type="button">Ticker <span class="arrow"></span></button></th>
+            <th data-sort-key="direction"><button type="button">Side <span class="arrow"></span></button></th>
+            <th data-sort-key="entry_date"><button type="button">Entry <span class="arrow"></span></button></th>
+            <th class="num" data-sort-key="entry_price"><button type="button">Entry price <span class="arrow"></span></button></th>
+            <th data-sort-key="exit_date"><button type="button">Exit <span class="arrow"></span></button></th>
+            <th class="num" data-sort-key="exit_price"><button type="button">Exit price <span class="arrow"></span></button></th>
+            <th class="num" data-sort-key="size_fraction"><button type="button">Size <span class="arrow"></span></button></th>
+            <th class="num" data-sort-key="notional"><button type="button">Notional <span class="arrow"></span></button></th>
+            <th class="num" data-sort-key="return"><button type="button">Return <span class="arrow"></span></button></th>
+            <th class="num" data-sort-key="realized_pnl"><button type="button">P&amp;L <span class="arrow"></span></button></th>
+          </tr></thead>
+          <tbody id="trades-tbody"></tbody>
         </table>
       </div>
-    </div>
-  </div>
 
-  <!-- LIVE-PATH HISTORICAL BACKTEST (reference) -->
-  <div class="panel">
-    <h2>Historical Live-Path Backtest <span class="count">(reference, not live)</span></h2>
-    <div id="lbm-content">
-      <div class="empty-row">Loading…</div>
+      <div class="table-wrap" id="panel-positions" hidden>
+        <table class="data" id="table-positions">
+          <thead><tr>
+            <th data-sort-key="ticker"><button type="button">Ticker <span class="arrow"></span></button></th>
+            <th data-sort-key="direction"><button type="button">Side <span class="arrow"></span></button></th>
+            <th data-sort-key="entry_date"><button type="button">Entry date <span class="arrow"></span></button></th>
+            <th class="num" data-sort-key="entry_price"><button type="button">Entry price <span class="arrow"></span></button></th>
+            <th class="num" data-sort-key="last_close"><button type="button">Last close <span class="arrow"></span></button></th>
+            <th class="num" data-sort-key="size_fraction"><button type="button">Size <span class="arrow"></span></button></th>
+            <th class="num" data-sort-key="notional"><button type="button">Notional <span class="arrow"></span></button></th>
+            <th class="num" data-sort-key="unrealized_pnl"><button type="button">Open P&amp;L <span class="arrow"></span></button></th>
+            <th class="num" data-sort-key="days_held"><button type="button">Days held <span class="arrow"></span></button></th>
+          </tr></thead>
+          <tbody id="positions-tbody"></tbody>
+        </table>
+      </div>
+
+      <div class="table-wrap" id="panel-signals" hidden>
+        <table class="data" id="table-signals">
+          <thead><tr>
+            <th data-sort-key="as_of_date"><button type="button">Decided <span class="arrow"></span></button></th>
+            <th data-sort-key="ticker"><button type="button">Ticker <span class="arrow"></span></button></th>
+            <th data-sort-key="direction"><button type="button">Side <span class="arrow"></span></button></th>
+            <th class="num" data-sort-key="sue"><button type="button">SUE <span class="arrow"></span></button></th>
+            <th class="num" data-sort-key="calibrated_proba"><button type="button">Model probability <span class="arrow"></span></button></th>
+            <th class="num" data-sort-key="size_fraction"><button type="button">Size <span class="arrow"></span></button></th>
+            <th data-sort-key="allowed"><button type="button">Outcome <span class="arrow"></span></button></th>
+            <th data-sort-key="detail"><button type="button">Reason <span class="arrow"></span></button></th>
+          </tr></thead>
+          <tbody id="signals-tbody"></tbody>
+        </table>
+      </div>
+
+      <div class="table-wrap" id="panel-cycles" hidden>
+        <table class="data" id="table-cycles">
+          <thead><tr>
+            <th data-sort-key="as_of_date"><button type="button">As of <span class="arrow"></span></button></th>
+            <th data-sort-key="ts"><button type="button">Ran at <span class="arrow"></span></button></th>
+            <th data-sort-key="session_open"><button type="button">Session <span class="arrow"></span></button></th>
+            <th data-sort-key="breaker_tier"><button type="button">Breaker <span class="arrow"></span></button></th>
+            <th data-sort-key="kill_switch_engaged"><button type="button">Kill switch <span class="arrow"></span></button></th>
+            <th class="num" data-sort-key="nav_before"><button type="button">NAV before <span class="arrow"></span></button></th>
+            <th class="num" data-sort-key="nav_after"><button type="button">NAV after <span class="arrow"></span></button></th>
+            <th class="num" data-sort-key="entries_considered"><button type="button">Considered <span class="arrow"></span></button></th>
+            <th class="num" data-sort-key="n_entries"><button type="button">Entries <span class="arrow"></span></button></th>
+            <th class="num" data-sort-key="n_exits"><button type="button">Exits <span class="arrow"></span></button></th>
+            <th class="num" data-sort-key="n_errors"><button type="button">Errors <span class="arrow"></span></button></th>
+          </tr></thead>
+          <tbody id="cycles-tbody"></tbody>
+        </table>
+      </div>
+
+      <div class="table-wrap" id="panel-alerts" hidden>
+        <table class="data" id="table-alerts">
+          <thead><tr>
+            <th data-sort-key="ts"><button type="button">Time <span class="arrow"></span></button></th>
+            <th data-sort-key="kind"><button type="button">Type <span class="arrow"></span></button></th>
+            <th data-sort-key="message"><button type="button">Message <span class="arrow"></span></button></th>
+          </tr></thead>
+          <tbody id="alerts-tbody"></tbody>
+        </table>
+      </div>
+    </section>
+  </section>
+
+  <!-- ==================== RESEARCH ==================== -->
+  <section class="view" id="view-research" role="tabpanel" aria-labelledby="nav-research" hidden>
+    <div class="section-title">
+      <h2>Pre-registered tests</h2>
+      <p>Each hypothesis was written down and hashed before its out-of-sample window was opened, then run once.</p>
+      <span class="chip" data-tone="neutral" id="rt-score" hidden></span>
     </div>
-  </div>
+
+    <div class="grid">
+      <section class="card col-12" aria-labelledby="rt-title">
+        <div class="card-head">
+          <div>
+            <h2 class="card-title" id="rt-title">Out-of-sample verdicts</h2>
+            <p class="card-sub" id="rt-sub">Target: Sharpe of 2 or more and at least 10% a year</p>
+          </div>
+        </div>
+        <div class="card-body" id="rt-content"></div>
+      </section>
+    </div>
+
+    <div class="grid">
+      <section class="card col-12" aria-labelledby="rt-sleeves-title">
+        <div class="card-head">
+          <div>
+            <h2 class="card-title" id="rt-sleeves-title">Before vs. after the cutoff</h2>
+            <p class="card-sub">Sharpe of every strategy tried, on development data and on its untouched hold-out</p>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="legend" id="rt-legend" style="margin-bottom:14px"></div>
+          <div id="rt-sleeves"></div>
+        </div>
+      </section>
+    </div>
+
+    <div class="section-title">
+      <h2>Backtest reference</h2>
+      <p>Historical replay of the unmodified live code path. Not live results.</p>
+      <span class="chip chip-plain" data-tone="neutral" id="lbm-period" hidden></span>
+    </div>
+
+    <div class="grid">
+      <section class="card col-12" aria-labelledby="lbm-title">
+        <div class="card-head">
+          <div>
+            <h2 class="card-title" id="lbm-title">Replay metrics</h2>
+            <p class="card-sub">From <code>reports/pead_live_backtest_metrics.json</code></p>
+          </div>
+        </div>
+        <div class="card-body" id="lbm-content"></div>
+      </section>
+    </div>
+
+    <div class="grid">
+      <section class="card col-7" aria-labelledby="mc-title">
+        <div class="card-head">
+          <div>
+            <h2 class="card-title" id="mc-title">Monte Carlo equity fan</h2>
+            <p class="card-sub" id="mc-sub">Resampled trade sequences vs. the realized path</p>
+          </div>
+        </div>
+        <div class="card-body" style="display:flex; flex-direction:column">
+          <div class="legend" id="mc-legend" style="margin-bottom:14px"></div>
+          <div class="chart-box tall" id="mc-box">
+            <canvas id="mc-chart" role="img" aria-label="Monte Carlo fan chart of simulated NAV by trade, with the realized NAV path"></canvas>
+            <div class="chart-empty" id="mc-empty" hidden></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="card col-5" aria-labelledby="dist-title">
+        <div class="card-head">
+          <div>
+            <h2 class="card-title" id="dist-title">Outcome distribution</h2>
+            <p class="card-sub" id="dist-sub">Where the realized result sits among simulations</p>
+          </div>
+        </div>
+        <div class="card-body" id="dist-content"></div>
+      </section>
+    </div>
+  </section>
 
   <footer class="page-footer">
-    PEAD paper-trading bot &middot; local read-only dashboard &middot; polls every 20s &middot; never places orders
+    <span>Local monitor on 127.0.0.1 · never places orders</span>
+    <span>The schedule controls only load or unload the paper-trading launchd jobs</span>
   </footer>
+</main>
 
+<div class="sheet-scrim" id="sheet-scrim" hidden></div>
+<aside class="sheet" id="sheet" role="dialog" aria-modal="true" aria-labelledby="sheet-title" hidden>
+  <div class="sheet-head">
+    <h2 id="sheet-title">Detail</h2>
+    <button class="btn btn-icon" id="sheet-close" type="button" aria-label="Close">
+      <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>
+    </button>
+  </div>
+  <p class="sheet-sub" id="sheet-sub"></p>
+  <div id="sheet-body"></div>
+</aside>
+
+<div class="modal" id="confirm-modal" hidden>
+  <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="confirm-title" aria-describedby="confirm-body">
+    <div class="modal-icon" id="confirm-icon" data-tone="crit">
+      <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg>
+    </div>
+    <h3 class="modal-title" id="confirm-title">Confirm</h3>
+    <p class="modal-body" id="confirm-body"></p>
+    <div class="modal-actions">
+      <button class="btn" id="confirm-cancel" type="button">Cancel</button>
+      <button class="btn" id="confirm-ok" type="button">Proceed</button>
+    </div>
+  </div>
 </div>
 
-<script>
-(function () {
-  "use strict";
+<div class="modal palette" id="palette" hidden>
+  <div class="palette-box" role="dialog" aria-modal="true" aria-label="Command palette">
+    <div class="palette-input">
+      <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+      <input type="text" id="palette-input" placeholder="Search views, tickers and actions…" autocomplete="off" role="combobox" aria-expanded="true" aria-controls="palette-list">
+      <span class="kbd">esc</span>
+    </div>
+    <ul class="palette-list" id="palette-list" role="listbox" aria-label="Commands"></ul>
+  </div>
+</div>
+
+<div class="toasts" id="toasts" aria-live="polite"></div>
 
-  // ---------- config ----------
-  const POLL_MS = 20000;
-  const HEARTBEAT_GREEN_MAX_S = 2 * 3600;   // < 2h -> green
-  const HEARTBEAT_STALE_S = 26 * 3600;      // backend's own threshold, mirrored here as fallback
-
-  // ---------- small utilities ----------
-
-  function isFiniteNum(x) {
-    return typeof x === "number" && Number.isFinite(x);
-  }
-
-  function esc(s) {
-    if (s === null || s === undefined) return "";
-    return String(s).replace(/[&<>"']/g, function (c) {
-      return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c];
-    });
-  }
-
-  function fmtNum(x, digits) {
-    digits = digits === undefined ? 2 : digits;
-    if (!isFiniteNum(x)) return "—";
-    return x.toLocaleString(undefined, { minimumFractionDigits: digits, maximumFractionDigits: digits });
-  }
-
-  function fmtInt(x) {
-    if (!isFiniteNum(x)) return "—";
-    return Math.round(x).toLocaleString();
-  }
-
-  function fmtPct(x, digits) {
-    digits = digits === undefined ? 2 : digits;
-    if (!isFiniteNum(x)) return "—";
-    return (x * 100).toFixed(digits) + "%";
-  }
-
-  function fmtMoney(x, digits) {
-    digits = digits === undefined ? 2 : digits;
-    if (!isFiniteNum(x)) return "—";
-    const sign = x < 0 ? "-" : "";
-    return sign + "$" + Math.abs(x).toLocaleString(undefined, { minimumFractionDigits: digits, maximumFractionDigits: digits });
-  }
-
-  function fmtDateStr(s) {
-    if (s === null || s === undefined || s === "") return "—";
-    return String(s);
-  }
-
-  function fmtTs(ts) {
-    if (!isFiniteNum(ts)) return "—";
-    try {
-      return new Date(ts * 1000).toLocaleString();
-    } catch (e) {
-      return "—";
-    }
-  }
-
-  function fmtDurationAgo(seconds) {
-    if (seconds === null || seconds === undefined || typeof seconds !== "number" || Number.isNaN(seconds)) return "—";
-    if (!Number.isFinite(seconds)) return "never";
-    const s = Math.max(0, Math.floor(seconds));
-    const d = Math.floor(s / 86400);
-    const h = Math.floor((s % 86400) / 3600);
-    const m = Math.floor((s % 3600) / 60);
-    const sec = s % 60;
-    if (d > 0) return d + "d " + h + "h ago";
-    if (h > 0) return h + "h " + m + "m ago";
-    if (m > 0) return m + "m " + sec + "s ago";
-    return sec + "s ago";
-  }
-
-  function setText(id, text) {
-    const el = document.getElementById(id);
-    if (el) el.textContent = text;
-  }
-
-  function setHTML(id, html) {
-    const el = document.getElementById(id);
-    if (el) el.innerHTML = html;
-  }
-
-  function cssVar(name) {
-    return getComputedStyle(document.documentElement).getPropertyValue(name).trim();
-  }
-
-  async function safeFetchJSON(url) {
-    try {
-      const res = await fetch(url, { cache: "no-store" });
-      if (!res.ok) {
-        console.warn("Non-OK response for", url, res.status);
-        return { __ok: false, __data: null };
-      }
-      const data = await res.json();
-      return { __ok: true, __data: data };
-    } catch (err) {
-      console.warn("Fetch failed for", url, err);
-      return { __ok: false, __data: null };
-    }
-  }
-
-  // ---------- backend availability banner ----------
-  function setBackendBanner(show) {
-    const el = document.getElementById("backend-banner");
-    if (!el) return;
-    el.classList.toggle("show", !!show);
-  }
-
-  // ---------- STATUS ----------
-  async function refreshStatus() {
-    const { __ok, __data } = await safeFetchJSON("/api/status");
-    setBackendBanner(!__ok);
-    if (!__ok || !__data) {
-      setText("kill-switch-value", "Unknown");
-      setText("kill-switch-detail", "status unavailable");
-      setText("breaker-value", "Unknown");
-      setText("breaker-detail", "status unavailable");
-      setText("heartbeat-value", "Unknown");
-      setText("heartbeat-detail", "status unavailable");
-      setText("last-cycle-value", "—");
-      setText("last-cycle-detail", "status unavailable");
-      document.getElementById("card-kill-switch").className = "status-card";
-      document.getElementById("card-breaker").className = "status-card";
-      document.getElementById("card-heartbeat").className = "status-card";
-      return;
-    }
-    const d = __data;
-
-    // Kill switch
-    const ksCard = document.getElementById("card-kill-switch");
-    if (d.kill_switch_engaged === true) {
-      ksCard.className = "status-card bad";
-      setText("kill-switch-value", "ENGAGED");
-      setText("kill-switch-detail", d.kill_switch_reason ? String(d.kill_switch_reason) : "no reason given");
-    } else if (d.kill_switch_engaged === false) {
-      ksCard.className = "status-card ok";
-      setText("kill-switch-value", "Clear");
-      setText("kill-switch-detail", "no restrictions");
-    } else {
-      ksCard.className = "status-card";
-      setText("kill-switch-value", "Unknown");
-      setText("kill-switch-detail", " ");
-    }
-
-    // Circuit breaker tier
-    const brCard = document.getElementById("card-breaker");
-    const tier = d.circuit_breaker_tier;
-    let tierClass = "";
-    let tierLabel = tier ? String(tier) : "unknown";
-    if (tier === "armed") tierClass = "ok";
-    else if (tier === "halt_new_entries") tierClass = "warn";
-    else if (tier === "full_flatten") tierClass = "bad";
-    brCard.className = "status-card " + tierClass;
-    setText("breaker-value", tierLabel);
-    setText("breaker-detail", tier === "armed" ? "normal operation"
-      : tier === "halt_new_entries" ? "new entries blocked"
-      : tier === "full_flatten" ? "flattening all positions"
-      : " ");
-
-    // Heartbeat
-    const hbCard = document.getElementById("card-heartbeat");
-    const age = d.heartbeat_age_seconds;
-    const stale = d.heartbeat_stale === true || (isFiniteNum(age) && age > HEARTBEAT_STALE_S);
-    let hbClass = "ok";
-    if (stale) hbClass = "bad";
-    else if (isFiniteNum(age) && age >= HEARTBEAT_GREEN_MAX_S) hbClass = "warn";
-    else if (!isFiniteNum(age)) hbClass = "bad";
-    hbCard.className = "status-card " + hbClass;
-    setText("heartbeat-value", fmtDurationAgo(age));
-    setText("heartbeat-detail", stale ? "STALE — bot may be down" : (isFiniteNum(age) ? fmtInt(age) + "s since last cycle" : " "));
-
-    // Last cycle
-    const lc = d.last_cycle;
-    if (lc && typeof lc === "object") {
-      setText("last-cycle-value", fmtDateStr(lc.as_of_date));
-      const tierPart = lc.breaker_tier ? String(lc.breaker_tier) : "—";
-      const errCount = Array.isArray(lc.errors) ? lc.errors.length : 0;
-      const ksPart = lc.kill_switch_engaged === true ? "kill-switch on" : "kill-switch off";
-      const errPart = errCount > 0 ? errCount + " error" + (errCount === 1 ? "" : "s") : "no errors";
-      setText("last-cycle-detail", tierPart + " · " + ksPart + " · " + errPart);
-    } else {
-      setText("last-cycle-value", "No cycles yet");
-      setText("last-cycle-detail", " ");
-    }
-  }
-
-  // ---------- POSITIONS ----------
-  async function refreshPositions() {
-    const { __ok, __data } = await safeFetchJSON("/api/positions");
-    const tbody = document.getElementById("positions-tbody");
-    const list = (__ok && Array.isArray(__data)) ? __data : [];
-    setText("positions-count", "(" + list.length + ")");
-    if (list.length === 0) {
-      tbody.innerHTML = '<tr><td colspan="7" class="empty-row">' +
-        (__ok ? "No open positions." : "Positions unavailable — backend unreachable.") + "</td></tr>";
-      return;
-    }
-    let html = "";
-    for (const p of list) {
-      const dirClass = p.direction === "short" ? "badge-orange" : "badge-blue";
-      html += "<tr>" +
-        "<td class=\"mono\">" + esc(p.ticker) + "</td>" +
-        "<td><span class=\"badge " + dirClass + "\">" + esc((p.direction || "").toUpperCase()) + "</span></td>" +
-        "<td>" + esc(fmtDateStr(p.entry_date)) + "</td>" +
-        "<td class=\"num\">" + fmtMoney(p.entry_price) + "</td>" +
-        "<td class=\"num\">" + fmtPct(p.size_fraction) + "</td>" +
-        "<td class=\"num\">" + fmtMoney(p.notional) + "</td>" +
-        "<td class=\"num\">" + fmtInt(p.days_held) + "</td>" +
-        "</tr>";
-    }
-    tbody.innerHTML = html;
-  }
-
-  // ---------- TRADES ----------
-  async function refreshTrades() {
-    const { __ok, __data } = await safeFetchJSON("/api/trades?limit=200");
-    const tbody = document.getElementById("trades-tbody");
-    const list = (__ok && Array.isArray(__data)) ? __data : [];
-    setText("trades-count", "(" + list.length + ")");
-    if (list.length === 0) {
-      tbody.innerHTML = '<tr><td colspan="10" class="empty-row">' +
-        (__ok ? "No trades yet." : "Trades unavailable — backend unreachable.") + "</td></tr>";
-      return;
-    }
-    let html = "";
-    for (const t of list) {
-      const open = t.open === true;
-      const statusBadge = open ? '<span class="badge badge-blue">OPEN</span>' : '<span class="badge badge-gray">CLOSED</span>';
-      const dirClass = t.direction === "short" ? "badge-orange" : "badge-blue";
-      const pnl = t.realized_pnl;
-      let pnlClass = "";
-      if (isFiniteNum(pnl)) pnlClass = pnl > 0 ? "pos" : (pnl < 0 ? "neg" : "");
-      html += "<tr>" +
-        "<td>" + statusBadge + "</td>" +
-        "<td class=\"mono\">" + esc(t.ticker) + "</td>" +
-        "<td><span class=\"badge " + dirClass + "\">" + esc((t.direction || "").toUpperCase()) + "</span></td>" +
-        "<td>" + esc(fmtDateStr(t.entry_date)) + "</td>" +
-        "<td class=\"num\">" + fmtMoney(t.entry_price) + "</td>" +
-        "<td>" + esc(fmtDateStr(t.exit_date)) + "</td>" +
-        "<td class=\"num\">" + fmtMoney(t.exit_price) + "</td>" +
-        "<td class=\"num\">" + fmtPct(t.size_fraction) + "</td>" +
-        "<td class=\"num\">" + fmtMoney(t.notional) + "</td>" +
-        "<td class=\"num " + pnlClass + "\">" + fmtMoney(pnl) + "</td>" +
-        "</tr>";
-    }
-    tbody.innerHTML = html;
-  }
-
-  // ---------- STATS ----------
-  async function refreshStats() {
-    const { __ok, __data } = await safeFetchJSON("/api/stats");
-    if (!__ok || !__data) {
-      setText("stat-nav", "—");
-      setText("stat-return", "—");
-      setText("stat-sharpe", "—");
-      setText("stat-sortino", "—");
-      setText("stat-maxdd", "—");
-      setText("stat-winrate", "—");
-      setText("stat-ntrades", "—");
-      setText("stat-nclosed", "—");
-      document.getElementById("stats-note").classList.remove("show");
-      return;
-    }
-    const d = __data;
-    setText("stat-nav", fmtMoney(d.current_nav));
-    const ret = d.total_return_pct;
-    const retEl = document.getElementById("stat-return");
-    retEl.textContent = fmtPct(ret);
-    retEl.className = "value" + (isFiniteNum(ret) ? (ret > 0 ? " pos" : ret < 0 ? " neg" : "") : "");
-
-    setText("stat-sharpe", fmtNum(d.sharpe_ratio));
-    setText("stat-sortino", fmtNum(d.sortino_ratio));
-
-    const mdd = d.max_drawdown;
-    const mddEl = document.getElementById("stat-maxdd");
-    mddEl.textContent = fmtPct(mdd);
-    mddEl.className = "value" + (isFiniteNum(mdd) && mdd < 0 ? " neg" : "");
-
-    setText("stat-winrate", fmtPct(d.win_rate));
-    setText("stat-ntrades", fmtInt(d.n_trades));
-    setText("stat-nclosed", fmtInt(d.n_closed_trades));
-
-    const note = document.getElementById("stats-note");
-    note.classList.toggle("show", d.insufficient_data === true);
-  }
-
-  // ---------- EQUITY CURVE ----------
-  let equityChart = null;
-
-  async function refreshEquityCurve() {
-    const { __ok, __data } = await safeFetchJSON("/api/equity_curve");
-    const wrap = document.getElementById("equity-chart-wrap");
-    const emptyMsg = document.getElementById("equity-chart-empty");
-
-    const dates = (__ok && __data && Array.isArray(__data.dates)) ? __data.dates : [];
-    const nav = (__ok && __data && Array.isArray(__data.nav)) ? __data.nav : [];
-    setText("equity-count", dates.length > 0 ? "(" + dates.length + " points)" : "");
-
-    if (!__ok || dates.length === 0 || nav.length === 0 || typeof Chart === "undefined") {
-      wrap.classList.add("hide");
-      emptyMsg.classList.add("show");
-      if (!__ok) emptyMsg.textContent = "Equity curve unavailable — backend unreachable.";
-      else if (typeof Chart === "undefined") emptyMsg.textContent = "Chart library failed to load.";
-      else emptyMsg.textContent = "No closed trades yet — the equity curve will appear once trades close.";
-      return;
-    }
-    wrap.classList.remove("hide");
-    emptyMsg.classList.remove("show");
-
-    const accent = cssVar("--accent") || "#5b8def";
-    const textDim = cssVar("--text-dim") || "#93a1b5";
-    const border = cssVar("--border") || "#232a3a";
-
-    const cfg = {
-      type: "line",
-      data: {
-        labels: dates,
-        datasets: [{
-          label: "NAV",
-          data: nav,
-          borderColor: accent,
-          backgroundColor: "transparent",
-          borderWidth: 2,
-          pointRadius: 0,
-          tension: 0.15,
-        }],
-      },
-      options: {
-        responsive: true,
-        maintainAspectRatio: false,
-        animation: false,
-        interaction: { mode: "index", intersect: false },
-        plugins: {
-          legend: { display: false },
-          tooltip: {
-            callbacks: {
-              label: function (ctx) { return "NAV: " + fmtMoney(ctx.parsed.y); },
-            },
-          },
-        },
-        scales: {
-          x: { ticks: { color: textDim, maxTicksLimit: 10, autoSkip: true }, grid: { color: border } },
-          y: {
-            ticks: { color: textDim, callback: function (v) { return "$" + Number(v).toLocaleString(); } },
-            grid: { color: border },
-          },
-        },
-      },
-    };
-
-    if (equityChart) {
-      equityChart.destroy();
-    }
-    const ctx = document.getElementById("equity-chart").getContext("2d");
-    equityChart = new Chart(ctx, cfg);
-  }
-
-  // ---------- MONTE CARLO FAN CHART ----------
-  let mcChart = null;
-
-  async function refreshMonteCarlo() {
-    const { __ok, __data } = await safeFetchJSON("/api/monte_carlo");
-    const wrap = document.getElementById("mc-chart-wrap");
-    const emptyMsg = document.getElementById("mc-chart-empty");
-
-    const available = __ok && __data && __data.available !== false;
-    const fan = available ? __data.fan_chart_nav_by_step : null;
-    const real = available ? __data.real_equity_curve_by_step : null;
-
-    const hasFan = fan && Array.isArray(fan.step) && Array.isArray(fan.p5) && Array.isArray(fan.p50) && Array.isArray(fan.p95) && fan.step.length > 0;
-    const hasReal = real && Array.isArray(real.step) && Array.isArray(real.nav) && real.nav.length > 0;
-
-    setText("mc-count", hasFan ? "(" + fan.step.length + " steps, n=" + (isFiniteNum(__data.n_trades) ? __data.n_trades : "?") + " trades)" : "");
-
-    if (!__ok || !available || !hasFan || typeof Chart === "undefined") {
-      wrap.classList.add("hide");
-      emptyMsg.classList.add("show");
-      if (!__ok) emptyMsg.textContent = "Monte Carlo unavailable — backend unreachable.";
-      else if (typeof Chart === "undefined") emptyMsg.textContent = "Chart library failed to load.";
-      else emptyMsg.textContent = "Monte Carlo not yet available.";
-      return;
-    }
-    wrap.classList.remove("hide");
-    emptyMsg.classList.remove("show");
-
-    const steps = fan.step;
-    const textDim = cssVar("--text-dim") || "#93a1b5";
-    const border = cssVar("--border") || "#232a3a";
-    const accent = cssVar("--accent") || "#5b8def";
-    const gray = cssVar("--gray") || "#6b7688";
-
-    const datasets = [
-      {
-        label: "P5 (simulated)",
-        data: fan.p5,
-        borderColor: "transparent",
-        backgroundColor: "transparent",
-        pointRadius: 0,
-        borderWidth: 0,
-        fill: false,
-        order: 3,
-      },
-      {
-        label: "P5–P95 band (simulated)",
-        data: fan.p95,
-        borderColor: "transparent",
-        backgroundColor: "rgba(91, 141, 239, 0.18)",
-        pointRadius: 0,
-        borderWidth: 0,
-        fill: "-1",
-        order: 3,
-      },
-      {
-        label: "P50 median (simulated)",
-        data: fan.p50,
-        borderColor: gray,
-        backgroundColor: "transparent",
-        borderDash: [4, 4],
-        pointRadius: 0,
-        borderWidth: 1.5,
-        fill: false,
-        order: 2,
-      },
-    ];
-
-    if (hasReal) {
-      datasets.push({
-        label: "Real NAV (actual trade sequence)",
-        data: real.nav,
-        borderColor: accent,
-        backgroundColor: "transparent",
-        pointRadius: 0,
-        borderWidth: 2.25,
-        fill: false,
-        order: 1,
-      });
-    }
-
-    const cfg = {
-      type: "line",
-      data: { labels: steps, datasets: datasets },
-      options: {
-        responsive: true,
-        maintainAspectRatio: false,
-        animation: false,
-        interaction: { mode: "index", intersect: false },
-        plugins: {
-          legend: {
-            display: true,
-            labels: { color: textDim, boxWidth: 12, font: { size: 10.5 } },
-          },
-          tooltip: {
-            callbacks: {
-              label: function (ctx) {
-                const v = ctx.parsed.y;
-                return ctx.dataset.label + ": " + fmtMoney(v);
-              },
-            },
-          },
-        },
-        scales: {
-          x: {
-            title: { display: true, text: "trade step", color: textDim, font: { size: 10.5 } },
-            ticks: { color: textDim, maxTicksLimit: 10, autoSkip: true },
-            grid: { color: border },
-          },
-          y: {
-            ticks: { color: textDim, callback: function (v) { return "$" + Number(v).toLocaleString(); } },
-            grid: { color: border },
-          },
-        },
-      },
-    };
-
-    if (mcChart) {
-      mcChart.destroy();
-    }
-    const ctx = document.getElementById("mc-chart").getContext("2d");
-    mcChart = new Chart(ctx, cfg);
-  }
-
-  // ---------- ALERTS ----------
-  function alertKindClass(kind) {
-    const k = (kind || "").toLowerCase();
-    if (k.indexOf("kill_switch") !== -1 || k.indexOf("drawdown") !== -1) return "badge-red";
-    if (k.indexOf("circuit_breaker") !== -1 || k.indexOf("halt") !== -1) return "badge-orange";
-    if (k.indexOf("error") !== -1) return "badge-red";
-    if (k.indexOf("rearm") !== -1 || k.indexOf("recover") !== -1) return "badge-green";
-    return "badge-gray";
-  }
-
-  async function refreshAlerts() {
-    const { __ok, __data } = await safeFetchJSON("/api/alerts?limit=50");
-    const container = document.getElementById("alerts-list");
-    const list = (__ok && Array.isArray(__data)) ? __data : [];
-    setText("alerts-count", "(" + list.length + ")");
-    if (list.length === 0) {
-      container.innerHTML = '<div class="empty-row">' +
-        (__ok ? "No alerts." : "Alerts unavailable — backend unreachable.") + "</div>";
-      return;
-    }
-    let html = "";
-    for (const a of list) {
-      const kindBadge = a && a.kind ? '<span class="badge ' + alertKindClass(a.kind) + '">' + esc(a.kind) + "</span>" : "";
-      const msg = a && a.message !== undefined ? esc(a.message) : "";
-      html += '<div class="alert-item">' +
-        '<span class="alert-ts">' + esc(a ? fmtTs(a.ts) : "—") + "</span>" +
-        '<span class="alert-msg">' + kindBadge + " " + msg + "</span>" +
-        "</div>";
-    }
-    container.innerHTML = html;
-  }
-
-  // ---------- CYCLE LOG ----------
-  async function refreshCycleLog() {
-    const { __ok, __data } = await safeFetchJSON("/api/cycle_log?limit=50");
-    const tbody = document.getElementById("cyclelog-tbody");
-    const list = (__ok && Array.isArray(__data)) ? __data : [];
-    setText("cyclelog-count", "(" + list.length + ")");
-    if (list.length === 0) {
-      tbody.innerHTML = '<tr><td colspan="8" class="empty-row">' +
-        (__ok ? "No cycles logged yet." : "Cycle log unavailable — backend unreachable.") + "</td></tr>";
-      return;
-    }
-    let html = "";
-    for (const c of list) {
-      const tier = c ? c.breaker_tier : null;
-      let tierBadgeClass = "badge-gray";
-      if (tier === "armed") tierBadgeClass = "badge-green";
-      else if (tier === "halt_new_entries") tierBadgeClass = "badge-yellow";
-      else if (tier === "full_flatten") tierBadgeClass = "badge-red";
-      const ksBadge = c && c.kill_switch_engaged === true
-        ? '<span class="badge badge-red">ON</span>'
-        : '<span class="badge badge-gray">off</span>';
-      const nEntries = c && Array.isArray(c.entries) ? c.entries.length : 0;
-      const nExits = c && Array.isArray(c.exits) ? c.exits.length : 0;
-      const nErrors = c && Array.isArray(c.errors) ? c.errors.length : 0;
-      html += "<tr>" +
-        "<td>" + esc(c ? fmtDateStr(c.as_of_date) : "—") + "</td>" +
-        "<td><span class=\"badge " + tierBadgeClass + "\">" + esc(tier || "—") + "</span></td>" +
-        "<td>" + ksBadge + "</td>" +
-        "<td class=\"num\">" + fmtMoney(c ? c.nav_before : null) + "</td>" +
-        "<td class=\"num\">" + fmtMoney(c ? c.nav_after : null) + "</td>" +
-        "<td class=\"num\">" + nEntries + "</td>" +
-        "<td class=\"num\">" + nExits + "</td>" +
-        "<td class=\"num" + (nErrors > 0 ? " neg" : "") + "\">" + nErrors + "</td>" +
-        "</tr>";
-    }
-    tbody.innerHTML = html;
-  }
-
-  // ---------- LIVE BACKTEST METRICS (reference panel, generic passthrough) ----------
-  const KNOWN_LBM_FIELDS = [
-    ["n_trades", "N Trades", "int"],
-    ["win_rate", "Win Rate", "pct"],
-    ["sharpe_ratio", "Sharpe", "num"],
-    ["sortino_ratio", "Sortino", "num"],
-    ["max_drawdown", "Max Drawdown", "pct"],
-    ["annualized_return", "Annualized Return", "pct"],
-    ["total_return", "Total Return", "pct"],
-    ["calmar_ratio", "Calmar", "num"],
-    ["start_date", "Start Date", "str"],
-    ["end_date", "End Date", "str"],
-  ];
-  const SKIP_LBM_FIELDS = new Set(["available", "methodology"]);
-
-  function renderKvValue(kind, v) {
-    if (kind === "pct") return fmtPct(v);
-    if (kind === "num") return fmtNum(v);
-    if (kind === "int") return fmtInt(v);
-    if (v === null || v === undefined) return "—";
-    if (typeof v === "object") return "—"; // don't try to render nested structures generically
-    return esc(String(v));
-  }
-
-  async function refreshLiveBacktestMetrics() {
-    const { __ok, __data } = await safeFetchJSON("/api/live_backtest_metrics");
-    const container = document.getElementById("lbm-content");
-    if (!__ok) {
-      container.innerHTML = '<div class="empty-row">Live backtest metrics unavailable — backend unreachable.</div>';
-      return;
-    }
-    const d = __data;
-    if (!d || d.available === false) {
-      container.innerHTML = '<div class="empty-row">Live-path historical backtest metrics not yet available.</div>';
-      return;
-    }
-
-    let html = '<div class="kv-grid">';
-    const seen = new Set();
-    for (const [key, label, kind] of KNOWN_LBM_FIELDS) {
-      if (Object.prototype.hasOwnProperty.call(d, key)) {
-        html += '<div class="kv-box"><div class="k">' + esc(label) + '</div><div class="v">' + renderKvValue(kind, d[key]) + "</div></div>";
-        seen.add(key);
-      }
-    }
-    // Generically surface any other scalar fields not already shown, so the panel
-    // stays correct even if the upstream JSON's exact key set evolves.
-    for (const key of Object.keys(d)) {
-      if (seen.has(key) || SKIP_LBM_FIELDS.has(key)) continue;
-      const v = d[key];
-      if (v !== null && typeof v === "object") continue; // skip nested/array fields in the summary grid
-      html += '<div class="kv-box"><div class="k">' + esc(key) + '</div><div class="v">' + renderKvValue("str", v) + "</div></div>";
-    }
-    html += "</div>";
-    if (d.methodology) {
-      html += '<div class="footnote">' + esc(d.methodology) + "</div>";
-    }
-    container.innerHTML = html;
-  }
-
-  // ---------- orchestration ----------
-  // ---------- BOT CONTROL TERMINAL ----------
-  // The dashboard's one write surface: /api/control/start and
-  // /api/control/stop toggle the REAL launchd jobs (see backend.py's
-  // module docstring). Everything else in this section is read-only,
-  // same as the rest of the page.
-  const EVENT_FEED_LIMIT = 100;
-
-  function wireKindClass(kind) {
-    const RED = new Set(["kill_switch_engaged", "dead_mans_switch", "circuit_breaker_halt", "error", "drawdown_cap_tripped"]);
-    const GREEN = new Set(["entry_placed", "position_opened"]);
-    const AMBER = new Set(["exit", "position_closed", "entry_skipped", "risk_blocked"]);
-    if (RED.has(kind)) return "pt-k-red";
-    if (GREEN.has(kind)) return "pt-k-green";
-    if (AMBER.has(kind)) return "pt-k-amber";
-    return "pt-k-dim";
-  }
-
-  function renderWireLine(evt) {
-    const cls = wireKindClass(evt && evt.kind);
-    const time = fmtTs(evt ? evt.ts : null);
-    const kind = esc(evt && evt.kind ? evt.kind : "?");
-    const summary = esc(evt && evt.summary ? evt.summary : "");
-    return '<div class="pt-wire-line"><span class="pt-wire-time">' + time + "</span>" +
-      '<span class="pt-wire-kind ' + cls + '">' + kind + "</span>" + summary + "</div>";
-  }
-
-  function renderJobBadge(el, job) {
-    if (!el) return;
-    if (!job) { el.textContent = "UNKNOWN"; el.className = "pt-cmd-badge"; return; }
-    if (job.error) { el.textContent = "ERR"; el.className = "pt-cmd-badge err"; return; }
-    if (job.loaded) { el.textContent = "ON"; el.className = "pt-cmd-badge on"; }
-    else { el.textContent = "OFF"; el.className = "pt-cmd-badge off"; }
-  }
-
-  function setControlButtonsEnabled(enabled) {
-    document.getElementById("pt-start-btn").disabled = !enabled;
-    document.getElementById("pt-stop-btn").disabled = !enabled;
-  }
-
-  // Deliberately NOT using safeFetchJSON here: distinguishing "backend
-  // unreachable" from "backend reachable but the paper-mode guard failed
-  // (HTTP 500)" is safety-relevant (see backend.py's _paper_mode_or_500) --
-  // safeFetchJSON collapses both into the same __ok:false, which isn't
-  // enough to render the MODE badge correctly.
-  async function fetchLaunchdStatus() {
-    try {
-      const res = await fetch("/api/launchd_status", { cache: "no-store" });
-      let data = null;
-      try { data = await res.json(); } catch (e) { /* non-JSON body, tolerate */ }
-      return { reachable: true, status: res.status, ok: res.ok, data: data };
-    } catch (err) {
-      return { reachable: false, status: null, ok: false, data: null };
-    }
-  }
-
-  function renderLaunchdStatus(info) {
-    const connBadge = document.getElementById("pt-conn-state");
-    const modeBadge = document.getElementById("pt-mode");
-    const botBadge = document.getElementById("pt-job-bot");
-    const wdBadge = document.getElementById("pt-job-watchdog");
-
-    if (!info.reachable) {
-      connBadge.textContent = "OFFLINE"; connBadge.className = "pt-cmd-badge err";
-      modeBadge.textContent = "UNKNOWN"; modeBadge.className = "pt-cmd-badge";
-      renderJobBadge(botBadge, null);
-      renderJobBadge(wdBadge, null);
-      setControlButtonsEnabled(false);
-      return;
-    }
-    connBadge.textContent = "LIVE"; connBadge.className = "pt-cmd-badge on";
-
-    // The single most safety-critical branch on this page: a 500 here means
-    // bot.execution.assert_paper_only_mode() did not confirm paper-only
-    // mode. Refuse to show a job/mode badge that could be mistaken for a
-    // verified state, and disable the controls entirely.
-    if (info.status === 500 || !info.ok || !info.data) {
-      modeBadge.textContent = "GUARD FAILED — REFUSING TO CONTROL";
-      modeBadge.className = "pt-cmd-badge mode-guard-failed";
-      renderJobBadge(botBadge, null);
-      renderJobBadge(wdBadge, null);
-      setControlButtonsEnabled(false);
-      return;
-    }
-
-    const d = info.data;
-    if (d.mode_verified === true && d.mode) {
-      modeBadge.textContent = d.mode;
-      modeBadge.className = "pt-cmd-badge mode-ok";
-    } else {
-      modeBadge.textContent = "GUARD FAILED — REFUSING TO CONTROL";
-      modeBadge.className = "pt-cmd-badge mode-guard-failed";
-    }
-
-    const jobs = d.jobs || {};
-    renderJobBadge(botBadge, jobs.pead_bot);
-    renderJobBadge(wdBadge, jobs.pead_watchdog);
-    setControlButtonsEnabled(d.mode_verified === true);
-  }
-
-  async function refreshTermPanel() {
-    const [statusRes, launchdInfo, feedRes] = await Promise.all([
-      safeFetchJSON("/api/status"),
-      fetchLaunchdStatus(),
-      safeFetchJSON("/api/event_feed?limit=" + EVENT_FEED_LIMIT),
-    ]);
-
-    renderLaunchdStatus(launchdInfo);
-
-    const killBadge = document.getElementById("pt-kill");
-    if (statusRes.__ok && statusRes.__data) {
-      const engaged = statusRes.__data.kill_switch_engaged;
-      if (engaged === true) { killBadge.textContent = "ENGAGED"; killBadge.className = "pt-cmd-badge err"; }
-      else if (engaged === false) { killBadge.textContent = "clear"; killBadge.className = "pt-cmd-badge on"; }
-      else { killBadge.textContent = "?"; killBadge.className = "pt-cmd-badge"; }
-
-      const lc = statusRes.__data.last_cycle;
-      setText("pt-sess", lc && lc.as_of_date ? String(lc.as_of_date) : "none yet");
-    } else {
-      killBadge.textContent = "?"; killBadge.className = "pt-cmd-badge";
-      setText("pt-sess", "—");
-    }
-
-    if (!feedRes.__ok) {
-      setHTML("pt-wire-body", '<div class="pt-empty">NO EVENTS — BACKEND UNREACHABLE</div>');
-      setText("pt-loops", "—");
-      setText("pt-feed-age", "—");
-      return;
-    }
-    const events = Array.isArray(feedRes.__data) ? feedRes.__data : [];
-    if (events.length === 0) {
-      setHTML("pt-wire-body", '<div class="pt-empty">NO EVENTS YET</div>');
-    } else {
-      setHTML("pt-wire-body", events.map(renderWireLine).join(""));
-    }
-    const cycleCount = events.filter(function (e) { return e && e.kind === "cycle_run"; }).length;
-    setText("pt-loops", String(cycleCount) + (events.length >= EVENT_FEED_LIMIT ? "+" : ""));
-    setText("pt-feed-age", events.length && isFiniteNum(events[0].ts)
-      ? fmtDurationAgo((Date.now() / 1000) - events[0].ts) : "—");
-  }
-
-  function setActionMsg(text, cls) {
-    const el = document.getElementById("pt-action-msg");
-    el.textContent = text || "";
-    el.className = "pt-action-msg" + (cls ? " " + cls : "");
-  }
-
-  // In-page confirm modal -- see the .pt-modal-overlay CSS comment for why
-  // this exists instead of window.confirm(): native confirm() dialogs can
-  // be silently suppressed by the browser (repeated-dialog auto-suppression,
-  // some privacy extensions, sandboxed contexts), and a suppressed confirm()
-  // just returns false with no visible error -- indistinguishable, from the
-  // user's side, from the button doing nothing at all. This modal is plain
-  // DOM, so it can't be suppressed that way.
-  function showPtConfirm(title, message, onConfirm) {
-    const overlay = document.getElementById("pt-confirm-overlay");
-    document.getElementById("pt-confirm-title").textContent = title;
-    document.getElementById("pt-confirm-body").textContent = message;
-    overlay.classList.add("show");
-
-    const okBtn = document.getElementById("pt-confirm-ok");
-    const cancelBtn = document.getElementById("pt-confirm-cancel");
-
-    function cleanup() {
-      overlay.classList.remove("show");
-      okBtn.removeEventListener("click", onOk);
-      cancelBtn.removeEventListener("click", onCancel);
-      overlay.removeEventListener("click", onOverlayClick);
-      document.removeEventListener("keydown", onKeydown);
-    }
-    function onOk() { cleanup(); onConfirm(); }
-    function onCancel() { cleanup(); }
-    function onOverlayClick(e) { if (e.target === overlay) cleanup(); }
-    function onKeydown(e) { if (e.key === "Escape") cleanup(); }
-
-    okBtn.addEventListener("click", onOk);
-    cancelBtn.addEventListener("click", onCancel);
-    overlay.addEventListener("click", onOverlayClick);
-    document.addEventListener("keydown", onKeydown);
-  }
-
-  async function postControl(action) {
-    setControlButtonsEnabled(false);
-    setActionMsg((action === "start" ? "Starting" : "Stopping") + " — calling launchctl…", "pending");
-    try {
-      const res = await fetch("/api/control/" + action, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ confirm: true }),
-      });
-      let data = null;
-      try { data = await res.json(); } catch (e) { /* non-JSON body, tolerate */ }
-      if (!res.ok) {
-        setActionMsg("Control action failed (" + res.status + "): " +
-          (data && data.detail ? data.detail : "unknown error"), "err");
-      } else {
-        setActionMsg((action === "start" ? "Start" : "Stop") + " command sent successfully.", "ok");
-      }
-    } catch (err) {
-      setActionMsg("Control action failed: could not reach the backend.", "err");
-    } finally {
-      await refreshTermPanel();
-    }
-  }
-
-  document.getElementById("pt-start-btn").addEventListener("click", function () {
-    showPtConfirm(
-      "START the PAPER-TRADE schedule?",
-      "This calls launchctl bootstrap on the REAL pead_bot and pead_watchdog LaunchAgents. " +
-      "Because RunAtLoad=true, this immediately triggers one real (paper-only) run_cycle() " +
-      "invocation right now, in addition to future scheduled runs.\n\n" +
-      "This bot is PAPER-TRADE ONLY — no live-trading path exists.",
-      function () { postControl("start"); }
-    );
-  });
-
-  document.getElementById("pt-stop-btn").addEventListener("click", function () {
-    showPtConfirm(
-      "STOP the PAPER-TRADE schedule?",
-      "This unloads BOTH pead_bot AND its dead-man's-switch watchdog together, " +
-      "so no false stale-heartbeat alerts fire while intentionally paused.\n\n" +
-      "No further paper cycles will run until START is pressed again.",
-      function () { postControl("stop"); }
-    );
-  });
-
-  function setLastUpdated() {
-    setText("last-updated", "Last updated: " + new Date().toLocaleTimeString());
-  }
-
-  async function refreshAll() {
-    await Promise.allSettled([
-      refreshStatus(),
-      refreshPositions(),
-      refreshTrades(),
-      refreshStats(),
-      refreshEquityCurve(),
-      refreshMonteCarlo(),
-      refreshAlerts(),
-      refreshCycleLog(),
-      refreshLiveBacktestMetrics(),
-      refreshTermPanel(),
-    ]);
-    setLastUpdated();
-  }
-
-  document.getElementById("refresh-btn").addEventListener("click", function () {
-    refreshAll();
-  });
-
-  refreshAll();
-  setInterval(refreshAll, POLL_MS);
-})();
-</script>
 </body>
 </html>

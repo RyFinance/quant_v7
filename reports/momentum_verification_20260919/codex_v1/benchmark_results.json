@@ -1,0 +1,410 @@
+{
+  "selection": {
+    "original": {
+      "metrics": {
+        "cagr": 0.3066207020792999,
+        "total_return": 4.652056720405177,
+        "excess_sharpe": 0.9349914039503817,
+        "ann_excess_mean": 0.2907336880342124,
+        "vol": 0.31094504622633246,
+        "max_dd": -0.3549864909402063,
+        "annual_cost": 0.003982987734754394,
+        "annual_turnover": 7.965975469508789,
+        "average_exposure": 1.0,
+        "days": 1632,
+        "years": 6.476190476190476
+      },
+      "six_factor": {
+        "start": "2019-01-02",
+        "end": "2025-06-30",
+        "observations": 1632,
+        "alpha_annual_arithmetic": 0.12381580331401537,
+        "alpha_t_hac": 2.2507240570668308,
+        "alpha_ci95": [
+          0.015995160241216225,
+          0.23163644638681452
+        ],
+        "r_squared": 0.8228314020237336,
+        "loadings": {
+          "Mkt-RF": 1.242217068406973,
+          "SMB": 0.04792060799911248,
+          "HML": 0.12258273140983776,
+          "RMW": -0.5851704493228913,
+          "CMA": 0.08051278493053393,
+          "Mom": 0.6238221064697035
+        },
+        "note": "HAC with 21 lags; no correction for project-wide repeated research or survivorship"
+      },
+      "vs_SPMO": {
+        "annual_active_arithmetic": 0.0914850671598015,
+        "active_t_hac": 1.4360422502485208,
+        "active_ci95": [
+          -0.03337716215511465,
+          0.2163472964747177
+        ]
+      },
+      "vs_MTUM": {
+        "annual_active_arithmetic": 0.13973935758089412,
+        "active_t_hac": 2.379427418514654,
+        "active_ci95": [
+          0.024634309219180483,
+          0.25484440594260777
+        ]
+      }
+    },
+    "membership_filtered": {
+      "metrics": {
+        "cagr": 0.17017456035219025,
+        "total_return": 1.766968559638478,
+        "excess_sharpe": 0.6171642246909137,
+        "ann_excess_mean": 0.16977307372750064,
+        "vol": 0.2750766143948863,
+        "max_dd": -0.344753335843495,
+        "annual_cost": 0.004245367037636104,
+        "annual_turnover": 8.490734075272208,
+        "average_exposure": 1.0,
+        "days": 1632,
+        "years": 6.476190476190476
+      },
+      "six_factor": {
+        "start": "2019-01-02",
+        "end": "2025-06-30",
+        "observations": 1632,
+        "alpha_annual_arithmetic": 0.0021912951586743534,
+        "alpha_t_hac": 0.052696398150806296,
+        "alpha_ci95": [
+          -0.0793106621137697,
+          0.08369325243111843
+        ],
+        "r_squared": 0.8395715247935618,
+        "loadings": {
+          "Mkt-RF": 1.1644545431951145,
+          "SMB": -0.039774938448946265,
+          "HML": 0.19358701209632917,
+          "RMW": -0.3481804270433,
+          "CMA": 0.12490057999394547,
+          "Mom": 0.544860065161703
+        },
+        "note": "HAC with 21 lags; no correction for project-wide repeated research or survivorship"
+      },
+      "vs_SPMO": {
+        "annual_active_arithmetic": -0.029475547146910287,
+        "active_t_hac": -0.6282653786395331,
+        "active_ci95": [
+          -0.12142874526464799,
+          0.062477650970827435
+        ]
+      },
+      "vs_MTUM": {
+        "annual_active_arithmetic": 0.018778743274182316,
+        "active_t_hac": 0.4121373504374386,
+        "active_ci95": [
+          -0.07052561230838249,
+          0.10808309885674716
+        ]
+      }
+    },
+    "SPMO": {
+      "metrics": {
+        "cagr": 0.221207250258608,
+        "total_return": 2.6480813770159597,
+        "excess_sharpe": 0.8973742473440048,
+        "ann_excess_mean": 0.19924862087441092,
+        "vol": 0.22203633392736846,
+        "max_dd": -0.3094754892742172,
+        "annual_cost": 0.00015480809117231456,
+        "annual_turnover": 0.30961618234462907,
+        "average_exposure": 1.0,
+        "days": 1632,
+        "years": 6.476190476190476
+      }
+    },
+    "MTUM": {
+      "metrics": {
+        "cagr": 0.16131113979397682,
+        "total_return": 1.634022333334269,
+        "excess_sharpe": 0.6526094615768292,
+        "ann_excess_mean": 0.15099433045331834,
+        "vol": 0.23137751591693972,
+        "max_dd": -0.34082312970695283,
+        "annual_cost": 0.0001552208816273296,
+        "annual_turnover": 0.3104417632546592,
+        "average_exposure": 1.0,
+        "days": 1632,
+        "years": 6.476190476190476
+      }
+    }
+  },
+  "later": {
+    "original": {
+      "metrics": {
+        "cagr": 0.7062894566749931,
+        "total_return": 0.9132789233879091,
+        "excess_sharpe": 1.2907135950417719,
+        "ann_excess_mean": 0.6087561303986654,
+        "vol": 0.47180433593908905,
+        "max_dd": -0.334168672020813,
+        "annual_cost": 0.003616031049101107,
+        "annual_turnover": 7.2320620982022135,
+        "average_exposure": 1.0,
+        "days": 306,
+        "years": 1.2142857142857142
+      },
+      "six_factor": {
+        "start": "2025-07-01",
+        "end": "2026-07-31",
+        "observations": 273,
+        "alpha_annual_arithmetic": 0.08760841167223839,
+        "alpha_t_hac": 0.56292287239275,
+        "alpha_ci95": [
+          -0.21742330766522805,
+          0.3926401310097048
+        ],
+        "r_squared": 0.8236280759724346,
+        "loadings": {
+          "Mkt-RF": 1.3864807774170957,
+          "SMB": -0.09000525898037526,
+          "HML": 0.2094042359010324,
+          "RMW": -1.0671105777843777,
+          "CMA": 0.2936894326817149,
+          "Mom": 1.23309498350784
+        },
+        "note": "HAC with 21 lags; no correction for project-wide repeated research or survivorship"
+      },
+      "vs_SPMO": {
+        "annual_active_arithmetic": 0.39091197118682003,
+        "active_t_hac": 2.2092778868097382,
+        "active_ci95": [
+          0.0441138661471216,
+          0.7377100762265185
+        ]
+      },
+      "vs_MTUM": {
+        "annual_active_arithmetic": 0.40764058133435965,
+        "active_t_hac": 2.6274732900737865,
+        "active_ci95": [
+          0.10356104565623349,
+          0.7117201170124857
+        ]
+      }
+    },
+    "membership_filtered": {
+      "metrics": {
+        "cagr": 0.4727343916898008,
+        "total_return": 0.6001146151357559,
+        "excess_sharpe": 0.9979954894102958,
+        "ann_excess_mean": 0.45305219745308434,
+        "vol": 0.4541035717200478,
+        "max_dd": -0.3392293910253308,
+        "annual_cost": 0.0040656756936492296,
+        "annual_turnover": 8.131351387298457,
+        "average_exposure": 1.0,
+        "days": 306,
+        "years": 1.2142857142857142
+      },
+      "six_factor": {
+        "start": "2025-07-01",
+        "end": "2026-07-31",
+        "observations": 273,
+        "alpha_annual_arithmetic": -0.07858200403659332,
+        "alpha_t_hac": -0.592830849029686,
+        "alpha_ci95": [
+          -0.33838275157999864,
+          0.181218743506812
+        ],
+        "r_squared": 0.8212201996697968,
+        "loadings": {
+          "Mkt-RF": 1.3583187283499472,
+          "SMB": -0.21518451734254995,
+          "HML": 0.34099081606317877,
+          "RMW": -1.1486648635047527,
+          "CMA": 0.19495631397002955,
+          "Mom": 1.0927925416187536
+        },
+        "note": "HAC with 21 lags; no correction for project-wide repeated research or survivorship"
+      },
+      "vs_SPMO": {
+        "annual_active_arithmetic": 0.23520803824123906,
+        "active_t_hac": 1.3848714098183692,
+        "active_ci95": [
+          -0.09767433665565475,
+          0.5680904131381328
+        ]
+      },
+      "vs_MTUM": {
+        "annual_active_arithmetic": 0.25193664838877866,
+        "active_t_hac": 1.7242018711164364,
+        "active_ci95": [
+          -0.03444905011878981,
+          0.5383223468963472
+        ]
+      }
+    },
+    "SPMO": {
+      "metrics": {
+        "cagr": 0.25732701195611485,
+        "total_return": 0.3205613561618217,
+        "excess_sharpe": 0.9492896905307386,
+        "ann_excess_mean": 0.21784415921184538,
+        "vol": 0.22960402408693023,
+        "max_dd": -0.1564394901152013,
+        "annual_cost": 0.0008315783869322246,
+        "annual_turnover": 1.6631567738644495,
+        "average_exposure": 1.0,
+        "days": 306,
+        "years": 1.2142857142857142
+      }
+    },
+    "MTUM": {
+      "metrics": {
+        "cagr": 0.23202841144332087,
+        "total_return": 0.2883665760929306,
+        "excess_sharpe": 0.8222313013847059,
+        "ann_excess_mean": 0.20111554906430573,
+        "vol": 0.24474565941139528,
+        "max_dd": -0.17991428957884403,
+        "annual_cost": 0.0008319618727527162,
+        "annual_turnover": 1.6639237455054325,
+        "average_exposure": 1.0,
+        "days": 306,
+        "years": 1.2142857142857142
+      }
+    }
+  },
+  "continuous": {
+    "original": {
+      "metrics": {
+        "cagr": 0.3622076110884149,
+        "total_return": 9.774445322663695,
+        "excess_sharpe": 0.9974828920963702,
+        "ann_excess_mean": 0.3404805418355506,
+        "vol": 0.34137866401336253,
+        "max_dd": -0.3549864909402063,
+        "annual_cost": 0.0037959494519161914,
+        "annual_turnover": 7.591898903832383,
+        "average_exposure": 1.0,
+        "days": 1938,
+        "years": 7.690476190476191
+      },
+      "six_factor": {
+        "start": "2019-01-02",
+        "end": "2026-07-31",
+        "observations": 1905,
+        "alpha_annual_arithmetic": 0.13725290819851557,
+        "alpha_t_hac": 2.5172147286024997,
+        "alpha_ci95": [
+          0.030384489789164592,
+          0.24412132660786653
+        ],
+        "r_squared": 0.8007062346135514,
+        "loadings": {
+          "Mkt-RF": 1.2668535873064766,
+          "SMB": -0.016990007446364766,
+          "HML": 0.2556379472107528,
+          "RMW": -0.8062690831943771,
+          "CMA": -0.0782651112689256,
+          "Mom": 0.7394206330991888
+        },
+        "note": "HAC with 21 lags; no correction for project-wide repeated research or survivorship"
+      },
+      "vs_SPMO": {
+        "annual_active_arithmetic": 0.13894593411506587,
+        "active_t_hac": 2.2567720742413835,
+        "active_ci95": [
+          0.018274010808256937,
+          0.25961785742187476
+        ]
+      },
+      "vs_MTUM": {
+        "annual_active_arithmetic": 0.18186264295734808,
+        "active_t_hac": 3.2358513591742737,
+        "active_ci95": [
+          0.07170794462144345,
+          0.2920173412932527
+        ]
+      }
+    },
+    "membership_filtered": {
+      "metrics": {
+        "cagr": 0.21267898847763522,
+        "total_return": 3.4060100876779824,
+        "excess_sharpe": 0.689455586392314,
+        "ann_excess_mean": 0.2138824153783806,
+        "vol": 0.31025104363455697,
+        "max_dd": -0.344753335843495,
+        "annual_cost": 0.004086735347944326,
+        "annual_turnover": 8.17347069588865,
+        "average_exposure": 1.0,
+        "days": 1938,
+        "years": 7.690476190476191
+      },
+      "six_factor": {
+        "start": "2019-01-02",
+        "end": "2026-07-31",
+        "observations": 1905,
+        "alpha_annual_arithmetic": 0.014673337704286245,
+        "alpha_t_hac": 0.3287557494538605,
+        "alpha_ci95": [
+          -0.07280562952646302,
+          0.1021523049350355
+        ],
+        "r_squared": 0.7970642951888716,
+        "loadings": {
+          "Mkt-RF": 1.1937719983617237,
+          "SMB": -0.12176647477744684,
+          "HML": 0.3523458273429481,
+          "RMW": -0.6440194920462239,
+          "CMA": -0.06768112321609959,
+          "Mom": 0.6704386222085297
+        },
+        "note": "HAC with 21 lags; no correction for project-wide repeated research or survivorship"
+      },
+      "vs_SPMO": {
+        "annual_active_arithmetic": 0.012347807657895851,
+        "active_t_hac": 0.2530475135916878,
+        "active_ci95": [
+          -0.08329137865141678,
+          0.10798699396720848
+        ]
+      },
+      "vs_MTUM": {
+        "annual_active_arithmetic": 0.05526451650017805,
+        "active_t_hac": 1.2100632988804023,
+        "active_ci95": [
+          -0.03424853795208667,
+          0.14477757095244273
+        ]
+      }
+    },
+    "SPMO": {
+      "metrics": {
+        "cagr": 0.22603158434774429,
+        "total_return": 3.7931375980670934,
+        "excess_sharpe": 0.9028836174808054,
+        "ann_excess_mean": 0.20153460772048473,
+        "vol": 0.2232337991353278,
+        "max_dd": -0.3094754892742172,
+        "annual_cost": 0.000131301850568246,
+        "annual_turnover": 0.262603701136492,
+        "average_exposure": 1.0,
+        "days": 1938,
+        "years": 7.690476190476191
+      }
+    },
+    "MTUM": {
+      "metrics": {
+        "cagr": 0.1718543322108217,
+        "total_return": 2.385875702795603,
+        "excess_sharpe": 0.679392151850879,
+        "ann_excess_mean": 0.15861789887820255,
+        "vol": 0.23350255692304217,
+        "max_dd": -0.34082312970695283,
+        "annual_cost": 0.00013136240096095516,
+        "annual_turnover": 0.2627248019219104,
+        "average_exposure": 1.0,
+        "days": 1938,
+        "years": 7.690476190476191
+      }
+    }
+  }
+}

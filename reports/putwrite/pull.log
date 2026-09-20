@@ -1,0 +1,21 @@
+2026-09-18 20:06:11.602 | INFO     | data.pull_options_1d:export_all:86 - SPY: export hit the 2,500,000-row cap at 2019-09-06; continuing
+2026-09-18 20:07:44.193 | INFO     | data.pull_options_1d:export_all:86 - SPY: export hit the 2,500,000-row cap at 2022-01-12; continuing
+2026-09-18 20:08:46.415 | INFO     | data.pull_options_1d:export_all:86 - SPY: export hit the 2,500,000-row cap at 2024-06-11; continuing
+2026-09-18 20:09:27.650 | INFO     | data.pull_options_1d:export_all:86 - SPY: export hit the 2,500,000-row cap at 2026-06-10; continuing
+2026-09-18 20:09:48.615 | INFO     | __main__:main:58 - SPY: 10,377,203 rows
+2026-09-18 20:09:48.839 | INFO     | data.pull_options_1d:wait_for_export_slot:68 - export cap reached (5/5); sleeping 5 min
+2026-09-18 20:14:49.116 | INFO     | data.pull_options_1d:wait_for_export_slot:68 - export cap reached (5/5); sleeping 5 min
+2026-09-18 20:19:49.349 | INFO     | data.pull_options_1d:wait_for_export_slot:68 - export cap reached (5/5); sleeping 5 min
+2026-09-18 20:24:49.684 | INFO     | data.pull_options_1d:wait_for_export_slot:68 - export cap reached (5/5); sleeping 5 min
+2026-09-18 20:29:50.037 | INFO     | data.pull_options_1d:wait_for_export_slot:68 - export cap reached (5/5); sleeping 5 min
+2026-09-18 20:34:50.413 | INFO     | data.pull_options_1d:wait_for_export_slot:68 - export cap reached (5/5); sleeping 5 min
+2026-09-18 20:39:50.719 | INFO     | data.pull_options_1d:wait_for_export_slot:68 - export cap reached (5/5); sleeping 5 min
+2026-09-18 20:44:51.009 | INFO     | data.pull_options_1d:wait_for_export_slot:68 - export cap reached (5/5); sleeping 5 min
+2026-09-18 20:49:51.220 | INFO     | data.pull_options_1d:wait_for_export_slot:68 - export cap reached (5/5); sleeping 5 min
+2026-09-18 20:52:33.147 | INFO     | data.pull_options_1d:wait_for_export_slot:69 - export cap reached (5/5); sleeping 5 min
+2026-09-18 20:57:33.915 | INFO     | data.pull_options_1d:wait_for_export_slot:69 - export cap reached (5/5); sleeping 5 min
+2026-09-18 21:04:17.230 | INFO     | data.pull_options_1d:export_all:87 - QQQ: export hit the 2,500,000-row cap at 2022-02-09; continuing
+2026-09-18 21:04:57.742 | INFO     | data.pull_options_1d:export_all:87 - QQQ: export hit the 2,500,000-row cap at 2025-03-12; continuing
+2026-09-18 21:05:42.640 | INFO     | __main__:main:62 - QQQ: 6,687,867 rows
+2026-09-18 21:06:35.274 | INFO     | data.pull_options_1d:export_all:87 - IWM: export hit the 2,500,000-row cap at 2023-10-06; continuing
+2026-09-18 21:07:02.859 | INFO     | __main__:main:62 - IWM: 3,872,384 rows

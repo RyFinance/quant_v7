@@ -13,10 +13,21 @@ import pytest
 import bot.earnings_watcher as ew
 
 
-def test_load_validated_universe_returns_the_phase1_universe():
+def test_load_validated_universe_is_the_full_validated_sample():
+    """The traded universe is the same 503-name set the production model was
+    fit and validated on, not the Phase-1 top-75 slice it used to trade."""
     tickers = ew.load_validated_universe()
-    assert len(tickers) == 75
-    assert "AAPL" in tickers
+    assert len(tickers) == 503
+    assert "AAPL" in tickers and "ABNB" in tickers  # a top-75 name and one only in the wider set
+    assert len(set(tickers)) == len(tickers)
+
+
+def test_breaker_universe_stays_the_calibrated_basket():
+    """The circuit breaker's thresholds were calibrated on the top-75 basket,
+    so its input must not follow the traded universe."""
+    breaker = ew.load_breaker_universe()
+    assert len(breaker) == 75
+    assert set(breaker) < set(ew.load_validated_universe())
 
 
 def test_get_recently_reported_real_data():
@@ -73,3 +84,55 @@ def test_get_upcoming_earnings_respects_window():
     watcher = ew.EarningsWatcher(tickers=["AAPL"])
     events = watcher.get_upcoming_earnings(days_ahead=5, now=pd.Timestamp("2024-12-01"))
     assert all(e.days_until <= 5 for e in events)
+
+
+def _history(rows):
+    return pd.DataFrame(rows, columns=["ticker", "earnings_date", "eps_estimate", "eps_actual", "surprise_pct"])
+
+
+def test_after_close_report_becomes_eligible_the_next_business_day(monkeypatch):
+    """An after-close report must not be tradable at that same day's close
+    (the label and the backtest enter at the NEXT session's close)."""
+    history = _history([["ORCL", pd.Timestamp("2026-09-10 16:05:00"), 1.74, 1.92, 10.45]])
+    monkeypatch.setattr(ew, "fetch_ticker_earnings_live", lambda ticker: history)
+    watcher = ew.EarningsWatcher(tickers=["ORCL"])
+
+    assert watcher.get_recently_reported(days_back=3, now=pd.Timestamp("2026-09-10")) == []
+    events = watcher.get_recently_reported(days_back=3, now=pd.Timestamp("2026-09-11"))
+    assert [e.ticker for e in events] == ["ORCL"]
+
+
+def test_friday_after_close_report_is_eligible_monday(monkeypatch):
+    history = _history([["ADBE", pd.Timestamp("2026-09-11 16:05:00"), 6.08, 6.13, 0.71]])
+    monkeypatch.setattr(ew, "fetch_ticker_earnings_live", lambda ticker: history)
+    watcher = ew.EarningsWatcher(tickers=["ADBE"])
+
+    assert ew.effective_trading_date(pd.Timestamp("2026-09-11 16:05:00")) == pd.Timestamp("2026-09-14")
+    assert len(watcher.get_recently_reported(days_back=3, now=pd.Timestamp("2026-09-14"))) == 1
+
+
+def test_quarter_end_dated_rows_are_never_a_fresh_report(monkeypatch):
+    """Regression for the 2026-09 bug: a report surfaced only via a
+    quarter-end-dated row was weeks outside the window when it appeared."""
+    history = _history([["AAPL", pd.Timestamp("2026-06-30"), 1.89, 2.02, 6.74]])
+    monkeypatch.setattr(ew, "fetch_ticker_earnings_live", lambda ticker: history)
+    watcher = ew.EarningsWatcher(tickers=["AAPL"])
+    assert watcher.get_recently_reported(days_back=3, now=pd.Timestamp("2026-07-31")) == []
+
+
+def test_schedule_and_staleness_come_from_the_same_fetch(monkeypatch):
+    history = _history([
+        ["JPM", pd.Timestamp("2026-07-14 06:00:00"), 5.80, 6.14, 5.86],
+        ["JPM", pd.Timestamp("2026-10-13 08:00:00"), 5.89, None, None],
+    ])
+    calls = []
+    monkeypatch.setattr(ew, "fetch_ticker_earnings_live", lambda ticker: calls.append(ticker) or history)
+    watcher = ew.EarningsWatcher(tickers=["JPM"])
+    now = pd.Timestamp("2026-09-17")
+    watcher.get_recently_reported(days_back=3, now=now)
+
+    scheduled = watcher.scheduled_from_last_fetch(days_ahead=60, now=now)
+    assert calls == ["JPM"]
+    assert [(e.ticker, e.timing, e.days_until) for e in scheduled] == [("JPM", "before_open", 26)]
+    assert watcher.feed_looks_stale(now=now) is False
+    assert watcher.feed_looks_stale(now=pd.Timestamp("2027-01-01")) is True

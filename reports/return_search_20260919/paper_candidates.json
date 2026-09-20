@@ -1,0 +1,54 @@
+{
+  "stocks__momentum": {
+    "status": "research candidate; not live",
+    "signal": "positive 12-1 momentum",
+    "decision": "first trading session close monthly",
+    "fill": "next trading session open",
+    "gross_cap": 1,
+    "target_slots": 20,
+    "stock_liquidity_rule": "63-session ADV > $20m; top 200",
+    "latest_observed_signal_date": "2026-09-01",
+    "latest_research_targets": {
+      "AMAT": 0.05,
+      "AMD": 0.05,
+      "CIEN": 0.05,
+      "COHR": 0.05,
+      "DELL": 0.05,
+      "FIX": 0.05,
+      "FLEX": 0.05,
+      "GLW": 0.05,
+      "HPE": 0.05,
+      "INTC": 0.05,
+      "LITE": 0.05,
+      "LRCX": 0.05,
+      "MRNA": 0.05,
+      "MRVL": 0.05,
+      "MU": 0.05,
+      "SNDK": 0.05,
+      "STX": 0.05,
+      "TER": 0.05,
+      "WBD": 0.05,
+      "WDC": 0.05
+    },
+    "selection_source": "2019-01-01 through 2025-06-30",
+    "source_code_sha256": "017cd978f6d8c675b2139ebb5a8e5b4eb9e78cb0e421dbcd1a66afcda8bc97e6"
+  },
+  "etf__momentum": {
+    "status": "research candidate; not live",
+    "signal": "positive 12-1 momentum",
+    "decision": "first trading session close monthly",
+    "fill": "next trading session open",
+    "gross_cap": 1,
+    "target_slots": 4,
+    "stock_liquidity_rule": null,
+    "latest_observed_signal_date": "2026-09-01",
+    "latest_research_targets": {
+      "EWT": 0.25,
+      "EWY": 0.25,
+      "SLV": 0.25,
+      "USO": 0.25
+    },
+    "selection_source": "2019-01-01 through 2025-06-30",
+    "source_code_sha256": "017cd978f6d8c675b2139ebb5a8e5b4eb9e78cb0e421dbcd1a66afcda8bc97e6"
+  }
+}

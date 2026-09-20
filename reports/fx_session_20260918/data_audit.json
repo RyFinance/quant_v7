@@ -1,0 +1,22 @@
+{
+  "EURUSD": {
+    "rows": 53045,
+    "first": "2009-10-01 00:00:00+00:00",
+    "last": "2017-12-29 21:00:00+00:00"
+  },
+  "GBPUSD": {
+    "rows": 52946,
+    "first": "2009-10-01 00:00:00+00:00",
+    "last": "2017-12-29 21:00:00+00:00"
+  },
+  "USDJPY": {
+    "rows": 52959,
+    "first": "2009-10-01 00:00:00+00:00",
+    "last": "2017-12-29 21:00:00+00:00"
+  },
+  "bar_timestamp_check": {
+    "max_ohlc_difference_1h_vs_5m": 0.0,
+    "tested_hours": 24,
+    "interpretation": "empirical bar-start consistency, not bid/ask verification"
+  }
+}

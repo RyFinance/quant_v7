@@ -1,0 +1,10 @@
+crypto ridge_price 2019: 202 train / 104 predicted
+crypto ridge_price 2020: 306 train / 104 predicted
+crypto ridge_price 2021: 410 train / 104 predicted
+crypto ridge_price 2022: 516 train / 104 predicted
+crypto ridge_price 2023: 620 train / 104 predicted
+crypto ridge_price 2024: 724 train / 106 predicted
+crypto ridge_price 2025: 828 train / 104 predicted
+crypto ridge_price 2026: 932 train / 74 predicted
+RESULT crypto__ridge_price {"cagr": -0.017463320326328247, "total_return": -0.02120272158822256, "excess_sharpe": 0.12599873591354155, "ann_excess_mean": 0.06086484574927557, "vol": 0.48306758794897575, "max_dd": -0.5408817804121289, "annual_cost": 0.009879642699694846, "annual_turnover": 4.939821349847422, "average_exposure": 0.9602756714836005, "days": 444, "years": 1.2164383561643837}
+RESULT crypto__trend {"cagr": -0.004028240770769909, "total_return": -0.004897968212222548, "excess_sharpe": 0.027255631147467662, "ann_excess_mean": 0.008632270722350389, "vol": 0.31672596011959125, "max_dd": -0.36202609020649956, "annual_cost": 0.009278166422557944, "annual_turnover": 4.639083211278972, "average_exposure": 0.4395793917068112, "days": 444, "years": 1.2164383561643837}

@@ -1,0 +1,5 @@
+P1_spy      net Sharpe +0.21 (gross +0.44, stress +0.03) CAGR +0.65% maxDD -4.8% worst day -2.73% trades 557
+P2_spy_vrp  net Sharpe +0.15 (gross +0.33, stress +0.01) CAGR +0.44% maxDD -4.8% worst day -2.73% trades 403
+P3_etf3     net Sharpe +0.04 (gross +0.39, stress -0.25) CAGR +0.07% maxDD -6.1% worst day -2.61% trades 1127
+selected: [] | SPY maxDD -19.3%
+exit=0 Fri Sep 18 21:07:14 PDT 2026

@@ -141,6 +141,10 @@ def install_historical_monkeypatches(as_of_holder: dict):
     risk_gate_module.current_breaker_tier = patched_current_breaker_tier
     run_cycle_module.current_breaker_tier = patched_current_breaker_tier
     earnings_watcher_module.EarningsWatcher.get_recently_reported = patched_get_recently_reported
+    # Replay days are pinned historical trading days: no live price refresh
+    # (which would write data/raw), no staleness alarm for a patched feed.
+    run_cycle_module.prepare_market_session = lambda tickers, as_of: (True, "replay: pinned historical trading day")
+    earnings_watcher_module.EarningsWatcher.feed_looks_stale = lambda self, now=None: False
     signal_pipeline_module.fetch_ticker_earnings_live = patched_fetch_ticker_earnings_live
     signal_pipeline_module._trailing_return = patched_trailing_return
 
@@ -164,6 +168,8 @@ def install_historical_monkeypatches(as_of_holder: dict):
     bot_alerting_module.build_alerter = patched_build_alerter
     risk_gate_module.build_alerter = patched_build_alerter
     execution_module.build_alerter = patched_build_alerter
+    run_cycle_module.build_alerter = patched_build_alerter
+    run_cycle_module.UPCOMING_EARNINGS_FILE = REPLAY_STATE_DIR / "replay_upcoming_earnings.json"
 
 
 def run_replay(force_fresh: bool = True) -> dict:

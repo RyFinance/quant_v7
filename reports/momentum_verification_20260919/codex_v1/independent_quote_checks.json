@@ -1,0 +1,146 @@
+[
+  {
+    "symbol": "STX",
+    "date": "2025-07-02",
+    "vault_intraday_return": 0.04655006197493461,
+    "cached_intraday_return": 0.04757314861192241,
+    "difference_bps": -10.230866369878022,
+    "bars": 13
+  },
+  {
+    "symbol": "STX",
+    "date": "2025-10-02",
+    "vault_intraday_return": -0.032586403342195314,
+    "cached_intraday_return": -0.03251037864284034,
+    "difference_bps": -0.7602469935497069,
+    "bars": 13
+  },
+  {
+    "symbol": "STX",
+    "date": "2026-01-05",
+    "vault_intraday_return": -0.01808943089430881,
+    "cached_intraday_return": -0.017425550487053076,
+    "difference_bps": -6.638804072557347,
+    "bars": 13
+  },
+  {
+    "symbol": "STX",
+    "date": "2026-04-02",
+    "vault_intraday_return": 0.07352500000000006,
+    "cached_intraday_return": 0.07072315549018082,
+    "difference_bps": 28.0184450981924,
+    "bars": 13
+  },
+  {
+    "symbol": "STX",
+    "date": "2026-07-02",
+    "vault_intraday_return": -0.08882375147114341,
+    "cached_intraday_return": -0.08946991602050369,
+    "difference_bps": 6.461645493602841,
+    "bars": 13
+  },
+  {
+    "symbol": "STX",
+    "date": "2026-09-02",
+    "vault_intraday_return": 0.0020455221660220513,
+    "cached_intraday_return": 0.0033256306610285336,
+    "difference_bps": -12.801084950064823,
+    "bars": 13
+  },
+  {
+    "symbol": "GEV",
+    "date": "2025-07-02",
+    "vault_intraday_return": 0.0040159844132090505,
+    "cached_intraday_return": 0.004954476538024721,
+    "difference_bps": -9.384921248156708,
+    "bars": 13
+  },
+  {
+    "symbol": "GEV",
+    "date": "2025-10-02",
+    "vault_intraday_return": -0.005901639344262355,
+    "cached_intraday_return": -0.007985477245974093,
+    "difference_bps": 20.838379017117383,
+    "bars": 13
+  },
+  {
+    "symbol": "GEV",
+    "date": "2026-01-05",
+    "vault_intraday_return": -0.014711418725203429,
+    "cached_intraday_return": -0.01413224325190432,
+    "difference_bps": -5.791754732991095,
+    "bars": 13
+  },
+  {
+    "symbol": "GEV",
+    "date": "2026-04-02",
+    "vault_intraday_return": 0.03521889400921663,
+    "cached_intraday_return": 0.034027626379998566,
+    "difference_bps": 11.912676292180624,
+    "bars": 13
+  },
+  {
+    "symbol": "GEV",
+    "date": "2026-07-02",
+    "vault_intraday_return": -0.01988556338028158,
+    "cached_intraday_return": -0.022674754848686307,
+    "difference_bps": 27.89191468404728,
+    "bars": 13
+  },
+  {
+    "symbol": "GEV",
+    "date": "2026-09-02",
+    "vault_intraday_return": 0.025130657177804938,
+    "cached_intraday_return": 0.02605363469360089,
+    "difference_bps": -9.22977515795953,
+    "bars": 13
+  },
+  {
+    "symbol": "GLW",
+    "date": "2025-07-02",
+    "vault_intraday_return": 0.0034253092293055065,
+    "cached_intraday_return": 0.003235052066807409,
+    "difference_bps": 1.9025716249809754,
+    "bars": 13
+  },
+  {
+    "symbol": "GLW",
+    "date": "2025-10-02",
+    "vault_intraday_return": -0.016910801476717863,
+    "cached_intraday_return": -0.015274538926935755,
+    "difference_bps": -16.36262549782108,
+    "bars": 13
+  },
+  {
+    "symbol": "GLW",
+    "date": "2026-01-05",
+    "vault_intraday_return": -0.03597826086956524,
+    "cached_intraday_return": -0.03639720166013094,
+    "difference_bps": 4.189407905657028,
+    "bars": 13
+  },
+  {
+    "symbol": "GLW",
+    "date": "2026-04-02",
+    "vault_intraday_return": 0.0869341563786008,
+    "cached_intraday_return": 0.08453698094357476,
+    "difference_bps": 23.971754350260444,
+    "bars": 13
+  },
+  {
+    "symbol": "GLW",
+    "date": "2026-07-02",
+    "vault_intraday_return": -0.12280701754385959,
+    "cached_intraday_return": -0.12104161051138318,
+    "difference_bps": -17.65407032476407,
+    "bars": 13
+  },
+  {
+    "symbol": "GLW",
+    "date": "2026-09-02",
+    "vault_intraday_return": 0.002921535893155358,
+    "cached_intraday_return": 0.002643512228260869,
+    "difference_bps": 2.7802366489448893,
+    "bars": 13
+  }
+]

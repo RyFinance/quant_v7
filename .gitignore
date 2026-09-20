@@ -9,3 +9,17 @@ __pycache__/
 !.env.example
 .DS_Store
 node_modules/
+
+# Licensed vendor data from the LSE vault (data/pull_lse_history.py); never commit or redistribute.
+data/lse/
+
+# Multi-asset research panel (data/pull_multiasset.py); holds LSE vault data, never commit.
+data/multiasset/
+
+# yfinance raw bars for research/options_signals
+data/stocks_raw_2014/
+data/option_quotes/
+data/cot_etf_prices.parquet
+
+# SEC DERA insider transactions data sets and derived price panel (research/insider); large, re-downloadable.
+data/sec_insider/

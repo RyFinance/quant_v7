@@ -1,0 +1,81 @@
+{
+  "chosen": "crypto_trend_long_only",
+  "primary": {
+    "start": "2022-01-01",
+    "end": "2026-09-17",
+    "years": 4.72,
+    "sharpe": 0.397,
+    "ann_excess": 0.069,
+    "vol": 0.1736,
+    "cagr_total": 0.0986,
+    "max_dd": -0.181,
+    "hac_t": 1.03,
+    "beta_btc": 0.158
+  },
+  "passed": false,
+  "all_candidates": {
+    "crypto_tsmom_1w": {
+      "start": "2022-01-01",
+      "end": "2026-09-17",
+      "years": 4.72,
+      "sharpe": 0.131,
+      "ann_excess": 0.0457,
+      "vol": 0.3482,
+      "cagr_total": 0.0252,
+      "max_dd": -0.5584,
+      "hac_t": 0.28,
+      "beta_btc": -0.105
+    },
+    "crypto_tsmom_multi": {
+      "start": "2022-01-01",
+      "end": "2026-09-17",
+      "years": 4.72,
+      "sharpe": 0.17,
+      "ann_excess": 0.0423,
+      "vol": 0.2487,
+      "cagr_total": 0.0527,
+      "max_dd": -0.4503,
+      "hac_t": 0.4,
+      "beta_btc": -0.059
+    },
+    "crypto_trend_long_only": {
+      "start": "2022-01-01",
+      "end": "2026-09-17",
+      "years": 4.72,
+      "sharpe": 0.397,
+      "ann_excess": 0.069,
+      "vol": 0.1736,
+      "cagr_total": 0.0986,
+      "max_dd": -0.181,
+      "hac_t": 1.03,
+      "beta_btc": 0.158
+    }
+  },
+  "btc_buy_hold": {
+    "start": "2022-01-01",
+    "end": "2026-09-17",
+    "years": 4.55,
+    "sharpe": 0.394,
+    "ann_excess": 0.2005,
+    "vol": 0.5091,
+    "cagr_total": 0.117,
+    "max_dd": -0.6743,
+    "hac_t": 0.84,
+    "beta_btc": 1.0
+  },
+  "descriptive_blend_with_multiasset_book": {
+    "start": "2018-07-05",
+    "end": "2026-09-17",
+    "years": 8.18,
+    "sharpe": 0.726,
+    "ann_excess": 0.0856,
+    "vol": 0.1178,
+    "cagr_total": 0.112,
+    "max_dd": -0.1661,
+    "hac_t": 2.02,
+    "beta_spy": 0.089,
+    "alpha_hac_t": 1.8,
+    "worst_day": -0.0584
+  },
+  "code_sha256": "f617c19e4c19981f991bb1f3ee45959dc138ff9578ef0d6f190c9c3745b2ec26"
+}

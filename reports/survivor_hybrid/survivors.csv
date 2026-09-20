@@ -1,0 +1,213 @@
+signal,Year,SampleEndYear,mech,data_src,cat_econ,pp,stock_weight,desc,t_ps,n_ps,mean_pub,n_pub,t_ps_lc,n_ps_lc,has_vw,c1_pub,c2_op_ps,c3_pub_pos,c4_lc_ps,selected,lc_version
+AbnormalAccruals,2001,1992,M4,accounting,accruals,12.0000,EW,Abnormal Accruals,-0.3718,264,-0.0009,156,1.3922,264,True,True,False,False,True,False,q5_vw
+Accruals,1996,1991,M4,accounting,accruals,12.0000,EW,Accruals,2.7533,276,0.0020,216,2.2981,276,True,True,True,True,True,True,q5_vw
+AccrualsBM,2004,1998,M6,accounting,valuation,12.0000,EW,Book-to-market and accruals,4.1093,192,0.0107,120,1.8347,192,False,True,True,True,True,True,me_gt_nyse20
+Activism1,2005,2001,M1,flows_holdings,other,1.0000,VW,Takeover vulnerability,-0.2864,62,0.0015,14,-0.2199,62,True,True,False,False,False,False,q5_vw
+AM,1992,1990,M6,accounting,valuation,12.0000,EW,Total assets to market,1.8903,288,0.0051,264,1.3763,288,True,True,False,True,True,False,q5_vw
+AnalystRevision,1984,1980,M4,analyst,earnings forecast,1.0000,EW,EPS forecast revision,8.5603,408,0.0068,360,6.7581,408,True,True,True,True,True,True,q5_vw
+AnnouncementReturn,1996,1992,M4,price,earnings event,1.0000,EW,Earnings announcement return,9.6824,264,0.0105,216,6.2274,264,True,True,True,True,True,True,q5_vw
+AssetGrowth,2008,2003,M6,accounting,investment,12.0000,EW,Asset growth,1.2452,132,0.0100,72,1.8174,132,True,True,False,True,True,False,q5_vw
+BetaLiquidityPS,2003,1999,M3,price,liquidity,12.0000,VW,Pastor-Stambaugh liquidity beta,1.8446,180,0.0032,132,1.6168,180,True,True,False,True,True,False,q5_vw
+BetaTailRisk,2014,2010,M6,price,risk,12.0000,EW,Tail risk beta,-0.4259,48,,0,-0.6820,48,True,False,False,False,False,False,q5_vw
+betaVIX,2006,2000,M3,price,volatility,1.0000,VW,Systematic volatility,0.9371,168,0.0012,96,0.8665,168,True,True,False,True,False,False,q5_vw
+BM,1980,1976,M6,accounting,valuation,12.0000,EW,"Book to market, original (Stattman 1980)",4.1003,456,0.0075,408,3.4617,456,True,True,True,True,True,True,q5_vw
+BMdec,1992,1990,M6,accounting,valuation,12.0000,EW,Book to market using December ME,3.5708,288,0.0074,264,1.4060,288,True,True,True,True,True,True,q5_vw
+BookLeverage,1992,1990,M6,accounting,leverage,12.0000,EW,Book leverage (annual),0.3447,288,0.0014,264,-1.2166,288,True,True,False,True,False,False,q5_vw
+BPEBM,2007,2001,M6,accounting,leverage,12.0000,EW,Leverage component of BM,-0.1806,156,0.0006,84,-0.0766,156,True,True,False,True,False,False,q5_vw
+Cash,2012,2009,M6,accounting,asset composition,1.0000,EW,Cash to assets,0.0655,60,0.0052,24,0.3799,60,True,False,False,False,False,False,q5_vw
+CashProd,2009,2003,M6,accounting,profitability alt,1.0000,EW,Cash Productivity,-0.0212,132,0.0018,60,-0.0612,132,True,True,False,True,False,False,q5_vw
+CBOperProf,2016,2014,M6,accounting,profitability,12.0000,VW,Cash-based operating profitability,,0,,0,,0,True,False,False,False,False,False,q5_vw
+CF,1994,1990,M6,accounting,valuation,12.0000,EW,Cash flow to market,0.9921,288,0.0046,240,1.4744,288,True,True,False,True,True,False,q5_vw
+cfp,2004,1997,M6,accounting,valuation,12.0000,EW,Operating Cash flows to price,0.7678,204,0.0074,120,1.7601,204,True,True,False,True,True,False,q5_vw
+ChangeInRecommendation,2004,1998,M4,analyst,recommendation,1.0000,EW,Change in recommendation,5.8322,192,0.0027,120,3.8338,192,True,True,True,True,True,True,q5_vw
+ChAssetTurnover,2008,2002,M4,accounting,sales growth,12.0000,EW,Change in Asset Turnover,0.6209,144,0.0001,72,-0.1811,144,True,True,False,True,False,False,q5_vw
+ChEQ,2010,2007,M6,accounting,investment,12.0000,EW,Growth in book equity,1.5529,84,0.0022,48,2.1255,84,True,False,False,True,True,False,q5_vw
+ChForecastAccrual,2004,1996,M4,analyst,earnings forecast,12.0000,EW,Change in Forecast and Accrual,1.2914,216,0.0013,120,0.6837,216,False,True,False,True,False,False,me_gt_nyse20
+ChInv,2002,1997,M6,accounting,investment alt,12.0000,EW,Inventory Growth,3.3498,204,0.0030,144,2.1758,204,True,True,True,True,True,True,q5_vw
+ChInvIA,1998,1988,M6,accounting,investment growth,12.0000,EW,Change in capital inv (ind adj),4.1788,312,0.0043,192,3.8316,312,True,True,True,True,True,True,q5_vw
+ChNAnalyst,2008,2005,M4,analyst,earnings event,1.0000,VW,Decline in Analyst Coverage,0.6727,108,-0.0000,72,0.7105,22,False,True,False,False,False,False,me_gt_nyse20
+ChNNCOA,2008,2002,M6,accounting,investment alt,12.0000,EW,Change in Net Noncurrent Op Assets,1.4619,144,0.0006,72,1.7488,144,True,True,False,True,True,False,q5_vw
+ChNWC,2008,2002,M6,accounting,investment alt,12.0000,EW,Change in Net Working Capital,-2.0432,144,-0.0010,72,-1.5565,144,True,True,False,False,False,False,q5_vw
+ChTax,2011,2006,M4,accounting,other,3.0000,EW,Change in Taxes,2.6818,96,0.0084,36,0.9465,96,True,False,True,True,False,False,q5_vw
+CitationsRD,2013,2008,M1,alt_other,profitability alt,12.0000,VW,Citations to RD expenses,0.6137,72,0.0017,12,0.5710,72,False,False,False,False,False,False,me_gt_nyse20
+CompEquIss,2006,2003,M4,accounting,external financing,1.0000,EW,Composite equity issuance,2.3840,132,0.0039,96,2.4003,132,True,True,True,True,True,True,q5_vw
+CompositeDebtIssuance,2008,2005,M4,accounting,external financing,12.0000,EW,Composite debt issuance,3.3976,108,0.0027,72,1.7485,108,True,True,True,True,True,True,q5_vw
+ConvDebt,2016,2012,M4,accounting,external financing,1.0000,EW,Convertible debt indicator,0.7242,24,,0,-0.7068,24,False,False,False,False,False,False,me_gt_nyse20
+CoskewACX,2006,2001,M6,price,risk,1.0000,EW,Coskewness using daily returns,2.0072,156,0.0041,96,1.9165,156,True,True,True,True,True,True,q5_vw
+CPVolSpread,2009,2004,M1,options,optionrisk,1.0000,VW,Call minus Put Vol,3.4447,120,0.0071,60,3.4249,120,True,True,True,True,True,True,q5_vw
+dVolCall,2014,2011,M1,options,informed trading,1.0000,EW,Change in call vol,-0.7126,36,,0,-0.8838,36,True,False,False,False,False,False,q5_vw
+dVolPut,2014,2011,M1,options,informed trading,1.0000,EW,Change in put vol,1.0693,36,,0,0.9350,36,True,False,False,False,False,False,q5_vw
+dCPVolSpread,2014,2011,M1,options,informed trading,1.0000,EW,Change in put vol minus change in call vol,0.9465,36,,0,0.0788,36,True,False,False,False,False,False,q5_vw
+CredRatDG,2001,1998,M4,analyst,other,1.0000,EW,Credit Rating Downgrade,1.8364,192,0.0034,156,-0.0888,192,False,True,False,True,False,False,me_gt_nyse20
+CustomerMomentum,2008,2004,M5,alt_other,lead lag,1.0000,VW,Customer momentum,1.1765,120,0.0066,72,1.2000,120,True,True,False,True,True,False,q5_vw
+DelBreadth,2002,1998,M3,flows_holdings,ownership,3.0000,EW,Breadth of ownership,1.1483,192,0.0009,144,1.1397,192,True,True,False,True,True,False,q5_vw
+DelCOA,2005,2001,M6,accounting,investment alt,12.0000,EW,Change in current operating assets,1.7705,156,0.0006,108,0.6074,156,True,True,False,True,False,False,q5_vw
+DelCOL,2005,2001,M4,accounting,external financing,12.0000,EW,Change in current operating liabilities,1.3782,156,0.0002,108,0.7998,156,True,True,False,True,False,False,q5_vw
+DelEqu,2005,2001,M6,accounting,investment,12.0000,EW,Change in equity to assets,2.3133,156,0.0023,108,2.1315,156,True,True,True,True,True,True,q5_vw
+DelFINL,2005,2001,M4,accounting,external financing,12.0000,EW,Change in financial liabilities,5.0601,156,0.0038,108,2.5140,156,True,True,True,True,True,True,q5_vw
+DelLTI,2005,2001,M6,accounting,investment,12.0000,EW,Change in long-term investment,2.4445,156,0.0009,108,1.9847,156,True,True,True,True,True,True,q5_vw
+DelNetFin,2005,2001,M6,accounting,investment alt,12.0000,EW,Change in net financial assets,0.4630,156,0.0017,108,0.1434,156,True,True,False,True,False,False,q5_vw
+DivInit,1995,1988,M4,event,payout indicator,1.0000,EW,Dividend Initiation,1.4542,312,0.0022,228,1.4162,312,False,True,False,True,True,False,me_gt_nyse20
+DivOmit,1995,1988,M4,event,payout indicator,1.0000,EW,Dividend Omission,1.9773,311,0.0058,227,0.1139,310,False,True,False,True,False,False,me_gt_nyse20
+DivSeason,2013,2011,M2,event,payout indicator,1.0000,EW,Dividend seasonality,1.9938,36,0.0009,12,-0.2067,36,False,False,False,False,False,False,me_gt_nyse20
+DivYieldST,1979,1977,M6,accounting,valuation,,EW,Predicted div yield next month,10.0302,444,0.0074,420,5.6951,444,False,True,True,True,True,True,me_gt_nyse20
+dNoa,2004,2002,M6,accounting,investment,1.0000,EW,change in net operating assets,2.8507,144,0.0032,120,1.6240,144,True,True,True,True,True,True,q5_vw
+DolVol,1998,1995,M3,volume,volume,1.0000,EW,Past trading volume,2.0052,228,0.0065,192,0.6686,228,True,True,True,True,False,False,q5_vw
+EarningsConsistency,2009,2002,M4,accounting,earnings growth,12.0000,EW,Earnings consistency,0.7627,144,-0.0006,60,0.0148,144,True,True,False,False,False,False,q5_vw
+EarningsForecastDisparity,2011,2006,M4,analyst,earnings forecast,1.0000,EW,Long-vs-short EPS forecasts,0.9484,96,0.0060,36,-0.0847,96,True,False,False,True,False,False,q5_vw
+EarningsStreak,2012,2009,M4,accounting,earnings growth,1.0000,EW,Earnings surprise streak,3.9297,60,0.0076,24,2.8855,60,True,False,True,False,True,False,q5_vw
+EarningsSurprise,1984,1981,M4,accounting,earnings growth,1.0000,EW,Earnings Surprise,6.3293,396,0.0052,360,1.5571,396,True,True,True,True,True,True,q5_vw
+EarnSupBig,2007,2001,M5,accounting,lead lag,1.0000,EW,Earnings surprise of big firms,0.6348,156,0.0006,84,-0.9517,156,True,True,False,True,False,False,q5_vw
+EBM,2007,2001,M6,accounting,valuation,12.0000,EW,Enterprise component of BM,-0.2743,156,0.0004,84,0.3623,156,True,True,False,True,False,False,q5_vw
+EntMult,2011,2009,M6,accounting,valuation,12.0000,EW,Enterprise Multiple,0.8215,60,0.0035,36,0.1537,60,True,False,False,True,False,False,q5_vw
+EP,1977,1971,M6,accounting,valuation,1.0000,EW,Earnings-to-Price Ratio,2.0581,516,0.0019,444,2.3491,516,True,True,True,True,True,True,q5_vw
+EquityDuration,2004,1998,M6,accounting,valuation,12.0000,VW,Equity Duration,1.7417,192,0.0011,120,1.6940,192,True,True,False,True,True,False,q5_vw
+ExchSwitch,1995,1990,M2,event,other,1.0000,EW,Exchange Switch,4.2243,288,0.0074,228,2.6037,288,False,True,True,True,True,True,me_gt_nyse20
+ExclExp,2003,1999,M4,analyst,composite accounting,12.0000,EW,Excluded Expenses,0.9534,180,0.0002,132,0.7898,180,True,True,False,True,False,False,q5_vw
+FEPS,2006,2002,M6,analyst,profitability,1.0000,EW,Analyst earnings per share,0.9832,144,0.0034,96,0.2414,144,True,True,False,True,False,False,q5_vw
+fgr5yrLag,1996,1990,M4,analyst,earnings forecast,3.0000,EW,Long-term EPS forecast,0.1216,288,0.0009,216,0.2470,288,True,True,False,True,False,False,q5_vw
+FirmAgeMom,2006,2001,M4,price,momentum,1.0000,EW,Firm Age - Momentum,1.6097,156,0.0067,96,1.2784,156,True,True,False,True,True,False,q5_vw
+ForecastDispersion,2002,2000,M3,analyst,volatility,1.0000,EW,EPS Forecast Dispersion,0.6472,168,0.0015,144,0.6250,168,True,True,False,True,False,False,q5_vw
+Frontier,2009,2003,M6,accounting,valuation,12.0000,EW,Efficient frontier index,3.5210,132,0.0076,60,1.5513,132,True,True,True,True,True,True,q5_vw
+Governance,2003,1999,M1,alt_other,other,1.0000,VW,Governance Index,-2.5953,86,-0.0054,38,-2.6040,86,False,True,False,False,False,False,me_gt_nyse20
+GP,2013,2010,M6,accounting,profitability,12.0000,VW,gross profits / total assets,1.1237,48,0.0014,12,1.3970,48,True,False,False,False,True,False,q5_vw
+GrAdExp,2014,2010,M6,accounting,investment alt,1.0000,EW,Growth in advertising expenses,1.6627,48,,0,1.1829,48,True,False,False,False,True,False,q5_vw
+grcapx,2006,1999,M6,accounting,investment growth,12.0000,EW,Change in capex (two years),1.6283,180,0.0005,96,1.2255,180,True,True,False,True,True,False,q5_vw
+grcapx3y,2006,1999,M6,accounting,investment growth,12.0000,EW,Change in capex (three years),1.1897,180,-0.0007,96,1.6193,180,True,True,False,False,True,False,q5_vw
+Herf,2006,2001,M6,alt_other,other,1.0000,EW,Industry concentration (sales),-0.5332,156,-0.0018,96,-2.2036,156,True,True,False,False,False,False,q5_vw
+HerfBE,2006,2001,M6,alt_other,other,1.0000,EW,Industry concentration (equity),-1.4513,156,-0.0037,96,-2.4124,156,True,True,False,False,False,False,q5_vw
+hire,2014,2010,M6,alt_other,investment alt,12.0000,EW,Employment growth,1.9296,48,,0,3.1517,48,True,False,False,False,True,False,q5_vw
+IdioVol3F,2006,2000,M3,price,volatility,1.0000,VW,Idiosyncratic risk (3 factor),0.4281,168,0.0030,96,0.6340,168,True,True,False,True,False,False,q5_vw
+IdioVolAHT,2003,1997,M3,price,volatility,36.0000,VW,Idiosyncratic risk (AHT),0.2786,204,0.0023,132,0.0064,204,True,True,False,True,False,False,q5_vw
+Illiquidity,2002,1997,M3,volume,liquidity,12.0000,EW,Amihud's illiquidity,0.5719,204,0.0017,144,0.6551,204,True,True,False,True,False,False,q5_vw
+IndIPO,1991,1987,M4,event,external financing,1.0000,EW,Initial Public Offerings,2.1169,324,0.0050,276,1.4436,324,False,True,True,True,True,True,me_gt_nyse20
+IndMom,1999,1995,M4,price,momentum,6.0000,EW,Industry Momentum,2.0878,228,0.0049,180,1.5308,228,True,True,True,True,True,True,q5_vw
+IndRetBig,2007,2001,M5,price,lead lag,1.0000,EW,Industry return of big firms,3.9091,156,0.0113,84,2.9532,156,True,True,True,True,True,True,q5_vw
+IntanBM,2006,2003,M6,accounting,long term reversal,1.0000,EW,Intangible return using BM,0.2335,132,-0.0002,96,0.5846,132,True,True,False,False,False,False,q5_vw
+IntanCFP,2006,2003,M6,accounting,long term reversal,1.0000,EW,Intangible return using CFtoP,1.3702,132,0.0030,96,1.4811,132,True,True,False,True,True,False,q5_vw
+IntanEP,2006,2003,M6,accounting,long term reversal,12.0000,EW,Intangible return using EP,0.8383,132,0.0015,96,1.2826,132,True,True,False,True,True,False,q5_vw
+IntanSP,2006,2003,M6,accounting,long term reversal,12.0000,EW,Intangible return using Sale2P,0.4415,132,0.0019,96,0.6749,132,True,True,False,True,False,False,q5_vw
+IntMom,2012,2010,M4,price,momentum,1.0000,VW,Intermediate Momentum,1.3062,48,0.0035,24,0.7736,48,True,False,False,False,False,False,q5_vw
+Investment,2004,1996,M6,accounting,investment,12.0000,VW,Investment to revenue,0.0813,216,0.0004,120,-0.2274,216,True,True,False,True,False,False,q5_vw
+InvestPPEInv,2008,2005,M6,accounting,investment,1.0000,EW,change in ppe and inv/assets,1.4009,108,0.0051,72,0.7629,108,True,True,False,True,False,False,q5_vw
+InvGrowth,2012,2009,M6,accounting,profitability,12.0000,EW,Inventory Growth,0.1800,60,-0.0009,24,1.1912,60,True,False,False,False,True,False,q5_vw
+iomom_cust,2010,2005,M5,alt_other,lead lag,1.0000,EW,Customers momentum,2.5468,108,0.0062,48,2.1533,108,True,False,True,True,True,False,q5_vw
+iomom_supp,2010,2005,M5,alt_other,lead lag,1.0000,EW,Suppliers momentum,1.2141,108,0.0052,48,0.8200,108,True,False,False,True,False,False,q5_vw
+Leverage,1988,1981,M6,accounting,leverage,12.0000,EW,Market leverage,1.9448,396,0.0032,312,1.6232,396,True,True,False,True,True,False,q5_vw
+LRreversal,1985,1982,M6,price,long term reversal,1.0000,EW,Long-run reversal,2.2537,384,0.0074,348,1.8373,384,True,True,True,True,True,True,q5_vw
+MaxRet,2011,2005,M3,price,volatility,1.0000,VW,Maximum return over month,0.1849,108,-0.0039,36,0.2433,108,True,False,False,False,False,False,q5_vw
+MeanRankRevGrowth,1994,1990,M4,accounting,sales growth,12.0000,EW,Revenue Growth Rank,0.4013,288,0.0003,240,-1.4876,288,True,True,False,True,False,False,q5_vw
+Mom12m,1993,1989,M4,price,momentum,3.0000,EW,Momentum (12 month),1.0374,300,0.0062,252,1.8977,300,True,True,False,True,True,False,q5_vw
+Mom12mOffSeason,2008,2002,M4,price,other,1.0000,EW,Momentum without the seasonal part,0.7801,144,-0.0040,72,0.5072,144,True,True,False,False,False,False,q5_vw
+Mom6m,1993,1989,M4,price,momentum,3.0000,EW,Momentum (6 month),1.3740,300,0.0099,252,2.2583,300,True,True,False,True,True,False,q5_vw
+Mom6mJunk,2007,2003,M4,price,momentum,1.0000,EW,Junk Stock Momentum,1.0492,132,-0.0036,84,0.5654,132,True,True,False,False,False,False,q5_vw
+MomOffSeason,2008,2002,M2,price,other,1.0000,EW,Off season long-term reversal,0.6782,144,0.0037,72,0.7288,144,True,True,False,True,False,False,q5_vw
+MomOffSeason06YrPlus,2008,2002,M2,price,other,1.0000,EW,Off season reversal years 6 to 10,4.7239,144,0.0117,72,2.4364,144,True,True,True,True,True,True,q5_vw
+MomOffSeason16YrPlus,2008,2002,M2,price,other,1.0000,EW,Off season reversal years 16 to 20,1.2798,144,0.0008,72,1.2990,144,True,True,False,True,True,False,q5_vw
+MomRev,2006,2001,M4,price,momentum,3.0000,EW,Momentum and LT Reversal,0.2861,156,-0.0061,96,-0.2619,156,False,True,False,False,False,False,me_gt_nyse20
+MomSeason,2008,2002,M2,price,other,1.0000,EW,Return seasonality years 2 to 5,1.4068,144,-0.0002,72,0.7389,144,True,True,False,False,False,False,q5_vw
+MomSeason06YrPlus,2008,2002,M2,price,other,1.0000,EW,Return seasonality years 6 to 10,2.5816,144,0.0075,72,3.2986,144,True,True,True,True,True,True,q5_vw
+MomSeason11YrPlus,2008,2002,M2,price,other,1.0000,EW,Return seasonality years 11 to 15,2.1880,144,0.0032,72,1.8151,144,True,True,True,True,True,True,q5_vw
+MomSeason16YrPlus,2008,2002,M2,price,other,1.0000,EW,Return seasonality years 16 to 20,2.7928,144,0.0057,72,4.3210,144,True,True,True,True,True,True,q5_vw
+MomSeasonShort,2008,2002,M2,price,other,1.0000,EW,Return seasonality last year,-0.6124,144,0.0002,72,-1.3761,144,True,True,False,True,False,False,q5_vw
+MomVol,2000,1995,M4,price,momentum,3.0000,EW,Momentum in high volume stocks,1.7129,228,0.0017,168,1.4645,228,False,True,False,True,True,False,me_gt_nyse20
+MS,2005,2001,M4,accounting,composite accounting,1.0000,EW,Mohanram G-score,2.1048,156,0.0070,108,1.5455,156,False,True,True,True,True,True,me_gt_nyse20
+NetDebtFinance,2006,2000,M4,accounting,external financing,12.0000,EW,Net debt financing,5.5815,168,0.0056,96,2.3924,168,True,True,True,True,True,True,q5_vw
+NetDebtPrice,2007,2001,M6,accounting,leverage,12.0000,EW,Net debt to price,0.9061,156,0.0009,84,-0.8747,156,True,True,False,True,False,False,q5_vw
+NetEquityFinance,2006,2000,M4,accounting,external financing,12.0000,EW,Net equity financing,1.8167,168,0.0074,96,1.7231,168,True,True,False,True,True,False,q5_vw
+NetPayoutYield,2007,2003,M6,accounting,valuation,12.0000,EW,Net Payout Yield,2.7677,132,0.0111,84,2.0752,132,True,True,True,True,True,True,q5_vw
+NOA,2004,2002,M6,accounting,asset composition,1.0000,EW,Net Operating Assets,1.3957,144,0.0013,120,-0.0103,144,True,True,False,True,False,False,q5_vw
+OPLeverage,2011,2008,M6,accounting,other,12.0000,EW,Operating leverage,3.7241,72,0.0023,36,2.5983,72,True,False,True,True,True,False,q5_vw
+OptionVolume1,2012,2010,M1,options,volume,1.0000,EW,Option to stock volume,1.5536,48,0.0003,24,1.9522,48,True,False,False,False,True,False,q5_vw
+OrderBacklog,2003,1999,M4,accounting,sales growth,12.0000,EW,Order backlog,-0.6286,180,-0.0014,132,-0.3549,180,True,True,False,False,False,False,q5_vw
+OrderBacklogChg,2007,1999,M4,accounting,accruals,12.0000,EW,Change in order backlog,0.5389,180,0.0009,84,-0.2793,180,True,True,False,True,False,False,q5_vw
+OrgCap,2013,2008,M6,accounting,R&D,12.0000,VW,Organizational capital,-0.1315,72,0.0002,12,-1.4558,72,True,False,False,False,False,False,q5_vw
+OScore,1998,1995,M6,accounting,default risk,1.0000,EW,O Score,1.7635,228,0.0060,192,1.2248,228,False,True,False,True,True,False,me_gt_nyse20
+PatentsRD,2013,2008,M1,alt_other,profitability alt,12.0000,VW,Patents to RD expenses,-1.9112,24,,0,-0.3527,57,False,False,False,False,False,False,me_gt_nyse20
+PayoutYield,2007,2003,M6,accounting,valuation,12.0000,EW,Payout Yield,1.1332,132,0.0024,84,0.5274,132,True,True,False,True,False,False,q5_vw
+PctAcc,2011,2008,M4,accounting,accruals,12.0000,EW,Percent Operating Accruals,2.4561,72,0.0008,36,1.8408,72,True,False,True,True,True,False,q5_vw
+PctTotAcc,2011,2008,M4,accounting,accruals,12.0000,EW,Percent Total Accruals,0.5826,72,0.0039,36,1.2558,72,True,False,False,True,True,False,q5_vw
+Price,1973,1971,M3,price,other,1.0000,EW,Price,1.4116,516,0.0054,492,-0.6244,516,True,True,False,True,False,False,q5_vw
+PriceDelayRsq,2005,2001,M5,price,lead lag,12.0000,EW,Price delay r square,1.5166,156,0.0002,108,-0.3318,156,True,True,False,True,False,False,q5_vw
+PS,2000,1996,M4,accounting,composite accounting,1.0000,VW,Piotroski F-score,2.0506,216,0.0140,168,1.9192,216,True,True,True,True,True,True,q5_vw
+RD,2001,1995,M6,accounting,R&D,12.0000,EW,R&D over market cap,2.5784,228,0.0062,156,1.4624,228,True,True,True,True,True,True,q5_vw
+RDAbility,2013,2009,M4,accounting,other,1.0000,EW,R&D ability,0.2886,60,0.0035,12,-0.1196,60,True,False,False,False,False,False,q5_vw
+RDcap,2011,2007,M6,accounting,asset composition,12.0000,VW,R&D capital-to-assets,1.0382,84,-0.0004,36,,0,True,False,False,False,False,False,q5_vw
+RDIPO,2006,1995,M4,event,R&D,1.0000,EW,IPO and no R&D spending,2.2925,228,0.0051,96,0.6274,228,False,True,True,True,False,False,me_gt_nyse20
+RDS,2011,2003,M4,accounting,composite accounting,12.0000,EW,Real dirty surplus,0.4154,132,0.0020,36,0.6594,132,True,False,False,True,False,False,q5_vw
+RealizedVol,2006,2000,M3,price,volatility,1.0000,VW,Realized (Total) Volatility,0.6370,168,0.0037,96,0.7466,168,True,True,False,True,False,False,q5_vw
+Recomm_ShortInterest,2011,2006,M4,analyst,recommendation,1.0000,EW,Analyst Recommendations and Short-Interest,1.1507,96,0.0038,36,1.9346,96,False,False,False,True,True,False,me_gt_nyse20
+ResidualMomentum,2011,2009,M4,price,momentum,1.0000,EW,Momentum based on FF3 residuals,1.1218,60,0.0025,36,0.7140,60,True,False,False,True,False,False,q5_vw
+retConglomerate,2012,2009,M5,price,lead lag,1.0000,EW,Conglomerate return,0.7967,60,0.0082,24,0.7741,60,True,False,False,False,False,False,q5_vw
+ReturnSkew,2015,2012,M6,price,risk,1.0000,EW,Return skewness,0.0704,24,,0,-0.2064,24,True,False,False,False,False,False,q5_vw
+ReturnSkew3F,2015,2012,M6,price,risk,1.0000,EW,Idiosyncratic skewness (3F model),-1.1927,24,,0,-1.8316,24,True,False,False,False,False,False,q5_vw
+REV6,1996,1992,M4,analyst,earnings forecast,1.0000,EW,Earnings forecast revisions,3.7257,264,0.0052,216,1.4773,264,True,True,True,True,True,True,q5_vw
+RevenueSurprise,2006,2003,M4,accounting,sales growth,1.0000,EW,Revenue Surprise,3.6695,132,0.0042,96,0.8844,132,True,True,True,True,False,False,q5_vw
+RIO_Disp,2005,2003,M3,flows_holdings,short sale constraints,1.0000,EW,Inst Own and Forecast Dispersion,0.6500,132,0.0037,108,0.4979,132,False,True,False,True,False,False,me_gt_nyse20
+RIO_MB,2005,2003,M3,flows_holdings,short sale constraints,1.0000,EW,Inst Own and Market to Book,0.0529,132,0.0016,108,-0.2300,132,False,True,False,True,False,False,me_gt_nyse20
+RIO_Turnover,2005,2003,M3,flows_holdings,short sale constraints,1.0000,EW,Inst Own and Turnover,0.6389,132,0.0031,108,0.6133,132,False,True,False,True,False,False,me_gt_nyse20
+RIO_Volatility,2005,2003,M3,flows_holdings,short sale constraints,1.0000,EW,Inst Own and Idio Vol,1.3841,132,0.0069,108,1.2321,132,False,True,False,True,True,False,me_gt_nyse20
+RIVolSpread,2009,2004,M1,options,optionrisk,1.0000,VW,Realized minus Implied Vol,1.0855,120,0.0027,60,0.5461,120,True,True,False,True,False,False,q5_vw
+roaq,2010,2005,M6,accounting,profitability,1.0000,EW,Return on assets (qtrly),1.7306,108,0.0071,48,0.1070,108,True,False,False,True,False,False,q5_vw
+sfe,2001,1998,M6,analyst,valuation,12.0000,EW,Earnings Forecast to price,0.4835,192,0.0068,156,0.9353,192,True,True,False,True,False,False,q5_vw
+ShareIss1Y,2008,2003,M4,accounting,external financing,12.0000,EW,Share issuance (1 year),2.0923,132,0.0025,72,1.7113,132,True,True,True,True,True,True,q5_vw
+ShareIss5Y,2006,2003,M4,accounting,external financing,12.0000,EW,Share issuance (5 year),2.1146,132,0.0054,96,2.0806,132,True,True,True,True,True,True,q5_vw
+ShareVol,1998,1991,M3,volume,volume,12.0000,EW,Share Volume,0.6286,276,0.0015,192,-0.9962,276,False,True,False,True,False,False,me_gt_nyse20
+Size,1981,1975,M3,price,size,12.0000,EW,Size,1.8298,468,0.0016,396,0.9466,468,True,True,False,True,False,False,q5_vw
+SmileSlope,2011,2005,M1,options,optionrisk,1.0000,EW,Put volatility minus call volatility,6.6816,108,0.0078,36,4.7294,108,True,False,True,True,True,False,q5_vw
+std_turn,2001,1995,M3,volume,liquidity,1.0000,EW,Share turnover volatility,0.2683,228,-0.0027,156,0.4980,228,True,True,False,False,False,False,q5_vw
+STreversal,1990,1987,M3,price,short-term reversal,1.0000,EW,Short term reversal,4.7694,324,0.0198,288,-0.1079,324,True,True,True,True,False,False,q5_vw
+SurpriseRD,2004,2001,M6,accounting,R&D,1.0000,EW,Unexpected R&D increase,0.0305,156,-0.0002,120,0.1081,156,False,True,False,False,False,False,me_gt_nyse20
+tang,2009,2001,M6,accounting,asset composition,1.0000,EW,Tangibility,0.3544,156,-0.0015,60,-1.2325,156,True,True,False,False,False,False,q5_vw
+Tax,2004,2000,M4,accounting,other,12.0000,EW,Taxable income to income,3.3785,168,0.0038,120,2.2922,168,True,True,True,True,True,True,q5_vw
+TotalAccruals,2005,2001,M6,accounting,investment alt,12.0000,EW,Total accruals,1.3052,156,0.0010,108,1.5054,156,True,True,False,True,True,False,q5_vw
+TrendFactor,2016,2014,M4,price,momentum,1.0000,EW,Trend Factor,,0,,0,,0,True,False,False,False,False,False,q5_vw
+VolSD,2001,1995,M3,volume,liquidity,1.0000,EW,Volume Variance,0.2200,228,0.0011,156,0.5538,228,True,True,False,True,False,False,q5_vw
+XFIN,2006,2000,M4,accounting,external financing,12.0000,EW,Net external financing,2.1888,168,0.0069,96,2.2871,168,True,True,True,True,True,True,q5_vw
+zerotrade6M,2006,2003,M3,volume,liquidity,1.0000,EW,Days with zero trades,0.9554,132,0.0062,96,1.4719,132,True,True,False,True,True,False,q5_vw
+zerotrade1M,2006,2003,M3,volume,liquidity,12.0000,EW,Days with zero trades,0.8110,132,0.0043,96,1.3017,132,True,True,False,True,True,False,q5_vw
+zerotrade12M,2006,2003,M3,volume,liquidity,1.0000,EW,Days with zero trades,0.6372,132,0.0041,96,1.3213,132,True,True,False,True,True,False,q5_vw
+Activism2,2005,2001,M1,flows_holdings,ownership,1.0000,VW,Active shareholders,1.7469,62,0.0016,14,1.5689,62,True,True,False,False,True,False,q5_vw
+AdExp,2001,1996,M6,accounting,R&D,12.0000,EW,Advertising Expense,2.3138,216,0.0065,156,1.3719,216,True,True,True,True,True,True,q5_vw
+AgeIPO,1991,1987,M4,event,other,1.0000,EW,IPO and age,2.2864,324,0.0081,276,2.0447,324,True,True,True,True,True,True,q5_vw
+AnalystValue,1998,1993,M6,analyst,valuation,12.0000,EW,Analyst Value,0.9697,252,0.0041,192,1.3690,252,True,True,False,True,True,False,q5_vw
+AOP,1998,1993,M4,analyst,other,12.0000,EW,Analyst Optimism,0.2662,252,-0.0003,192,0.4849,252,True,True,False,False,False,False,q5_vw
+Beta,1973,1968,M6,price,risk,1.0000,EW,CAPM beta,-0.0418,552,0.0022,492,-0.1030,552,True,True,False,True,False,False,q5_vw
+BetaFP,2014,2012,M3,price,other,1.0000,EW,Frazzini-Pedersen Beta,0.0491,24,,0,0.7834,24,True,False,False,False,False,False,q5_vw
+BidAskSpread,1986,1980,M3,volume,liquidity,1.0000,EW,Bid-ask spread,0.1803,408,0.0025,336,-1.0530,408,True,True,False,True,False,False,q5_vw
+BrandInvest,2014,2010,M6,accounting,investment alt,12.0000,EW,Brand capital investment,-0.6802,48,,0,-0.1166,48,True,False,False,False,False,False,q5_vw
+ConsRecomm,2001,1997,M4,analyst,recommendation,1.0000,VW,Consensus Recommendation,2.8646,204,0.0038,156,2.8366,204,False,True,True,True,True,True,me_gt_nyse20
+Coskewness,2000,1993,M6,price,risk,1.0000,VW,Coskewness,0.2123,252,0.0009,168,0.8314,252,True,True,False,True,False,False,q5_vw
+DebtIssuance,1999,1989,M4,accounting,external financing,1.0000,EW,Debt Issuance,4.7876,300,0.0020,180,1.7332,300,False,True,True,True,True,True,me_gt_nyse20
+DelDRC,2013,2007,M6,accounting,investment alt,1.0000,EW,Deferred Revenue,-0.4652,84,0.0037,12,-0.2591,84,True,False,False,False,False,False,q5_vw
+DownRecomm,2001,1997,M4,analyst,earnings forecast,1.0000,EW,Down forecast EPS,5.2984,204,0.0024,156,4.0319,204,False,True,True,True,True,True,me_gt_nyse20
+FirmAge,1984,1980,M3,alt_other,info proxy,1.0000,EW,Firm age based on CRSP,-1.1255,408,-0.0010,360,-1.6520,408,True,True,False,False,False,False,q5_vw
+FR,2006,2002,M4,accounting,composite accounting,12.0000,EW,Pension Funding Status,-1.9158,144,-0.0059,96,-2.0769,144,True,True,False,False,False,False,q5_vw
+GrLTNOA,2003,1993,M6,accounting,investment,12.0000,EW,Growth in long term operating assets,1.4461,252,0.0008,132,0.2009,252,True,True,False,True,False,False,q5_vw
+GrSaleToGrInv,1998,1988,M4,accounting,sales growth,12.0000,EW,Sales growth over inventory growth,2.7879,312,0.0011,192,1.5159,312,True,True,True,True,True,True,q5_vw
+GrSaleToGrOverhead,1998,1988,M4,accounting,sales growth,12.0000,EW,Sales growth over overhead growth,-0.6971,312,-0.0016,192,-1.4143,312,True,True,False,False,False,False,q5_vw
+HerfAsset,2006,2001,M6,alt_other,other,1.0000,EW,Industry concentration (assets),-2.0237,156,-0.0047,96,-2.2865,156,True,True,False,False,False,False,q5_vw
+High52,2004,2001,M4,price,momentum,6.0000,EW,52 week high,-0.0760,156,0.0004,120,-0.0921,156,True,True,False,True,False,False,q5_vw
+IO_ShortInterest,2005,2002,M1,flows_holdings,ownership,1.0000,EW,Inst own among high short interest,2.5269,144,0.0286,108,1.6101,144,True,True,True,True,True,True,q5_vw
+MomOffSeason11YrPlus,2008,2002,M2,price,other,1.0000,EW,Off season reversal years 11 to 15,1.3088,144,0.0032,72,0.8067,144,True,True,False,True,False,False,q5_vw
+MRreversal,1985,1980,M6,price,long term reversal,12.0000,EW,Medium-run reversal,2.0909,408,0.0044,348,1.5694,408,True,True,True,True,True,True,q5_vw
+NumEarnIncrease,2012,2009,M4,accounting,earnings growth,1.0000,EW,Earnings streak length,3.1407,60,0.0038,24,2.1246,60,True,False,True,False,True,False,q5_vw
+OperProf,2006,2003,M6,accounting,profitability,12.0000,EW,operating profits / book equity,3.0388,132,0.0052,96,2.5038,132,True,True,True,True,True,True,q5_vw
+OperProfRD,2016,2014,M6,accounting,profitability,12.0000,VW,Operating profitability R&D adjusted,,0,,0,,0,True,False,False,False,False,False,q5_vw
+OptionVolume2,2012,2010,M1,options,volume,1.0000,EW,Option volume to average,0.5344,48,-0.0014,24,1.1839,48,True,False,False,False,True,False,q5_vw
+PredictedFE,1998,1993,M4,accounting,earnings forecast,12.0000,EW,Predicted Analyst forecast error,0.1756,252,0.0002,192,-0.0414,252,True,True,False,True,False,False,q5_vw
+PriceDelaySlope,2005,2001,M5,price,lead lag,12.0000,EW,Price delay coeff,1.2618,156,0.0013,108,-0.3894,156,True,True,False,True,False,False,q5_vw
+PriceDelayTstat,2005,2001,M5,price,lead lag,12.0000,EW,Price delay SE adjusted,1.2837,156,0.0013,108,-0.3064,156,True,True,False,True,False,False,q5_vw
+ProbInformedTrading,2002,1998,M3,volume,liquidity,1.0000,EW,Probability of Informed Trading,0.8904,180,0.0037,132,-0.5257,167,True,True,False,True,False,False,q5_vw
+realestate,2010,2005,M6,accounting,asset composition,12.0000,VW,Real estate holdings,0.5302,108,0.0028,48,0.7011,108,True,False,False,True,False,False,q5_vw
+RoE,1996,1993,M6,accounting,profitability,12.0000,EW,net income / book equity,1.9172,252,0.0038,216,1.6836,252,True,True,False,True,True,False,q5_vw
+ShareRepurchase,1995,1990,M4,accounting,payout indicator,12.0000,EW,Share repurchases,0.9559,288,0.0017,228,1.4728,288,False,True,False,True,True,False,me_gt_nyse20
+ShortInterest,2001,1993,M3,volume,short sale constraints,1.0000,EW,Short Interest,3.8143,252,0.0100,156,3.1088,252,True,True,True,True,True,True,q5_vw
+sinAlgo,2009,2006,M3,alt_other,other,1.0000,EW,Sin Stock (selection criteria),-0.4258,96,-0.0007,60,-0.4375,96,False,True,False,False,False,False,me_gt_nyse20
+skew1,2010,2005,M1,options,optionrisk,1.0000,EW,Volatility smirk near the money,1.7044,108,0.0022,48,1.5881,108,True,False,False,True,True,False,q5_vw
+SP,1996,1991,M6,accounting,valuation,12.0000,EW,Sales-to-price,3.7791,276,0.0090,216,2.2092,276,True,True,True,True,True,True,q5_vw
+Spinoff,1993,1988,M2,event,other,1.0000,VW,Spinoffs,1.2399,312,0.0024,252,1.1769,312,False,True,False,True,True,False,me_gt_nyse20
+UpRecomm,2001,1997,M4,analyst,earnings forecast,1.0000,EW,Up Forecast,5.2725,204,0.0018,156,4.0659,204,False,True,True,True,True,True,me_gt_nyse20
+VarCF,1996,1993,M6,accounting,cash flow risk,12.0000,EW,Cash-flow  to price variance,-1.2254,252,-0.0050,216,-1.4734,252,True,True,False,False,False,False,q5_vw
+VolMkt,1996,1993,M3,volume,volume,12.0000,EW,Volume to market equity,1.2318,252,0.0042,216,0.5331,252,True,True,False,True,False,False,q5_vw
+VolumeTrend,1996,1993,M3,volume,volume,12.0000,EW,Volume Trend,4.9801,252,0.0080,216,2.2779,252,True,True,True,True,True,True,q5_vw

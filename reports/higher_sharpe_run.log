@@ -1,0 +1,11 @@
+residual_momentum selection -0.484 evaluation 0.2415
+residual_reversal selection -1.0916 evaluation -0.0179
+low_beta_spread selection -0.2184 evaluation 0.4179
+low_vol_long selection 0.4434 evaluation 0.8875
+liquid_equal_weight selection 0.655 evaluation 0.6176
+low_vol_hedged selection -0.3377 evaluation 0.0419
+momentum_reversal_blend selection -0.9855 evaluation 0.1077
+pead_sue_hedged selection -0.2028 evaluation -1.1321
+pead_reaction_confirmed selection -0.0492 evaluation -0.2029
+defensive_momentum_blend selection 0.1383 evaluation 0.7033
+SPY_control selection 0.6563 evaluation 0.7184

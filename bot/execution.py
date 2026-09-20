@@ -26,11 +26,13 @@ import json
 import math
 import os
 import time
-from dataclasses import asdict, dataclass
+from dataclasses import asdict, dataclass, field
 from pathlib import Path
-from typing import Literal
+from typing import Callable, Literal
 
 import yfinance as yf
+
+from risk.transaction_costs import ROUND_TRIP_COST_BPS_DEFAULT
 
 from bot.alerting import ALERT_POSITION_CLOSED, ALERT_POSITION_OPENED, BotAlerter, build_alerter
 from bot.risk_gate import RiskGateDecision, consume_approval
@@ -74,6 +76,26 @@ class PaperPosition:
     realized_pnl: float | None = None
 
 
+def unrealized_pnl(direction: Direction, notional, entry_price, mark):
+    """P&L of an open position if it were closed at `mark`, before the exit
+    cost -- close_position's gross formula, term for term. Works on floats or
+    numpy arrays of marks."""
+    sign = 1.0 if direction == "long" else -1.0
+    pct_move = sign * (mark - entry_price) / entry_price
+    return notional * pct_move
+
+
+@dataclass
+class MarkedNav:
+    """Account value with open positions at their latest price, alongside the
+    cash-basis nav() it extends."""
+    nav: float
+    cash_basis_nav: float
+    unrealized_pnl: float
+    marks: dict[str, float] = field(default_factory=dict)  # ticker -> price used
+    unmarked: list[str] = field(default_factory=list)  # open, no price: carried at cost
+
+
 @dataclass
 class PaperFill:
     ticker: str
@@ -97,6 +119,18 @@ class PaperExecutionClient:
     this matches the fidelity level of the thing that was actually
     validated rather than inventing a fancier microstructure model this
     strategy was never backtested against.
+
+    COSTS (added 2026-09-17): the round trip is charged on the CLOSE, against
+    the entry and exit notionals, at risk/transaction_costs.py's 10 bps -- the
+    same assumption the cost-adjusted training label and every research
+    backtest in this repo already use. Before this, the paper account was the
+    only thing here quoting returns gross of fees, which overstated it by
+    roughly 0.4%/yr at the bot's current turnover. Charging at the close (not
+    half at entry) keeps the invariant the whole system is built on: cash-basis
+    NAV changes on a close event and nowhere else, so from_ledger, the
+    dashboard's stats and its equity curve all stay correct without each
+    re-deriving a cost model. An open position is therefore marked before its
+    exit cost.
     """
 
     def __init__(
@@ -104,7 +138,9 @@ class PaperExecutionClient:
         starting_capital: float = 100_000.0,
         ledger_path: Path = LEDGER_FILE,
         alerter: BotAlerter | None = None,
+        round_trip_cost_bps: float = ROUND_TRIP_COST_BPS_DEFAULT,
     ):
+        self.round_trip_cost_bps = round_trip_cost_bps
         self.starting_capital = starting_capital
         self.cash = starting_capital
         self.realized_pnl = 0.0
@@ -167,8 +203,47 @@ class PaperExecutionClient:
         with the fixed-holding-period, no-adaptive-exit design (see
         position_manager.py / PLAN.md): nothing reacts to interim price
         moves, so there is no decision this bot makes that depends on a
-        live mark, only the recorded entry and the eventual exit price."""
+        live mark, only the recorded entry and the eventual exit price.
+
+        This is deliberately still the NAV that sizes and gates trades:
+        place_order's notional, current_total_exposure_pct, the daily-loss
+        check and the drawdown kill switch (with high_water_mark) all read it.
+        Switching them to marked_nav() would change position sizes, when the
+        exposure cap binds and when the kill switch trips -- i.e. the trades
+        themselves. It is NOT a performance measure: a return series built on
+        it moves only on exit days, is autocorrelated and understates
+        volatility (reports/pead_audit/REPORT.md). Performance is measured on
+        marked_nav(), recorded every session by run_cycle, via
+        bot/performance.py."""
         return self.starting_capital + self.realized_pnl
+
+    def marked_nav(self, price_for: Callable[[str], float] | None = None) -> MarkedNav:
+        """Cash plus every open position at its latest price: nav() plus each
+        position's unrealized_pnl. `price_for` defaults to get_current_price,
+        the same source fills use (the session's close when run_cycle calls
+        this after the close; the pinned close in the historical replays,
+        which patch this module's get_current_price). A position whose price
+        cannot be fetched is carried at cost and listed in `unmarked` --
+        marking never raises. Read-only: changes no state and no ledger."""
+        price_for = price_for or get_current_price
+        marks: dict[str, float] = {}
+        unmarked: list[str] = []
+        unrealized = 0.0
+        for ticker, position in self.positions.items():
+            if not position.open:
+                continue
+            try:
+                price = float(price_for(ticker))
+            except Exception:
+                price = float("nan")
+            if not math.isfinite(price) or price <= 0 or not position.entry_price:
+                unmarked.append(ticker)
+                continue
+            marks[ticker] = price
+            unrealized += unrealized_pnl(position.direction, position.notional, position.entry_price, price)
+        cash_basis = self.nav()
+        return MarkedNav(nav=cash_basis + unrealized, cash_basis_nav=cash_basis, unrealized_pnl=unrealized,
+                         marks=marks, unmarked=sorted(unmarked))
 
     def current_total_exposure_pct(self) -> float:
         nav = self.nav()
@@ -231,7 +306,13 @@ class PaperExecutionClient:
         exit_price = get_current_price(ticker)
         sign = 1.0 if position.direction == "long" else -1.0
         pct_move = sign * (exit_price - position.entry_price) / position.entry_price
-        pnl = position.notional * pct_move
+        gross_pnl = position.notional * pct_move
+        # One-way cost on each leg: entry notional plus the notional actually
+        # sold/covered at the exit price.
+        one_way = self.round_trip_cost_bps / 2 / 10_000.0
+        exit_notional = position.notional * (exit_price / position.entry_price) if position.entry_price else position.notional
+        cost = (position.notional + exit_notional) * one_way
+        pnl = gross_pnl - cost
 
         position.open = False
         position.exit_price = exit_price
@@ -244,12 +325,13 @@ class PaperExecutionClient:
             "event": "close", "ticker": ticker, "direction": position.direction,
             "entry_price": position.entry_price, "exit_price": exit_price,
             "notional": position.notional, "realized_pnl": pnl, "reason": reason,
+            "gross_pnl": gross_pnl, "cost": cost, "cost_bps_round_trip": self.round_trip_cost_bps,
             "exit_date": exit_date, "ts": time.time(),
         })
         self.alerter.alert(
             ALERT_POSITION_CLOSED,
-            f"paper position closed: {ticker} pnl={pnl:.2f} ({reason})",
-            ticker=ticker, exit_price=exit_price, realized_pnl=round(pnl, 2), reason=reason,
+            f"paper position closed: {ticker} pnl={pnl:.2f} net of {cost:.2f} costs ({reason})",
+            ticker=ticker, exit_price=exit_price, realized_pnl=round(pnl, 2), cost=round(cost, 2), reason=reason,
         )
         return pnl
 

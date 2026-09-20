@@ -1,0 +1,7 @@
+{
+ "selected": [
+  "N3_opportunistic",
+  "N4_composite"
+ ],
+ "gate": "net Sharpe >= 0.5, beats same-universe control"
+}

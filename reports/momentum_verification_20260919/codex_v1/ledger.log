@@ -1,0 +1,85 @@
+{
+  "matching_fractional": {
+    "metrics": {
+      "cagr": 0.7062894566749911,
+      "total_return": 0.9132789233879066,
+      "excess_sharpe": 1.2907135950417719,
+      "ann_excess_mean": 0.608756130398665,
+      "vol": 0.4718043359390889,
+      "max_dd": -0.3341686720208136,
+      "annual_cost": 0.003616031049101107,
+      "annual_turnover": 6.38169945382873,
+      "average_exposure": 1.0,
+      "days": 306,
+      "years": 1.2142857142857142
+    },
+    "fills": 376,
+    "total_dollar_cost": 611.9403549876299,
+    "pnl_reconciliation_dollars": -1.4551915228366852e-11,
+    "top_contributions_dollars": {
+      "MU": 14989.77677703201,
+      "LITE": 12271.438953113347,
+      "SNDK": 10952.460129644001,
+      "STX": 10347.368302922,
+      "WDC": 8571.986205683264,
+      "LRCX": 4754.768673446007,
+      "GLW": 4626.50348444722,
+      "GEV": 4096.771805557754,
+      "DELL": 3652.616200087377,
+      "FIX": 3157.0262809524393
+    },
+    "bottom_contributions_dollars": {
+      "ECHO": -3262.6277237374584,
+      "FLEX": -3242.4640854680665,
+      "MPWR": -1558.4227204115123,
+      "FTNT": -1481.8481940659035,
+      "COIN": -1461.221024438241
+    },
+    "max_nav_difference": 8.881784197001252e-16
+  },
+  "one_dollar_per_order": {
+    "metrics": {
+      "cagr": 0.7021425759688229,
+      "total_return": 0.9076340418391164,
+      "excess_sharpe": 1.285544326524772,
+      "ann_excess_mean": 0.6063194591446245,
+      "vol": 0.4718054300075786,
+      "max_dd": -0.3342347334039395,
+      "annual_cost": 0.006051260641463193,
+      "annual_turnover": 6.381049290622627,
+      "average_exposure": 1.0,
+      "days": 306,
+      "years": 1.2142857142857142
+    },
+    "fills": 376,
+    "total_dollar_cost": 1006.8285394714483,
+    "pnl_reconciliation_dollars": 2.9103830456733704e-11,
+    "top_contributions_dollars": {
+      "MU": 14957.133854212756,
+      "LITE": 12249.537746768043,
+      "SNDK": 10927.050054538415,
+      "STX": 10325.741982205234,
+      "WDC": 8555.658143051103,
+      "LRCX": 4746.010352647614,
+      "GLW": 4618.298861854348,
+      "GEV": 4090.3334517256244,
+      "DELL": 3642.474355468841,
+      "FIX": 3151.34358499631
+    },
+    "bottom_contributions_dollars": {
+      "ECHO": -3254.2767670267604,
+      "FLEX": -3233.9090762540864,
+      "MPWR": -1554.4648255665857,
+      "FTNT": -1480.9489135120634,
+      "COIN": -1459.3576691165536
+    }
+  },
+  "whole_share_snapshot": {
+    "reference_date": "2026-09-17",
+    "signal_date": "2026-09-01",
+    "capital": 100000,
+    "uninvested_before_costs": 3709.6693630218506,
+    "assumed_cost": 68.14516531848908,
+    "status": "feasibility only; historical adjusted units are not nominal shares; no orders"
+  }
+}

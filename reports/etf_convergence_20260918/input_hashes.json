@@ -1,0 +1,11 @@
+{
+  "data/multiasset/etf/EEM.parquet": "d59a4463ced86ade2ce8298b8a4c5782cba2bc0ac59ae0eb265ea4bfed1783d6",
+  "data/multiasset/etf/EFA.parquet": "7a755a4a60fa73c44853243d598fb2baebd1cb8824bf7d13c8e9b2b618c25a58",
+  "data/multiasset/etf/GLD.parquet": "95fd1fbaef9d8cb458942b5d03fe5e7c6b918e78d5244a5d407c882988658994",
+  "data/multiasset/etf/IEF.parquet": "684a4a7a017f8494dd56d376ed780a9486026edcdcc4301208cf161c4e7171f7",
+  "data/multiasset/etf/LQD.parquet": "7fa21e1d84549afc21f0bed004ca4c31159bc1ffaec638b42192b74677c9b196",
+  "data/multiasset/etf/QQQ.parquet": "71ba92657d925e86a125fc84436b0f721963267c98654a18cbf35c43cb1acd4f",
+  "data/multiasset/etf/SLV.parquet": "2498d4a3330a7e212050e6d70a1b9f5fa71ed8c7c38991c197f75edbfc17cd72",
+  "data/multiasset/etf/SPY.parquet": "c927a8371ad9d9552e5a1cd0d96bfcd005ae62f72d4f590c51681a81c6e4fc0c",
+  "reports/higher_sharpe/inputs/french_daily.zip": "1916d331c2c51d2aee3d00215897d2b8e5995cb387f1f4569ba46bff5fb049a8"
+}

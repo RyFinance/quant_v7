@@ -1,0 +1,72 @@
+{
+  "timing_checks": {
+    "5d": {
+      "cached_matches_including_reaction_day": true,
+      "mean_abs_change_bps": 413.18940073391417
+    },
+    "20d": {
+      "cached_matches_including_reaction_day": true,
+      "mean_abs_change_bps": 414.8578002029395
+    }
+  },
+  "events_after_purge": 18568,
+  "date_range": [
+    "2015-04-28 00:00:00",
+    "2025-06-27 00:00:00"
+  ],
+  "train_decile_edges": {
+    "pre_earnings_return_5d": [
+      -0.06074591575659321,
+      -0.03634295441037822,
+      -0.0205525618722368,
+      -0.00857877792939212,
+      0.002835423521894148,
+      0.013451974477493911,
+      0.02689997771316681,
+      0.042919014016384295,
+      0.06923395748650119
+    ],
+    "pre_earnings_return_20d": [
+      -0.08552869214433621,
+      -0.05259943314524093,
+      -0.032313192776919755,
+      -0.016176183307175452,
+      0.00018682914087205828,
+      0.01670321651935036,
+      0.03369127536739268,
+      0.05675607063016428,
+      0.09108254745280057
+    ],
+    "strict_pre_5d": [
+      -0.033333781435496534,
+      -0.019891900889139322,
+      -0.011855894623403973,
+      -0.005770866064707069,
+      0.00026944783087285416,
+      0.006053422106387864,
+      0.012530923889709876,
+      0.02054641343670379,
+      0.03295159283313076
+    ],
+    "strict_pre_20d": [
+      -0.0696838927071585,
+      -0.044219006320497606,
+      -0.02698594144901822,
+      -0.014029230305604575,
+      -0.002087552051976685,
+      0.010317539921450517,
+      0.02377434339636914,
+      0.04025576286834433,
+      0.06489604211258096
+    ]
+  },
+  "limitations": [
+    "Current S&P500 survivor universe, not point-in-time membership.",
+    "Summed fitted residuals are diagnostic labels, not executable portfolio returns.",
+    "Cached pre features include reaction close, unavailable at reaction open.",
+    "Strict pre excludes entire announcement calendar day conservatively.",
+    "10/25/50bps are assumed total gross-notional costs; no explicit borrow/hedge modeling.",
+    "No independence assumed for overlapping events; no iid t-stat or annualized Sharpe.",
+    "Four feature comparisons; unadjusted retrospective diagnostics, not a confirmed edge."
+  ]
+}

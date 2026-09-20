@@ -1,0 +1,32 @@
+[
+  {
+    "symbol": "EURUSD",
+    "date": "2016-12-26",
+    "entry_hour": 14
+  },
+  {
+    "symbol": "EURUSD",
+    "date": "2016-12-26",
+    "entry_hour": 16
+  },
+  {
+    "symbol": "GBPUSD",
+    "date": "2016-12-26",
+    "entry_hour": 14
+  },
+  {
+    "symbol": "GBPUSD",
+    "date": "2016-12-26",
+    "entry_hour": 16
+  },
+  {
+    "symbol": "USDJPY",
+    "date": "2016-12-26",
+    "entry_hour": 14
+  },
+  {
+    "symbol": "USDJPY",
+    "date": "2016-12-26",
+    "entry_hour": 16
+  }
+]

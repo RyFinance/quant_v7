@@ -1,0 +1,16 @@
+{
+  "start_date": "2021-08-11",
+  "end_date": "2025-06-27",
+  "n_days_replayed": 974,
+  "n_trades": 655,
+  "win_rate": 0.5526717557251909,
+  "annualized_return": 0.071284,
+  "annualized_std": 0.048722,
+  "sharpe_ratio": 1.4376,
+  "sortino_ratio": 3.2087,
+  "max_drawdown": -0.081136,
+  "calmar_ratio": 0.8786,
+  "turnover_annualized": 4.8691,
+  "total_return": 0.30492,
+  "methodology": "computed via backtest/metrics.py::compute_metrics on the REAL live-code-path (bot/run_cycle.py, unmodified) historical replay's daily NAV changes (live_backtest/run_historical_replay.py), out-of-sample window per the cached model's own train/validation split -- see live_backtest/run_historical_replay.py's docstring."
+}

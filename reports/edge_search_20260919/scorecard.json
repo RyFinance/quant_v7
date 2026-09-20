@@ -1,0 +1,152 @@
+[
+  {
+    "family": "liquidity_pressure_20260918",
+    "configuration": "ridge",
+    "period": "2021\u20132025-06-27",
+    "net_cagr": -0.037055091772675186,
+    "excess_sharpe": -0.6005247636026851,
+    "max_drawdown": -0.3417887472392127,
+    "stress_cagr": -0.1355457768214382,
+    "stress_excess_sharpe": -1.6289286089662542
+  },
+  {
+    "family": "liquidity_pressure_20260918",
+    "configuration": "gradient_boost",
+    "period": "2021\u20132025-06-27",
+    "net_cagr": -0.015278455517207745,
+    "excess_sharpe": -0.4127584253167398,
+    "max_drawdown": -0.2866367441506288,
+    "stress_cagr": -0.09849188753218285,
+    "stress_excess_sharpe": -1.29789905342112
+  },
+  {
+    "family": "liquidity_pressure_20260918",
+    "configuration": "liquidity_shock",
+    "period": "2021\u20132025-06-27",
+    "net_cagr": 0.012191138137251034,
+    "excess_sharpe": -0.6114505310076621,
+    "max_drawdown": -0.08035598269852795,
+    "stress_cagr": -0.023190355102023608,
+    "stress_excess_sharpe": -1.8082006880514294
+  },
+  {
+    "family": "liquidity_pressure_20260918",
+    "configuration": "trend_pullback",
+    "period": "2021\u20132025-06-27",
+    "net_cagr": -0.007367675026289211,
+    "excess_sharpe": -0.689534797823283,
+    "max_drawdown": -0.14811010815522396,
+    "stress_cagr": -0.075296207936003,
+    "stress_excess_sharpe": -2.0210811826424435
+  },
+  {
+    "family": "liquidity_pressure_20260918",
+    "configuration": "fixed_blend",
+    "period": "2021\u20132025-06-27",
+    "net_cagr": -0.013758312466489064,
+    "excess_sharpe": -0.71253388420388,
+    "max_drawdown": -0.2139081179050606,
+    "stress_cagr": -0.0833707228518138,
+    "stress_excess_sharpe": -2.0381034091591177
+  },
+  {
+    "family": "share_class_20260918",
+    "configuration": "alphabet",
+    "period": "2021\u20132025-06-27",
+    "net_cagr": 0.009390829342030171,
+    "excess_sharpe": -1.268028605555833,
+    "max_drawdown": -0.052641918704290025,
+    "stress_cagr": -0.019312655127708855,
+    "stress_excess_sharpe": -2.7160833843006196
+  },
+  {
+    "family": "share_class_20260918",
+    "configuration": "news",
+    "period": "2021\u20132025-06-27",
+    "net_cagr": -0.011210115407962684,
+    "excess_sharpe": -0.8517931013096932,
+    "max_drawdown": -0.10115404468838307,
+    "stress_cagr": -0.045970275356536416,
+    "stress_excess_sharpe": -1.5807339068491342
+  },
+  {
+    "family": "share_class_20260918",
+    "configuration": "fox",
+    "period": "2021\u20132025-06-27",
+    "net_cagr": 0.008743143581625645,
+    "excess_sharpe": -0.6933441872992853,
+    "max_drawdown": -0.07749271213166842,
+    "stress_cagr": -0.02085444831842853,
+    "stress_excess_sharpe": -1.6111481188752539
+  },
+  {
+    "family": "share_class_20260918",
+    "configuration": "primary_book",
+    "period": "2021\u20132025-06-27",
+    "net_cagr": 0.0027176993647115566,
+    "excess_sharpe": -1.4079662727195674,
+    "max_drawdown": -0.05669120475122369,
+    "stress_cagr": -0.028133160343901564,
+    "stress_excess_sharpe": -2.9156889547685605
+  },
+  {
+    "family": "crowding_unwind_20260919/availability_corrected",
+    "configuration": "crowding_unwind",
+    "period": "2021\u20132025-06-27",
+    "net_cagr": 0.03466373123226374,
+    "excess_sharpe": 0.09028067738497157,
+    "max_drawdown": -0.08931986950445103,
+    "stress_cagr": 0.01015447185820828,
+    "stress_excess_sharpe": -0.3724601538590748
+  },
+  {
+    "family": "crowding_unwind_20260919/availability_corrected",
+    "configuration": "positioning_only",
+    "period": "2021\u20132025-06-27",
+    "net_cagr": 0.017639144151627928,
+    "excess_sharpe": -0.15653931498987192,
+    "max_drawdown": -0.11545362265552062,
+    "stress_cagr": -0.025089030359236486,
+    "stress_excess_sharpe": -0.7728115129384089
+  },
+  {
+    "family": "crowding_unwind_20260919/availability_corrected",
+    "configuration": "price_only",
+    "period": "2021\u20132025-06-27",
+    "net_cagr": -0.029870427148476986,
+    "excess_sharpe": -0.6312940002229654,
+    "max_drawdown": -0.20210238593187502,
+    "stress_cagr": -0.12412531981667863,
+    "stress_excess_sharpe": -1.7563599082231989
+  },
+  {
+    "family": "downside_rotation_20260919",
+    "configuration": "primary",
+    "period": "2017\u20132025-06-27",
+    "net_cagr": 0.062156238399668995,
+    "excess_sharpe": 0.3768141901837642,
+    "max_drawdown": -0.2748704576436404,
+    "stress_cagr": 0.05593807014998009,
+    "stress_excess_sharpe": 0.32693013072019816
+  },
+  {
+    "family": "downside_rotation_20260919",
+    "configuration": "momentum_only",
+    "period": "2017\u20132025-06-27",
+    "net_cagr": 0.081184786524225,
+    "excess_sharpe": 0.4796199891805396,
+    "max_drawdown": -0.2714783434695335,
+    "stress_cagr": 0.07503051003827088,
+    "stress_excess_sharpe": 0.4369615658484447
+  },
+  {
+    "family": "downside_rotation_20260919",
+    "configuration": "equal_weight",
+    "period": "2017\u20132025-06-27",
+    "net_cagr": 0.06473924636080453,
+    "excess_sharpe": 0.36027810096690477,
+    "max_drawdown": -0.31569070888942496,
+    "stress_cagr": 0.06393035821378734,
+    "stress_excess_sharpe": 0.35474002722761083
+  }
+]

@@ -1,0 +1,5 @@
+V1_dcall    net Sharpe -0.28 (gross -0.01, stress -1.07) excess CAGR -3.31% maxDD -29.0% p=0.738
+V2_dput     net Sharpe -1.01 (gross -0.74, stress -1.78) excess CAGR -10.17% maxDD -45.7% p=0.983
+V3_dspread  net Sharpe -1.69 (gross -1.36, stress -2.62) excess CAGR -13.41% maxDD -56.6% p=1.000
+selected: []
+exit=0 Sat Sep 19 16:46:06 PDT 2026

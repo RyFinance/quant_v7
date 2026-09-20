@@ -1,0 +1,9 @@
+family,candidate,development_ratio,validation_ratio,ratio_definition,validation_cagr,validation_max_dd,validation_annual_cost,stress_ratio,stress_status,qualified
+FX intraday,london_reversal,-0.3456050663856409,-0.9240751162150769,"mean trading return / volatility, rf=0",-0.013033016999327796,-0.057582423318741305,0.015059789675493318,-2.0984068985205573,completed,False
+FX intraday,new_york_continuation,-1.977246604440224,-0.8442993325141802,"mean trading return / volatility, rf=0",-0.013812052124849927,-0.06342054129962282,0.01622050782937007,-1.9585877358425825,completed,False
+FX intraday,london_fix_reversal,-3.0207704630784664,-5.142249109074704,"mean trading return / volatility, rf=0",-0.16950945476428514,-0.5371509760321949,0.18644630301381493,,insolvent on 2016-01-21; fees and losses exhausted capital,False
+ETF convergence,SPY_QQQ,-0.2166406001403025,-0.2710752337203827,excess returns over French RF,-0.004424405172705259,-0.028679997402704105,,-0.9112881067550539,completed,False
+ETF convergence,GLD_SLV,-0.2966843539067317,0.13885325427094408,excess returns over French RF,0.0031467556737074798,-0.059289200705553546,,-0.21955878897920159,completed,False
+ETF convergence,EFA_EEM,-0.5225955392399138,0.22605899317929168,excess returns over French RF,0.00695973706193187,-0.04165695999580088,,-0.05345619591026763,completed,False
+ETF convergence,LQD_IEF,-0.04910828063071996,-2.3123916923447614,excess returns over French RF,-0.023107462499651454,-0.09307188819644485,,-4.1333163178931525,completed,False
+ETF convergence,fixed_blend,-0.5805714716330717,-0.3949639550663103,excess returns over French RF,-0.00483882920295553,-0.02931861044907902,,-1.4517821888769347,completed,False

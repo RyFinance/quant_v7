@@ -19,6 +19,9 @@ Bot-specific event kinds (position lifecycle + every risk-stack halt):
   * ALERT_KILL_SWITCH_ENGAGED -- kill_switch.KILL_SWITCH file present at gate time.
   * ALERT_DRAWDOWN_CAP_TRIPPED -- kill_switch.check_capital_drawdown_cap breached
     and the bot auto-engaged the switch.
+  * ALERT_EARNINGS_FEED_STALE -- no report anywhere in the universe for
+    earnings_watcher.EARNINGS_FEED_STALE_DAYS; the data source has likely
+    gone stale, so the bot is blind to new entries.
   * ALERT_DEAD_MANS_SWITCH    -- watchdog.py found no fresh heartbeat within
     the staleness threshold on a trading weekday (crash, machine off, or
     the scheduler itself broken -- the "one layer up" failure mode a bot
@@ -40,6 +43,7 @@ ALERT_CIRCUIT_BREAKER_HALT = "circuit_breaker_halt"
 ALERT_KILL_SWITCH_ENGAGED = "kill_switch_engaged"
 ALERT_DRAWDOWN_CAP_TRIPPED = "drawdown_cap_tripped"
 ALERT_DEAD_MANS_SWITCH = "dead_mans_switch"
+ALERT_EARNINGS_FEED_STALE = "earnings_feed_stale"
 
 
 class BotAlerter:

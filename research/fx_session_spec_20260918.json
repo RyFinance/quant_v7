@@ -1,0 +1,29 @@
+{
+  "status": "frozen before strategy returns; pilot only",
+  "provider": "London Strategic Edge vault API, existing authenticated client",
+  "symbols": ["EUR/USD", "GBP/USD", "USD/JPY"],
+  "data_start": "2009-10-01",
+  "data_end_exclusive": "2018-01-01",
+  "development": ["2010-01-01", "2013-12-31"],
+  "validation": ["2014-01-01", "2017-12-31"],
+  "reserved": "2018 onward remains unread by this experiment",
+  "initial_nav_usd": 100000,
+  "pair_notional_fraction": 0.3333333333333333,
+  "candidates": {
+    "london_reversal": "Europe/London: prior 00:00 open to 07:00-bar close return divided by prior 60 weekday observations standard deviation (min 40); fade sign if absolute ratio >=1; enter 09:00 open, exit 13:00 open. One hour implementation lag.",
+    "new_york_continuation": "America/New_York: same 00:00 to 07:00-bar close signal, follow sign if absolute ratio >=1; enter 09:00 open, exit 13:00 open.",
+    "london_fix_reversal": "Europe/London: long USD 14:00 open to 16:00 open, reverse to short USD 16:00 open to 18:00 open. Predetermined calendar rule, no fitted coefficients."
+  },
+  "execution": "Hourly bar opens are indicative fills, not quotes. Require complete signal bars; fail on missing scheduled execution bars. UTC timestamps provisionally assumed bar starts; validate against 5-minute aggregation. DST converted using IANA zones. Only Mon-Fri.",
+  "sizing": "Each active pair receives one third of start-of-day NAV in USD notional. Inactive allocation stays cash. No redistributing inactive allocations, no volatility scaling, max scheduled gross 1. All positions flat intraday; mark daily.",
+  "cash": "Cash interest zero; returns are trading P&L returns on committed capital, not excess Sharpe over a risk-free account. Report return/volatility ratio explicitly; no claim of conventional excess Sharpe.",
+  "costs": {
+    "base": {"spread_slippage_bps_per_side": 0.5, "commission_bps_per_side": 0.2, "minimum_commission_usd_per_order": 2},
+    "stress_2x": {"spread_slippage_bps_per_side": 1.0, "commission_bps_per_side": 0.4, "minimum_commission_usd_per_order": 4},
+    "stress_3x": {"spread_slippage_bps_per_side": 1.5, "commission_bps_per_side": 0.6, "minimum_commission_usd_per_order": 6}
+  },
+  "selection": "Rank candidates by development net return/volatility ratio; select one before printing validation results. No direction, time, threshold or pair changes after results.",
+  "gate": "Selected candidate development ratio >=0.5; validation base ratio >=0.75; validation stress2 mean positive; all three pairs positive validation base P&L; one-sided circular 20-business-day centered bootstrap mean test Bonferroni p<0.05 across 3 candidates. Passing authorizes further research only.",
+  "uncertainty": "5000 circular 20-business-day bootstrap samples, seed 20260918; also report 63-day sensitivity; family of 3 only (does not adjust historical project search).",
+  "limitations": ["Hypotheses inspired by published intraday FX patterns, not a claim of novelty", "No executable historical bid/ask or broker verification", "USD-denominated exact spot P&L including inverse conversion for USD/JPY", "Minimum fees make account size material", "No spread filter, news filter or parameters tuned after viewing performance", "Selected liquid surviving currency pairs; not an unbiased universal FX sample", "Macro dates already studied elsewhere; this is new-family historical validation, not pristine market history"]
+}

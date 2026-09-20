@@ -1,0 +1,157 @@
+{
+  "true_event_stats": {
+    "s1_signed_mean_bps": 90.46531784206498,
+    "s2_long_short_spread_bps": 9.683368546086461,
+    "s3_abs_sue_ge1_mean_bps": 173.72263732304378,
+    "n_up": 14663,
+    "n_down": 3925,
+    "n_abs_ge1": 7820,
+    "s3_excess_vs_all_bps": 28.291223902277267
+  },
+  "event_placebo_p": {
+    "s1_p": 0.2918,
+    "s2_p": 0.2918,
+    "s3_p": 0.927,
+    "s1_placebo_mean_bps": 86.27823990926392,
+    "s2_placebo_ci_bps": [
+      -8.529838922787766,
+      15.411230378936068
+    ],
+    "s3_placebo_ci_bps": [
+      163.44841425590084,
+      185.1421386775717
+    ]
+  },
+  "buckets": [
+    {
+      "period": "discovery",
+      "bucket": "+SUE & |SUE|>=1",
+      "n": 3880,
+      "raw_forward_bps": 168.74771570020891,
+      "spy_excess_bps": 42.38338774224957
+    },
+    {
+      "period": "discovery",
+      "bucket": "+SUE & |SUE|<1",
+      "n": 3998,
+      "raw_forward_bps": 104.07955886297955,
+      "spy_excess_bps": 41.308853273122665
+    },
+    {
+      "period": "discovery",
+      "bucket": "-SUE & |SUE|>=1",
+      "n": 694,
+      "raw_forward_bps": 162.4532295613079,
+      "spy_excess_bps": 34.80769120179911
+    },
+    {
+      "period": "discovery",
+      "bucket": "-SUE & |SUE|<1",
+      "n": 1538,
+      "raw_forward_bps": 95.0470494499591,
+      "spy_excess_bps": 35.634345468296225
+    },
+    {
+      "period": "validation",
+      "bucket": "+SUE & |SUE|>=1",
+      "n": 1803,
+      "raw_forward_bps": 156.09444735021967,
+      "spy_excess_bps": 52.44671487325166
+    },
+    {
+      "period": "validation",
+      "bucket": "+SUE & |SUE|<1",
+      "n": 2699,
+      "raw_forward_bps": 117.19206229480783,
+      "spy_excess_bps": 52.88691769411675
+    },
+    {
+      "period": "validation",
+      "bucket": "-SUE & |SUE|>=1",
+      "n": 264,
+      "raw_forward_bps": 63.588782801058535,
+      "spy_excess_bps": -26.92859308627596
+    },
+    {
+      "period": "validation",
+      "bucket": "-SUE & |SUE|<1",
+      "n": 844,
+      "raw_forward_bps": 100.68609072421955,
+      "spy_excess_bps": 8.074285910497137
+    },
+    {
+      "period": "confirmation",
+      "bucket": "+SUE & |SUE|>=1",
+      "n": 1024,
+      "raw_forward_bps": 233.21912602358492,
+      "spy_excess_bps": -13.307272192518118
+    },
+    {
+      "period": "confirmation",
+      "bucket": "+SUE & |SUE|<1",
+      "n": 1259,
+      "raw_forward_bps": 226.38360393285905,
+      "spy_excess_bps": -15.794796797307283
+    },
+    {
+      "period": "confirmation",
+      "bucket": "-SUE & |SUE|>=1",
+      "n": 155,
+      "raw_forward_bps": 348.29182808882445,
+      "spy_excess_bps": 17.157266292829167
+    },
+    {
+      "period": "confirmation",
+      "bucket": "-SUE & |SUE|<1",
+      "n": 430,
+      "raw_forward_bps": 223.6703636148339,
+      "spy_excess_bps": 44.47708001783377
+    }
+  ],
+  "portfolio_placebo": {
+    "pead_long_short": {
+      "full_sharpe_ci95": [
+        0.42516277415946774,
+        0.7672073062424656
+      ],
+      "conf_sharpe_ci95": [
+        0.14955467452703095,
+        1.092275942996189
+      ]
+    },
+    "pead_large_sue_long": {
+      "full_sharpe_ci95": [
+        0.38815168194943284,
+        0.6523535377087214
+      ],
+      "conf_sharpe_ci95": [
+        0.3488687604964774,
+        1.2519725671380888
+      ]
+    }
+  },
+  "portfolio_true": {
+    "pead_long_short": {
+      "full_sharpe": 0.5820603600564818,
+      "conf_sharpe": 0.53747103027393
+    },
+    "pead_large_sue_long": {
+      "full_sharpe": 0.5756995272930522,
+      "conf_sharpe": 0.9615778480756054
+    }
+  },
+  "portfolio_p": {
+    "pead_long_short": {
+      "full_p": 0.96,
+      "conf_p": 0.5933333333333334
+    },
+    "pead_large_sue_long": {
+      "full_p": 0.5533333333333333,
+      "conf_p": 0.37333333333333335
+    }
+  },
+  "verdict": {
+    "sue_family_dead": true,
+    "rule": "DEAD if long-short stat and harness Sharpe both inside central 95% of placebo (two-sided p>.05) and magnitude selection p>.05"
+  }
+}

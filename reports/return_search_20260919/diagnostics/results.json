@@ -1,0 +1,576 @@
+{
+  "SPY": {
+    "cagr": 0.20162776303328145,
+    "total_return": 0.24986617657993349,
+    "excess_sharpe": 1.2516902799668297,
+    "ann_excess_mean": 0.15375705571800194,
+    "vol": 0.12293771104680432,
+    "max_dd": -0.08884968175523744,
+    "annual_cost": 0.0008279925312682265,
+    "annual_turnover": 1.6559850625364527,
+    "average_exposure": 1.0,
+    "days": 306,
+    "years": 1.2142857142857142
+  },
+  "QQQ": {
+    "cagr": 0.248453036465754,
+    "total_return": 0.30925245770745735,
+    "excess_sharpe": 1.091332023328351,
+    "ann_excess_mean": 0.20151200091782845,
+    "vol": 0.1848003103322931,
+    "max_dd": -0.11964363794311839,
+    "annual_cost": 0.0008304520445035478,
+    "annual_turnover": 1.6609040890070952,
+    "average_exposure": 1.0,
+    "days": 306,
+    "years": 1.2142857142857142
+  },
+  "stocks__momentum": {
+    "continuous_base": {
+      "cagr": 0.3622076110884149,
+      "total_return": 9.774445322663695,
+      "excess_sharpe": 0.9974828920963702,
+      "ann_excess_mean": 0.3404805418355506,
+      "vol": 0.34137866401336253,
+      "max_dd": -0.3549864909402063,
+      "annual_cost": 0.0037959494519161914,
+      "annual_turnover": 7.591898903832383,
+      "average_exposure": 1.0,
+      "days": 1938,
+      "years": 7.690476190476191
+    },
+    "continuous_yearly": {
+      "2019": {
+        "cagr": 0.3913151960374579,
+        "total_return": 0.3913151960374579,
+        "excess_sharpe": 1.8992882911647782,
+        "ann_excess_mean": 0.32456111981463115,
+        "vol": 0.17080235898750326,
+        "max_dd": -0.06033491307978367,
+        "annual_cost": 0.004393625760996648,
+        "annual_turnover": 8.787251521993294,
+        "average_exposure": 1.0,
+        "days": 252,
+        "years": 1.0
+      },
+      "2020": {
+        "cagr": 0.5322469101396947,
+        "total_return": 0.534843805654672,
+        "excess_sharpe": 1.219664479237432,
+        "ann_excess_mean": 0.5129678841295059,
+        "vol": 0.4205615113497787,
+        "max_dd": -0.34944027683731227,
+        "annual_cost": 0.003984269850689768,
+        "annual_turnover": 7.968539701379535,
+        "average_exposure": 1.0,
+        "days": 253,
+        "years": 1.003968253968254
+      },
+      "2021": {
+        "cagr": 0.17776752407216834,
+        "total_return": 0.17776752407216834,
+        "excess_sharpe": 0.7279744720635819,
+        "ann_excess_mean": 0.201600697092578,
+        "vol": 0.27693424199113065,
+        "max_dd": -0.18889303507443989,
+        "annual_cost": 0.0037959288768191226,
+        "annual_turnover": 7.591857753638245,
+        "average_exposure": 1.0,
+        "days": 252,
+        "years": 1.0
+      },
+      "2022": {
+        "cagr": 0.009827832326391395,
+        "total_return": 0.00978864273749358,
+        "excess_sharpe": 0.13146298657173278,
+        "ann_excess_mean": 0.04241465698233345,
+        "vol": 0.32265320492264277,
+        "max_dd": -0.22499390486065451,
+        "annual_cost": 0.0033675400489432896,
+        "annual_turnover": 6.73508009788658,
+        "average_exposure": 1.0,
+        "days": 251,
+        "years": 0.996031746031746
+      },
+      "2023": {
+        "cagr": 0.14866311314143887,
+        "total_return": 0.14740028973332797,
+        "excess_sharpe": 0.5256641719324642,
+        "ann_excess_mean": 0.1099479389015094,
+        "vol": 0.20934240172614105,
+        "max_dd": -0.19519929940115543,
+        "annual_cost": 0.004407112845231797,
+        "annual_turnover": 8.814225690463592,
+        "average_exposure": 1.0,
+        "days": 250,
+        "years": 0.9920634920634921
+      },
+      "2024": {
+        "cagr": 0.7331876202163281,
+        "total_return": 0.7331876202163281,
+        "excess_sharpe": 1.7052883429201915,
+        "ann_excess_mean": 0.552908301576946,
+        "vol": 0.32415347261523814,
+        "max_dd": -0.21186878095653505,
+        "annual_cost": 0.003426438198828722,
+        "annual_turnover": 6.852876397657444,
+        "average_exposure": 1.0,
+        "days": 252,
+        "years": 1.0
+      },
+      "2025": {
+        "cagr": 0.3507013335169469,
+        "total_return": 0.3474825305658993,
+        "excess_sharpe": 0.8861437979956333,
+        "ann_excess_mean": 0.32863275336596054,
+        "vol": 0.3709433802444656,
+        "max_dd": -0.35498649094020684,
+        "annual_cost": 0.0036524151735709103,
+        "annual_turnover": 7.30483034714182,
+        "average_exposure": 1.0,
+        "days": 250,
+        "years": 0.9920634920634921
+      },
+      "2026": {
+        "cagr": 0.916384988709805,
+        "total_return": 0.5831842967704663,
+        "excess_sharpe": 1.3694056568867001,
+        "ann_excess_mean": 0.7744578290173695,
+        "vol": 0.565675575225766,
+        "max_dd": -0.33416867202081313,
+        "annual_cost": 0.00315261243690569,
+        "annual_turnover": 6.305224873811381,
+        "average_exposure": 1.0,
+        "days": 178,
+        "years": 0.7063492063492064
+      }
+    },
+    "extra_day_delay_base": {
+      "cagr": 0.6759506323859827,
+      "total_return": 0.8720489386481056,
+      "excess_sharpe": 1.2581245205700704,
+      "ann_excess_mean": 0.5891756566747284,
+      "vol": 0.46845841372817093,
+      "max_dd": -0.3325059617799948,
+      "annual_cost": 0.003614151122428282,
+      "annual_turnover": 7.228302244856565,
+      "average_exposure": 1.0,
+      "days": 306,
+      "years": 1.2142857142857142
+    },
+    "continuous_stress": {
+      "cagr": 0.35190900590682617,
+      "total_return": 9.163617965954042,
+      "excess_sharpe": 0.9752368343700683,
+      "ann_excess_mean": 0.33288224134583605,
+      "vol": 0.3413738649284481,
+      "max_dd": -0.3560094188695274,
+      "annual_cost": 0.01138394706740549,
+      "annual_turnover": 7.589298044936993,
+      "average_exposure": 1.0,
+      "days": 1938,
+      "years": 7.690476190476191
+    },
+    "extra_day_delay_stress": {
+      "cagr": 0.6639231962211352,
+      "total_return": 0.8557479017399683,
+      "excess_sharpe": 1.2428331294287138,
+      "ann_excess_mean": 0.5819265829613408,
+      "vol": 0.4683878676550462,
+      "max_dd": -0.33270756829143777,
+      "annual_cost": 0.01083897345307509,
+      "annual_turnover": 7.225982302050059,
+      "average_exposure": 1.0,
+      "days": 306,
+      "years": 1.2142857142857142
+    },
+    "earlier_history": {
+      "cagr": 0.13991855776316697,
+      "total_return": 3.216333883576535,
+      "excess_sharpe": 0.6301080995932717,
+      "ann_excess_mean": 0.1580425358785263,
+      "vol": 0.2507977742783403,
+      "max_dd": -0.5763822430570711,
+      "annual_cost": 0.0037778503312623246,
+      "annual_turnover": 7.555700662524649,
+      "average_exposure": 0.9690859690309472,
+      "days": 2769,
+      "years": 10.988095238095237
+    },
+    "largest_average_targets": {
+      "STX": 0.03954248366013084,
+      "GEV": 0.037581699346405324,
+      "GLW": 0.03578431372549026
+    },
+    "omit_asset_leave_cash": {
+      "STX": {
+        "cagr": 0.624739501544556,
+        "total_return": 0.8028171613905579,
+        "excess_sharpe": 1.2248614389220227,
+        "ann_excess_mean": 0.5488133934347201,
+        "vol": 0.4482277411006158,
+        "max_dd": -0.32290007943020727,
+        "annual_cost": 0.003548597283276794,
+        "annual_turnover": 7.097194566553588,
+        "average_exposure": 0.9610931901405738,
+        "days": 306,
+        "years": 1.2142857142857142
+      },
+      "GEV": {
+        "cagr": 0.6655455366104794,
+        "total_return": 0.8579452248474693,
+        "excess_sharpe": 1.2550040388224049,
+        "ann_excess_mean": 0.5801553039371782,
+        "vol": 0.46243405833953566,
+        "max_dd": -0.3341686720208129,
+        "annual_cost": 0.003569307657188006,
+        "annual_turnover": 7.138615314376012,
+        "average_exposure": 0.9635197729643566,
+        "days": 306,
+        "years": 1.2142857142857142
+      },
+      "GLW": {
+        "cagr": 0.667613472309998,
+        "total_return": 0.860746734107857,
+        "excess_sharpe": 1.2867073515293883,
+        "ann_excess_mean": 0.5740419695018867,
+        "vol": 0.4462952522249772,
+        "max_dd": -0.3163459670967044,
+        "annual_cost": 0.003556666320429883,
+        "annual_turnover": 7.113332640859768,
+        "average_exposure": 0.9649945272802825,
+        "days": 306,
+        "years": 1.2142857142857142
+      }
+    },
+    "benchmarks": {
+      "SPY": {
+        "excess_sharpe_ci95": [
+          0.00044305022320838874,
+          2.722414116712429
+        ],
+        "annual_active_mean": 0.45499907468066164,
+        "annual_active_mean_ci95": [
+          -0.08458075712360298,
+          0.9262560145703131
+        ],
+        "one_sided_active_mean_p": 0.02949262684328918,
+        "beta": 2.533064515407476,
+        "annual_alpha": 0.21927958856586274,
+        "annual_alpha_ci95": [
+          -0.30707417057363384,
+          0.6960577355862888
+        ],
+        "caveat": "20-session circular bootstrap; no correction for project-wide repeated strategy research; beta held fixed within bootstrap"
+      },
+      "QQQ": {
+        "excess_sharpe_ci95": [
+          0.00044305022320838874,
+          2.722414116712429
+        ],
+        "annual_active_mean": 0.40724412948083505,
+        "annual_active_mean_ci95": [
+          -0.042592151365312525,
+          0.8150583231119148
+        ],
+        "one_sided_active_mean_p": 0.02549362659335166,
+        "beta": 2.0342831704021678,
+        "annual_alpha": 0.19882365829745888,
+        "annual_alpha_ci95": [
+          -0.22325908734683012,
+          0.6472788313778942
+        ],
+        "caveat": "20-session circular bootstrap; no correction for project-wide repeated strategy research; beta held fixed within bootstrap"
+      }
+    },
+    "latest_target_date": "2026-09-01",
+    "latest_research_targets": {
+      "AMAT": 0.05,
+      "AMD": 0.05,
+      "CIEN": 0.05,
+      "COHR": 0.05,
+      "DELL": 0.05,
+      "FIX": 0.05,
+      "FLEX": 0.05,
+      "GLW": 0.05,
+      "HPE": 0.05,
+      "INTC": 0.05,
+      "LITE": 0.05,
+      "LRCX": 0.05,
+      "MRNA": 0.05,
+      "MRVL": 0.05,
+      "MU": 0.05,
+      "SNDK": 0.05,
+      "STX": 0.05,
+      "TER": 0.05,
+      "WBD": 0.05,
+      "WDC": 0.05
+    }
+  },
+  "etf__momentum": {
+    "continuous_base": {
+      "cagr": 0.17224754975880852,
+      "total_return": 2.39462294265983,
+      "excess_sharpe": 0.7193997502616487,
+      "ann_excess_mean": 0.15500281393127888,
+      "vol": 0.21544754589260165,
+      "max_dd": -0.4281183619824962,
+      "annual_cost": 0.003451269069999908,
+      "annual_turnover": 6.902538139999818,
+      "average_exposure": 0.9975662573376763,
+      "days": 1938,
+      "years": 7.690476190476191
+    },
+    "continuous_yearly": {
+      "2019": {
+        "cagr": 0.164169580342161,
+        "total_return": 0.164169580342161,
+        "excess_sharpe": 1.255511132729304,
+        "ann_excess_mean": 0.13757914462131415,
+        "vol": 0.10944534815932143,
+        "max_dd": -0.06850193818607486,
+        "annual_cost": 0.004633826957176728,
+        "annual_turnover": 9.267653914353456,
+        "average_exposure": 1.0,
+        "days": 252,
+        "years": 1.0
+      },
+      "2020": {
+        "cagr": 0.25582150280871074,
+        "total_return": 0.25695718867040207,
+        "excess_sharpe": 1.2678714956889494,
+        "ann_excess_mean": 0.24278026556957533,
+        "vol": 0.1914700024716177,
+        "max_dd": -0.16720038673478987,
+        "annual_cost": 0.003955460509380221,
+        "annual_turnover": 7.910921018760442,
+        "average_exposure": 1.0,
+        "days": 253,
+        "years": 1.003968253968254
+      },
+      "2021": {
+        "cagr": 0.01971129152217488,
+        "total_return": 0.01971129152217488,
+        "excess_sharpe": 0.19581012206491533,
+        "ann_excess_mean": 0.03684134118768903,
+        "vol": 0.18814938927245692,
+        "max_dd": -0.15903090417134347,
+        "annual_cost": 0.0021536328072395824,
+        "annual_turnover": 4.3072656144791654,
+        "average_exposure": 1.0,
+        "days": 252,
+        "years": 1.0
+      },
+      "2022": {
+        "cagr": 0.19537439619746433,
+        "total_return": 0.1945281647461885,
+        "excess_sharpe": 0.6920636206057029,
+        "ann_excess_mean": 0.20120466239995954,
+        "vol": 0.290586252220479,
+        "max_dd": -0.27072271030474815,
+        "annual_cost": 0.0022143268668298223,
+        "annual_turnover": 4.4286537336596465,
+        "average_exposure": 1.0,
+        "days": 251,
+        "years": 0.996031746031746
+      },
+      "2023": {
+        "cagr": -0.11810170939689546,
+        "total_return": -0.11722162217400289,
+        "excess_sharpe": -1.0927871489229972,
+        "ann_excess_mean": -0.1648029607699166,
+        "vol": 0.1508001073081912,
+        "max_dd": -0.21634531178369454,
+        "annual_cost": 0.005116537904410045,
+        "annual_turnover": 10.233075808820091,
+        "average_exposure": 0.9811336268816672,
+        "days": 250,
+        "years": 0.9920634920634921
+      },
+      "2024": {
+        "cagr": 0.11955737135036704,
+        "total_return": 0.11955737135036704,
+        "excess_sharpe": 0.49608170165761073,
+        "ann_excess_mean": 0.07412549803800621,
+        "vol": 0.14934698828092097,
+        "max_dd": -0.11523591514521903,
+        "annual_cost": 0.004086174542502862,
+        "annual_turnover": 8.172349085005724,
+        "average_exposure": 1.0,
+        "days": 252,
+        "years": 1.0
+      },
+      "2025": {
+        "cagr": 0.39311914425542427,
+        "total_return": 0.3894582327418177,
+        "excess_sharpe": 1.6664029514510246,
+        "ann_excess_mean": 0.30796467804870153,
+        "vol": 0.18490113167371997,
+        "max_dd": -0.1276191451416827,
+        "annual_cost": 0.0024171129469725545,
+        "annual_turnover": 4.83422589394511,
+        "average_exposure": 1.0,
+        "days": 250,
+        "years": 0.9920634920634921
+      },
+      "2026": {
+        "cagr": 0.5888650382774474,
+        "total_return": 0.3868760522984145,
+        "excess_sharpe": 1.280194910103755,
+        "ann_excess_mean": 0.5058744870684462,
+        "vol": 0.39530835418617555,
+        "max_dd": -0.19183163646332146,
+        "annual_cost": 0.0028565356574329183,
+        "annual_turnover": 5.7130713148658385,
+        "average_exposure": 1.0,
+        "days": 178,
+        "years": 0.7063492063492064
+      }
+    },
+    "extra_day_delay_base": {
+      "cagr": 0.5846980965208415,
+      "total_return": 0.7490097182430748,
+      "excess_sharpe": 1.484247876881306,
+      "ann_excess_mean": 0.475250262416124,
+      "vol": 0.3203504799598152,
+      "max_dd": -0.19170586929379962,
+      "annual_cost": 0.0025411152239698683,
+      "annual_turnover": 5.082230447939736,
+      "average_exposure": 1.0,
+      "days": 306,
+      "years": 1.2142857142857142
+    },
+    "continuous_stress": {
+      "cagr": 0.16418547327675714,
+      "total_return": 2.219155617156073,
+      "excess_sharpe": 0.6874485396557312,
+      "ann_excess_mean": 0.1480881444918032,
+      "vol": 0.21540295895071002,
+      "max_dd": -0.4335864555706265,
+      "annual_cost": 0.010349421426628862,
+      "annual_turnover": 6.899614284419241,
+      "average_exposure": 0.9975662573376763,
+      "days": 1938,
+      "years": 7.690476190476191
+    },
+    "extra_day_delay_stress": {
+      "cagr": 0.5766894918237326,
+      "total_return": 0.7382824807230834,
+      "excess_sharpe": 1.468967408163691,
+      "ann_excess_mean": 0.4701238806517211,
+      "vol": 0.32019171003435815,
+      "max_dd": -0.19174883768963047,
+      "annual_cost": 0.0076216591741222256,
+      "annual_turnover": 5.081106116081484,
+      "average_exposure": 1.0,
+      "days": 306,
+      "years": 1.2142857142857142
+    },
+    "earlier_history": {
+      "cagr": -0.01759577773277543,
+      "total_return": -0.17721908955142707,
+      "excess_sharpe": -0.039273963124085064,
+      "ann_excess_mean": -0.006880736354757732,
+      "vol": 0.17517154066491739,
+      "max_dd": -0.4768789419571189,
+      "annual_cost": 0.0039483297476345415,
+      "annual_turnover": 7.896659495269083,
+      "average_exposure": 0.9920548934633442,
+      "days": 2769,
+      "years": 10.988095238095237
+    },
+    "largest_average_targets": {
+      "SLV": 0.23202614379084968,
+      "EWY": 0.17892156862745098,
+      "GLD": 0.1715686274509804
+    },
+    "omit_asset_leave_cash": {
+      "SLV": {
+        "cagr": 0.43442708005288133,
+        "total_return": 0.5497171334721829,
+        "excess_sharpe": 1.5987191563224072,
+        "ann_excess_mean": 0.347146322494227,
+        "vol": 0.21728306027916922,
+        "max_dd": -0.1299527358594993,
+        "annual_cost": 0.0022779144233982143,
+        "annual_turnover": 4.555828846796428,
+        "average_exposure": 0.7725355435675917,
+        "days": 306,
+        "years": 1.2142857142857142
+      },
+      "EWY": {
+        "cagr": 0.3994106461309064,
+        "total_return": 0.503900623109947,
+        "excess_sharpe": 1.3560083198167252,
+        "ann_excess_mean": 0.328697599017719,
+        "vol": 0.24255833538419436,
+        "max_dd": -0.1864897867339479,
+        "annual_cost": 0.002299361008893484,
+        "annual_turnover": 4.598722017786969,
+        "average_exposure": 0.824878238900756,
+        "days": 306,
+        "years": 1.2142857142857142
+      },
+      "GLD": {
+        "cagr": 0.5155453030501922,
+        "total_return": 0.656770158711814,
+        "excess_sharpe": 1.4599746764936612,
+        "ann_excess_mean": 0.4205273424218754,
+        "vol": 0.28819496363570674,
+        "max_dd": -0.18598667835148064,
+        "annual_cost": 0.0023444849576557437,
+        "annual_turnover": 4.688969915311486,
+        "average_exposure": 0.8318985593687379,
+        "days": 306,
+        "years": 1.2142857142857142
+      }
+    },
+    "benchmarks": {
+      "SPY": {
+        "excess_sharpe_ci95": [
+          -0.025261113791695947,
+          3.284024504903156
+        ],
+        "annual_active_mean": 0.3303744359964918,
+        "annual_active_mean_ci95": [
+          -0.07931655650232915,
+          0.7546983539243529
+        ],
+        "one_sided_active_mean_p": 0.06023494126468383,
+        "beta": 1.3948793645820927,
+        "annual_alpha": 0.2696589475345539,
+        "annual_alpha_ci95": [
+          -0.11996656896105806,
+          0.683858093240766
+        ],
+        "caveat": "20-session circular bootstrap; no correction for project-wide repeated strategy research; beta held fixed within bootstrap"
+      },
+      "QQQ": {
+        "excess_sharpe_ci95": [
+          -0.025261113791695947,
+          3.284024504903156
+        ],
+        "annual_active_mean": 0.2826194907966654,
+        "annual_active_mean_ci95": [
+          -0.12177917776327601,
+          0.7270992593103608
+        ],
+        "one_sided_active_mean_p": 0.09322669332666833,
+        "beta": 1.0573911214180665,
+        "annual_alpha": 0.27105449108479274,
+        "annual_alpha_ci95": [
+          -0.13260103231382575,
+          0.7158597646570715
+        ],
+        "caveat": "20-session circular bootstrap; no correction for project-wide repeated strategy research; beta held fixed within bootstrap"
+      }
+    },
+    "latest_target_date": "2026-09-01",
+    "latest_research_targets": {
+      "EWT": 0.25,
+      "EWY": 0.25,
+      "SLV": 0.25,
+      "USO": 0.25
+    }
+  }
+}

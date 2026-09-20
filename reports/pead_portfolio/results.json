@@ -1,0 +1,912 @@
+{
+ "plan_registered_at": "2026-09-18T22:02:19-0700",
+ "alpha_bonferroni": 0.01,
+ "windows": {
+  "main": {
+   "PEAD": {
+    "days": 973,
+    "start": "2021-08-12",
+    "end": "2025-06-27",
+    "sharpe": 0.700240491633731,
+    "sharpe_ci95": [
+     -0.24226782768625044,
+     1.7176984780507765
+    ],
+    "excess_cagr": 0.06451004927256054,
+    "vol": 0.09582105787902759,
+    "max_dd": -0.12977491922665707,
+    "beta_mkt": 0.35217702377813065,
+    "alpha_ann": 0.04205115743878604,
+    "alpha_t": 1.1540070546892218
+   },
+   "first_effective_date": "2021-12-02",
+   "PEAD_after_warmup": {
+    "days": 895,
+    "start": "2021-12-02",
+    "end": "2025-06-27",
+    "sharpe": 0.655221896156678,
+    "sharpe_ci95": [
+     -0.31849626374569895,
+     1.682499219241273
+    ],
+    "excess_cagr": 0.06198936884716311,
+    "vol": 0.09930112958431099,
+    "max_dd": -0.1297749192266574,
+    "beta_mkt": 0.36053463280150755,
+    "alpha_ann": 0.037777402078346296,
+    "alpha_t": 0.9621276534374337
+   },
+   "B1_beta_hedged": {
+    "days": 973,
+    "start": "2021-08-12",
+    "end": "2025-06-27",
+    "sharpe": 0.5447315168565313,
+    "sharpe_ci95": [
+     -0.4774046459887438,
+     1.6183427417494598
+    ],
+    "excess_cagr": 0.03745734795261857,
+    "vol": 0.07229584759817796,
+    "max_dd": -0.10630485853413318,
+    "beta_mkt": 0.030149537245923067,
+    "alpha_ann": 0.03723760898790574,
+    "alpha_t": 0.9793118573631002,
+    "corr_with_pead": 0.7390004718568991,
+    "max_dd_vol_matched": -0.13867965893049827,
+    "vol_match_scale": 1.325401956853778,
+    "paired": {
+     "delta_sharpe": -0.15550897477719972,
+     "p_one_sided": 0.6590681863627275,
+     "delta_sharpe_ci95": [
+      -0.8668789980906746,
+      0.5138764595460787
+     ],
+     "raw_mean_diff_ann": -0.027715957953490362,
+     "p_raw_mean_diff": 0.825634873025395,
+     "null_kind_dSR_at_0.3": "vacuous (cannot rule out Sharpe >= 0.3)"
+    },
+    "after_warmup": {
+     "sharpe": 0.46849727871197006,
+     "pead_sharpe": 0.655221896156678,
+     "paired": {
+      "delta_sharpe": -0.18672461744470797,
+      "p_one_sided": 0.6846630673865227,
+      "delta_sharpe_ci95": [
+       -0.9635407628022615,
+       0.5216651883750395
+      ],
+      "raw_mean_diff_ann": -0.03013093638705926,
+      "p_raw_mean_diff": 0.8204359128174366
+     }
+    },
+    "stress_costs_x3": {
+     "sharpe": 0.5350088117271656
+    },
+    "avg_weights_after_warmup": {
+     "H": -0.32832282803870033,
+     "P": 1.000691173155555
+    },
+    "turnover_per_year": 0.7920701004347015,
+    "cost_drag_per_year": 0.0003445778440930617,
+    "financing_drag_per_year": 9.166450837988053e-06
+   },
+   "B2_vol_managed": {
+    "days": 973,
+    "start": "2021-08-12",
+    "end": "2025-06-27",
+    "sharpe": 0.5115920296179214,
+    "sharpe_ci95": [
+     -0.3959041670698783,
+     1.5255436676047334
+    ],
+    "excess_cagr": 0.051567207041633534,
+    "vol": 0.11014441241431011,
+    "max_dd": -0.1847680421627842,
+    "beta_mkt": 0.33196214035902216,
+    "alpha_ann": 0.032740047133123666,
+    "alpha_t": 0.7296401292818093,
+    "corr_with_pead": 0.8436546422035003,
+    "max_dd_vol_matched": -0.16246105790178667,
+    "vol_match_scale": 0.8699584098610016,
+    "paired": {
+     "delta_sharpe": -0.18864846201580965,
+     "p_one_sided": 0.7764447110577885,
+     "delta_sharpe_ci95": [
+      -0.6984592090461431,
+      0.3327521767180732
+     ],
+     "raw_mean_diff_ann": -0.010748781179964162,
+     "p_raw_mean_diff": 0.6660667866426715,
+     "null_kind_dSR_at_0.3": "vacuous (cannot rule out Sharpe >= 0.3)"
+    },
+    "after_warmup": {
+     "sharpe": 0.46694720628820324,
+     "pead_sharpe": 0.655221896156678,
+     "paired": {
+      "delta_sharpe": -0.1882746898684748,
+      "p_one_sided": 0.7660467906418716,
+      "delta_sharpe_ci95": [
+       -0.7355269638161203,
+       0.35293134091026324
+      ],
+      "raw_mean_diff_ann": -0.011685055939415698,
+      "p_raw_mean_diff": 0.6598680263947211
+     }
+    },
+    "stress_costs_x3": {
+     "sharpe": 0.4705412360532665
+    },
+    "avg_weights_after_warmup": {
+     "P": 1.3126745553233132
+    },
+    "turnover_per_year": 6.194732007114459,
+    "cost_drag_per_year": 0.0013583398078604008,
+    "financing_drag_per_year": 0.0018644138649305244
+   },
+   "B3_pead_tsmom": {
+    "days": 973,
+    "start": "2021-08-12",
+    "end": "2025-06-27",
+    "sharpe": 0.7398173785549174,
+    "sharpe_ci95": [
+     -0.4189380767224945,
+     1.9714540977097745
+    ],
+    "excess_cagr": 0.06420024866628982,
+    "vol": 0.08953018216258207,
+    "max_dd": -0.18051687849261666,
+    "beta_mkt": 0.17165414728734868,
+    "alpha_ann": 0.05402804050774327,
+    "alpha_t": 0.9470448189796806,
+    "corr_with_pead": 0.6427612998050165,
+    "max_dd_vol_matched": -0.19213414823859054,
+    "vol_match_scale": 1.0702654184822455,
+    "paired": {
+     "delta_sharpe": 0.03957688692118633,
+     "p_one_sided": 0.46590681863627276,
+     "delta_sharpe_ci95": [
+      -1.1242027710486129,
+      1.218834495387744
+     ],
+     "raw_mean_diff_ann": -0.0008618000090087934,
+     "p_raw_mean_diff": 0.5016996600679864,
+     "null_kind_dSR_at_0.3": "vacuous (cannot rule out Sharpe >= 0.3)"
+    },
+    "after_warmup": {
+     "sharpe": 0.6917923101702773,
+     "pead_sharpe": 0.655221896156678,
+     "paired": {
+      "delta_sharpe": 0.036570414013599284,
+      "p_one_sided": 0.47250549890022,
+      "delta_sharpe_ci95": [
+       -1.2115075867282348,
+       1.3023005093090751
+      ],
+      "raw_mean_diff_ann": -0.0009364160742318241,
+      "p_raw_mean_diff": 0.5022995400919816
+     }
+    },
+    "stress_costs_x3": {
+     "sharpe": 0.7248530320553261
+    },
+    "avg_weights_after_warmup": {
+     "P": 0.7555556552000111,
+     "tsmom_broad": 0.5391452436247698
+    },
+    "turnover_per_year": 1.0322832195022156,
+    "cost_drag_per_year": 0.0006768863630863883,
+    "financing_drag_per_year": 4.5476620321553387e-07
+   },
+   "B4_pead_3sleeves": {
+    "days": 973,
+    "start": "2021-08-12",
+    "end": "2025-06-27",
+    "sharpe": 0.5869115898767228,
+    "sharpe_ci95": [
+     -0.3102649592107514,
+     1.5408574232506251
+    ],
+    "excess_cagr": 0.055418775213546656,
+    "vol": 0.10052006796832175,
+    "max_dd": -0.14289484800721108,
+    "beta_mkt": 0.1355497907839957,
+    "alpha_ann": 0.04935616979951424,
+    "alpha_t": 1.0751186083539068,
+    "corr_with_pead": 0.40373470065688494,
+    "max_dd_vol_matched": -0.1365697284672548,
+    "vol_match_scale": 0.9532530152011535,
+    "paired": {
+     "delta_sharpe": -0.11332890175700827,
+     "p_one_sided": 0.5922815436912617,
+     "delta_sharpe_ci95": [
+      -1.0187560621501506,
+      0.8327661899029717
+     ],
+     "raw_mean_diff_ann": -0.008101391772270539,
+     "p_raw_mean_diff": 0.5704859028194361,
+     "null_kind_dSR_at_0.3": "vacuous (cannot rule out Sharpe >= 0.3)"
+    },
+    "after_warmup": {
+     "sharpe": 0.5397481625524123,
+     "pead_sharpe": 0.655221896156678,
+     "paired": {
+      "delta_sharpe": -0.11547373360426572,
+      "p_one_sided": 0.5926814637072585,
+      "delta_sharpe_ci95": [
+       -1.1157869433067524,
+       0.8755301882265476
+      ],
+      "raw_mean_diff_ann": -0.008806944326358816,
+      "p_raw_mean_diff": 0.5712857428514297
+     }
+    },
+    "stress_costs_x3": {
+     "sharpe": 0.54629086081053
+    },
+    "avg_weights_after_warmup": {
+     "P": 0.5068270334723082,
+     "bond_carry": 0.7681539798837473,
+     "fx_carry": 0.4998646247856105,
+     "tsmom_broad": 0.3622295485625502
+    },
+    "turnover_per_year": 2.343721153395903,
+    "cost_drag_per_year": 0.0020518433147344944,
+    "financing_drag_per_year": 4.5476620321553387e-07
+   },
+   "B5_hedged_3sleeves": {
+    "days": 973,
+    "start": "2021-08-12",
+    "end": "2025-06-27",
+    "sharpe": 0.4946899672599033,
+    "sharpe_ci95": [
+     -0.43903731868805795,
+     1.4575588529114485
+    ],
+    "excess_cagr": 0.03586655808764161,
+    "vol": 0.07727270208899524,
+    "max_dd": -0.1238565567840888,
+    "beta_mkt": -0.0047456466855963705,
+    "alpha_ann": 0.038563538127461494,
+    "alpha_t": 1.0085937299797898,
+    "corr_with_pead": 0.3010061322359905,
+    "max_dd_vol_matched": -0.15176314484126496,
+    "vol_match_scale": 1.2400376237480364,
+    "paired": {
+     "delta_sharpe": -0.20555052437382776,
+     "p_one_sided": 0.6566686662667467,
+     "delta_sharpe_ci95": [
+      -1.2364687126679899,
+      0.8094531446591969
+     ],
+     "raw_mean_diff_ann": -0.028871754211585148,
+     "p_raw_mean_diff": 0.7348530293941212,
+     "null_kind_dSR_at_0.3": "vacuous (cannot rule out Sharpe >= 0.3)"
+    },
+    "after_warmup": {
+     "sharpe": 0.42197777183169316,
+     "pead_sharpe": 0.655221896156678,
+     "paired": {
+      "delta_sharpe": -0.23324412432498487,
+      "p_one_sided": 0.6614677064587082,
+      "delta_sharpe_ci95": [
+       -1.3565836468544186,
+       0.8709464453556557
+      ],
+      "raw_mean_diff_ann": -0.03138746125759138,
+      "p_raw_mean_diff": 0.7356528694261147
+     }
+    },
+    "stress_costs_x3": {
+     "sharpe": 0.4511518322200549
+    },
+    "avg_weights_after_warmup": {
+     "H": -0.16647408970783928,
+     "P": 0.5077457635323486,
+     "bond_carry": 0.5800665016067312,
+     "fx_carry": 0.37234261569596205,
+     "tsmom_broad": 0.27783628580304587
+    },
+    "turnover_per_year": 2.133549802846479,
+    "cost_drag_per_year": 0.0016766641169007925,
+    "financing_drag_per_year": 4.5476620321553387e-07
+   }
+  },
+  "old": {
+   "PEAD": {
+    "days": 2769,
+    "start": "2004-01-02",
+    "end": "2014-12-31",
+    "sharpe": 0.5241711165734002,
+    "sharpe_ci95": [
+     0.05745134048141124,
+     1.0808117293884525
+    ],
+    "excess_cagr": 0.06022538536124,
+    "vol": 0.12694571837059448,
+    "max_dd": -0.27063815421789295,
+    "beta_mkt": 0.5406044594262277,
+    "alpha_ann": 0.019374096276046242,
+    "alpha_t": 0.9720811582610032
+   },
+   "first_effective_date": "2004-05-04",
+   "PEAD_after_warmup": {
+    "days": 2685,
+    "start": "2004-05-04",
+    "end": "2014-12-31",
+    "sharpe": 0.563120791959359,
+    "sharpe_ci95": [
+     0.06462692782787981,
+     1.1245502029327559
+    ],
+    "excess_cagr": 0.06593689485487109,
+    "vol": 0.12793134335613335,
+    "max_dd": -0.2706381542178934,
+    "beta_mkt": 0.5402912905513341,
+    "alpha_ann": 0.02414624027007824,
+    "alpha_t": 1.1919628600034926
+   },
+   "B1_beta_hedged": {
+    "days": 2769,
+    "start": "2004-01-02",
+    "end": "2014-12-31",
+    "sharpe": 0.30066276432002104,
+    "sharpe_ci95": [
+     -0.18431649035777345,
+     0.8019117338258801
+    ],
+    "excess_cagr": 0.0195533988592842,
+    "vol": 0.07334199283719754,
+    "max_dd": -0.16322929849486179,
+    "beta_mkt": 0.049159058220939446,
+    "alpha_ann": 0.01776212907447453,
+    "alpha_t": 0.9038210183760282,
+    "corr_with_pead": 0.6136861205307943,
+    "max_dd_vol_matched": -0.2683424322752994,
+    "vol_match_scale": 1.7308735890553855,
+    "paired": {
+     "delta_sharpe": -0.22350835225337917,
+     "p_one_sided": 0.8194361127774445,
+     "delta_sharpe_ci95": [
+      -0.7126733613275581,
+      0.20087828821867773
+     ],
+     "raw_mean_diff_ann": -0.044490072635355905,
+     "p_raw_mean_diff": 0.968006398720256,
+     "null_kind_dSR_at_0.3": "bounded null (rules out Sharpe >= 0.3)"
+    },
+    "after_warmup": {
+     "sharpe": 0.35945638883818726,
+     "pead_sharpe": 0.563120791959359,
+     "paired": {
+      "delta_sharpe": -0.2036644031211718,
+      "p_one_sided": 0.8010397920415917,
+      "delta_sharpe_ci95": [
+       -0.7002550722321149,
+       0.2488067316144737
+      ],
+      "raw_mean_diff_ann": -0.045881842987234946,
+      "p_raw_mean_diff": 0.9708058388322336
+     }
+    },
+    "stress_costs_x3": {
+     "sharpe": 0.28487937315656303
+    },
+    "avg_weights_after_warmup": {
+     "H": -0.5332158081825765,
+     "P": 1.0012747045488188
+    },
+    "turnover_per_year": 0.7330823138603656,
+    "cost_drag_per_year": 0.000552265512394264,
+    "financing_drag_per_year": 5.181639219693013e-05
+   },
+   "B2_vol_managed": {
+    "days": 2769,
+    "start": "2004-01-02",
+    "end": "2014-12-31",
+    "sharpe": 0.5072552361927856,
+    "sharpe_ci95": [
+     -0.027002841803057245,
+     1.0805197072224417
+    ],
+    "excess_cagr": 0.05684922959253669,
+    "vol": 0.12424954598845028,
+    "max_dd": -0.2257705591898348,
+    "beta_mkt": 0.4412783501461383,
+    "alpha_ann": 0.024525150933784743,
+    "alpha_t": 0.8893609713928154,
+    "corr_with_pead": 0.8315328375352914,
+    "max_dd_vol_matched": -0.2303863071938641,
+    "vol_match_scale": 1.0216996558071514,
+    "paired": {
+     "delta_sharpe": -0.016915880380614645,
+     "p_one_sided": 0.4977004599080184,
+     "delta_sharpe_ci95": [
+      -0.32696118791063333,
+      0.2917329714933943
+     ],
+     "raw_mean_diff_ann": -0.0035150461453091883,
+     "p_raw_mean_diff": 0.5778844231153769,
+     "null_kind_dSR_at_0.3": "bounded null (rules out Sharpe >= 0.3)"
+    },
+    "after_warmup": {
+     "sharpe": 0.5465733474857072,
+     "pead_sharpe": 0.563120791959359,
+     "paired": {
+      "delta_sharpe": -0.016547444473651862,
+      "p_one_sided": 0.5030993801239753,
+      "delta_sharpe_ci95": [
+       -0.33389311313002085,
+       0.30783805807805
+      ],
+      "raw_mean_diff_ann": -0.0036249162271085513,
+      "p_raw_mean_diff": 0.5820835832833433
+     }
+    },
+    "stress_costs_x3": {
+     "sharpe": 0.4557860212317831
+    },
+    "avg_weights_after_warmup": {
+     "P": 1.2023837605610583
+    },
+    "turnover_per_year": 5.846943414169284,
+    "cost_drag_per_year": 0.0019635844910094753,
+    "financing_drag_per_year": 0.002456672019768756
+   },
+   "B3_pead_tsmom": {
+    "days": 2769,
+    "start": "2004-01-02",
+    "end": "2014-12-31",
+    "sharpe": 0.5887705730313829,
+    "sharpe_ci95": [
+     0.025085924003713025,
+     1.1627292231284132
+    ],
+    "excess_cagr": 0.06640307947847046,
+    "vol": 0.12181545789770502,
+    "max_dd": -0.20483112919817703,
+    "beta_mkt": 0.3166041383721875,
+    "alpha_ann": 0.04409797174311994,
+    "alpha_t": 1.3449583540677477,
+    "corr_with_pead": 0.6849877559004418,
+    "max_dd_vol_matched": -0.21267552580613813,
+    "vol_match_scale": 1.04211502022344,
+    "paired": {
+     "delta_sharpe": 0.0645994564579827,
+     "p_one_sided": 0.3835232953409318,
+     "delta_sharpe_ci95": [
+      -0.469602933075809,
+      0.5319868484025347
+     ],
+     "raw_mean_diff_ann": 0.005180078007985191,
+     "p_raw_mean_diff": 0.4287142571485703,
+     "null_kind_dSR_at_0.3": "vacuous (cannot rule out Sharpe >= 0.3)"
+    },
+    "after_warmup": {
+     "sharpe": 0.6307785418728854,
+     "pead_sharpe": 0.563120791959359,
+     "paired": {
+      "delta_sharpe": 0.06765774991352635,
+      "p_one_sided": 0.39012197560487905,
+      "delta_sharpe_ci95": [
+       -0.4767956644613017,
+       0.5440512115046726
+      ],
+      "raw_mean_diff_ann": 0.005342234156679949,
+      "p_raw_mean_diff": 0.4377124575084983
+     }
+    },
+    "stress_costs_x3": {
+     "sharpe": 0.5754543980093293
+    },
+    "avg_weights_after_warmup": {
+     "P": 0.6875832533547032,
+     "tsmom_broad": 0.5358027151650898
+    },
+    "turnover_per_year": 0.9430306021247133,
+    "cost_drag_per_year": 0.0006933144135820061,
+    "financing_drag_per_year": 0.00023146003672601953
+   },
+   "B4_pead_3sleeves": {
+    "days": 2769,
+    "start": "2004-01-02",
+    "end": "2014-12-31",
+    "sharpe": 0.5756018899158243,
+    "sharpe_ci95": [
+     0.01575867553840376,
+     1.1686119888087962
+    ],
+    "excess_cagr": 0.06465774868568852,
+    "vol": 0.12175739075616512,
+    "max_dd": -0.19782310027154615,
+    "beta_mkt": 0.23127271712387104,
+    "alpha_ann": 0.04990547769941826,
+    "alpha_t": 1.620181970652111,
+    "corr_with_pead": 0.5030178361598098,
+    "max_dd_vol_matched": -0.20562829186556597,
+    "vol_match_scale": 1.0426120137940509,
+    "paired": {
+     "delta_sharpe": 0.051430773342424074,
+     "p_one_sided": 0.41511697660467906,
+     "delta_sharpe_ci95": [
+      -0.48987362477898455,
+      0.5355319929953094
+     ],
+     "raw_mean_diff_ann": 0.003542505287941233,
+     "p_raw_mean_diff": 0.45810837832433515,
+     "null_kind_dSR_at_0.3": "vacuous (cannot rule out Sharpe >= 0.3)"
+    },
+    "after_warmup": {
+     "sharpe": 0.6173101224905229,
+     "pead_sharpe": 0.563120791959359,
+     "paired": {
+      "delta_sharpe": 0.054189330531163815,
+      "p_one_sided": 0.40491901619676063,
+      "delta_sharpe_ci95": [
+       -0.49902054160455694,
+       0.5547015862642046
+      ],
+      "raw_mean_diff_ann": 0.003653430111316196,
+      "p_raw_mean_diff": 0.4495100979804039
+     }
+    },
+    "stress_costs_x3": {
+     "sharpe": 0.5429126106017361
+    },
+    "avg_weights_after_warmup": {
+     "P": 0.5015153958019984,
+     "bond_carry": 1.2342822377838478,
+     "fx_carry": 0.2783591713742639,
+     "tsmom_broad": 0.36976160001665503
+    },
+    "turnover_per_year": 2.1345636597666537,
+    "cost_drag_per_year": 0.0019729232580175306,
+    "financing_drag_per_year": 9.230955882543171e-08
+   },
+   "B5_hedged_3sleeves": {
+    "days": 2769,
+    "start": "2004-01-02",
+    "end": "2014-12-31",
+    "sharpe": 0.49396291985114843,
+    "sharpe_ci95": [
+     -0.01588636551178863,
+     1.0172983039919443
+    ],
+    "excess_cagr": 0.03220477097098495,
+    "vol": 0.0689893248344648,
+    "max_dd": -0.11302994781823394,
+    "beta_mkt": 0.010719609342503562,
+    "alpha_ann": 0.03314289345184218,
+    "alpha_t": 1.8257742217858643,
+    "corr_with_pead": 0.3289282886205748,
+    "max_dd_vol_matched": -0.20174401332762726,
+    "vol_match_scale": 1.8400777029662505,
+    "paired": {
+     "delta_sharpe": -0.03020819672225178,
+     "p_one_sided": 0.5248950209958009,
+     "delta_sharpe_ci95": [
+      -0.5934287043330652,
+      0.4658119729447379
+     ],
+     "raw_mean_diff_ann": -0.032463110608735316,
+     "p_raw_mean_diff": 0.8782243551289742,
+     "null_kind_dSR_at_0.3": "vacuous (cannot rule out Sharpe >= 0.3)"
+    },
+    "after_warmup": {
+     "sharpe": 0.5650979642912394,
+     "pead_sharpe": 0.563120791959359,
+     "paired": {
+      "delta_sharpe": 0.001977172331880328,
+      "p_one_sided": 0.47570485902819437,
+      "delta_sharpe_ci95": [
+       -0.5769137284886828,
+       0.5249953304526308
+      ],
+      "raw_mean_diff_ann": -0.03347861846145751,
+      "p_raw_mean_diff": 0.8894221155768847
+     }
+    },
+    "stress_costs_x3": {
+     "sharpe": 0.45759198432285536
+    },
+    "avg_weights_after_warmup": {
+     "H": -0.2782043499969379,
+     "P": 0.5210036508526293,
+     "bond_carry": 0.7426536900330185,
+     "fx_carry": 0.15425234022408107,
+     "tsmom_broad": 0.21359344518003662
+    },
+    "turnover_per_year": 1.472208179854129,
+    "cost_drag_per_year": 0.0012529660638783495,
+    "financing_drag_per_year": 9.230955882543171e-08
+   }
+  }
+ },
+ "verdict": {
+  "B1_beta_hedged": {
+   "C1_beats_pead_sharpe": false,
+   "C2_paired_p": false,
+   "C3_drawdown": false,
+   "C4_old_window": false,
+   "PASS": false
+  },
+  "B2_vol_managed": {
+   "C1_beats_pead_sharpe": false,
+   "C2_paired_p": false,
+   "C3_drawdown": false,
+   "C4_old_window": false,
+   "PASS": false
+  },
+  "B3_pead_tsmom": {
+   "C1_beats_pead_sharpe": true,
+   "C2_paired_p": false,
+   "C3_drawdown": false,
+   "C4_old_window": true,
+   "PASS": false
+  },
+  "B4_pead_3sleeves": {
+   "C1_beats_pead_sharpe": false,
+   "C2_paired_p": false,
+   "C3_drawdown": false,
+   "C4_old_window": true,
+   "PASS": false
+  },
+  "B5_hedged_3sleeves": {
+   "C1_beats_pead_sharpe": false,
+   "C2_paired_p": false,
+   "C3_drawdown": false,
+   "C4_old_window": false,
+   "PASS": false
+  }
+ },
+ "ceiling": {
+  "main": {
+   "window": [
+    "2021-08-12",
+    "2025-06-27"
+   ],
+   "days": 973,
+   "sharpes": {
+    "P": 0.7,
+    "tsmom_broad": 0.225,
+    "fx_carry": 0.1,
+    "bond_carry": 0.007,
+    "M": 0.438
+   },
+   "corr": {
+    "P": {
+     "P": 1.0,
+     "tsmom_broad": -0.102,
+     "fx_carry": -0.05,
+     "bond_carry": 0.068,
+     "M": 0.693
+    },
+    "tsmom_broad": {
+     "P": -0.102,
+     "tsmom_broad": 1.0,
+     "fx_carry": 0.087,
+     "bond_carry": -0.121,
+     "M": -0.095
+    },
+    "fx_carry": {
+     "P": -0.05,
+     "tsmom_broad": 0.087,
+     "fx_carry": 1.0,
+     "bond_carry": 0.053,
+     "M": -0.027
+    },
+    "bond_carry": {
+     "P": 0.068,
+     "tsmom_broad": -0.121,
+     "fx_carry": 0.053,
+     "bond_carry": 1.0,
+     "M": 0.09
+    },
+    "M": {
+     "P": 0.693,
+     "tsmom_broad": -0.095,
+     "fx_carry": -0.027,
+     "bond_carry": 0.09,
+     "M": 1.0
+    }
+   },
+   "set_A_no_market": {
+    "unconstrained": 0.7690940188536397,
+    "constrained_long_only": 0.7689586038427342,
+    "equal_risk": 0.5245805030342627,
+    "tangency_risk_weights": [
+     0.639,
+     0.25,
+     0.098,
+     -0.013
+    ]
+   },
+   "set_B_with_market_free_sign": {
+    "unconstrained": 0.771150969580193,
+    "constrained_long_only": 0.7710685713675918,
+    "equal_risk": 0.590717182747387,
+    "tangency_risk_weights": [
+     0.617,
+     0.224,
+     0.089,
+     -0.009,
+     -0.061
+    ]
+   },
+   "pead_appraisal_ratio_vs_spy": 0.5502492386183833,
+   "pead_beta_to_spy": 0.36212191340461736,
+   "label": "main window, in-sample",
+   "forward_prior": {
+    "inputs": {
+     "P": 0.6,
+     "tsmom_broad": 0.21,
+     "fx_carry": 0.25,
+     "bond_carry": 0.13,
+     "M": 0.451
+    },
+    "set_A_no_market": {
+     "unconstrained": 0.715649801588793,
+     "constrained_long_only": 0.7156498015887794,
+     "equal_risk": 0.6048727260608956,
+     "tangency_risk_weights": [
+      0.503,
+      0.211,
+      0.201,
+      0.084
+     ]
+    },
+    "set_B_with_market_free_sign": {
+     "unconstrained": 0.7173537251530419,
+     "constrained_long_only": 0.717353725152999,
+     "equal_risk": 0.6595523479590221,
+     "tangency_risk_weights": [
+      0.459,
+      0.209,
+      0.198,
+      0.081,
+      0.054
+     ]
+    }
+   }
+  },
+  "old_without_fx": {
+   "window": [
+    "2004-02-03",
+    "2014-12-31"
+   ],
+   "days": 2748,
+   "sharpes": {
+    "P": 0.545,
+    "tsmom_broad": 0.528,
+    "bond_carry": 0.283,
+    "M": 0.404
+   },
+   "corr": {
+    "P": {
+     "P": 1.0,
+     "tsmom_broad": 0.05,
+     "bond_carry": 0.031,
+     "M": 0.837
+    },
+    "tsmom_broad": {
+     "P": 0.05,
+     "tsmom_broad": 1.0,
+     "bond_carry": -0.005,
+     "M": 0.038
+    },
+    "bond_carry": {
+     "P": 0.031,
+     "tsmom_broad": -0.005,
+     "bond_carry": 1.0,
+     "M": -0.001
+    },
+    "M": {
+     "P": 0.837,
+     "tsmom_broad": 0.038,
+     "bond_carry": -0.001,
+     "M": 1.0
+    }
+   },
+   "set_A_no_market": {
+    "unconstrained": 0.7880205740549824,
+    "constrained_long_only": 0.7880205740549808,
+    "equal_risk": 0.7637992923772033,
+    "tangency_risk_weights": [
+     0.398,
+     0.392,
+     0.21
+    ]
+   },
+   "set_B_with_market_free_sign": {
+    "unconstrained": 0.7918968513334246,
+    "constrained_long_only": 0.7918968513334117,
+    "equal_risk": 0.7246897833698221,
+    "tangency_risk_weights": [
+     0.409,
+     0.326,
+     0.172,
+     -0.093
+    ]
+   },
+   "pead_appraisal_ratio_vs_spy": 0.37811674033842196,
+   "pead_beta_to_spy": 0.5395218651019067,
+   "label": "old, 2004-02+"
+  },
+  "old_with_fx": {
+   "window": [
+    "2009-02-03",
+    "2014-12-31"
+   ],
+   "days": 1489,
+   "sharpes": {
+    "P": 0.912,
+    "tsmom_broad": 0.197,
+    "fx_carry": 0.704,
+    "bond_carry": 0.561,
+    "M": 1.08
+   },
+   "corr": {
+    "P": {
+     "P": 1.0,
+     "tsmom_broad": 0.197,
+     "fx_carry": -0.028,
+     "bond_carry": 0.05,
+     "M": 0.843
+    },
+    "tsmom_broad": {
+     "P": 0.197,
+     "tsmom_broad": 1.0,
+     "fx_carry": 0.001,
+     "bond_carry": -0.037,
+     "M": 0.194
+    },
+    "fx_carry": {
+     "P": -0.028,
+     "tsmom_broad": 0.001,
+     "fx_carry": 1.0,
+     "bond_carry": 0.144,
+     "M": -0.01
+    },
+    "bond_carry": {
+     "P": 0.05,
+     "tsmom_broad": -0.037,
+     "fx_carry": 0.144,
+     "bond_carry": 1.0,
+     "M": 0.014
+    },
+    "M": {
+     "P": 0.843,
+     "tsmom_broad": 0.194,
+     "fx_carry": -0.01,
+     "bond_carry": 0.014,
+     "M": 1.0
+    }
+   },
+   "set_A_no_market": {
+    "unconstrained": 1.2396564826979113,
+    "constrained_long_only": 1.2396564826979053,
+    "equal_risk": 1.100522387570259,
+    "tangency_risk_weights": [
+     0.445,
+     0.017,
+     0.33,
+     0.208
+    ]
+   },
+   "set_B_with_market_free_sign": {
+    "unconstrained": 1.3708921703291002,
+    "constrained_long_only": 1.370871011746439,
+    "equal_risk": 1.2420981353873686,
+    "tangency_risk_weights": [
+     -0.006,
+     0.002,
+     0.294,
+     0.205,
+     0.493
+    ]
+   },
+   "pead_appraisal_ratio_vs_spy": 0.0014958332424840324,
+   "pead_beta_to_spy": 0.5241958304034875,
+   "label": "old, fx overlap 2009-02+"
+  }
+ }
+}

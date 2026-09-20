@@ -1,0 +1,17 @@
+{
+  "data/cot_edge_20260918/cot.parquet": "2d7c412a18631883cace51f5a15f504ebeb52b0fc3e5c8ce79a1771fddad9609",
+  "data/multiasset/etf/GLD.parquet": "95fd1fbaef9d8cb458942b5d03fe5e7c6b918e78d5244a5d407c882988658994",
+  "data/multiasset/etf/SLV.parquet": "2498d4a3330a7e212050e6d70a1b9f5fa71ed8c7c38991c197f75edbfc17cd72",
+  "data/multiasset/etf/USO.parquet": "b86123c5825f580f7814fd4724c4e36df3466c1fd1e70b6ef68e6a1cfe5991f3",
+  "data/multiasset/etf/UNG.parquet": "34e894e8ff8f90053544d3b9885a4f46308f6c9a1aa097bb6625dabeffbf1b05",
+  "data/multiasset/etf/FXE.parquet": "fdb5853ac3000c92ae037e9abb52abcfd71b2b20ed5661840b9395dab11035a0",
+  "data/multiasset/etf/FXB.parquet": "2d97030ca8ae6d866941fb851f82b39c9c3ae0150234780f7bbff32604e5b681",
+  "data/multiasset/etf/FXY.parquet": "024fb8e41475fc34173b6db3e53a84b101da8de5512c71e7fa28093d8174f49a",
+  "data/multiasset/etf/FXA.parquet": "a9ab2a32c8e4c6a6c434a4e6cc9f074144882cb8c3b7011bedc1bb0254e2943a",
+  "data/multiasset/etf/FXC.parquet": "ec5370819e2fbac80edc2dde00ebc80d1a7cec23077f4bb2bcfeb88b5b867e2d",
+  "data/multiasset/etf/FXF.parquet": "aa5dfa655c98fda7bdf66237e848441c49af4e2258b6b31e27f6e9f0a8db4e83",
+  "data/multiasset/etf/IEF.parquet": "684a4a7a017f8494dd56d376ed780a9486026edcdcc4301208cf161c4e7171f7",
+  "data/multiasset/etf/TLT.parquet": "8a2e20d6556457168e8397afbbb86683401f0dd126e0833abb2cbe6c2965c0c9",
+  "data/multiasset/etf/SPY.parquet": "c927a8371ad9d9552e5a1cd0d96bfcd005ae62f72d4f590c51681a81c6e4fc0c",
+  "data/multiasset/etf/QQQ.parquet": "71ba92657d925e86a125fc84436b0f721963267c98654a18cbf35c43cb1acd4f"
+}

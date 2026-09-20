@@ -1,0 +1,8 @@
+/Users/rytty/CCP/quant_v7/research/options_signals/evaluate.py:114: RuntimeWarning: Mean of empty slice
+  mean = np.nanmean(stack, axis=0)
+H1_os          net Sharpe -0.37 (gross +0.07, stress -1.55) excess CAGR -3.29% maxDD -25.1% p=0.817
+H2_ivspread    net Sharpe -0.91 (gross -0.09, stress -2.83) excess CAGR -8.31% maxDD -41.5% p=0.990
+H3_skew        net Sharpe -0.94 (gross -0.21, stress -2.66) excess CAGR -8.76% maxDD -49.8% p=0.975
+H4_composite   net Sharpe -1.08 (gross -0.31, stress -2.90) excess CAGR -9.36% maxDD -48.3% p=0.996
+selected: []
+exit=0 Sat Sep 19 16:42:50 PDT 2026

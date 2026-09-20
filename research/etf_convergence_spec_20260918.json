@@ -1,0 +1,17 @@
+{
+  "status": "exploratory reused historical window; frozen before this candidate family is computed",
+  "pairs": [["SPY", "QQQ"], ["GLD", "SLV"], ["EFA", "EEM"], ["LQD", "IEF"]],
+  "economic_hypothesis": "Related liquid exposures may temporarily diverge and converge; relationships may also break permanently. These are not riskless arbitrages or a claim of novelty.",
+  "signal": "At each close fit trailing 252-session OLS log(A) on log(B), intercept included, using only then-known data. Residual z uses same-window residual standard deviation. Positive beta constrained by eligibility to [0.25,4]; otherwise exit/stay flat. Enter against residual at abs(z)>=2. Exit at abs(z)<=0.5 or residual sign crossover or after 20 held sessions. No refitting choices based on results.",
+  "sizing": "Each pair book gross 1: weights +/-1/(1+beta) and -/+beta/(1+beta), beta fixed at entry, no rebalancing while holding. No leverage scaling or Kelly. Fixed equal allocation across the four independently simulated books is an additional descriptive portfolio, not another optimized winner.",
+  "execution": "Close decisions, next-session open fills using existing tested backtest.research.simulate_weights; daily marks; final liquidation. Missing held prices fail. Total-return adjusted ETF bars are proxies, not literal historical fills.",
+  "development": ["2008-01-01", "2013-12-31"],
+  "validation": ["2014-01-01", "2017-12-31"],
+  "reserved": "2018+ not evaluated",
+  "base_costs": {"round_trip_bps": 10, "annual_short_borrow": 0.03},
+  "stress_costs": {"round_trip_bps": 25, "annual_short_borrow": 0.10},
+  "cash_interest": "French daily Treasury bill RF on free cash, no short collateral rebate, per existing engine. Assumption, not verified broker terms. Excess Sharpe deducts same RF.",
+  "selection": "Select highest development excess Sharpe across four pairs; report all and fixed equal-dollar composite. No retuning.",
+  "gate": "Selected development excess Sharpe>=0.5, validation excess Sharpe>=0.75, validation stressed excess mean>0, four-test Bonferroni centered block-bootstrap one-sided mean p<0.05. Block20 sensitivity63, 5000 draws.",
+  "limitations": ["Existing ETF choice and dates reused in other experiments; not virgin holdout", "No guarantee of cointegration", "Borrow locates and empirical spreads unavailable; hypothetical cost stress only", "Cash interest assumptions optimistic for some brokers", "No broker minimum commissions, order impact, tax or fixed data costs; any candidate requires additional implementation validation", "Four trials plus one fixed blend; historical project search not included in family-level adjustment"]
+}

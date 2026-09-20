@@ -1,0 +1,52 @@
+{
+  "arms": {
+    "pead_long_only": "predeclared side rule",
+    "all_events_long_control": "predeclared side rule",
+    "pead_long_short": "predeclared side rule",
+    "pead_large_sue_long": "predeclared side rule",
+    "pead_abs_sue_long": "predeclared side rule"
+  },
+  "sizing": {
+    "equity0": 10000.0,
+    "slot": 5000.0,
+    "max_positions": 12,
+    "hold_sessions": 20,
+    "priority": "abs(SUE) desc, then ticker"
+  },
+  "costs": {
+    "round_trip_bps": {
+      "net_10bps": 10.0,
+      "net_25bps": 25.0
+    },
+    "short_borrow_pa": 0.03
+  },
+  "periods": {
+    "discovery": [
+      "2015-01-01",
+      "2020-12-31"
+    ],
+    "validation": [
+      "2021-01-01",
+      "2023-12-31"
+    ],
+    "confirmation": [
+      "2024-01-01",
+      "2026-12-31"
+    ]
+  },
+  "verdict_rule": "pead_long_only net Sharpe > control net Sharpe on confirmation AND quarter-block bootstrap CI of full-sample daily mean difference excludes 0",
+  "limitations": [
+    "Fixed $ slots, no compounding; capital never re-sizes with equity.",
+    "Current S&P 500 constituents (survivorship/selection bias); Yahoo cache not vendor-verified.",
+    "Capacity 12 x $5k ignores market impact; real fills unobserved.",
+    "Positions carried across split boundaries; subperiod metrics include them.",
+    "No dividends on longs, no locate/haircut beyond flat 3% borrow, cash yields zero.",
+    "Stale marks: missing closes ffilled up to 10 sessions; returns treated as 0 while stale.",
+    "Three arms x two cost levels reported; no multiple-testing adjustment.",
+    "Confirmation period was previously studied by this repository; not a virgin holdout."
+  ],
+  "input_sha256": {
+    "reports/edge_executable_probe/events.parquet": "32558639aa733af85264fed67cc01660f28475341db1ed7b35993a1ab8e3584a",
+    "data/raw_legacy/SPY.parquet": "6ff86684c94dd0304aa557378b2a40019effdd8e371b2af1d3c8b8591f66f37d"
+  }
+}

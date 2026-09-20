@@ -1,0 +1,14 @@
+{
+  "n_perm_event": 10000,
+  "n_perm_portfolio": 300,
+  "seed": 17092026,
+  "arms_under_test": [
+    "pead_long_short",
+    "pead_large_sue_long"
+  ],
+  "cost_bps": 10.0,
+  "verdict_rule": "DEAD if long-short stat and harness Sharpe both inside central 95% of placebo (two-sided p>.05) and magnitude selection p>.05",
+  "input_sha256": {
+    "reports/edge_executable_probe/events.parquet": "32558639aa733af85264fed67cc01660f28475341db1ed7b35993a1ab8e3584a"
+  }
+}

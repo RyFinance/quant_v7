@@ -32,12 +32,20 @@ def test_fit_or_load_caches_to_disk(pipeline):
 
 
 def test_score_real_known_event(pipeline):
-    """AAPL 2025-05-01 -- a real reported event (eps_actual present) in the
-    ingested earnings history, used elsewhere in this project's own
-    reports/ pipeline as real data."""
+    """AAPL's 2025-05-01 report -- a real reported event, used elsewhere in
+    this project's own reports/ pipeline as real data. The row is read from
+    the live history rather than hardcoded: providers revise the exact
+    timestamp (yfinance 0.2.x said 16:30, 1.x says 16:00), and scoring
+    matches on it exactly."""
+    history = sp.fetch_ticker_earnings_live("AAPL")
+    if history.empty:
+        pytest.skip("network unavailable / yfinance unreachable for earnings history")
+    rows = history[history["earnings_date"].dt.normalize() == pd.Timestamp("2025-05-01")]
+    assert len(rows) == 1
+    row = rows.iloc[0]
     event = ew.ReportedEarnings(
-        ticker="AAPL", earnings_date=pd.Timestamp("2025-05-01 16:30:00"),
-        eps_estimate=1.63, eps_actual=1.65, surprise_pct=1.41, days_since=2,
+        ticker="AAPL", earnings_date=row["earnings_date"], eps_estimate=row["eps_estimate"],
+        eps_actual=row["eps_actual"], surprise_pct=row["surprise_pct"], days_since=2,
     )
     scored = sp.score_event(event, pipeline)
     if scored is None:

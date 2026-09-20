@@ -1,0 +1,20 @@
+constituents (503, 8) Index(['Symbol', 'Security', 'GICS Sector', 'GICS Sub-Industry',
+       'Headquarters Location', 'Date added', 'CIK', 'Founded'],
+      dtype='object')   Symbol     Security  GICS Sector         GICS Sub-Industry  Headquarters Location  Date added    CIK Founded
+0    MMM           3M  Industrials  Industrial Conglomerates  Saint Paul, Minnesota  1957-03-04  66740    1902
+1    AOS  A. O. Smith  Industrials         Building Products   Milwaukee, Wisconsin  2017-07-26  91142    1916
+changes (407, 7) MultiIndex([('Effective Date', 'Effective Date'),
+            (         'Added',         'Ticker'),
+            (         'Added',       'Security'),
+            (       'Removed',         'Ticker'),
+            (       'Removed',       'Security'),
+            (        'Reason',         'Reason'),
+            (          'Refs',           'Refs')],
+           )     Effective Date  Added                       Removed                                                                                                                                                              Reason Refs
+    Effective Date Ticker              Security  Ticker               Security                                                                                                                                       Reason Refs
+0  August 18, 2026   RDDT                Reddit     AVB  AvalonBay Communities                                                                 Equity Residential (now Vivmark Residential) acquired AvalonBay Communities.  [2]
+1   August 5, 2026   FERG  Ferguson Enterprises      EA        Electronic Arts  An investor consortium comprising Saudi Arabia's Public Investment Fund (PIF), Silver Lake, and Affinity Partners acquired Electronic Arts.  [3]
+F-F_Research_Data_5_Factors_2x3_daily_CSV.zip 150090
+F-F_Momentum_Factor_daily_CSV.zip 85202
+SPMO 2749 2015-10-12 00:00:00-04:00 2026-09-17 00:00:00-04:00
+MTUM 3375 2013-04-18 00:00:00-04:00 2026-09-17 00:00:00-04:00

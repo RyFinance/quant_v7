@@ -5,12 +5,31 @@
   "n_trades": 194,
   "win_rate": 0.5721649484536082,
   "annualized_return": 0.055165,
-  "annualized_std": 0.052302,
-  "sharpe_ratio": 1.0547,
-  "sortino_ratio": 0.4983,
-  "max_drawdown": -0.083777,
-  "calmar_ratio": 0.6585,
+  "annualized_std": 0.075258,
+  "sharpe_ratio": 0.2788,
+  "sortino_ratio": 0.3951,
+  "max_drawdown": -0.118563,
+  "calmar_ratio": 0.4653,
   "turnover_annualized": 2.6929,
   "total_return": 0.230651,
-  "methodology": "computed via backtest/metrics.py::compute_metrics on the REAL live-code-path (bot/run_cycle.py, unmodified) historical replay's daily NAV changes (live_backtest/run_historical_replay.py), out-of-sample window per the cached model's own train/validation split -- see live_backtest/run_historical_replay.py's docstring."
+  "stale_marks": 0,
+  "nav": {
+    "basis": "marked to market daily (cash + open positions at each day's close)",
+    "source": "rebuilt from the ledger at cached closes",
+    "final_marked_nav": 123065.05,
+    "final_cash_basis_nav": 123065.05,
+    "lag1_autocorr": 0.0109
+  },
+  "risk_free": {
+    "source": "Ken French daily RF (1-month T-bill), reports/higher_sharpe/inputs/french_daily.zip",
+    "annualized_mean": 0.035549,
+    "last_published": "2026-07-31"
+  },
+  "cash_basis_reference": {
+    "note": "cash-basis NAV (open positions at cost), risk-free 0 -- the definition this report used before 2026-09-18; overstates Sharpe, kept for comparison only",
+    "sharpe_ratio": 1.0528,
+    "annualized_std": 0.052302,
+    "lag1_autocorr": 0.2025
+  },
+  "methodology": "Sharpe and Sortino in excess of the daily 1-month T-bill rate (Ken French daily RF; the last published rate carried forward), via backtest/metrics.py::compute_metrics on the daily MARK-TO-MARKET NAV (cash plus open positions at each day's close, bot/performance.py; idle cash earns nothing, as in the paper account) of the REAL live-code-path (bot/run_cycle.py, unmodified) historical replay (live_backtest/run_historical_replay.py), out-of-sample window per the cached model's own train/validation split -- see live_backtest/run_historical_replay.py's docstring."
 }

@@ -1,0 +1,8 @@
+{
+  "data/multiasset/stocks/GOOG.parquet": "e9675086ae73a24df24a5593bca57404b1c19d28240776ab973094e35a43eab7",
+  "data/multiasset/stocks/GOOGL.parquet": "84a89d6225645584950b574a5d2c1af8e53184bedc56152848f329a5e6e17804",
+  "data/multiasset/stocks/NWS.parquet": "e12de1e9feaa0fdf0673d3215134a796bcd7de6cbc41aed5f2e7cee16fee9fee",
+  "data/multiasset/stocks/NWSA.parquet": "725c5d3b02b897378240fc284daf3bd7dea1804019bdc3d6e7417f6ca6479185",
+  "data/multiasset/stocks/FOX.parquet": "78e34e34868013e8ce10d9c0a4dade4b4a11fedcfe00cadcc3f229900203e00e",
+  "data/multiasset/stocks/FOXA.parquet": "167e74073e6efe6bf73d62f24a6689d779c6ab1b78f579eae7f4207c07411344"
+}

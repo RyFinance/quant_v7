@@ -1,0 +1,32 @@
+[
+  {
+    "source": "https://en.wikipedia.org/wiki/List_of_S%26P_500_companies",
+    "sha256": "a37e2392dc6f680fe9abfcc25cfd7136393e48b712c5faf5f2e3c27b9c5df890",
+    "saved": "constituents.html"
+  },
+  {
+    "source": "https://en.wikipedia.org/wiki/Historical_components_of_the_S%26P_500",
+    "sha256": "27ec3af936877316559f436c413f14c35914215f5783d469d2fdf667575b742c",
+    "saved": "changes.html"
+  },
+  {
+    "source": "https://mba.tuck.dartmouth.edu/pages/faculty/ken.french/ftp/F-F_Research_Data_5_Factors_2x3_daily_CSV.zip",
+    "sha256": "478350b8d60831351fbf754bc593fc0112b013552c24639c10902e1f26d7f306",
+    "saved": "F-F_Research_Data_5_Factors_2x3_daily_CSV.zip"
+  },
+  {
+    "source": "https://mba.tuck.dartmouth.edu/pages/faculty/ken.french/ftp/F-F_Momentum_Factor_daily_CSV.zip",
+    "sha256": "b039d986db27fc831bcf1f52ba2134916e96fbeba4762fefc942429b0a568a96",
+    "saved": "F-F_Momentum_Factor_daily_CSV.zip"
+  },
+  {
+    "source": "Yahoo adjusted official-session history",
+    "symbol": "SPMO",
+    "sha256": "523717c7dd2f5c4b3120efc4b6cf600ee73a2f13da2c32c1f0f505edd5fe17a4"
+  },
+  {
+    "source": "Yahoo adjusted official-session history",
+    "symbol": "MTUM",
+    "sha256": "0fc8f50e16183ea0aa78ff7f279cdf43ee74164409ac0afd6e7a796aa7fc2771"
+  }
+]

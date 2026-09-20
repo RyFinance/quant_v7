@@ -1,0 +1,17 @@
+{
+  "family_winners": {
+    "stocks": "stocks__momentum",
+    "etf": "etf__momentum",
+    "crypto": "crypto__breakout",
+    "vol": null
+  },
+  "primary": "crypto__breakout",
+  "fixed_equal_weight_blend": [
+    "etf__momentum",
+    "crypto__breakout"
+  ],
+  "stock_survivorship_exclusion": true,
+  "plan_sha256": "426d11b5e2efc2eb6061a1d9d31aff5a7057f6350d7d183751e415bd805b89e6",
+  "code_sha256": "017cd978f6d8c675b2139ebb5a8e5b4eb9e78cb0e421dbcd1a66afcda8bc97e6",
+  "results_sha256": "57ed4faca09979f519f7e96a89a893f56a9cd94610097beb1e265fe6a70022b8"
+}

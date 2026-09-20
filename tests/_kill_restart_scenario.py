@@ -43,6 +43,13 @@ ex.build_alerter = lambda: BotAlerter(webhook_url="", alerts_path=_isolated_aler
 # so every run of this scenario refreshed the real bot's dead-man's-switch.
 _isolated_heartbeat_path = kill_switch_path.parent / "scenario_heartbeat.txt"
 rc.touch_heartbeat = lambda: hb.touch_heartbeat(_isolated_heartbeat_path)
+rc.build_alerter = lambda: BotAlerter(webhook_url="", alerts_path=_isolated_alerts_path)
+# The cycle's price refresh (writes data/raw, and takes longer than this
+# scenario's kill window) and its schedule snapshot (writes bot/state) stay
+# off real state too.
+rc.prepare_market_session = lambda tickers, as_of: (True, "scenario session")
+rc.UPCOMING_EARNINGS_FILE = kill_switch_path.parent / "scenario_upcoming_earnings.json"
+rc.BACKFILL_CYCLE_LOG_FILE = kill_switch_path.parent / "scenario_backfill_cycle_log.jsonl"
 
 FAKE_TICKERS = ["AAPL", "MSFT", "NVDA"]
 fake_events = [

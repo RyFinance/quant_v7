@@ -1,0 +1,235 @@
+{
+ "pulled_at": "2026-09-19T11:43:40-0700",
+ "yfinance": "1.7.0",
+ "start": "1993-01-01",
+ "end_exclusive": "2026-09-19",
+ "items": {
+  "XLB": {
+   "ticker": "XLB",
+   "rows": 6977,
+   "first": "1998-12-22",
+   "last": "2026-09-18",
+   "sha256": "bdec77c267b6da9def21a505b588de89e6c1bf222b645f3f3a12d1f1f6e3b96f"
+  },
+  "XLE": {
+   "ticker": "XLE",
+   "rows": 6977,
+   "first": "1998-12-22",
+   "last": "2026-09-18",
+   "sha256": "37d5506d285bf55b8ed012476df30c9fe5977410042e3a224741c7c3c1ca8251"
+  },
+  "XLF": {
+   "ticker": "XLF",
+   "rows": 6977,
+   "first": "1998-12-22",
+   "last": "2026-09-18",
+   "sha256": "3469c3f92dddea4b76f70c7c28dc2aa76af07e7caebc3fe333e0249343f1c32f"
+  },
+  "XLI": {
+   "ticker": "XLI",
+   "rows": 6977,
+   "first": "1998-12-22",
+   "last": "2026-09-18",
+   "sha256": "2c20d728c3a9acb861af16587a12defa9b4e00fb1ad0aa385d6d235abeb8284f"
+  },
+  "XLK": {
+   "ticker": "XLK",
+   "rows": 6977,
+   "first": "1998-12-22",
+   "last": "2026-09-18",
+   "sha256": "0fb328c7c631f655209f372e5447396d1f612f34298c656dc7cecb40ff747918"
+  },
+  "XLP": {
+   "ticker": "XLP",
+   "rows": 6977,
+   "first": "1998-12-22",
+   "last": "2026-09-18",
+   "sha256": "1f3d4ae4e67042482de53ab0e75fa0fa385cd5d77388d5656a9f5cd887fe03cf"
+  },
+  "XLU": {
+   "ticker": "XLU",
+   "rows": 6977,
+   "first": "1998-12-22",
+   "last": "2026-09-18",
+   "sha256": "878e518d41472508e25b86ff2bf51f71d38f7a94c89567ad4fa077e21bc23277"
+  },
+  "XLV": {
+   "ticker": "XLV",
+   "rows": 6977,
+   "first": "1998-12-22",
+   "last": "2026-09-18",
+   "sha256": "f26fd17ac07fff1baeed7dddbe7a649c56cde7d6f9923143fcc9584bc847b727"
+  },
+  "XLY": {
+   "ticker": "XLY",
+   "rows": 6977,
+   "first": "1998-12-22",
+   "last": "2026-09-18",
+   "sha256": "598ec3db811e673393ad24234d605e3bdd3d7478d0dc5f16346660e1b2c70bd5"
+  },
+  "XLRE": {
+   "ticker": "XLRE",
+   "rows": 2752,
+   "first": "2015-10-08",
+   "last": "2026-09-18",
+   "sha256": "16a22314fca4312bec78449d4bfb52b5c716e2533cd0e9f46c0cddc056c7cd9c"
+  },
+  "XLC": {
+   "ticker": "XLC",
+   "rows": 2074,
+   "first": "2018-06-19",
+   "last": "2026-09-18",
+   "sha256": "b327b5363b66ebcf4389d2998151013382e29cfc07f6cc5a59c9440f33ac779b"
+  },
+  "EWA": {
+   "ticker": "EWA",
+   "rows": 7676,
+   "first": "1996-03-18",
+   "last": "2026-09-18",
+   "sha256": "5b9c1dc01537ff8630ca3a726324411caea6584d2a45c81be05902c5025132ea"
+  },
+  "EWC": {
+   "ticker": "EWC",
+   "rows": 7676,
+   "first": "1996-03-18",
+   "last": "2026-09-18",
+   "sha256": "5d3bc37a37f0d51b8c3f872a1f751c3556e79a51b26f04fa3c1bd278c540eb29"
+  },
+  "EWG": {
+   "ticker": "EWG",
+   "rows": 7676,
+   "first": "1996-03-18",
+   "last": "2026-09-18",
+   "sha256": "8903547ba98739dc45878d77cf4bee66f75f8de69e6cc83c7d6b017683f0e5fc"
+  },
+  "EWH": {
+   "ticker": "EWH",
+   "rows": 7676,
+   "first": "1996-03-18",
+   "last": "2026-09-18",
+   "sha256": "992a31f7b2368f5fc40c2cc02e20e5e27d0962b16e444924a18e8b7c959fc49b"
+  },
+  "EWJ": {
+   "ticker": "EWJ",
+   "rows": 7676,
+   "first": "1996-03-18",
+   "last": "2026-09-18",
+   "sha256": "ca5e5b3581d43ce94ca5ee9bbef05ef1a3225812c79f64737d845bee61acc897"
+  },
+  "EWU": {
+   "ticker": "EWU",
+   "rows": 7676,
+   "first": "1996-03-18",
+   "last": "2026-09-18",
+   "sha256": "a4919e8d2676ada7d7e50c07b8bdb9d0c255eaa9bf4c332a09196f04e992b615"
+  },
+  "EWS": {
+   "ticker": "EWS",
+   "rows": 7676,
+   "first": "1996-03-18",
+   "last": "2026-09-18",
+   "sha256": "84482236c7027fef5bf32582a8ba34a61205890d29c141069c2e7090beca6945"
+  },
+  "EWL": {
+   "ticker": "EWL",
+   "rows": 7676,
+   "first": "1996-03-18",
+   "last": "2026-09-18",
+   "sha256": "9cfa3c76bcb031f6cba8d17bedb292d119aebd4cca75339a2bd11459c8b7ae32"
+  },
+  "EWP": {
+   "ticker": "EWP",
+   "rows": 7676,
+   "first": "1996-03-18",
+   "last": "2026-09-18",
+   "sha256": "c17921c1c75b0f24da2a126a974b3f326a29c4ea12a8b05521fab9054d6567c0"
+  },
+  "EWQ": {
+   "ticker": "EWQ",
+   "rows": 7676,
+   "first": "1996-03-18",
+   "last": "2026-09-18",
+   "sha256": "7ed26dbe71f663ab2b2cad3679167565b39290f271dcf67f52c86c2ff98eb5c4"
+  },
+  "EWI": {
+   "ticker": "EWI",
+   "rows": 7676,
+   "first": "1996-03-18",
+   "last": "2026-09-18",
+   "sha256": "64cb64bfadf09664d5d137463c2c7092c96842b6bf39a43af5d37269185376bb"
+  },
+  "EWD": {
+   "ticker": "EWD",
+   "rows": 7676,
+   "first": "1996-03-18",
+   "last": "2026-09-18",
+   "sha256": "d47f8d3c56ddfc54cc0b7b8bb0029d8ed526f272df97d7f127f95a9f1c64e4dd"
+  },
+  "EWN": {
+   "ticker": "EWN",
+   "rows": 7676,
+   "first": "1996-03-18",
+   "last": "2026-09-18",
+   "sha256": "3679150c752dd326755268fbe4c2a64a2fe154ebf1d03ac257ee132a0d8c47af"
+  },
+  "EWT": {
+   "ticker": "EWT",
+   "rows": 6598,
+   "first": "2000-06-23",
+   "last": "2026-09-18",
+   "sha256": "a4ef7c34281be898b00e840e1c1c8a24a4e55719e1a0aaa32202f13b91a333b1"
+  },
+  "EWY": {
+   "ticker": "EWY",
+   "rows": 6627,
+   "first": "2000-05-12",
+   "last": "2026-09-18",
+   "sha256": "aaae8a247982695094ee26a5d2770fafa5f3c22a4d8bb6500334baa8b32f0695"
+  },
+  "EWZ": {
+   "ticker": "EWZ",
+   "rows": 6584,
+   "first": "2000-07-14",
+   "last": "2026-09-18",
+   "sha256": "55f4f278de15be65147909c386fe6c3196a863ada6d02959def2f46ce0818de4"
+  },
+  "EWW": {
+   "ticker": "EWW",
+   "rows": 7676,
+   "first": "1996-03-18",
+   "last": "2026-09-18",
+   "sha256": "7a16c22a1847aea1f24cbbf5ea6dc48fd9e24a6c3433161c9c4632944e668950"
+  },
+  "EEM": {
+   "ticker": "EEM",
+   "rows": 5896,
+   "first": "2003-04-14",
+   "last": "2026-09-18",
+   "sha256": "11a5fa9fcb642d65adc016a3f7bd411dc445f95482a6f713f06b3fc9292ec304"
+  },
+  "EFA": {
+   "ticker": "EFA",
+   "rows": 6302,
+   "first": "2001-08-27",
+   "last": "2026-09-18",
+   "sha256": "8644057967578d26406e682a7537f49534683595d0a19690410412daf2dc0348"
+  },
+  "SPY": {
+   "ticker": "SPY",
+   "rows": 8467,
+   "first": "1993-01-29",
+   "last": "2026-09-18",
+   "sha256": "1d71d16cd6aabe08d5e259d34fc20935fc26b4b68de1f8c6aa22d0bf28143c5a"
+  }
+ },
+ "probes": {
+  "ERUS": {
+   "ticker": "ERUS",
+   "rows": 0
+  },
+  "RSX": {
+   "ticker": "RSX",
+   "rows": 0
+  }
+ }
+}

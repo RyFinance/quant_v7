@@ -1,0 +1,36 @@
+{
+  "base_roundtrip_bps": 10,
+  "controls": [
+    "momentum_only",
+    "equal_weight"
+  ],
+  "debit_financing": "daily risk-free plus 1% annual spread",
+  "development": [
+    "2008",
+    "2016"
+  ],
+  "evaluation": [
+    "2017",
+    "2025-06-27"
+  ],
+  "rebalance": "first trading session monthly close, next open execution",
+  "score": "mean 63,126,252 session returns / 63 session downside deviation",
+  "selection": "positive score; greedy score discounted by maximum positive correlation to selected assets; top four",
+  "stress_roundtrip_bps": 25,
+  "universe": [
+    "SPY",
+    "QQQ",
+    "IWM",
+    "EFA",
+    "EEM",
+    "VNQ",
+    "GLD",
+    "IEF",
+    "TLT",
+    "TIP",
+    "LQD",
+    "DBC"
+  ],
+  "warning": "exploratory reused historical period, no untouched holdout claim",
+  "weighting": "inverse 63-day volatility; scale to 12% trailing 126-day portfolio volatility, maximum 150% gross, 50% per asset"
+}

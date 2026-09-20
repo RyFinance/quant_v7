@@ -58,7 +58,12 @@ MODEL_DIR = Path(__file__).parent / "state" / "model"
 MODEL_PATH = MODEL_DIR / "pead_model_expanded.joblib"
 
 PRIMARY_LABEL = "label_cost_adjusted"
-MOMENTUM_LOOKBACK_DAYS = 30  # calendar days of history fetched to derive ~5d/~20d trailing returns
+# Calendar days of history fetched to derive the 5d/20d trailing returns. Was 30,
+# which is only ~20 trading days: any holiday in the window left too few bars and
+# the event was silently skipped (17 of 72 reports in the 2026-07/09 season). The
+# returns themselves always use the last 6/21 closes, so a wider fetch does not
+# change their values.
+MOMENTUM_LOOKBACK_DAYS = 45
 
 
 @dataclass

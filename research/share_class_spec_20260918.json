@@ -1,0 +1,14 @@
+{
+  "objective": "Net excess Sharpe>=2 and CAGR>10percent, with realistic marked financing and borrow",
+  "pairs": {"alphabet": ["GOOG", "GOOGL"], "news": ["NWS", "NWSA"], "fox": ["FOX", "FOXA"]},
+  "true_inception": {"alphabet": "2014-04-03", "news": "2013-07-01", "fox": "2019-03-19"},
+  "signal": "Trailing126-session z-score of log class-price ratio, enter against deviation at abs(z)>=2, exit abs(z)<=0.5 or sign crossover or after30 sessions. Hold entry units, no repeated rebalancing while holding. No beta fit; equal USD long/short within pair. Known voting/liquidity differences mean no guaranteed convergence.",
+  "selection": "2015-2020 ranks individual pairs only; FOX has a short development history and remains descriptive if less than3years. The primary candidate is a fixed one-third allocation to each pair, independent of individual performance. Cash allocation for pair not yet eligible.",
+  "evaluation": ["2021-01-01", "2025-06-27"],
+  "sizing": "Primary book total gross2 when all three pairs active: one-third NAV long and one-third short per pair. Individual diagnostics gross2. Fixed capital fractions, daily mark-to-market. No leverage parameter sweep.",
+  "costs": {"base_round_trip_bps":10, "base_short_borrow_pa":0.03, "stress_round_trip_bps":25, "stress_short_borrow_pa":0.10, "debit_spread_pa":0.01},
+  "financing": "Only cash minus marked short-sale collateral earns RF. If negative, finance deficit at RF+1percent. RF is French daily RF. Short collateral receives no interest rebate; accrue borrow on marked short exposure. Costs and financing are deducted from daily marked NAV. Adjusted total-return prices proxy dividends and splits.",
+  "execution": "Signal at close, next-open fill, both legs atomic if either entry open missing; missing mark or exit on held position fails. Exit costs included on final day. Source cache adjusted OHLC; no venue quotes or borrow locates.",
+  "gate": "Primary book evaluation excess Sharpe>=2 and CAGR>10percent, stress excess mean>0, positive excess mean each complete2021-2024year, centered20day bootstrap primary mean p<.05. Three pair diagnostics never determine primary construction. No virgin holdout claim.",
+  "limitations": ["Same-issuer voting differences, liquidity premium and permanent spread shifts", "Cache backfills GOOG before Class C listing; all Alphabet data before2014-04-03 must be excluded", "Proxy financing and borrow rates, unverified availability", "Current surviving issuer choice and previously seen macro dates", "No fixed data cost, taxes, ticket minimums or empirical market impact"]
+}

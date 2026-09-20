@@ -1,0 +1,74 @@
+[
+  {
+    "year": 2017,
+    "training_samples": 263400,
+    "prediction_samples": 75300,
+    "last_training_signal": "2016-12-21",
+    "last_training_label_end": "2016-12-30",
+    "first_prediction_date": "2017-01-03"
+  },
+  {
+    "year": 2018,
+    "training_samples": 300900,
+    "prediction_samples": 75300,
+    "last_training_signal": "2017-12-19",
+    "last_training_label_end": "2017-12-28",
+    "first_prediction_date": "2018-01-02"
+  },
+  {
+    "year": 2019,
+    "training_samples": 338700,
+    "prediction_samples": 75600,
+    "last_training_signal": "2018-12-20",
+    "last_training_label_end": "2018-12-31",
+    "first_prediction_date": "2019-01-02"
+  },
+  {
+    "year": 2020,
+    "training_samples": 376500,
+    "prediction_samples": 75900,
+    "last_training_signal": "2019-12-20",
+    "last_training_label_end": "2019-12-31",
+    "first_prediction_date": "2020-01-02"
+  },
+  {
+    "year": 2021,
+    "training_samples": 414300,
+    "prediction_samples": 75600,
+    "last_training_signal": "2020-12-21",
+    "last_training_label_end": "2020-12-30",
+    "first_prediction_date": "2021-01-04"
+  },
+  {
+    "year": 2022,
+    "training_samples": 452100,
+    "prediction_samples": 75300,
+    "last_training_signal": "2021-12-21",
+    "last_training_label_end": "2021-12-30",
+    "first_prediction_date": "2022-01-03"
+  },
+  {
+    "year": 2023,
+    "training_samples": 489900,
+    "prediction_samples": 75000,
+    "last_training_signal": "2022-12-21",
+    "last_training_label_end": "2022-12-30",
+    "first_prediction_date": "2023-01-03"
+  },
+  {
+    "year": 2024,
+    "training_samples": 527400,
+    "prediction_samples": 75600,
+    "last_training_signal": "2023-12-20",
+    "last_training_label_end": "2023-12-29",
+    "first_prediction_date": "2024-01-02"
+  },
+  {
+    "year": 2025,
+    "training_samples": 565200,
+    "prediction_samples": 36300,
+    "last_training_signal": "2024-12-20",
+    "last_training_label_end": "2024-12-31",
+    "first_prediction_date": "2025-01-02"
+  }
+]

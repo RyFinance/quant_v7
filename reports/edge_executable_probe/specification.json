@@ -1,0 +1,22 @@
+{
+  "features": [
+    "cached_5",
+    "prior_5",
+    "cached_20",
+    "prior_20",
+    "raw_reaction",
+    "raw_prior_20"
+  ],
+  "direction": "long bottom decile, short top decile, half each",
+  "cutoffs": "Training <=2020; validation 2021-23; confirmation 2024+",
+  "holding": "Next session open to close of twentieth held session",
+  "cost_bps_roundtrip": [
+    10,
+    25,
+    50
+  ],
+  "annual_short_borrow": 0.03,
+  "fit_thresholds": "Training deciles only; no later-period tuning",
+  "multiplicity": "Six feature comparisons, three periods; CIs unadjusted descriptive only",
+  "status": "Historical windows were studied before; none is a virgin holdout"
+}

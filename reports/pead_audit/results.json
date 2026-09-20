@@ -1,0 +1,587 @@
+{
+ "wide_5p0": {
+  "label": "Sized 2x \u00b7 5% positions, 100% gross",
+  "days": 974,
+  "trades": 625,
+  "longs": 517,
+  "reconciliation": {
+   "cash_basis_final_nav": 135411.00191372036,
+   "mtm_final_nav_same_costs": 135411.00191372057,
+   "missing_marks_filled": 0
+  },
+  "avg_gross_exposure": 0.41724727224939434,
+  "A_reported_cash_basis_rf0": {
+   "sharpe": 1.3384374696014778,
+   "ci95": [
+    -0.25266521196201586,
+    2.5885760068715604
+   ],
+   "null_kind_at_0.5": "vacuous (cannot rule out Sharpe >= 0.5)",
+   "ann_mean": 0.08021830594491823,
+   "ann_vol": 0.0599342948526414,
+   "lag1_autocorr": 0.2559593441929023,
+   "lo_autocorr_adjusted_sharpe": 0.8008852413886703
+  },
+  "B_mtm_rf0_cash_idle": {
+   "sharpe": 0.8451898891005238,
+   "ci95": [
+    -0.11584394892049014,
+    1.8639502783626611
+   ],
+   "null_kind_at_0.5": "vacuous (cannot rule out Sharpe >= 0.5)",
+   "ann_mean": 0.08328003198696872,
+   "ann_vol": 0.0985341082056694,
+   "lag1_autocorr": -0.01710510175000844
+  },
+  "C_mtm_excess_cash_earns_rf": {
+   "sharpe": 0.6998806027785588,
+   "ci95": [
+    -0.24855115082558055,
+    1.7024139879464055
+   ],
+   "null_kind_at_0.5": "vacuous (cannot rule out Sharpe >= 0.5)",
+   "ann_mean": 0.06702889578209642,
+   "ann_vol": 0.09577190097280676,
+   "lag1_autocorr": -0.017605280226215558,
+   "beta": 0.35216617767906017,
+   "alpha_ann": 0.041826524615772936,
+   "alpha_t": 1.148858690663348
+  },
+  "D_stress_borrow_slippage": {
+   "sharpe": 0.6386186810688173,
+   "ci95": [
+    -0.310871673395779,
+    1.637186869034492
+   ],
+   "null_kind_at_0.5": "vacuous (cannot rule out Sharpe >= 0.5)",
+   "ann_mean": 0.06181364389531584,
+   "ann_vol": 0.09679272737819397,
+   "lag1_autocorr": -0.018210135168186595,
+   "beta": 0.3559070780870015,
+   "alpha_ann": 0.0363435594545418,
+   "alpha_t": 0.9886362281240442
+  },
+  "control_same_trades_in_SPY": {
+   "sharpe": 0.5311649671559102,
+   "ci95": [
+    -0.3482584277995859,
+    1.4776024731511983
+   ],
+   "null_kind_at_0.5": "vacuous (cannot rule out Sharpe >= 0.5)",
+   "ann_mean": 0.0507052763575141,
+   "ann_vol": 0.09546050566740565,
+   "lag1_autocorr": -0.00682880693008299,
+   "beta": 0.40316278526166344,
+   "alpha_ann": 0.02185339108682542,
+   "alpha_t": 0.749368910562376
+  },
+  "control_same_trades_in_universe_avg": {
+   "sharpe": 0.6015105133031711,
+   "ci95": [
+    -0.3195100552831809,
+    1.58627383862216
+   ],
+   "null_kind_at_0.5": "vacuous (cannot rule out Sharpe >= 0.5)",
+   "ann_mean": 0.05489943396646317,
+   "ann_vol": 0.09126928416427024,
+   "lag1_autocorr": 0.001606951477701748,
+   "beta": 0.3738955611987405,
+   "alpha_ann": 0.02814202423201958,
+   "alpha_t": 0.9376887809929213
+  },
+  "selection_alpha_vs_universe_control": {
+   "sharpe": 0.30401329165793994,
+   "ci95": [
+    -0.6102108599032458,
+    1.2467218653377905
+   ],
+   "null_kind_at_0.5": "vacuous (cannot rule out Sharpe >= 0.5)",
+   "ann_mean": 0.012129461815633244,
+   "ann_vol": 0.03989780101220275,
+   "lag1_autocorr": -0.005320509029859773
+  },
+  "selection_alpha_vs_spy_control": {
+   "sharpe": 0.3580061142819301,
+   "ci95": [
+    -0.46307232438628076,
+    1.2171035843892493
+   ],
+   "null_kind_at_0.5": "vacuous (cannot rule out Sharpe >= 0.5)",
+   "ann_mean": 0.01632361942458233,
+   "ann_vol": 0.04559592357053285,
+   "lag1_autocorr": -0.02137104430648665
+  },
+  "deflated_sharpe_prob": {
+   "n5_this_sweep": 0.8846318674185027,
+   "n31_with_earlier_configs": 0.8544331962885456
+  }
+ },
+ "wide_3p5": {
+  "label": "Sized 1.4x \u00b7 3.5% positions, 85% gross",
+  "days": 974,
+  "trades": 655,
+  "longs": 548,
+  "reconciliation": {
+   "cash_basis_final_nav": 130492.02683001253,
+   "mtm_final_nav_same_costs": 130492.02683001243,
+   "missing_marks_filled": 0
+  },
+  "avg_gross_exposure": 0.3473386881585432,
+  "A_reported_cash_basis_rf0": {
+   "sharpe": 1.4375518202790047,
+   "ci95": [
+    -0.1313950802279353,
+    2.645686653884724
+   ],
+   "null_kind_at_0.5": "vacuous (cannot rule out Sharpe >= 0.5)",
+   "ann_mean": 0.0700407296759152,
+   "ann_vol": 0.048722229479227726,
+   "lag1_autocorr": 0.258753312448581,
+   "lo_autocorr_adjusted_sharpe": 0.8557638511067527
+  },
+  "B_mtm_rf0_cash_idle": {
+   "sharpe": 0.8861464524760881,
+   "ci95": [
+    -0.06594623842353345,
+    1.907523270813879
+   ],
+   "null_kind_at_0.5": "vacuous (cannot rule out Sharpe >= 0.5)",
+   "ann_mean": 0.07217307706511943,
+   "ann_vol": 0.08144599220981133,
+   "lag1_autocorr": -0.016112548563344566
+  },
+  "C_mtm_excess_cash_earns_rf": {
+   "sharpe": 0.7310281576787352,
+   "ci95": [
+    -0.20573329798708076,
+    1.7506155173241742
+   ],
+   "null_kind_at_0.5": "vacuous (cannot rule out Sharpe >= 0.5)",
+   "ann_mean": 0.05783164171169349,
+   "ann_vol": 0.07911000568750835,
+   "lag1_autocorr": -0.017845561817089985,
+   "beta": 0.2899620701663986,
+   "alpha_ann": 0.0370808366098223,
+   "alpha_t": 1.2339399205781536
+  },
+  "D_stress_borrow_slippage": {
+   "sharpe": 0.6699193744656836,
+   "ci95": [
+    -0.26680760801985404,
+    1.6834947513378267
+   ],
+   "null_kind_at_0.5": "vacuous (cannot rule out Sharpe >= 0.5)",
+   "ann_mean": 0.053449928655675084,
+   "ann_vol": 0.07978561404990839,
+   "lag1_autocorr": -0.018262657377711954,
+   "beta": 0.2924854112174662,
+   "alpha_ann": 0.03251854352716039,
+   "alpha_t": 1.0741501425721185
+  },
+  "control_same_trades_in_SPY": {
+   "sharpe": 0.4998029855849155,
+   "ci95": [
+    -0.37521509471036524,
+    1.4434917442516544
+   ],
+   "null_kind_at_0.5": "vacuous (cannot rule out Sharpe >= 0.5)",
+   "ann_mean": 0.03929055105376716,
+   "ann_vol": 0.0786120775324816,
+   "lag1_autocorr": -0.006902769813693215,
+   "beta": 0.3284471296819604,
+   "alpha_ann": 0.015785606526408206,
+   "alpha_t": 0.6513803578767712
+  },
+  "control_same_trades_in_universe_avg": {
+   "sharpe": 0.5695881339533533,
+   "ci95": [
+    -0.3385608704002912,
+    1.5577013541246725
+   ],
+   "null_kind_at_0.5": "vacuous (cannot rule out Sharpe >= 0.5)",
+   "ann_mean": 0.04297288685233056,
+   "ann_vol": 0.07544554440428326,
+   "lag1_autocorr": 0.0023394325902552863,
+   "beta": 0.3057835452844113,
+   "alpha_ann": 0.021089835914272697,
+   "alpha_t": 0.8488847783146856
+  },
+  "selection_alpha_vs_universe_control": {
+   "sharpe": 0.4826775623946838,
+   "ci95": [
+    -0.4383874586594208,
+    1.4017581196960942
+   ],
+   "null_kind_at_0.5": "vacuous (cannot rule out Sharpe >= 0.5)",
+   "ann_mean": 0.014858754859362904,
+   "ann_vol": 0.030784018187306895,
+   "lag1_autocorr": -0.009389138773882137
+  },
+  "selection_alpha_vs_spy_control": {
+   "sharpe": 0.5120246362255153,
+   "ci95": [
+    -0.28537989017244403,
+    1.3159179318164311
+   ],
+   "null_kind_at_0.5": "vacuous (cannot rule out Sharpe >= 0.5)",
+   "ann_mean": 0.018541090657926317,
+   "ann_vol": 0.03621132528818421,
+   "lag1_autocorr": -0.029669062952682734
+  },
+  "deflated_sharpe_prob": {
+   "n5_this_sweep": 0.8961773503940403,
+   "n31_with_earlier_configs": 0.8680593219243294
+  }
+ },
+ "wide_2p5": {
+  "label": "Live \u00b7 2.5% positions",
+  "days": 974,
+  "trades": 614,
+  "longs": 515,
+  "reconciliation": {
+   "cash_basis_final_nav": 121745.7451432034,
+   "mtm_final_nav_same_costs": 121745.74514320347,
+   "missing_marks_filled": 0
+  },
+  "avg_gross_exposure": 0.25415146605963945,
+  "A_reported_cash_basis_rf0": {
+   "sharpe": 1.4443919214800771,
+   "ci95": [
+    -0.059046116676238034,
+    2.651769238697602
+   ],
+   "null_kind_at_0.5": "vacuous (cannot rule out Sharpe >= 0.5)",
+   "ann_mean": 0.051544612994456056,
+   "ann_vol": 0.03568602969036131,
+   "lag1_autocorr": 0.28066522324610066,
+   "lo_autocorr_adjusted_sharpe": 0.8751478604272005
+  },
+  "B_mtm_rf0_cash_idle": {
+   "sharpe": 0.897698945318796,
+   "ci95": [
+    -0.06438526203472641,
+    1.9161913174638423
+   ],
+   "null_kind_at_0.5": "vacuous (cannot rule out Sharpe >= 0.5)",
+   "ann_mean": 0.052626939872628446,
+   "ann_vol": 0.058624263899451586,
+   "lag1_autocorr": -0.00972856856303567
+  },
+  "C_mtm_excess_cash_earns_rf": {
+   "sharpe": 0.7289765948282079,
+   "ci95": [
+    -0.21413953735232533,
+    1.736691846433055
+   ],
+   "null_kind_at_0.5": "vacuous (cannot rule out Sharpe >= 0.5)",
+   "ann_mean": 0.04143631978547194,
+   "ann_vol": 0.05684176978992982,
+   "lag1_autocorr": -0.010523996331171287,
+   "beta": 0.21295033909683375,
+   "alpha_ann": 0.026196771452685043,
+   "alpha_t": 1.2209996695592358
+  },
+  "D_stress_borrow_slippage": {
+   "sharpe": 0.6663257224263357,
+   "ci95": [
+    -0.2756962878975695,
+    1.6735845165739816
+   ],
+   "null_kind_at_0.5": "vacuous (cannot rule out Sharpe >= 0.5)",
+   "ann_mean": 0.03811065576197557,
+   "ann_vol": 0.05719523422148666,
+   "lag1_autocorr": -0.011054200050430693,
+   "beta": 0.21427510214284695,
+   "alpha_ann": 0.02277630227154098,
+   "alpha_t": 1.0571596290194565
+  },
+  "control_same_trades_in_SPY": {
+   "sharpe": 0.5267263739682573,
+   "ci95": [
+    -0.3446471790015353,
+    1.4686018342234175
+   ],
+   "null_kind_at_0.5": "vacuous (cannot rule out Sharpe >= 0.5)",
+   "ann_mean": 0.028879854146850112,
+   "ann_vol": 0.05482895023705522,
+   "lag1_autocorr": -0.010051777670333826,
+   "beta": 0.23247455370286424,
+   "alpha_ann": 0.012243077646170969,
+   "alpha_t": 0.7354093512391732
+  },
+  "control_same_trades_in_universe_avg": {
+   "sharpe": 0.5993900462933076,
+   "ci95": [
+    -0.3190417070287124,
+    1.5801458808674829
+   ],
+   "null_kind_at_0.5": "vacuous (cannot rule out Sharpe >= 0.5)",
+   "ann_mean": 0.03166536596063451,
+   "ann_vol": 0.05282931566257488,
+   "lag1_autocorr": 0.00047367843156623235,
+   "beta": 0.21746034609492076,
+   "alpha_ann": 0.01610306411677056,
+   "alpha_t": 0.9238588387889815
+  },
+  "selection_alpha_vs_universe_control": {
+   "sharpe": 0.44061392925290077,
+   "ci95": [
+    -0.4541824670291544,
+    1.3639845291616755
+   ],
+   "null_kind_at_0.5": "vacuous (cannot rule out Sharpe >= 0.5)",
+   "ann_mean": 0.00977095382483742,
+   "ann_vol": 0.022175771522713595,
+   "lag1_autocorr": -0.0021129884074802207
+  },
+  "selection_alpha_vs_spy_control": {
+   "sharpe": 0.4829547925604037,
+   "ci95": [
+    -0.31330396379264297,
+    1.3132849949871177
+   ],
+   "null_kind_at_0.5": "vacuous (cannot rule out Sharpe >= 0.5)",
+   "ann_mean": 0.012556465638621813,
+   "ann_vol": 0.02599925672556891,
+   "lag1_autocorr": -0.03274613743938095
+  },
+  "deflated_sharpe_prob": {
+   "n5_this_sweep": 0.895748190312244,
+   "n31_with_earlier_configs": 0.8675095574293601
+  }
+ },
+ "wide_10p0": {
+  "label": "Wide universe, 10% positions",
+  "days": 974,
+  "trades": 368,
+  "longs": 303,
+  "reconciliation": {
+   "cash_basis_final_nav": 122411.90525168237,
+   "mtm_final_nav_same_costs": 122411.90525168244,
+   "missing_marks_filled": 0
+  },
+  "avg_gross_exposure": 0.3389877550037246,
+  "A_reported_cash_basis_rf0": {
+   "sharpe": 0.9789394124212223,
+   "ci95": [
+    -0.14663369897101805,
+    1.9705663661342572
+   ],
+   "null_kind_at_0.5": "vacuous (cannot rule out Sharpe >= 0.5)",
+   "ann_mean": 0.05382339613269695,
+   "ann_vol": 0.05498133536127116,
+   "lag1_autocorr": 0.013240976262177876,
+   "lo_autocorr_adjusted_sharpe": 0.8878429897928528
+  },
+  "B_mtm_rf0_cash_idle": {
+   "sharpe": 0.6930374226367867,
+   "ci95": [
+    -0.11896336722974872,
+    1.605774133150339
+   ],
+   "null_kind_at_0.5": "vacuous (cannot rule out Sharpe >= 0.5)",
+   "ann_mean": 0.05552419823129832,
+   "ann_vol": 0.08011717176836776,
+   "lag1_autocorr": -0.06587163860999289
+  },
+  "C_mtm_excess_cash_earns_rf": {
+   "sharpe": 0.5479376900931423,
+   "ci95": [
+    -0.2611518778519503,
+    1.4391127736805962
+   ],
+   "null_kind_at_0.5": "vacuous (cannot rule out Sharpe >= 0.5)",
+   "ann_mean": 0.042319283139367565,
+   "ann_vol": 0.07723375103503802,
+   "lag1_autocorr": -0.06331593698234518,
+   "beta": 0.2786315327339909,
+   "alpha_ann": 0.022379335036221824,
+   "alpha_t": 0.9092905363883725
+  },
+  "D_stress_borrow_slippage": {
+   "sharpe": 0.4847705859505163,
+   "ci95": [
+    -0.32520170067577325,
+    1.3681364799806741
+   ],
+   "null_kind_at_0.5": "vacuous (cannot rule out Sharpe >= 0.5)",
+   "ann_mean": 0.03781608220848975,
+   "ann_vol": 0.07800820285814512,
+   "lag1_autocorr": -0.06347483502765869,
+   "beta": 0.28122298738489304,
+   "alpha_ann": 0.017690679606552705,
+   "alpha_t": 0.7127221354442966
+  },
+  "control_same_trades_in_SPY": {
+   "sharpe": 0.41587203071777135,
+   "ci95": [
+    -0.36740207677263326,
+    1.3703081090956724
+   ],
+   "null_kind_at_0.5": "vacuous (cannot rule out Sharpe >= 0.5)",
+   "ann_mean": 0.031363000773841306,
+   "ann_vol": 0.07541502783851697,
+   "lag1_autocorr": -0.051530786023830606,
+   "beta": 0.33622495676362074,
+   "alpha_ann": 0.00730144491523142,
+   "alpha_t": 0.37804054790963576
+  },
+  "control_same_trades_in_universe_avg": {
+   "sharpe": 0.4157030049601033,
+   "ci95": [
+    -0.4020314913282613,
+    1.3938928923975493
+   ],
+   "null_kind_at_0.5": "vacuous (cannot rule out Sharpe >= 0.5)",
+   "ann_mean": 0.03017502959548717,
+   "ann_vol": 0.07258795157947726,
+   "lag1_autocorr": -0.018257594923512466,
+   "beta": 0.31546488653734595,
+   "alpha_ann": 0.0075991445038137255,
+   "alpha_t": 0.37968591571404015
+  },
+  "selection_alpha_vs_universe_control": {
+   "sharpe": 0.28827437913045556,
+   "ci95": [
+    -0.6184979769197715,
+    1.2137828804181756
+   ],
+   "null_kind_at_0.5": "vacuous (cannot rule out Sharpe >= 0.5)",
+   "ann_mean": 0.012144253543880377,
+   "ann_vol": 0.0421274120180643,
+   "lag1_autocorr": -0.040998881659483
+  },
+  "selection_alpha_vs_spy_control": {
+   "sharpe": 0.23995326848512216,
+   "ci95": [
+    -0.5622023243013502,
+    1.0442894698086271
+   ],
+   "null_kind_at_0.5": "vacuous (cannot rule out Sharpe >= 0.5)",
+   "ann_mean": 0.01095628236552625,
+   "ann_vol": 0.0456600672068177,
+   "lag1_autocorr": -0.07547456266834852
+  },
+  "deflated_sharpe_prob": {
+   "n5_this_sweep": 0.8147383728019584,
+   "n31_with_earlier_configs": 0.7742437543337556
+  }
+ },
+ "old_pead_75": {
+  "label": "Old PEAD \u00b7 75 names, 10% positions",
+  "days": 974,
+  "trades": 189,
+  "longs": 154,
+  "reconciliation": {
+   "cash_basis_final_nav": 121752.13789940666,
+   "mtm_final_nav_same_costs": 121752.13789940655,
+   "missing_marks_filled": 0
+  },
+  "avg_gross_exposure": 0.18954624485062097,
+  "A_reported_cash_basis_rf0": {
+   "sharpe": 1.0178911451617392,
+   "ci95": [
+    -0.35943706297964195,
+    2.2850309812051672
+   ],
+   "null_kind_at_0.5": "vacuous (cannot rule out Sharpe >= 0.5)",
+   "ann_mean": 0.052239159379917986,
+   "ann_vol": 0.051320968482948516,
+   "lag1_autocorr": 0.19627368566444287,
+   "lo_autocorr_adjusted_sharpe": 0.6790250626194954
+  },
+  "B_mtm_rf0_cash_idle": {
+   "sharpe": 0.7188041068934172,
+   "ci95": [
+    -0.22095014117359163,
+    1.8395169447001376
+   ],
+   "null_kind_at_0.5": "vacuous (cannot rule out Sharpe >= 0.5)",
+   "ann_mean": 0.05371979449710919,
+   "ann_vol": 0.07473495766361092,
+   "lag1_autocorr": 0.031396345217720584
+  },
+  "C_mtm_excess_cash_earns_rf": {
+   "sharpe": 0.6146511218888395,
+   "ci95": [
+    -0.2884277289673299,
+    1.7063588004900945
+   ],
+   "null_kind_at_0.5": "vacuous (cannot rule out Sharpe >= 0.5)",
+   "ann_mean": 0.044804610702323146,
+   "ann_vol": 0.07289437716250705,
+   "lag1_autocorr": 0.02568225928226994,
+   "beta": 0.20762032322500903,
+   "alpha_ann": 0.029946498881155338,
+   "alpha_t": 0.983677693614495
+  },
+  "D_stress_borrow_slippage": {
+   "sharpe": 0.5788944567473175,
+   "ci95": [
+    -0.3217922348355736,
+    1.6646807112216915
+   ],
+   "null_kind_at_0.5": "vacuous (cannot rule out Sharpe >= 0.5)",
+   "ann_mean": 0.04234921506613707,
+   "ann_vol": 0.07315533008225392,
+   "lag1_autocorr": 0.025731482341932153,
+   "beta": 0.20842836394399125,
+   "alpha_ann": 0.027433276731783043,
+   "alpha_t": 0.8974655490763551
+  },
+  "control_same_trades_in_SPY": {
+   "sharpe": 0.342942796658631,
+   "ci95": [
+    -0.5086074105089103,
+    1.4033927794432992
+   ],
+   "null_kind_at_0.5": "vacuous (cannot rule out Sharpe >= 0.5)",
+   "ann_mean": 0.017830152509642292,
+   "ann_vol": 0.05199162275273163,
+   "lag1_autocorr": 0.03436739480427055,
+   "beta": 0.19238271291595707,
+   "alpha_ann": 0.004062502904997993,
+   "alpha_t": 0.21679358499442833
+  },
+  "control_same_trades_in_universe_avg": {
+   "sharpe": 0.32798049125250267,
+   "ci95": [
+    -0.5390238173350098,
+    1.3883632834086947
+   ],
+   "null_kind_at_0.5": "vacuous (cannot rule out Sharpe >= 0.5)",
+   "ann_mean": 0.016823460102168612,
+   "ann_vol": 0.05129408776089893,
+   "lag1_autocorr": 0.06146713397611111,
+   "beta": 0.185105442059467,
+   "alpha_ann": 0.003576600092969991,
+   "alpha_t": 0.1876893771732392
+  },
+  "selection_alpha_vs_universe_control": {
+   "sharpe": 0.6532827443386305,
+   "ci95": [
+    -0.40534827540712925,
+    1.755127468277666
+   ],
+   "null_kind_at_0.5": "vacuous (cannot rule out Sharpe >= 0.5)",
+   "ann_mean": 0.027981150600154537,
+   "ann_vol": 0.04283160827779411,
+   "lag1_autocorr": 0.030408949932962694
+  },
+  "selection_alpha_vs_spy_control": {
+   "sharpe": 0.6531471378211626,
+   "ci95": [
+    -0.33570328315374065,
+    1.637412545638982
+   ],
+   "null_kind_at_0.5": "vacuous (cannot rule out Sharpe >= 0.5)",
+   "ann_mean": 0.026974458192680854,
+   "ann_vol": 0.0412992059992257,
+   "lag1_autocorr": 0.014899427377320288
+  },
+  "deflated_sharpe_prob": {
+   "n5_this_sweep": 0.8435312047435475,
+   "n31_with_earlier_configs": 0.807592912696476
+  }
+ }
+}

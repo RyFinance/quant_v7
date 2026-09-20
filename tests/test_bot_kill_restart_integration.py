@@ -125,6 +125,10 @@ def test_sigkill_mid_cycle_then_clean_restart_no_loss_no_duplication(scenario_pa
     alerter = lambda: BotAlerter(webhook_url="", alerts_path=scenario_paths["kill_switch"].parent / "restart_alerts.jsonl")
     monkeypatch.setattr(rg_module, "build_alerter", alerter)
     monkeypatch.setattr(ex_module, "build_alerter", alerter)
+    monkeypatch.setattr(rc, "build_alerter", alerter)
+    monkeypatch.setattr(rc, "prepare_market_session", lambda tickers, as_of: (True, "restart test session"))
+    monkeypatch.setattr(rc, "UPCOMING_EARNINGS_FILE", scenario_paths["kill_switch"].parent / "restart_upcoming_earnings.json")
+    monkeypatch.setattr(rc, "BACKFILL_CYCLE_LOG_FILE", scenario_paths["kill_switch"].parent / "restart_backfill_cycle_log.jsonl")
     monkeypatch.setattr(rc, "touch_heartbeat", lambda: hb_module.touch_heartbeat(scenario_paths["kill_switch"].parent / "restart_heartbeat.txt"))
     already_open_ticker = next(iter(committed_tickers))
     fake_event = ReportedEarnings(ticker=already_open_ticker, earnings_date=pd.Timestamp("2024-01-05"),

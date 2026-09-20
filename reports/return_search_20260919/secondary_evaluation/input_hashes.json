@@ -1,0 +1,11 @@
+{
+  "data/multiasset/crypto/yf_BTC-USD.parquet": "dd827ced5b84a5dca2c91b7a14948aac2e14a6eb36c833c65ef5be040893a1aa",
+  "data/multiasset/crypto/yf_ETH-USD.parquet": "5e2b433d09811aaac3effc73c17701a2e35f11868ca0687595ba741d7141a505",
+  "data/multiasset/rates/IRX.parquet": "a1621c36fbd30709a390cdbd7297e235ceff251fd15b5c5834c4b24eda4a6b3e",
+  "data/multiasset/vol/VIX.parquet": "58559ce3d364368845d066250e2a1e5e974b9d3c6ed82ca0b2273ca30fda68c7",
+  "data/multiasset/vol/VIX3M.parquet": "c9b8db34897c8111e6a2652e20c2d08f0f0c53224e25a2ed2866bcafa5e37b7a",
+  "data/multiasset/yields/US10Y.parquet": "9cd82200c7126eeb788b23401ca5af8de18265e6903e67ddaa97a3784c33ca37",
+  "data/multiasset/etf/SPY.parquet": "c927a8371ad9d9552e5a1cd0d96bfcd005ae62f72d4f590c51681a81c6e4fc0c",
+  "data/multiasset/etf/LQD.parquet": "7fa21e1d84549afc21f0bed004ca4c31159bc1ffaec638b42192b74677c9b196",
+  "data/multiasset/etf/IEF.parquet": "684a4a7a017f8494dd56d376ed780a9486026edcdcc4301208cf161c4e7171f7"
+}

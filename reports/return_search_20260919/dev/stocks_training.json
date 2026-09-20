@@ -1,0 +1,44 @@
+[
+  {
+    "year": 2019,
+    "train_rows": 113376,
+    "last_label": "2018-12-28",
+    "first_prediction": "2019-01-02"
+  },
+  {
+    "year": 2020,
+    "train_rows": 123736,
+    "last_label": "2019-12-27",
+    "first_prediction": "2020-01-02"
+  },
+  {
+    "year": 2021,
+    "train_rows": 134272,
+    "last_label": "2020-12-31",
+    "first_prediction": "2021-01-04"
+  },
+  {
+    "year": 2022,
+    "train_rows": 144532,
+    "last_label": "2021-12-30",
+    "first_prediction": "2022-01-03"
+  },
+  {
+    "year": 2023,
+    "train_rows": 154892,
+    "last_label": "2022-12-29",
+    "first_prediction": "2023-01-03"
+  },
+  {
+    "year": 2024,
+    "train_rows": 165269,
+    "last_label": "2023-12-28",
+    "first_prediction": "2024-01-02"
+  },
+  {
+    "year": 2025,
+    "train_rows": 175625,
+    "last_label": "2024-12-27",
+    "first_prediction": "2025-01-02"
+  }
+]

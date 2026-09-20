@@ -1,0 +1,8 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "strategies/curve_regime_overlay.py\nstrategies/ensemble_kill_switch.py\nstrategies/kalman_slope_trend.py\nstrategies/ou_half_life_reversion.py\nstrategies/tsmom_multi_horizon.py\nstrategies/variance_ratio_gated_trend.py\nstrategies/vol_targeted_trend.py"
+    }
+  ]
+}

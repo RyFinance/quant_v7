@@ -1,0 +1,341 @@
+{
+  "base": {
+    "full": {
+      "cagr": 0.21267898847763522,
+      "total_return": 3.4060100876779824,
+      "excess_sharpe": 0.689455586392314,
+      "ann_excess_mean": 0.2138824153783806,
+      "vol": 0.31025104363455697,
+      "max_dd": -0.344753335843495,
+      "annual_cost": 0.004086735347944326,
+      "annual_turnover": 8.17347069588865,
+      "average_exposure": 1.0,
+      "days": 1938,
+      "years": 7.690476190476191
+    },
+    "selection": {
+      "cagr": 0.1702649307946429,
+      "total_return": 1.7683527360064812,
+      "excess_sharpe": 0.6174412034945048,
+      "ann_excess_mean": 0.1698512498797201,
+      "vol": 0.27507989585152615,
+      "max_dd": -0.344753335843495,
+      "annual_cost": 0.004167190885416618,
+      "annual_turnover": 8.334381770833236,
+      "average_exposure": 1.0,
+      "days": 1632,
+      "years": 6.476190476190476
+    },
+    "later": {
+      "cagr": 0.4662500853591862,
+      "total_return": 0.5915638315780258,
+      "excess_sharpe": 0.9880449393408656,
+      "ann_excess_mean": 0.44871529803790305,
+      "vol": 0.45428629687978195,
+      "max_dd": -0.33922939102533023,
+      "annual_cost": 0.0036576391480920936,
+      "annual_turnover": 7.315278296184188,
+      "average_exposure": 1.0,
+      "days": 306,
+      "years": 1.2142857142857142
+    }
+  },
+  "stress": {
+    "full": {
+      "cagr": 0.20281076158435707,
+      "total_return": 3.1376663301439,
+      "excess_sharpe": 0.6631012518816102,
+      "ann_excess_mean": 0.20570702583896544,
+      "vol": 0.3102516364328,
+      "max_dd": -0.3451628605264798,
+      "annual_cost": 0.0122558003443122,
+      "annual_turnover": 8.170533562874802,
+      "average_exposure": 1.0,
+      "days": 1938,
+      "years": 7.690476190476191
+    },
+    "selection": {
+      "cagr": 0.16055031553142074,
+      "total_return": 1.6228666587999525,
+      "excess_sharpe": 0.5871134241921567,
+      "ann_excess_mean": 0.16151366939656817,
+      "vol": 0.27508909571439516,
+      "max_dd": -0.3451628605264798,
+      "annual_cost": 0.012496780925725929,
+      "annual_turnover": 8.331187283817286,
+      "average_exposure": 1.0,
+      "days": 1632,
+      "years": 6.476190476190476
+    },
+    "later": {
+      "cagr": 0.4555989634113973,
+      "total_return": 0.5775359057089922,
+      "excess_sharpe": 0.9720112699105401,
+      "ann_excess_mean": 0.44140492686508404,
+      "vol": 0.45425686738842086,
+      "max_dd": -0.33949036051086245,
+      "annual_cost": 0.010970570576772316,
+      "annual_turnover": 7.31371371784821,
+      "average_exposure": 1.0,
+      "days": 306,
+      "years": 1.2142857142857142
+    }
+  },
+  "audit": {
+    "status": "partial bias diagnostic only; removed names not yet restored",
+    "anomalies": [
+      {
+        "date": "2026-03-23",
+        "added_not_in_later_members": [
+          "SATS"
+        ],
+        "removed_already_in_later_members": []
+      },
+      {
+        "date": "2017-06-19",
+        "added_not_in_later_members": [
+          "RE"
+        ],
+        "removed_already_in_later_members": []
+      },
+      {
+        "date": "2015-03-23",
+        "added_not_in_later_members": [],
+        "removed_already_in_later_members": [
+          "AGN"
+        ]
+      },
+      {
+        "date": "2014-05-01",
+        "added_not_in_later_members": [
+          "UA"
+        ],
+        "removed_already_in_later_members": []
+      },
+      {
+        "date": "2013-12-23",
+        "added_not_in_later_members": [
+          "FB"
+        ],
+        "removed_already_in_later_members": []
+      },
+      {
+        "date": "2013-12-02",
+        "added_not_in_later_members": [
+          "ALLE |"
+        ],
+        "removed_already_in_later_members": []
+      },
+      {
+        "date": "2013-11-13",
+        "added_not_in_later_members": [
+          "KORS"
+        ],
+        "removed_already_in_later_members": []
+      },
+      {
+        "date": "2012-12-21",
+        "added_not_in_later_members": [
+          "DLPH"
+        ],
+        "removed_already_in_later_members": []
+      },
+      {
+        "date": "2011-02-25",
+        "added_not_in_later_members": [
+          "JOYG"
+        ],
+        "removed_already_in_later_members": []
+      },
+      {
+        "date": "2010-11-17",
+        "added_not_in_later_members": [
+          "IR"
+        ],
+        "removed_already_in_later_members": []
+      },
+      {
+        "date": "2009-11-03",
+        "added_not_in_later_members": [
+          "PCLN"
+        ],
+        "removed_already_in_later_members": []
+      },
+      {
+        "date": "2008-09-16",
+        "added_not_in_later_members": [
+          "HRS"
+        ],
+        "removed_already_in_later_members": []
+      },
+      {
+        "date": "2008-06-23",
+        "added_not_in_later_members": [
+          "COG"
+        ],
+        "removed_already_in_later_members": []
+      },
+      {
+        "date": "2007-10-26",
+        "added_not_in_later_members": [
+          "JEC"
+        ],
+        "removed_already_in_later_members": []
+      },
+      {
+        "date": "2007-09-27",
+        "added_not_in_later_members": [
+          "TSO"
+        ],
+        "removed_already_in_later_members": []
+      },
+      {
+        "date": "2007-08-24",
+        "added_not_in_later_members": [
+          "LUK"
+        ],
+        "removed_already_in_later_members": []
+      }
+    ],
+    "original_mean_allocation_outside_membership": 0.21129032258064515,
+    "original_later_mean_allocation_outside_membership": 0.09666666666666666,
+    "largest_outside_allocations": {
+      "CVNA": 0.021505376344086023,
+      "TTD": 0.015053763440860216,
+      "CRWD": 0.010752688172043012,
+      "BX": 0.00913978494623656,
+      "LULU": 0.00913978494623656,
+      "VRT": 0.00913978494623656,
+      "XYZ": 0.008602150537634409,
+      "APP": 0.008064516129032258,
+      "HOOD": 0.008064516129032258,
+      "MRNA": 0.008064516129032258,
+      "COIN": 0.007526881720430108,
+      "VEEV": 0.007526881720430108,
+      "PLTR": 0.006989247311827958,
+      "DDOG": 0.006989247311827957,
+      "DELL": 0.006451612903225807
+    },
+    "minimum_coverage_fraction": 0.7648221343873518,
+    "missing_names_at_2019_start": [
+      "AAL",
+      "AAP",
+      "ABMD",
+      "ADS",
+      "AGN",
+      "AIV",
+      "ALK",
+      "ALXN",
+      "AMG",
+      "ANSS",
+      "APC",
+      "ARNC",
+      "ATVI",
+      "AVB",
+      "BBWI",
+      "BHF",
+      "BWA",
+      "CAG",
+      "CE",
+      "CELG",
+      "CERN",
+      "CMA",
+      "COTY",
+      "CPB",
+      "CPRI",
+      "CTRA",
+      "CTXS",
+      "CXO",
+      "DFS",
+      "DISCA",
+      "DISCK",
+      "DISH",
+      "DRE",
+      "DWDP",
+      "DXC",
+      "EA",
+      "EMN",
+      "ETFC",
+      "FBHS",
+      "FL",
+      "FLIR",
+      "FLR",
+      "FLS",
+      "FLT",
+      "FMC",
+      "FRC",
+      "FTI",
+      "GPS",
+      "GT",
+      "HBI",
+      "HES",
+      "HFC",
+      "HOG",
+      "HOLX",
+      "HP",
+      "HRB",
+      "ILMN",
+      "INFO",
+      "IPG",
+      "IPGP",
+      "JEF",
+      "JNPR",
+      "JWN",
+      "K",
+      "KMX",
+      "KSS",
+      "KSU",
+      "LEG",
+      "LKQ",
+      "LLL",
+      "LNC",
+      "LUMN",
+      "LW",
+      "M",
+      "MAC",
+      "MAT",
+      "MHK",
+      "MRO",
+      "MXIM",
+      "NBL",
+      "NFX",
+      "NKTR",
+      "NLSN",
+      "NOV",
+      "NWL",
+      "PBCT",
+      "PRGO",
+      "PVH",
+      "PXD",
+      "QRVO",
+      "RHI",
+      "RHT",
+      "RTN",
+      "SEE",
+      "SIVB",
+      "SLG",
+      "STI",
+      "TIF",
+      "TRIP",
+      "TSS",
+      "TWTR",
+      "UA",
+      "UAA",
+      "UNM",
+      "VAR",
+      "VFC",
+      "VIAB",
+      "VNO",
+      "WBA",
+      "WCG",
+      "WHR",
+      "WLTW",
+      "WU",
+      "XEC",
+      "XLNX",
+      "XRAY",
+      "XRX",
+      "ZION"
+    ]
+  }
+}

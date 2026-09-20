@@ -1,0 +1,55 @@
+{
+  "candidates": [
+    "residual_momentum",
+    "residual_reversal",
+    "low_beta_spread",
+    "low_vol_long",
+    "liquid_equal_weight",
+    "low_vol_hedged",
+    "momentum_reversal_blend",
+    "pead_sue_hedged",
+    "pead_reaction_confirmed",
+    "defensive_momentum_blend",
+    "SPY_control"
+  ],
+  "periods": {
+    "discovery": [
+      "2016-01-04",
+      "2020-12-31"
+    ],
+    "selection": [
+      "2021-01-01",
+      "2023-12-31"
+    ],
+    "evaluation": [
+      "2024-01-01",
+      "2025-06-27"
+    ]
+  },
+  "execution": "close decision; next open fill; daily MTM",
+  "stock_universe": "current cached constituents, historically ranked top150 trailing63-day ADV; 252day history; price>5; ADV>$10m",
+  "hypotheses": "residual momentum; residual reversal; low beta; defensive low vol; beta hedged PEAD; reaction confirmation; fixed 50/50 blends",
+  "gross_cap": 0.6,
+  "stock_cap": 0.1,
+  "SPY_hedge_cap": 0.6,
+  "vol_target": 0.05,
+  "base_round_trip_bps": 10,
+  "stress_round_trip_bps": 25,
+  "base_borrow": 0.03,
+  "stress_borrow": 0.1,
+  "cash_yield_and_risk_free": "French daily RF (1-month Tbill); free cash only; no short collateral rebate",
+  "cash_data_sha256": "1916d331c2c51d2aee3d00215897d2b8e5995cb387f1f4569ba46bff5fb049a8",
+  "initialization": "start flat, enter last target known strictly before first simulated open",
+  "selection": "highest 2021-2023 excess-return Sharpe, 2024-2025 only for later evaluation",
+  "gate": "later excess Sharpe >=1, positive later excess mean at 25bps AND 10% borrow, paired later excess Sharpe advantage CI vs wide PEAD excludes zero",
+  "limitations": [
+    "11 additional candidate/control definitions after earlier 26 configurations; exploratory multiple testing, no pristine holdout.",
+    "Current constituent survivorship persists despite causal liquidity ranking.",
+    "Hedges reduce estimated beta but neither guarantee zero beta nor neutralize sector/style factors.",
+    "Historical data and revised earnings estimates are not independently vendor verified.",
+    "All positions paper/research. No borrow availability, locate fees, tax or market impact model.",
+    "Cash assumes a Treasury-bill-like return on free cash. Actual broker interest may be lower; short collateral earns no rebate.",
+    "Adjusted Yahoo OHLC are total-return proxies, not literal historical trade prices. Adjusted-price ADV is not point-in-time unadjusted dollar volume.",
+    "Sizing constraints only: production risk gates/circuit breaker are not replayed for these candidates."
+  ]
+}

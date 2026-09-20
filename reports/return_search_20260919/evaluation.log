@@ -1,0 +1,17 @@
+RESULT stocks__momentum {"cagr": 0.7062894566749931, "total_return": 0.9132789233879091, "excess_sharpe": 1.2907135950417719, "ann_excess_mean": 0.6087561303986654, "vol": 0.47180433593908905, "max_dd": -0.334168672020813, "annual_cost": 0.003616031049101107, "annual_turnover": 7.2320620982022135, "average_exposure": 1.0, "days": 306, "years": 1.2142857142857142}
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/Users/rytty/CCP/quant_v7/research/return_search/run.py", line 312, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "/Users/rytty/CCP/quant_v7/research/return_search/run.py", line 307, in main
+    result.update(run_family(family,END_TEST,names,'2025-07-01',folder))
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rytty/CCP/quant_v7/research/return_search/run.py", line 242, in run_family
+    f=execute(p,t,rf,family,stress=stress,start=start)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rytty/CCP/quant_v7/research/return_search/run.py", line 187, in execute
+    if np.any(held&(~np.isfinite(op)|~np.isfinite(cp)|(op<=0)|(cp<=0))):raise ValueError(f'missing held mark {family} {date}')
+                                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: missing held mark stocks 2025-11-12 00:00:00

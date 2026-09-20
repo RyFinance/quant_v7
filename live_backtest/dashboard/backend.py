@@ -61,12 +61,15 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import FileResponse, JSONResponse
 from fastapi.staticfiles import StaticFiles
 
-from backtest.metrics import compute_metrics
+from data.ingestion import RAW_DATA_DIR
 from bot.alerting import ALERTS_LOG_FILE
-from bot.execution import LEDGER_FILE, PaperExecutionClient, assert_paper_only_mode
+from bot.execution import LEDGER_FILE, PaperExecutionClient, assert_paper_only_mode, unrealized_pnl
 from bot.heartbeat import read_heartbeat_age_seconds
 from bot.kill_switch import read_kill_switch_status
 from bot.launchd_control import get_operation_status, start_bot_operation, stop_bot_operation
+from bot.performance import (
+    cached_closes, daily_marked_nav, excess_metrics, price_panel, recorded_marks, risk_free_last_published,
+)
 from bot.position_manager import trading_days_elapsed
 
 # -- real paths -------------------------------------------------------------
@@ -75,12 +78,28 @@ from bot.position_manager import trading_days_elapsed
 # drift out of sync with where the real bot actually writes those files.
 STATE_DIR = LEDGER_FILE.parent  # bot/state/
 CYCLE_LOG_PATH = STATE_DIR / "cycle_log.jsonl"  # mirrors bot/run_cycle.py::CYCLE_LOG_FILE
+UPCOMING_EARNINGS_PATH = STATE_DIR / "upcoming_earnings.json"  # mirrors bot/run_cycle.py::UPCOMING_EARNINGS_FILE
+BACKFILL_CYCLE_LOG_PATH = STATE_DIR / "backfill_cycle_log.jsonl"  # mirrors bot/run_cycle.py::BACKFILL_CYCLE_LOG_FILE
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 REPORTS_DIR = REPO_ROOT / "reports"
 CIRCUIT_BREAKER_CSV = REPORTS_DIR / "circuit_breaker_daily_production.csv"
 LIVE_BACKTEST_METRICS_PATH = REPORTS_DIR / "pead_live_backtest_metrics.json"
 LIVE_BACKTEST_MONTE_CARLO_PATH = REPORTS_DIR / "pead_live_backtest_monte_carlo.json"
+# Pre-registered out-of-sample tests (research/preregistrations.jsonl holds their hashes)
+PREREGISTRATIONS_PATH = REPO_ROOT / "research" / "preregistrations.jsonl"
+PEAD_2004_2014_RESULTS = REPORTS_DIR / "pead_2004_2014" / "results.json"
+MULTIASSET_DEV_RESULTS = REPORTS_DIR / "multiasset" / "dev_results.json"
+MULTIASSET_HOLDOUT_RESULTS = REPORTS_DIR / "multiasset" / "holdout" / "results.json"
+CRYPTO_DEV_RESULTS = REPORTS_DIR / "multiasset" / "crypto" / "dev_results.json"
+CRYPTO_HOLDOUT_RESULTS = REPORTS_DIR / "multiasset" / "crypto" / "holdout_results.json"
+RESEARCH_TARGET = {"sharpe": 2.0, "cagr": 0.10}
+
+# Daily bar cache (data.ingestion.refresh_cached_history). The bot refreshes it
+# every cycle for the circuit-breaker basket only, so for most traded names it
+# can lag; the per-position closes run_cycle records in the cycle logs ("marks")
+# take precedence wherever they exist. Never a live quote.
+PRICE_CACHE_DIR = RAW_DATA_DIR
 
 DASHBOARD_DIR = Path(__file__).resolve().parent
 INDEX_HTML_PATH = DASHBOARD_DIR / "index.html"
@@ -267,7 +286,10 @@ def _reconstruct_all_trades(ledger_path: Path) -> list[dict]:
                 "size_fraction": record.get("size_fraction"),
                 "notional": record.get("notional"),
                 "realized_pnl": None,
+                "gross_pnl": None,
+                "cost": None,
                 "open": True,
+                "backfill": bool(record.get("backfill")),
                 "_sort_ts": record.get("ts", 0.0),
             }
             trades.append(trade)
@@ -286,13 +308,18 @@ def _reconstruct_all_trades(ledger_path: Path) -> list[dict]:
                     "entry_price": record.get("entry_price"),
                     "size_fraction": None,
                     "notional": record.get("notional"),
+                    "gross_pnl": None,
+                    "cost": None,
                     "open": True,
+                    "backfill": bool(record.get("backfill")),
                     "_sort_ts": record.get("ts", 0.0),
                 }
                 trades.append(trade)
             trade["exit_date"] = record.get("exit_date")
             trade["exit_price"] = record.get("exit_price")
             trade["realized_pnl"] = record.get("realized_pnl")
+            trade["gross_pnl"] = record.get("gross_pnl")
+            trade["cost"] = record.get("cost")
             trade["open"] = False
             trade["_sort_ts"] = record.get("ts", trade["_sort_ts"])
 
@@ -302,50 +329,144 @@ def _reconstruct_all_trades(ledger_path: Path) -> list[dict]:
     return trades
 
 
+def _price_panel(tickers: set[str]) -> pd.DataFrame:
+    """Daily closes for `tickers`: the bot's recorded marks, else cached bars."""
+    recorded = recorded_marks(_read_jsonl(CYCLE_LOG_PATH) + _read_jsonl(BACKFILL_CYCLE_LOG_PATH))
+    panel = price_panel(cached_closes(tickers, PRICE_CACHE_DIR), recorded)
+    return panel.reindex(columns=sorted(tickers))
+
+
+def _latest_close(panel: pd.DataFrame, ticker: str, since: str | None) -> tuple[float | None, str | None]:
+    """Latest close on or after `since` (the entry date): a close from before
+    a position was opened says nothing about its P&L."""
+    if ticker not in panel.columns:
+        return None, None
+    closes = panel[ticker].dropna()
+    if since:
+        closes = closes[closes.index >= pd.Timestamp(since).normalize()]
+    if closes.empty:
+        return None, None
+    return float(closes.iloc[-1]), closes.index[-1].date().isoformat()
+
+
+def _open_positions(ledger_path: Path) -> list[dict[str, Any]]:
+    """Open positions (via PaperExecutionClient.from_ledger), each marked at
+    its latest close (see _price_panel). unrealized_pnl mirrors
+    PaperExecutionClient.close_position's P&L formula."""
+    client = PaperExecutionClient.from_ledger(starting_capital=STARTING_CAPITAL, ledger_path=ledger_path)
+    backfill_by_ticker = {r.get("ticker"): bool(r.get("backfill"))
+                          for r in _read_jsonl(ledger_path) if r.get("event") == "open"}
+    today_str = date.today().isoformat()
+    panel = _price_panel({t for t, p in client.positions.items() if p.open})
+
+    out: list[dict[str, Any]] = []
+    for position in client.positions.values():
+        if not position.open:
+            continue
+        last_close, last_close_date = _latest_close(panel, position.ticker, position.entry_date)
+        unrealized = None
+        if last_close is not None and position.entry_price:
+            unrealized = unrealized_pnl(position.direction, position.notional, position.entry_price, last_close)
+        out.append({
+            "ticker": position.ticker,
+            "direction": position.direction,
+            "entry_price": position.entry_price,
+            "entry_date": position.entry_date,
+            "size_fraction": position.size_fraction,
+            "notional": position.notional,
+            "days_held": trading_days_elapsed(position.entry_date, today_str) if position.entry_date else 0,
+            "last_close": last_close,
+            "last_close_date": last_close_date,
+            "unrealized_pnl": unrealized,
+            "backfill": backfill_by_ticker.get(position.ticker, False),
+        })
+    out.sort(key=lambda p: p.get("entry_date") or "", reverse=True)
+    return out
+
+
+def _marked_nav_frame(ledger_path: Path) -> pd.DataFrame:
+    """The paper account rebuilt day by day (bot.performance.daily_marked_nav):
+    cash-basis and marked NAV on every trading day from the first entry, plus
+    every entry and exit date, so all realized P&L is in the last row."""
+    records = _read_jsonl(ledger_path)
+    opens = [r for r in records if r.get("event") == "open" and r.get("ticker") and r.get("entry_date")]
+    if not opens:
+        return pd.DataFrame(columns=["cash_basis_nav", "marked_nav", "unrealized_pnl", "open_positions", "stale_marks"])
+    panel = _price_panel({r["ticker"] for r in opens})
+    first_entry = min(pd.Timestamp(r["entry_date"]).normalize() for r in opens)
+    trading_days = panel.index[panel.notna().any(axis=1) & (panel.index >= first_entry)]
+    event_days = [pd.Timestamp(r[k]).normalize() for r in records for k in ("entry_date", "exit_date") if r.get(k)]
+    return daily_marked_nav(records, panel, trading_days.union(pd.DatetimeIndex(event_days)), STARTING_CAPITAL)
+
+
 def _compute_equity_curve(ledger_path: Path) -> dict:
     """Real cumulative NAV over time: replay the ledger's close events
     chronologically by exit_date, starting from STARTING_CAPITAL. One point
-    per close event (not collapsed by date), matching each realized P&L
-    event as its own step, mirroring the step-indexed style of
-    reports/pead_live_backtest_monte_carlo.json's real_equity_curve_by_step."""
+    per exit date (the NAV after all of that day's closes), anchored at
+    STARTING_CAPITAL on the first entry date so the curve shows where the
+    account started rather than beginning at the first realized result.
+
+    `marked` is the daily series performance is computed from: the NAV marked
+    to market at each trading day's close, with the cash-basis NAV on the same
+    days for comparison."""
     records = _read_jsonl(ledger_path)
     closes = [r for r in records if r.get("event") == "close"]
     closes.sort(key=lambda r: (r.get("exit_date") or "", r.get("ts", 0.0)))
 
-    dates: list[str] = []
-    nav_values: list[float] = []
+    nav_by_date: dict[str, float] = {}
     running_nav = STARTING_CAPITAL
     for r in closes:
         running_nav += float(r.get("realized_pnl", 0.0) or 0.0)
-        dates.append(r.get("exit_date"))
-        nav_values.append(round(running_nav, 6))
+        nav_by_date[r.get("exit_date")] = round(running_nav, 6)
 
-    return {"dates": dates, "nav": nav_values}
+    entry_dates = sorted(r.get("entry_date") for r in records if r.get("event") == "open" and r.get("entry_date"))
+    if nav_by_date and entry_dates and entry_dates[0] < min(nav_by_date):
+        nav_by_date = {entry_dates[0]: STARTING_CAPITAL, **nav_by_date}
+
+    frame = _marked_nav_frame(ledger_path)
+    marked = {
+        "dates": [d.date().isoformat() for d in frame.index],
+        "nav": [round(float(v), 2) for v in frame["marked_nav"]],
+        "cash_basis_nav": [round(float(v), 2) for v in frame["cash_basis_nav"]],
+    }
+    return {"dates": list(nav_by_date), "nav": list(nav_by_date.values()), "marked": marked}
 
 
 def _compute_stats(ledger_path: Path) -> dict:
-    """Stats from the REAL production ledger's realized trades. Sharpe /
-    Sortino / max drawdown are computed by reusing
-    backtest/metrics.py::compute_metrics (the same function -- and the same
-    TRADING_DAYS_PER_YEAR=252 annualization -- used everywhere else in this
-    repo) over a business-day NAV series built by forward-filling the
-    ledger's realized P&L between close events. Forward-filling (rather than
-    only using the trade dates themselves) matches the real NAV mechanics
-    documented in bot/execution.py::PaperExecutionClient.nav(): NAV is
-    cash-basis and only changes on a close event, so every business day with
-    no close in between is correctly a zero-return day, not a missing one.
+    """Stats from the REAL production ledger. Sharpe / Sortino / max drawdown
+    come from backtest/metrics.py::compute_metrics (the function every report
+    in this repo uses) over the DAILY MARK-TO-MARKET NAV (_marked_nav_frame:
+    cash plus open positions at each day's close), with Sharpe and Sortino in
+    excess of the daily 1-month T-bill rate (Ken French daily RF, last
+    published rate carried forward -- bot/performance.py).
+
+    Until 2026-09-18 these used the cash-basis NAV (open positions at cost,
+    changing only on exit days) with a zero risk-free rate, which roughly
+    doubled the Sharpe (reports/pead_audit/REPORT.md). current_nav and
+    total_return_pct are still cash-basis, as labelled on the dashboard;
+    marked_nav is the account at its latest marks.
 
     Returns insufficient_data=True (with null float fields, not fabricated
-    numbers) when there are fewer than 2 closed trades -- not enough to
-    compute a meaningful return series."""
+    numbers) when there are fewer than 2 closed trades."""
     records = _read_jsonl(ledger_path)
     n_trades = sum(1 for r in records if r.get("event") == "open")
+    n_backfilled_trades = sum(1 for r in records if r.get("event") == "open" and r.get("backfill"))
     closes = [r for r in records if r.get("event") == "close"]
     n_closed_trades = len(closes)
+    marks = [p["unrealized_pnl"] for p in _open_positions(ledger_path)]
+    unrealized_pnl = round(sum(marks), 2) if all(m is not None for m in marks) else None
 
     realized_pnls = [float(r.get("realized_pnl", 0.0) or 0.0) for r in closes]
     current_nav = STARTING_CAPITAL + sum(realized_pnls)
     total_return_pct = (current_nav - STARTING_CAPITAL) / STARTING_CAPITAL * 100.0
+
+    frame = _marked_nav_frame(ledger_path)
+    marking = {
+        "marked_nav": round(float(frame["marked_nav"].iloc[-1]), 2) if len(frame) else None,
+        "stale_marks": int(frame["stale_marks"].sum()) if len(frame) else 0,
+        "risk_free_rate": None,
+        "risk_free_through": str(risk_free_last_published().date()),
+    }
 
     if n_closed_trades < 2:
         return {
@@ -357,45 +478,25 @@ def _compute_stats(ledger_path: Path) -> dict:
             "max_drawdown": None,
             "current_nav": round(current_nav, 2),
             "total_return_pct": round(total_return_pct, 4),
+            "unrealized_pnl": unrealized_pnl,
+            "starting_capital": STARTING_CAPITAL,
+            "n_backfilled_trades": n_backfilled_trades,
+            **marking,
             "insufficient_data": True,
         }
 
     win_rate = sum(1 for p in realized_pnls if p > 0) / n_closed_trades
 
-    pnl_by_date: dict[str, float] = {}
-    for r in closes:
-        d = r.get("exit_date")
-        if not d:
-            continue
-        pnl_by_date[d] = pnl_by_date.get(d, 0.0) + float(r.get("realized_pnl", 0.0) or 0.0)
-
     sharpe_ratio: float | None = None
     sortino_ratio: float | None = None
     max_drawdown: float | None = None
 
-    if pnl_by_date:
-        cum = 0.0
-        cum_by_date: dict[str, float] = {}
-        for d in sorted(pnl_by_date.keys()):
-            cum += pnl_by_date[d]
-            cum_by_date[d] = cum
-
-        s = pd.Series(cum_by_date)
-        s.index = pd.to_datetime(s.index)
-
-        first_date = s.index.min()
-        today_ts = pd.Timestamp(date.today())
-        last_date = max(s.index.max(), today_ts)
-
-        bdays = pd.bdate_range(first_date, last_date)
-        nav_series = (STARTING_CAPITAL + s).reindex(bdays).ffill()
-        nav_series = nav_series.fillna(STARTING_CAPITAL)
-        daily_returns = nav_series.pct_change().dropna()
-
-        metrics = compute_metrics(daily_returns, n_trades=n_closed_trades)
+    if len(frame) >= 2:
+        metrics, _, rf = excess_metrics(frame["marked_nav"], STARTING_CAPITAL, n_trades=n_closed_trades)
         sharpe_ratio = metrics.sharpe_ratio
         sortino_ratio = metrics.sortino_ratio
         max_drawdown = metrics.max_drawdown
+        marking["risk_free_rate"] = round(float(rf.mean() * 252), 6)
 
     return {
         "n_trades": n_trades,
@@ -406,6 +507,10 @@ def _compute_stats(ledger_path: Path) -> dict:
         "max_drawdown": max_drawdown,
         "current_nav": round(current_nav, 2),
         "total_return_pct": round(total_return_pct, 4),
+        "unrealized_pnl": unrealized_pnl,
+        "starting_capital": STARTING_CAPITAL,
+        "n_backfilled_trades": n_backfilled_trades,
+        **marking,
         "insufficient_data": False,
     }
 
@@ -433,26 +538,7 @@ def get_status() -> dict[str, Any]:
 
 @app.get("/api/positions")
 def get_positions() -> list[dict[str, Any]]:
-    client = PaperExecutionClient.from_ledger(starting_capital=STARTING_CAPITAL, ledger_path=LEDGER_FILE)
-    today_str = date.today().isoformat()
-
-    out: list[dict[str, Any]] = []
-    for position in client.positions.values():
-        if not position.open:
-            continue
-        days_held = trading_days_elapsed(position.entry_date, today_str) if position.entry_date else 0
-        out.append({
-            "ticker": position.ticker,
-            "direction": position.direction,
-            "entry_price": position.entry_price,
-            "entry_date": position.entry_date,
-            "size_fraction": position.size_fraction,
-            "notional": position.notional,
-            "days_held": days_held,
-        })
-
-    out.sort(key=lambda p: p.get("entry_date") or "", reverse=True)
-    return out
+    return _open_positions(LEDGER_FILE)
 
 
 @app.get("/api/trades")
@@ -487,6 +573,109 @@ def get_live_backtest_metrics() -> dict[str, Any]:
     return data
 
 
+def _registered_at(filename: str) -> str | None:
+    if not PREREGISTRATIONS_PATH.exists():
+        return None
+    for line in PREREGISTRATIONS_PATH.read_text().splitlines():
+        try:
+            rec = json.loads(line)
+        except json.JSONDecodeError:
+            continue
+        if rec.get("file", "").endswith(filename):
+            return rec.get("registered_at")
+    return None
+
+
+def _research_tests() -> dict[str, Any]:
+    tests: list[dict[str, Any]] = []
+    sleeves: list[dict[str, Any]] = []
+
+    pead = _read_json_file(PEAD_2004_2014_RESULTS)
+    if pead:
+        m = pead.get("model", {})
+        c = pead.get("all_events_control", {})
+        tests.append({
+            "id": "pead_2004_2014",
+            "name": "Production PEAD model",
+            "question": "Does the unchanged live model earn alpha on a decade it never saw?",
+            "window": ["2004-01-01", "2014-12-31"],
+            "registered_at": _registered_at("PREREGISTRATION_pead_2004_2014.md"),
+            "passed": bool(pead.get("passed")),
+            "criterion": "Alpha t ≥ 2, beats all-events control, alpha positive in both halves",
+            "result": {"sharpe": m.get("sharpe_ratio"), "cagr": m.get("annualized_return"),
+                       "max_dd": m.get("max_drawdown"), "t_stat": m.get("alpha_hac_t"), "t_label": "Alpha t"},
+            "benchmark": {"name": "Control", "sharpe": c.get("sharpe_ratio"),
+                          "cagr": c.get("annualized_return"), "max_dd": c.get("max_drawdown")},
+            "report": "reports/pead_2004_2014/REPORT.md",
+        })
+
+    ma_dev, ma = _read_json_file(MULTIASSET_DEV_RESULTS), _read_json_file(MULTIASSET_HOLDOUT_RESULTS)
+    if ma:
+        p = ma.get("primary", {})
+        spy = ma.get("descriptive", {}).get("spy", {})
+        tests.append({
+            "id": "multiasset_2018_2026",
+            "name": "Multi-asset book",
+            "question": "Do five literature premia (carry, trend, VIX basis, overnight reversal) combine into an edge?",
+            "window": ma.get("window"),
+            "registered_at": _registered_at("PREREGISTRATION_holdout.md"),
+            "passed": bool(ma.get("passed")),
+            "criterion": "Excess-return t ≥ 2 and alpha t ≥ 2 vs SPY",
+            "result": {"sharpe": p.get("sharpe"), "cagr": p.get("cagr_total"), "max_dd": p.get("max_dd"),
+                       "t_stat": p.get("hac_t"), "t_label": "Excess t"},
+            "benchmark": {"name": "SPY", "sharpe": spy.get("sharpe"), "cagr": spy.get("cagr_total"),
+                          "max_dd": spy.get("max_dd")},
+            "report": "reports/multiasset/REPORT.md",
+        })
+        dev_sleeves = (ma_dev or {}).get("sleeves", {})
+        for name, st in ma.get("sleeves", {}).items():
+            sleeves.append({"name": name, "family": "multi-asset",
+                            "dev_sharpe": dev_sleeves.get(name, {}).get("raw", {}).get("sharpe"),
+                            "holdout_sharpe": st.get("sharpe"), "in_book": name in ma.get("book_sleeves", [])})
+
+    cr_dev, cr = _read_json_file(CRYPTO_DEV_RESULTS), _read_json_file(CRYPTO_HOLDOUT_RESULTS)
+    if cr:
+        p = cr.get("primary", {})
+        btc = cr.get("btc_buy_hold", {})
+        tests.append({
+            "id": "crypto_2022_2026",
+            "name": "Crypto trend (BTC, ETH)",
+            "question": "Does long-only multi-horizon trend earn a significant excess return?",
+            "window": [p.get("start"), p.get("end")],
+            "registered_at": _registered_at("PREREGISTRATION_crypto_holdout.md"),
+            "passed": bool(cr.get("passed")),
+            "criterion": "Excess-return t ≥ 2",
+            "result": {"sharpe": p.get("sharpe"), "cagr": p.get("cagr_total"), "max_dd": p.get("max_dd"),
+                       "t_stat": p.get("hac_t"), "t_label": "Excess t"},
+            "benchmark": {"name": "BTC", "sharpe": btc.get("sharpe"), "cagr": btc.get("cagr_total"),
+                          "max_dd": btc.get("max_dd")},
+            "report": "reports/multiasset/crypto/holdout_results.json",
+        })
+        dev_c = (cr_dev or {}).get("candidates", {})
+        for name, st in cr.get("all_candidates", {}).items():
+            sleeves.append({"name": name, "family": "crypto", "dev_sharpe": dev_c.get(name, {}).get("sharpe"),
+                            "holdout_sharpe": st.get("sharpe"), "in_book": name == cr.get("chosen")})
+
+    return {"available": bool(tests), "target": RESEARCH_TARGET, "tests": tests, "sleeves": sleeves}
+
+
+@app.get("/api/research_tests")
+def get_research_tests() -> dict[str, Any]:
+    """Out-of-sample verdicts of every pre-registered research test, read from their
+    result files. Read-only; the dashboard never runs research itself."""
+    return _research_tests()
+
+
+@app.get("/api/upcoming_earnings")
+def get_upcoming_earnings() -> dict[str, Any]:
+    """Scheduled reports for the traded universe, as snapshotted by the
+    bot's most recent cycle (the dashboard never queries yfinance itself)."""
+    data = _read_json_file(UPCOMING_EARNINGS_PATH)
+    if data is None:
+        return {"available": False}
+    return data
+
+
 @app.get("/api/alerts")
 def get_alerts(limit: int = Query(50, ge=1, le=10_000)) -> list[dict[str, Any]]:
     return _tail_jsonl_newest_first(ALERTS_LOG_FILE, limit)
@@ -495,6 +684,34 @@ def get_alerts(limit: int = Query(50, ge=1, le=10_000)) -> list[dict[str, Any]]:
 @app.get("/api/cycle_log")
 def get_cycle_log(limit: int = Query(50, ge=1, le=10_000)) -> list[dict[str, Any]]:
     return _tail_jsonl_newest_first(CYCLE_LOG_PATH, limit)
+
+
+@app.get("/api/signals")
+def get_signals(limit: int = Query(200, ge=1, le=5_000)) -> list[dict[str, Any]]:
+    """Every earnings event the bot actually scored and gated, newest first,
+    flattened out of the live cycle log and the backfill cycle log. This is
+    the "why" behind the trade log: SUE, calibrated probability, the Kelly
+    size the gate allowed, and the reason anything was skipped or blocked."""
+    rows: list[dict[str, Any]] = []
+    for path, backfill in ((CYCLE_LOG_PATH, False), (BACKFILL_CYCLE_LOG_PATH, True)):
+        for record in _read_jsonl(path):
+            for entry in record.get("entries") or []:
+                rows.append({
+                    "ticker": entry.get("ticker"),
+                    "as_of_date": record.get("as_of_date"),
+                    "ts": record.get("ts", 0.0),
+                    "earnings_date": entry.get("earnings_date"),
+                    "sue": entry.get("sue"),
+                    "calibrated_proba": entry.get("calibrated_proba"),
+                    "direction": entry.get("direction"),
+                    "allowed": entry.get("allowed"),
+                    "reason": entry.get("reason"),
+                    "detail": entry.get("detail"),
+                    "size_fraction": entry.get("size_fraction"),
+                    "backfill": backfill,
+                })
+    rows.sort(key=lambda r: (r.get("ts", 0.0), r.get("ticker") or ""), reverse=True)
+    return rows[:limit]
 
 
 @app.get("/api/event_feed")
@@ -508,7 +725,8 @@ def get_event_feed(limit: int = Query(100, ge=1, le=2_000)) -> list[dict[str, An
     cycles = _tail_jsonl_newest_first(CYCLE_LOG_PATH, limit)
 
     events: list[dict[str, Any]] = [
-        {"ts": a.get("ts", 0.0), "source": "alert", "kind": a.get("kind"), "summary": a.get("message", "")}
+        {"ts": a.get("ts", 0.0), "source": "alert", "kind": a.get("kind"), "summary": a.get("message", ""),
+         "backfill": bool(a.get("backfill"))}
         for a in alerts
     ]
     for record in cycles:

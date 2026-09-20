@@ -1,0 +1,28 @@
+2017 ridge: trained 263,400, predicted 75,300
+2017 gradient_boost: trained 263,400, predicted 75,300
+2018 ridge: trained 300,900, predicted 75,300
+2018 gradient_boost: trained 300,900, predicted 75,300
+2019 ridge: trained 338,700, predicted 75,600
+2019 gradient_boost: trained 338,700, predicted 75,600
+2020 ridge: trained 376,500, predicted 75,900
+2020 gradient_boost: trained 376,500, predicted 75,900
+2021 ridge: trained 414,300, predicted 75,600
+2021 gradient_boost: trained 414,300, predicted 75,600
+2022 ridge: trained 452,100, predicted 75,300
+2022 gradient_boost: trained 452,100, predicted 75,300
+2023 ridge: trained 489,900, predicted 75,000
+2023 gradient_boost: trained 489,900, predicted 75,000
+2024 ridge: trained 527,400, predicted 75,600
+2024 gradient_boost: trained 527,400, predicted 75,600
+2025 ridge: trained 565,200, predicted 36,300
+2025 gradient_boost: trained 565,200, predicted 36,300
+ridge selection 1.0060617693099245
+gradient_boost selection 0.9955674602844213
+liquidity_shock selection 0.4886770916730822
+trend_pullback selection 0.20259106202103883
+ridge EVALUATION {'excess_sharpe': -0.6005247636026851, 'ann_excess_mean': -0.06299918984454475, 'cagr': -0.037055091772675186, 'vol': 0.10499882462748683, 'max_dd': -0.3417887472392127, 'average_gross': 0.996381560449451, 'annual_one_way_turnover': 91.7744459868787, 'annual_borrow_drag': 0.01672983234645202} STRESS {'excess_sharpe': -1.6289286089662542, 'ann_excess_mean': -0.17085734569492672, 'cagr': -0.1355457768214382, 'vol': 0.10498074662254331, 'max_dd': -0.5613289546467427, 'average_gross': 0.9965361107478619, 'annual_one_way_turnover': 91.76904041997254, 'annual_borrow_drag': 0.05575113646099355}
+gradient_boost EVALUATION {'excess_sharpe': -0.4127584253167398, 'ann_excess_mean': -0.04116833102478696, 'cagr': -0.015278455517207745, 'vol': 0.0998202022210826, 'max_dd': -0.2866367441506288, 'average_gross': 0.9575357385359972, 'annual_one_way_turnover': 66.00456108934732, 'annual_borrow_drag': 0.016613839674730714} STRESS {'excess_sharpe': -1.29789905342112, 'ann_excess_mean': -0.1294363422747358, 'cagr': -0.09849188753218285, 'vol': 0.09981196201078295, 'max_dd': -0.438630126590251, 'average_gross': 0.9576852771003075, 'annual_one_way_turnover': 66.00251812849625, 'annual_borrow_drag': 0.0553689223067546}
+liquidity_shock EVALUATION {'excess_sharpe': -0.6114505310076621, 'ann_excess_mean': -0.018188212575402193, 'cagr': 0.012191138137251034, 'vol': 0.02983088908458338, 'max_dd': -0.08035598269852795, 'average_gross': 0.2985828142744987, 'annual_one_way_turnover': 33.877600152586126, 'annual_borrow_drag': 0.004358328384423555} STRESS {'excess_sharpe': -1.8082006880514294, 'ann_excess_mean': -0.05376831923297787, 'cagr': -0.023190355102023608, 'vol': 0.029826464403303984, 'max_dd': -0.1497449407897068, 'average_gross': 0.2985988079193001, 'annual_one_way_turnover': 33.87649853807177, 'annual_borrow_drag': 0.014526003428927495}
+trend_pullback EVALUATION {'excess_sharpe': -0.689534797823283, 'ann_excess_mean': -0.036725812610544535, 'cagr': -0.007367675026289211, 'vol': 0.05330463280663728, 'max_dd': -0.14811010815522396, 'average_gross': 0.9183530904173329, 'annual_one_way_turnover': 52.358103737875545, 'annual_borrow_drag': 0.013543428681988635} STRESS {'excess_sharpe': -2.0210811826424435, 'ann_excess_mean': -0.10760142831865209, 'cagr': -0.075296207936003, 'vol': 0.053281951189774066, 'max_dd': -0.33281304816113944, 'average_gross': 0.9184715506491089, 'annual_one_way_turnover': 52.36033103957638, 'annual_borrow_drag': 0.04513772722455194}
+fixed_blend EVALUATION {'excess_sharpe': -0.71253388420388, 'ann_excess_mean': -0.04279586967345733, 'cagr': -0.013758312466489064, 'vol': 0.06016184176337044, 'max_dd': -0.2139081179050606} STRESS {'excess_sharpe': -2.0381034091591177, 'ann_excess_mean': -0.11615839907578271, 'cagr': -0.0833707228518138, 'vol': 0.05709921952662117, 'max_dd': -0.3776019856836761}
+{'selected': 'ridge', 'numerical_target_met': False, 'research_gate_met': False, 'selected_uncertainty': {'ann_mean_ci95': [-0.15088311580308264, 0.029139184642458557], 'ratio_ci95': [-1.4081496605147779, 0.28226113035925676], 'one_sided_null_p': 0.9174165166966607, 'five_portfolio_bonferroni_p': 1}, 'live_configuration_changed': False}

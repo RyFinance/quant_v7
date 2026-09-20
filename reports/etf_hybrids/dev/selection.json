@@ -1,0 +1,7 @@
+{
+ "selected": [
+  "E1",
+  "E2"
+ ],
+ "gate": "net Sharpe >= 0.5 and above benchmark B"
+}
