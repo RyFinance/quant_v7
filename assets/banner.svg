@@ -1,48 +1,95 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 420" width="1280" height="420" role="img" aria-label="MERIDIAN: earnings drift, researched honestly, traded autonomously">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 440" width="1280" height="440" role="img" aria-label="MERIDIAN: post-earnings drift, researched honestly, traded autonomously">
   <defs>
-    <linearGradient id="line" x1="0" x2="1">
-      <stop offset="0" stop-color="#96aaff"/>
-      <stop offset=".65" stop-color="#e9e9e9"/>
-      <stop offset="1" stop-color="#9be7c4"/>
+    <filter id="grain" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency=".85" numOctaves="3" stitchTiles="stitch" result="n"/>
+      <feColorMatrix in="n" values="0 0 0 0 .1  0 0 0 0 .08  0 0 0 0 .05  0 0 0 .18 0"/>
+    </filter>
+    <linearGradient id="driftFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0d6b64" stop-opacity=".22"/>
+      <stop offset="1" stop-color="#0d6b64" stop-opacity="0"/>
     </linearGradient>
-    <linearGradient id="area" x1="0" x2="0" y1="0" y2="1">
-      <stop offset="0" stop-color="#96aaff" stop-opacity=".22"/>
-      <stop offset="1" stop-color="#96aaff" stop-opacity="0"/>
-    </linearGradient>
+    <radialGradient id="warm" cx=".85" cy=".1" r=".8">
+      <stop offset="0" stop-color="#e8c79a" stop-opacity=".35"/>
+      <stop offset="1" stop-color="#e8c79a" stop-opacity="0"/>
+    </radialGradient>
   </defs>
   <style>
-    .bg { fill: #0a0a0a; }
+    .serif { font-family: 'Instrument Serif', 'Times New Roman', Georgia, serif; }
+    .sans { font-family: 'Inter Tight', 'Helvetica Neue', Helvetica, Arial, sans-serif; }
     .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
-    .title { font-size: 78px; font-weight: 700; letter-spacing: 16px; fill: #e9e9e9; }
-    .sub { font-size: 19px; letter-spacing: 6px; fill: #8a8a8a; }
-    .tag { font-size: 15px; letter-spacing: 3px; fill: #96aaff; }
-    .glyph { font-size: 11px; fill: #96aaff; opacity: .14; }
-    .grid { stroke: #ffffff; stroke-opacity: .05; }
-    .curve { fill: none; stroke: url(#line); stroke-width: 3; stroke-linecap: round; stroke-linejoin: round;
-             stroke-dasharray: 1700; stroke-dashoffset: 1700; animation: draw 4.5s ease-out forwards; }
-    .fill { fill: url(#area); opacity: 0; animation: fade 2s 2.4s ease forwards; }
-    .dot { fill: #9be7c4; animation: blink 1.6s ease-in-out infinite; }
-    .gate { fill: #0a0a0a; stroke: #2a2a2a; }
+    .kicker { font-size: 12px; letter-spacing: 5.5px; font-weight: 600; fill: #0d6b64; }
+    .title { font-size: 148px; fill: #101719; letter-spacing: -2px; }
+    .sub { font-size: 23px; fill: #3a4341; }
+    .meta { font-size: 11px; letter-spacing: 2.4px; fill: #7c7770; }
+    .draw { stroke-dasharray: 620; stroke-dashoffset: 620; animation: draw 1.9s .35s cubic-bezier(.4,0,.2,1) forwards; }
+    .fade { opacity: 0; animation: fade .7s ease forwards; }
+    .float { animation: float 7s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
     @keyframes draw { to { stroke-dashoffset: 0; } }
     @keyframes fade { to { opacity: 1; } }
-    @keyframes blink { 50% { opacity: .25; } }
-    @media (prefers-reduced-motion: reduce) { .curve { stroke-dashoffset: 0; animation: none; } .fill { opacity: 1; animation: none; } .dot { animation: none; } }
+    @keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
   </style>
-  <rect class="bg" width="1280" height="420"/>
-  <text class="mono glyph" x="24" y="34">SUE 2.41 · DRIFT +63D · Q3 BEAT · EPS REV +4% · KELLY 0.05 · BREAKER ARMED · KILL SWITCH CLEAR · SUE 1.87</text>
 
-  <g class="grid">
-    <line x1="80" x2="1200" y1="300" y2="300"/><line x1="80" x2="1200" y1="250" y2="250"/>
-    <line x1="80" x2="1200" y1="200" y2="200"/><line x1="80" x2="1200" y1="150" y2="150"/>
+  <rect width="1280" height="440" fill="#f5efe3"/>
+  <rect width="1280" height="440" fill="url(#warm)"/>
+  <rect width="1280" height="440" filter="url(#grain)" opacity=".5"/>
+
+  <!-- chart: latitude lines + meridian curves -->
+  <g stroke="#0d6b64" stroke-opacity=".10" fill="none">
+    <line x1="700" y1="140" x2="1210" y2="140"/>
+    <line x1="700" y1="196" x2="1210" y2="196"/>
+    <line x1="700" y1="252" x2="1210" y2="252"/>
+    <line x1="700" y1="308" x2="1210" y2="308"/>
+    <path d="M760 96 Q804 220 760 352"/>
+    <path d="M860 96 Q904 220 860 352"/>
+    <path d="M960 96 Q1004 220 960 352"/>
+    <path d="M1060 96 Q1104 220 1060 352"/>
+    <path d="M1160 96 Q1204 220 1160 352"/>
   </g>
-  <path class="fill" d="M80 300 L150 292 L210 296 L270 280 L330 285 L390 262 L450 270 L510 248 L570 254 L630 230 L690 238 L750 214 L810 222 L870 196 L930 204 L990 176 L1050 186 L1120 154 L1200 140 L1200 330 L80 330 Z"/>
-  <path class="curve" d="M80 300 L150 292 L210 296 L270 280 L330 285 L390 262 L450 270 L510 248 L570 254 L630 230 L690 238 L750 214 L810 222 L870 196 L930 204 L990 176 L1050 186 L1120 154 L1200 140"/>
-  <circle class="dot" cx="1200" cy="140" r="6"/>
 
-  <rect class="gate" x="370" y="64" width="540" height="112" rx="2"/>
-  <text class="mono title" x="648" y="146" text-anchor="middle">MERIDIAN</text>
+  <!-- left: type -->
+  <text x="72" y="118" class="sans kicker">POST-EARNINGS DRIFT · RESEARCHED HONESTLY</text>
+  <text x="62" y="252" class="serif title">Meridian</text>
+  <text x="74" y="304" class="sans sub">After the earnings gap, the drift has a direction.</text>
+  <text x="74" y="336" class="sans sub">It measures that drift, audits the bias, then trades it.</text>
+  <text x="74" y="392" class="mono meta">PRE-REGISTERED TESTS · BIAS AUDITS · 20-DAY HOLD</text>
+  <text x="74" y="414" class="mono meta">7 BROKERS · SIM → PAPER → LIVE (OPT-IN) · LOCALHOST</text>
 
-  <text class="mono tag" x="80" y="362">EARNINGS ▸ SIGNAL ▸ RISK GATE ▸ BROKER FILL ▸ LEDGER</text>
-  <text class="mono sub" x="1200" y="362" text-anchor="end">PEAD · RESEARCHED HONESTLY</text>
-  <text class="mono sub" x="1200" y="392" text-anchor="end">TRADED AUTONOMOUSLY · SIM · PAPER · LIVE</text>
+  <!-- right: the gap and the drift -->
+  <g>
+    <!-- earnings instant -->
+    <line x1="892" y1="108" x2="892" y2="356" stroke="#b3462c" stroke-width="1.4" stroke-dasharray="4 5" stroke-opacity=".55"/>
+    <text x="892" y="100" class="mono" font-size="9.5" letter-spacing="2" fill="#b3462c" text-anchor="middle">EARNINGS · T0</text>
+
+    <!-- drift shading -->
+    <path d="M892 196 L1190 138 L1190 308 L892 308 Z" fill="url(#driftFill)"/>
+
+    <!-- price: flat, gap, drift -->
+    <path d="M700 268 L860 268 L888 268 L888 196 L1190 138"
+          fill="none" stroke="#101719" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+
+    <!-- drift trace on top -->
+    <path class="draw" d="M888 196 L1190 138" fill="none" stroke="#0d6b64" stroke-width="3.4" stroke-linecap="round"/>
+    <circle class="fade" style="animation-delay:1.9s" cx="890" cy="196" r="5.5" fill="#fffaf0" stroke="#0d6b64" stroke-width="2.6"/>
+    <path class="fade" style="animation-delay:1.9s" d="M1182 132 l14 6 -14 6" fill="none" stroke="#0d6b64" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+
+    <!-- annotations -->
+    <text class="mono fade" style="animation-delay:.8s" x="904" y="242" font-size="10" letter-spacing="1.6" fill="#b3462c">SURPRISE +8.4%</text>
+    <text class="mono fade" style="animation-delay:1.7s" x="1042" y="150" font-size="10.5" letter-spacing="2.2" fill="#0d6b64" text-anchor="middle" transform="rotate(-11 1042 150)">20-DAY DRIFT</text>
+
+    <!-- axis -->
+    <line x1="700" y1="330" x2="1210" y2="330" stroke="#101719" stroke-opacity=".18"/>
+    <g class="mono" font-size="9" letter-spacing="1.4" fill="#8a847a">
+      <text x="700" y="348">T−5</text>
+      <text x="892" y="348" text-anchor="middle">T0</text>
+      <text x="1190" y="348" text-anchor="end">T+20</text>
+    </g>
+
+    <!-- pre-registered stamp -->
+    <g transform="translate(1026 244) rotate(-11)">
+      <g class="float">
+        <rect x="0" y="0" width="150" height="34" rx="3" fill="none" stroke="#b3462c" stroke-opacity=".55" stroke-width="1.6" stroke-dasharray="7 4"/>
+        <text x="75" y="22" class="mono" font-size="11" letter-spacing="3.4" fill="#b3462c" text-anchor="middle" opacity=".8">PREREGISTERED</text>
+      </g>
+    </g>
+  </g>
 </svg>
