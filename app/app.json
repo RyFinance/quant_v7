@@ -1,0 +1,9 @@
+{
+  "name": "Meridian",
+  "bundleId": "com.rytty.meridian.app",
+  "url": "http://127.0.0.1:8420/",
+  "cwd": ".",
+  "start": "scripts/desk.sh",
+  "bootSeconds": 120,
+  "icon": "#0a0a0a #96aaff M Menlo-Bold"
+}
